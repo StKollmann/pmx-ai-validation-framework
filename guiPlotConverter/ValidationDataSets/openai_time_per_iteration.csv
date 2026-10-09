@@ -1,0 +1,7 @@
+﻿AI_model,time_per_iteration
+gpt-5.6-sol [effort: none],"[04:59<00:00,  3.00s/it]"
+gpt-5.6-sol [effort: low],"[10:43<00:00,  6.44s/it]"
+gpt-5.6-sol [effort: medium],"[14:00<00:00,  8.40s/it]"
+gpt-5.6-terra [effort: none],"[04:29<00:00,  2.69s/it]"
+gpt-5.6-terra [effort: low],"[08:39<00:00,  5.19s/it]"
+gpt-5.6-terra [effort: medium],"[10:02<00:00,  6.02s/it]"

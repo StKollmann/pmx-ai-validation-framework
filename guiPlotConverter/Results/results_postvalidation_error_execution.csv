@@ -1,0 +1,566 @@
+"comp_id","software","data_type","project","plot","ref_code","ref_plh","plot_complexity","nb_plot_configs","AI_model","test_code","validation_status","mismatch_severity","error_message"
+86,"p","continuous","prj11_Theo_extravasc_SS.pkx","Param vs Covs","plotCAParametersVsCovariates(
+    covariates = c(""FORM"", ""SEQ""),
+    settings = list(
+      grid = FALSE))","plh_comp_id86.txt","1_low",2,"gpt-5.6-sol [effort: low]","plotCAParametersVsCovariates(
+  parameters = c(""FORM"", ""SEQ""),
+  settings = list(
+    grid = FALSE
+  )
+)","EXECUTION_ERROR","N/A","Test Error: Invalid parameters: FORM, SEQ. Available elements: 'Tlag', 'ka', 'V', 'Cl'"
+46,"p","continuous","prj08_4periods.pkx","Sequence by period","plotBESequenceByPeriod(
+  parameters = c(""AUCINF_obs"", ""AUClast"", ""Cmax""),
+  settings = list(
+    legend = TRUE,
+    grid   = FALSE,
+    error  = FALSE,
+    ncol   = 1),
+  stratify = list(
+    groups = list(
+      list(
+        name       = ""PER"",
+        definition = list(c(""1""), c(""3""), c(""4""), c(""2"")))),
+    filter = list(""PER"", c(4, 1, 2, 3))),
+  preferences = list(
+    formulationDot         = list(radius = 1.62, color = c(""#0D3598"",""#179848"")),             
+    observationStatistics  = list(lineWidth = 0.945),         
+    sequence               = list(color = ""#350808"",
+                                  lineWidth = 0.945)))","plh_comp_id46.txt","2_mid",13,"gpt-5.6-terra [effort: none]","plotBESequenceByPeriod(
+  parameters = c(""AUCINFobs"", ""AUClast"", ""Cmax""),
+  settings = list(
+    error = FALSE,
+    formulationColors = c(""#0D3598"", ""#179848"", ""#fdc086"", ""#ffff99"", ""#386cb0"", ""#f0027f"", ""#bf5b17"", ""#666666""),
+    legend = TRUE,
+    grid = FALSE
+  ),
+  preferences = list(
+    formulationDot = list(radius = 1.62),
+    observationStatistics = list(
+      whiskersWidth = 0.945,
+      lineWidth = 0.945
+    ),
+    sequence = list(
+      color = ""#350808"",
+      lineWidth = 0.945
+    )
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""PER"",
+        definition = list(c(""1""), c(""3""), c(""4""), c(""2"")),
+        colors = c(""#4682B4"", ""#4D4D4D"", ""#60BD68"", ""#F17CB0"")
+      )
+    ),
+    filter = list(list(""PER"", c(4, 1, 2, 3)))
+  )
+)","EXECUTION_ERROR","N/A","Test Error: Invalid parameters: AUCINFobs. Available elements: 'AUCINF_obs', 'AUClast', 'Cmax'"
+46,"p","continuous","prj08_4periods.pkx","Sequence by period","plotBESequenceByPeriod(
+  parameters = c(""AUCINF_obs"", ""AUClast"", ""Cmax""),
+  settings = list(
+    legend = TRUE,
+    grid   = FALSE,
+    error  = FALSE,
+    ncol   = 1),
+  stratify = list(
+    groups = list(
+      list(
+        name       = ""PER"",
+        definition = list(c(""1""), c(""3""), c(""4""), c(""2"")))),
+    filter = list(""PER"", c(4, 1, 2, 3))),
+  preferences = list(
+    formulationDot         = list(radius = 1.62, color = c(""#0D3598"",""#179848"")),             
+    observationStatistics  = list(lineWidth = 0.945),         
+    sequence               = list(color = ""#350808"",
+                                  lineWidth = 0.945)))","plh_comp_id46.txt","2_mid",13,"gpt-5.6-terra [effort: medium]","plotBESequenceByPeriod(
+  parameters = c(""AUCINFobs"", ""AUClast"", ""Cmax""),
+  settings = list(
+    grid = FALSE,
+    legend = TRUE,
+    error = FALSE,
+    formulationColors = c(""#0D3598"", ""#179848"", ""#fdc086"", ""#ffff99"", ""#386cb0"", ""#f0027f"", ""#bf5b17"", ""#666666"")
+  ),
+  preferences = list(
+    formulationDot = list(radius = 1.62),
+    observationStatistics = list(
+      whiskersWidth = 0.945,
+      lineWidth = 0.945
+    ),
+    sequence = list(
+      color = ""#350808"",
+      lineWidth = 0.945
+    )
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""PER"",
+        definition = list(c(""1""), c(""3""), c(""4""), c(""2"")),
+        colors = c(""#4682B4"", ""#4D4D4D"", ""#60BD68"", ""#F17CB0"")
+      )
+    ),
+    filter = list(list(""PER"", c(4, 1, 2, 3)))
+  )
+)","EXECUTION_ERROR","N/A","Test Error: Invalid parameters: AUCINFobs. Available elements: 'AUCINF_obs', 'AUClast', 'Cmax'"
+5,"m","continuous","prj02_phenobarbital.mlxtran","Individual param distrib","plotParametersDistribution(
+  settings = list(legend = TRUE,
+                  grid   = FALSE,
+                  ncol   = 2),
+  preferences = list(histogramBar = list(
+                       fill        = ""#941735"",   
+                       strokeWidth = 0.54,
+                       opacity     = 0.67),        
+    theoretical = list(color     = ""#594E4E"",     
+                       lineType  = ""dashed"",      
+                       lineWidth = 0.81)),        
+  stratify = list(split = ""tAPGAR""))","plh_comp_id05.txt","2_mid",10,"claude-sonnet-5 [effort: low]","plotParametersDistribution(
+  settings = list(
+    grid = FALSE,
+    legend = TRUE,
+    ncol = 2
+  ),
+  preferences = list(
+    histogramBar = list(fill = ""rgba(148, 23, 53, 0.65)"", strokeWidth = 0.54),
+    theoretical = list(color = ""#594E4E"", lineType = ""dashed"", lineWidth = 0.81)
+  ),
+  stratify = list(
+    groups = list(list(name = ""tAPGAR"", definition = list(c(""High""), c(""Low""), c(""Med"")), colors = c(""#1F43B8"", ""#0A6D12"", ""#E10B2A""))),
+    split = ""tAPGAR""
+  )
+)","EXECUTION_ERROR","N/A","Test Error: Problem while converting geom to grob."
+38,"p","continuous","prj07_aPCSK9_SAD.pkx","Individual fits","plotCAIndividualFits(
+  settings = list(
+    obsLines    = TRUE,
+    dosingTimes = TRUE,
+    cens        = FALSE,
+    units       = TRUE,
+    legend      = TRUE,
+    grid        = FALSE,
+    xlab        = ""Time (#FAFAFF)"",
+    ylab        = ""Raviolizumab"",
+    ylim        = c(0.01, 50),
+    ncol        = 3),
+  stratify = list(
+    individualSelection = list(indices = c(1, 9), isRange = TRUE), 
+    color  = ""DOSE_mg"",
+    colors = c(""#162CB4"", ""#E3A50D"", ""#CA148E""),
+    filter = list(list(""DOSE_mg"", c(1, 2)))),
+  preferences = list(
+    dosingTimes = list(color = ""#8C1D1D"", lineWidth = 0.945),  
+    indivFits   = list(color = ""#046529"", lineWidth = 0.81),   
+    obs         = list(radius = 1.35)))","plh_comp_id38.txt","2_mid",19,"claude-sonnet-5 [effort: low]","plotCAIndividualFits(
+  settings = list(
+    obsLines = TRUE,
+    cens = FALSE,
+    dosingTimes = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    xlab = ""Time (#FAFAFF)"",
+    ylab = ""Raviolizumab"",
+    ylim = c(0.01, 50),
+    ncol = 3
+  ),
+  stratify = list(
+    color = ""DOSE_mg"",
+    colors = c(""#162CB4"", ""#E3A50D"", ""#CA148E""),
+    filter = list(""DOSE_mg"", c(1, 2)),
+    individualSelection = list(indices = c(1, 9), isRange = TRUE)
+  ),
+  preferences = list(
+    dosingTimes = list(color = ""#8C1D1D"", lineWidth = 0.945),
+    indivFits = list(color = ""#046529"", lineWidth = 0.81, lineType = ""solid""),
+    obs = list(radius = 1.35)
+  ),
+  settings = list(ncol = 3)
+)","EXECUTION_ERROR","N/A","Test Error: formal argument ""settings"" matched by multiple actual arguments"
+53,"m","continuous","prj08_iov2.mlxtran","RandomEff distrib","plotStandardizedRandomEffectsDistribution(
+    settings = list(
+      grid             = FALSE,
+      variabilityLevel = ""ID"",
+      ncol             = 2),
+    stratify = list(
+      split  = ""TREAT"",
+      filter = list(""SEX"", 1)),
+    preferences = list(
+      boxplot = list(
+        fill    = ""#6B14E1"",
+        opacity = 0.38),
+      boxplotOutlier = list(
+        size = 4.32),
+      quartile = list(          
+        color     = ""#0B36EB"",  
+        lineWidth = 1.215),
+      baseline = list(          
+        color     = ""#8C0B0B"",  
+        lineWidth = 0.945)))","plh_comp_id53.txt","2_mid",12,"claude-sonnet-5 [effort: low]","plotStandardizedRandomEffectsDistribution(
+  settings = list(
+    variabilityLevel = ""id"",
+    indivEstimate = ""simulated"",
+    grid = FALSE
+  ),
+  preferences = list(
+    boxplot = list(fill = ""rgba(107, 20, 225, 0.38)""),
+    boxplotOutlier = list(size = 16, strokeWidth = 0.54),
+    baseline = list(color = ""rgb(140, 11, 11)"", lineWidth = 0.945),
+    quartile = list(color = ""rgba(11, 54, 235, 0.9)"", lineWidth = 1.215)
+  ),
+  stratify = list(
+    groups = list(list(name = ""TREAT"", definition = list(c(""A""), c(""B"")))),
+    split = c(""TREAT""),
+    filter = list(""SEX"", c(1))
+  ),
+  settings = list(ncol = 2)
+)","EXECUTION_ERROR","N/A","Test Error: formal argument ""settings"" matched by multiple actual arguments"
+54,"m","continuous","prj08_iov2.mlxtran","RandomEff distrib","plotStandardizedRandomEffectsDistribution(
+    plot = ""cdf"",
+    settings = list(
+      variabilityLevel = ""OCCevid"",
+      empirical        = TRUE,    
+      theoretical      = TRUE,
+      legend           = TRUE,
+      grid             = FALSE,
+      ncol             = 1),
+    stratify = list(
+      groups = list(
+        list(name       = ""TREAT"",
+             definition = list(c(""A""), c(""B"")))),
+      split  = ""SEX"",                       
+      filter = list(""TREAT"", 1)),
+    preferences = list(
+      empirical   = list(     
+        color     = ""#452FA4"",
+        lineWidth = 1.62),    
+      theoretical = list(
+        lineType  = ""dashed"", 
+        lineWidth = 1.08)))","plh_comp_id54.txt","2_mid",15,"claude-sonnet-5 [effort: low]","plotStandardizedRandomEffectsDistribution(
+  plot = ""cdf"",
+  settings = list(
+    variabilityLevel = ""id"",
+    grid = FALSE,
+    legend = TRUE
+  ),
+  stratify = list(
+    groups = list(list(name = ""TREAT"", definition = list(c(""A""), c(""B"")))),
+    split = ""SEX"",
+    filter = list(""TREAT"", c(1))
+  ),
+  preferences = list(
+    boxplot = list(
+      fill = ""#6B14E1""
+    ),
+    baseline = list(
+      color = ""#8C0B0B"",
+      lineWidth = 0.945
+    ),
+    quartile = list(
+      color = ""#0B36EB"",
+      lineWidth = 1.215
+    ),
+    empirical = list(
+      color = ""#452FA4"",
+      lineWidth = 1.62
+    ),
+    theoretical = list(
+      lineWidth = 1.08,
+      lineType = ""dashed""
+    )
+  ),
+  settings = list(ncol = 1)
+)","EXECUTION_ERROR","N/A","Test Error: formal argument ""settings"" matched by multiple actual arguments"
+58,"m","continuous","prj08_iov2.mlxtran","Param vs Covs","plotParametersVsCovariates(
+    settings = list(
+      indivEstimate = ""mode"",   
+      boxplotData   = ""spread"", 
+      regressionLine = FALSE,   
+      ncol          = 2),
+    stratify = list(
+      split  = ""OCCevid"",
+      color  = ""SEX"",
+      colors = c(""#3D7B63"", ""#E33281""),
+      filter = list(""SEX"", 1)),
+    preferences = list(
+      boxplot = list(                       
+        fill    = ""#2E9196"",                
+        opacity = 0.56),
+      boxplotOutlier = list(                
+        color = ""#A00808"",
+        size  = 3.51),                 
+      boxplotValues = list(
+        color  = ""#1542B2"",
+        radius = 1.62,
+        opacity= 0.67)))","plh_comp_id58.txt","2_mid",15,"claude-sonnet-5 [effort: low]","plotParametersVsCovariates(
+  settings = list(
+    indivEstimate = ""mode"",
+    boxplotData = ""spread"",
+    regressionLine = FALSE
+  ),
+  stratify = list(
+    filter = list(""SEX"", c(1)),
+    split = ""OCCevid"",
+    color = ""SEX"",
+    colors = c(""#3D7B63"", ""#E33281"")
+  ),
+  preferences = list(
+    boxplot = list(fill = ""rgba(46, 145, 150, 0.56)""),
+    boxplotOutlier = list(color = ""rgb(160, 8, 8)"", size = 3.51),
+    boxplotValues = list(color = ""rgba(21, 66, 178, 0.67)"", radius = 1.62),
+    regressionLine = list(lineWidth = 1.485)
+  ),
+  settings = list(ncol = 2)
+)","EXECUTION_ERROR","N/A","Test Error: formal argument ""settings"" matched by multiple actual arguments"
+61,"m","continuous","prj08_iov2.mlxtran","Residual scatter","plotResidualsScatterPlot(
+    xaxis      = ""prediction"",
+    residuals = c(""indiv"",
+                  ""pop"",  
+                  ""npde""),
+    settings = list(
+      binsSettings = list(            
+        criteria       = ""equalwidth"",
+        nbBins         = 15,
+        is.fixedNbBins = TRUE,
+        nbBinData      = c(10, 100)),
+      binLimits       = TRUE, 
+      empPercentiles  = TRUE, 
+      predPercentiles = TRUE, 
+      predInterval    = TRUE, 
+      spline          = TRUE,
+      outlierDots     = TRUE,
+      legend          = TRUE,
+      grid            = FALSE,
+      xlog            = TRUE),
+    stratify = list(
+      split  = ""SEX"",
+      color  = ""TREAT"",
+      colors = c(""#F39C0F"", ""#028E0F""),
+      filter = list(""SEX"", 1)),
+    preferences = list(
+      binsValues = list(
+        color     = ""#1A1111"",
+        lineWidth = 0.675),
+      empirical = list(
+        color     = ""#064C86"",
+        lineWidth = 1.215,  
+        lineType  = ""dashed""),
+      obs = list(
+        color   = ""#4682B4"",
+        radius  = 2.43),
+      censObs = list(       
+        radius = 2.43),
+      outlierArea = list(
+        fill = ""#B00B0B""),
+      outlierDot = list(
+        color = ""#B00707""),
+      piMedian = list(
+        fill    = ""#9C1B1B"",
+        opacity = 0.57),
+      piPercentile = list(
+        fill    = ""#3E06B0"",
+        opacity = 0.52),
+      spline = list(
+        color     = ""#DD5F00"",
+        lineWidth = 1.215)))","plh_comp_id61.txt","3_high",35,"claude-sonnet-5 [effort: low]","plotResidualsScatterPlot(
+  residuals = c(""indiv"", ""pop"", ""npde""),
+  settings = list(
+    empPercentiles = TRUE,
+    predPercentiles = TRUE,
+    predInterval = TRUE,
+    outlierDots = TRUE,
+    spline = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    xlog = TRUE,
+    binLimits = TRUE,
+    ncol = 3,
+    binsSettings = list(
+      criteria = ""equalwidth"",
+      is.fixedNbBins = TRUE,
+      nbBins = 15,
+      nbBinData = c(10, 100)
+    )
+  ),
+  preferences = list(
+    obs = list(color = ""rgba(70, 130, 180, 0.48)"", radius = 2.43),
+    censObs = list(radius = 2.43),
+    spline = list(color = ""rgb(221, 95, 0)"", lineWidth = 1.215),
+    empirical = list(color = ""rgb(6, 76, 134)"", lineWidth = 1.215, lineType = ""dashed""),
+    piMedian = list(fill = ""rgba(156, 27, 27, 0.57)""),
+    piPercentile = list(fill = ""rgba(62, 6, 176, 0.52)""),
+    outlierArea = list(fill = ""rgb(176, 11, 11)""),
+    outlierDot = list(color = ""rgb(176, 7, 7)""),
+    binsValues = list(color = ""rgb(26, 17, 17)"", lineWidth = 0.675)
+  ),
+  stratify = list(
+    filter = list(""SEX"", c(1)),
+    split = ""SEX"",
+    groups = list(list(name = ""TREAT"", definition = list(c(""A""), c(""B"")))),
+    color = ""TREAT"",
+    colors = c(""#F39C0F"", ""#028E0F"")
+  )
+)","EXECUTION_ERROR","N/A","Test Error: Problem while converting geom to grob."
+76,"p","continuous","prj10_Remi_infusion_SD.pkx","Covariates","plotCovariates(
+    settings = list(
+      legend          = TRUE,
+      grid            = FALSE,
+      histogramColors = c(
+        ""#1F77B4"", ""#FF7F0E"", ""#2CA02C"", ""#D62728"", ""#9467BD"",
+        ""#8C564B"", ""#E377C2"", ""#7F7F7F"", ""#BCBD22"", ""#17BECF"")),
+    stratify = list(
+      groups = list(
+        list(
+          name       = ""AGE"",
+          definition = c(32, 58))),
+      color  = ""AGE"",
+      colors = c(""#0A518C"", ""#B42020"", ""#1B8C25""),
+      filter = list(""AGE"", c(2, 1))),
+    preferences = list(
+      boxplot = list(
+        fill      = ""#1036D6"",  
+        opacity   = 0.48),
+      histogramBar = list(
+        fill      = ""#068AF7"",   
+        opacity   = 0.56,
+        strokeWidth = 0.54),
+      obs = list(
+        color     = ""#390CAA"",
+        radius    = 1.62),
+      regressionLine = list(
+        color     = ""#BD2671"",
+        lineWidth = 1.08)))","plh_comp_id76.txt","2_mid",16,"claude-sonnet-5 [effort: low]","plotCovariates(
+  settings = list(
+    grid = FALSE,
+    legend = TRUE,
+    histogramColors = c(""#1f77b4"", ""rgb(255, 127, 14)"", ""rgb(44, 160, 44)"", ""rgb(214, 39, 40)"", ""rgb(148, 103, 189)"", ""rgb(140, 86, 75)"", ""rgb(227, 119, 194)"", ""rgb(127, 127, 127)"", ""rgb(188, 189, 34)"", ""rgb(23, 190, 207)"")
+  ),
+  stratify = list(
+    filter = list(""AGE"", c(2, 1)),
+    groups = list(name = ""AGE"", definition = c(32, 58))
+  ),
+  preferences = list(
+    boxplot = list(fill = ""#1036D6""),
+    histogramBar = list(fill = ""#068AF7""),
+    obs = list(color = ""#390CAA"", radius = 1.62),
+    regressionLine = list(color = ""#BD2671"", lineWidth = 1.08)
+  )
+)","EXECUTION_ERROR","N/A","Test Error: Problem while converting geom to grob."
+77,"p","continuous","prj10_Remi_infusion_SD.pkx","Observed data","plotObservedData(
+    settings = list(
+      mean        = FALSE,
+      error       = FALSE,
+      binsSettings = list(
+        is.fixedNbBins = TRUE,
+        nbBins         = 20),
+      legend = TRUE,
+      ylog   = TRUE,
+      ylim   = c(-28.612209844277, 245.4),
+      ncol   = 1),
+    stratify = list(
+      groups = list(
+        list(
+          name       = ""AGE"",
+          definition = c(32, 58)),
+        list(
+          name       = ""GROUP"",
+          definition = list(c(""1"", ""2""), c(""3""), c(""4"")))),
+      split  = ""GROUP"",
+      color  = ""AGE"",
+      colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")),
+    preferences = list(
+      obs     = list(radius = 0.54),
+      censObs = list(radius = 0.54)))","plh_comp_id77.txt","2_mid",15,"claude-sonnet-5 [effort: low]","plotObservedData(
+  settings = list(
+    mean = FALSE,
+    error = FALSE,
+    binsSettings = list(is.fixedNbBins = TRUE, nbBins = 20),
+    legend = TRUE,
+    ylog = TRUE,
+    ylim = c(-28.612209844277, 245.4)
+  ),
+  stratify = list(
+    groups = list(
+      list(name = ""AGE"", definition = c(32, 58)),
+      list(name = ""GROUP"", definition = list(c(""1"", ""2""), c(""3""), c(""4"")), colors = c(""#F17CB0"", ""#B2912F"", ""#B276B2""))
+    ),
+    individualSelection = list(indices = c(1, 3), isRange = TRUE),
+    split = ""GROUP"",
+    color = ""AGE"",
+    colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")
+  ),
+  settings = list(ncol = 1),
+  preferences = list(
+    obs = list(radius = 0.54),
+    censObs = list(radius = 0.54)
+  )
+)","EXECUTION_ERROR","N/A","Test Error: formal argument ""settings"" matched by multiple actual arguments"
+5,"m","continuous","prj02_phenobarbital.mlxtran","Individual param distrib","plotParametersDistribution(
+  settings = list(legend = TRUE,
+                  grid   = FALSE,
+                  ncol   = 2),
+  preferences = list(histogramBar = list(
+                       fill        = ""#941735"",   
+                       strokeWidth = 0.54,
+                       opacity     = 0.67),        
+    theoretical = list(color     = ""#594E4E"",     
+                       lineType  = ""dashed"",      
+                       lineWidth = 0.81)),        
+  stratify = list(split = ""tAPGAR""))","plh_comp_id05.txt","2_mid",10,"claude-sonnet-5 [effort: medium]","plotParametersDistribution(
+  settings = list(
+    grid = FALSE,
+    legend = TRUE,
+    ncol = 2
+  ),
+  stratify = list(
+    groups = list(list(name = ""tAPGAR"", definition = list(c(""High""), c(""Low""), c(""Med"")))),
+    split = ""tAPGAR""
+  ),
+  preferences = list(
+    histogramBar = list(fill = ""rgba(148, 23, 53, 0.65)"", strokeWidth = 0.54),
+    theoretical = list(color = ""#594E4E"", lineType = ""dashed"", lineWidth = 0.81)
+  )
+)","EXECUTION_ERROR","N/A","Test Error: Problem while converting geom to grob."
+38,"p","continuous","prj07_aPCSK9_SAD.pkx","Individual fits","plotCAIndividualFits(
+  settings = list(
+    obsLines    = TRUE,
+    dosingTimes = TRUE,
+    cens        = FALSE,
+    units       = TRUE,
+    legend      = TRUE,
+    grid        = FALSE,
+    xlab        = ""Time (#FAFAFF)"",
+    ylab        = ""Raviolizumab"",
+    ylim        = c(0.01, 50),
+    ncol        = 3),
+  stratify = list(
+    individualSelection = list(indices = c(1, 9), isRange = TRUE), 
+    color  = ""DOSE_mg"",
+    colors = c(""#162CB4"", ""#E3A50D"", ""#CA148E""),
+    filter = list(list(""DOSE_mg"", c(1, 2)))),
+  preferences = list(
+    dosingTimes = list(color = ""#8C1D1D"", lineWidth = 0.945),  
+    indivFits   = list(color = ""#046529"", lineWidth = 0.81),   
+    obs         = list(radius = 1.35)))","plh_comp_id38.txt","2_mid",19,"claude-sonnet-5 [effort: medium]","plotCAIndividualFits(
+  settings = list(
+    obsLines = TRUE,
+    cens = FALSE,
+    dosingTimes = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    xlab = ""Time (#FAFAFF)"",
+    ylab = ""Raviolizumab"",
+    ylim = c(0.01, 50),
+    ncol = 3
+  ),
+  stratify = list(
+    individualSelection = list(indices = c(1, 9), isRange = TRUE),
+    groups = list(list(name = ""DOSE_mg"",
+                        definition = list(c(""150mg""), c(""300mg""), c(""800mg"")))),
+    color = ""DOSE_mg"",
+    colors = c(""#162CB4"", ""#E3A50D"", ""#CA148E""),
+    filter = list(""DOSE_mg"", c(1, 2))
+  ),
+  preferences = list(
+    obs = list(radius = 1.35),
+    dosingTimes = list(color = ""#8C1D1D"", lineWidth = 0.945),
+    indivFits = list(color = ""#046529"", lineWidth = 0.81, lineType = ""solid"")
+  ),
+  settings = list(ncol = 3)
+)","EXECUTION_ERROR","N/A","Test Error: formal argument ""settings"" matched by multiple actual arguments"

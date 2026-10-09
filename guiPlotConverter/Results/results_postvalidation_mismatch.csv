@@ -1,0 +1,6146 @@
+"comp_id","software","data_type","project","plot","ref_code","ref_plh","plot_complexity","nb_plot_configs","AI_model","test_code","validation_status","mismatch_severity","error_message"
+10,"m","discrete","prj03_AD_logistic.mlxtran","VPC","plotVpc(
+  settings = list(
+    xBinsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins         = 5),
+    yBinsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins         = 2,
+      nbBinData      = c(10, 200)),
+    binLimits    = TRUE,  
+    empirical    = TRUE,    
+    theoretical  = TRUE,    
+    outlierAreas = FALSE,   
+    legend       = TRUE,
+    ncol         = 2),      
+  stratify = list(          
+    groups = list(
+      list(name       = ""ARM"",
+           definition = list(c(""0"", ""1""), c(""2"")))),
+    split = ""ARM""),
+  preferences = list(
+    empirical    = list(color = ""#0B528E"", lineWidth = 1.35),
+    piPercentile = list(fill  = ""#0D8E69"", opacity   = 0.52)))","plh_comp_id10.txt","3_high",20,"gpt-5.6-sol [effort: none]","plotVpc(
+  settings = list(
+    yBinsSettings = list(
+      nbBins = 2,
+      is.fixedNbBins = TRUE,
+      nbBinData = c(10, 200)
+    ),
+    xBinsSettings = list(
+      nbBins = 5,
+      is.fixedNbBins = TRUE
+    ),
+    outlierAreas = FALSE,
+    binLimits = TRUE,
+    legend = TRUE,
+    theoretical = TRUE,
+    ncol = 2
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""ARM"",
+        definition = list(c(""0"", ""1""), c(""2"")),
+        colors = c(""#F17CB0"", ""#B2912F"")
+      )
+    ),
+    split = ""ARM""
+  ),
+  preferences = list(
+    empirical = list(
+      color = ""#0B528EE0"",
+      lineWidth = 1.35
+    ),
+    piPercentile = list(
+      fill = ""#0D8E6985""
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+34,"m","continuous","prj06_IOV.mlxtran","VPC","plotVpc(
+  settings = list(
+    legend        = TRUE,
+    grid          = FALSE,
+    obs           = TRUE,
+    theoretical   = TRUE,
+    ylog          = TRUE,
+    xlab          = ""Zeit"",
+    xlim          = c(-1, 10),
+    ylab          = ""Konzentration"",
+    ylim          = c(1, 150),
+    level            = 85,
+    higherPercentile = 95,
+    cens          = TRUE,
+    censoring     = ""loq"",
+    useCorrpred   = TRUE,
+    binLimits = TRUE,
+    xBinsSettings = list(           
+      criteria      = ""equalwidth"", 
+      nbBins        = 12,           
+      is.fixedNbBins = TRUE,        
+      nbBinData     = c(1, 5)),
+    ncol=1),
+  stratify = list(
+    split = ""DIET"",
+    color = ""id"",
+    colors = c(
+      ""#0E13AE"", ""#52A371"", ""#CFA06B"", ""#9c9ede"", ""#637939"",
+      ""#E78D28"", ""#CF6BB7"", ""#9018D9"", ""#11CCD7"", ""#101010"",
+      ""#e7ba52"", ""#E7F313"", ""#960E08"", ""#75F56F"")),
+  preferences = list(
+    empirical    = list(color  = ""#1C4669"", lineWidth = 0.81),
+    obs          = list(radius = 1.08),
+    piMedian     = list(fill   = ""#FF0000"", opacity = 0.62),
+    piPercentile = list(fill   = ""#0080FF"", opacity = 0.68)))","plh_comp_id34.txt","3_high",29,"gpt-5.6-sol [effort: none]","plotVpc(
+  settings = list(
+    useCensored = TRUE,
+    censoring = ""loq"",
+    binLimits = TRUE,
+    xBinsSettings = list(
+      criteria = ""equalwidth"",
+      nbBins = 12,
+      is.fixedNbBins = TRUE,
+      nbBinData = c(1, 5)
+    ),
+    level = 85,
+    higherPercentile = 95,
+    useCorrpred = TRUE,
+    obs = TRUE,
+    theoretical = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    xlim = c(-1, 10),
+    ylim = c(1, 150),
+    xlab = ""Zeit"",
+    ylab = ""Konzentration"",
+    ylog = TRUE,
+    ncol = 1
+  ),
+  stratify = list(
+    split = ""DIET"",
+    color = ""id"",
+    colors = c(
+      ""#0E13AE"", ""#52A371"", ""#CFA06B"", ""#9c9ede"",
+      ""#637939"", ""#E78D28"", ""#CF6BB7"", ""#9018D9"",
+      ""#11CCD7"", ""#101010"", ""#e7ba52"", ""#E7F313"",
+      ""#960E08"", ""#75F56F""
+    )
+  ),
+  preferences = list(
+    empirical = list(
+      color = ""#1C4669"",
+      lineWidth = 0.81
+    ),
+    obs = list(
+      radius = 1.08
+    ),
+    piMedian = list(
+      fill = ""#FF0000"",
+      opacity = 0.62
+    ),
+    piPercentile = list(
+      fill = ""#0080FF"",
+      opacity = 0.68
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+38,"p","continuous","prj07_aPCSK9_SAD.pkx","Individual fits","plotCAIndividualFits(
+  settings = list(
+    obsLines    = TRUE,
+    dosingTimes = TRUE,
+    cens        = FALSE,
+    units       = TRUE,
+    legend      = TRUE,
+    grid        = FALSE,
+    xlab        = ""Time (#FAFAFF)"",
+    ylab        = ""Raviolizumab"",
+    ylim        = c(0.01, 50),
+    ncol        = 3),
+  stratify = list(
+    individualSelection = list(indices = c(1, 9), isRange = TRUE), 
+    color  = ""DOSE_mg"",
+    colors = c(""#162CB4"", ""#E3A50D"", ""#CA148E""),
+    filter = list(list(""DOSE_mg"", c(1, 2)))),
+  preferences = list(
+    dosingTimes = list(color = ""#8C1D1D"", lineWidth = 0.945),  
+    indivFits   = list(color = ""#046529"", lineWidth = 0.81),   
+    obs         = list(radius = 1.35)))","plh_comp_id38.txt","2_mid",19,"gpt-5.6-sol [effort: none]","plotCAIndividualFits(
+  settings = list(
+    dosingTimes = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    obsLines = TRUE,
+    xlab = ""Time (#FAFAFF)"",
+    ylim = c(0.01, 50),
+    ylab = ""Raviolizumab"",
+    ncol = 3
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""DOSE_mg"",
+        definition = list(c(""150mg""), c(""300mg""), c(""800mg""))
+      )
+    ),
+    color = ""DOSE_mg"",
+    colors = c(""#162CB4"", ""#E3A50D"", ""#CA148E""),
+    filter = list(list(""DOSE_mg"", c(1, 2))),
+    individualSelection = list(indices = c(1, 9), isRange = TRUE)
+  ),
+  preferences = list(
+    obs = list(radius = 1.35),
+    dosingTimes = list(
+      color = ""#8C1D1D"",
+      lineWidth = 0.945
+    ),
+    indivFits = list(
+      color = ""#046529"",
+      lineWidth = 0.81,
+      lineType = ""solid""
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+59,"m","continuous","prj08_iov2.mlxtran","VPC","plotVpc(
+  settings = list(
+    level             = 80,
+    higherPercentile  = 95,
+    timeAfterLastDose = TRUE,
+    useCorrpred       = TRUE,
+    xBinsSettings     = list(
+      binRange  = c(15, 40),
+      nbBinData = c(20, 50)),
+    binLimits          = TRUE,
+    empirical          = TRUE,
+    obs                = TRUE,
+    theoretical        = TRUE,
+    legend             = TRUE,
+    grid               = FALSE,
+    linearInterpolation = FALSE,
+    ylog               = TRUE,
+    xlab               = ""Time"",
+    ylab               = ""Concentration"",
+    xlim               = c(0, 25),
+    ylim               = c(0.1, 20),
+    ncol               = 2),
+  stratify = list(
+    split  = ""OCCevid"",
+    color  = ""TREAT"",
+    colors = c(""#1F9658"", ""#084392""),
+    filter = list(""SEX"", 1)),
+  preferences = list(
+    binsValues   = list(color = ""#E98B0D"", lineWidth = 1.08),
+    empirical    = list(color = ""#084D88"", lineWidth = 1.215, lineType = ""dashed""),
+    obs          = list(radius = 1.62),
+    outlierDot   = list(color = ""#B00808"", radius = 0.54),
+    outlierArea  = list(fill = ""#A60B0B""),
+    piMedian     = list(fill = ""#A40707"", opacity = 0.51),
+    piPercentile = list(fill = ""#085BAE"", opacity = 0.48),
+    theoretical  = list(color = ""#3B3838"", lineWidth = 1.08, lineType = ""solid"")))","plh_comp_id59.txt","3_high",39,"gpt-5.6-sol [effort: none]","plotVpc(
+  settings = list(
+    level = 80,
+    higherPercentile = 95,
+    useCorrpred = TRUE,
+    useCensored = TRUE,
+    timeAfterLastDose = TRUE,
+    binLimits = TRUE,
+    xBinsSettings = list(
+      nbBinData = c(20, 50)
+    ),
+    obs = TRUE,
+    theoretical = TRUE,
+    linearInterpolation = FALSE,
+    grid = FALSE,
+    legend = TRUE,
+    xlab = ""Time"",
+    ylab = ""Concentration"",
+    ylog = TRUE,
+    xlim = c(0, 25),
+    ylim = c(0.1, 20),
+    ncol = 2
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""SEX"",
+        definition = list(c(""F""), c(""M"")),
+        colors = c(""#3D7B63"", ""#E33281"")
+      ),
+      list(
+        name = ""TREAT"",
+        definition = list(c(""A""), c(""B""))
+      )
+    ),
+    split = ""OCCevid"",
+    filter = list(list(""SEX"", c(1))),
+    color = ""TREAT"",
+    colors = c(""#1F9658"", ""#084392"")
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#E98B0D"",
+      lineWidth = 1.08
+    ),
+    empirical = list(
+      color = ""#084D88"",
+      lineType = ""dashed"",
+      lineWidth = 1.215
+    ),
+    obs = list(
+      radius = 1.62
+    ),
+    outlierArea = list(
+      fill = ""#A60B0B""
+    ),
+    outlierDot = list(
+      color = ""#B00808"",
+      radius = 0.54
+    ),
+    piMedian = list(
+      fill = ""#A40707"",
+      opacity = 0.51
+    ),
+    piPercentile = list(
+      fill = ""#085BAE"",
+      opacity = 0.48
+    ),
+    theoretical = list(
+      color = ""#3B3838"",
+      lineType = ""solid"",
+      lineWidth = 1.08
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+64,"p","continuous","prj09_iov2.pkx","BE CI","plotBEConfidenceIntervals(
+    parameters = c(""AUClast"", ""Cmax""),
+    settings   = list(
+      legend = TRUE,
+      grid   = FALSE,
+      ncol   = 1),
+    preferences = list(
+      pi         = list(      
+        color     = ""#070EAC"",
+        lineWidth = 1.08),
+      BEParams   = list(      
+        color = ""#1B7B1B""),
+      noBEParams = list(      
+        color     = ""#AE1D1D"",
+        lineWidth = 0.945),
+      median     = list(      
+        color     = ""#ED8B0A"",
+        lineWidth = 0.675)))","plh_comp_id64.txt","2_mid",11,"gpt-5.6-sol [effort: none]","plotBEConfidenceIntervals(
+  parameters = c(""AUClast"", ""Cmax""),
+  settings = list(
+    grid = FALSE,
+    legend = TRUE
+  ),
+  preferences = list(
+    BEParams = list(
+      color = ""#1B7B1B""
+    ),
+    noBEParams = list(
+      color = ""#AE1D1D""
+    ),
+    median = list(
+      color = ""#ED8B0A"",
+      lineWidth = 0.675
+    ),
+    pi = list(
+      color = ""#070EAC"",
+      lineWidth = 1.08
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+69,"p","continuous","prj09_iov2.pkx","NCA data","plotNCAData(
+  settings = list(
+    legend      = TRUE,
+    grid        = FALSE,
+    lines       = FALSE,
+    dosingTimes = TRUE,
+    binLimits   = TRUE,
+    ylog        = TRUE,
+    xlab        = ""TIME"",
+    ylab        = ""Konzentrationi"",
+    xlim        = c(-5, 155),
+    ylim        = c(0.1, 50),
+    ncol        = 1,
+    binsSettings = list(
+      criteria  = ""equalwidth"",
+      binRange  = c(20, 50),
+      nbBinData = c(5, 100))),
+  stratify = list(
+    split  = ""OCCevid"",
+    color  = ""TREAT"",
+    colors = c(""#E5920B"", ""#5A0EC0""),
+    filter = list(""SEX"", 2),
+    groups = list(
+      list(
+        name       = ""TREAT"",
+        definition = list(c(""A""), c(""B""))))),
+  preferences = list(
+    binsValues            = list(color = ""#B600FF"", lineWidth = 0.675),
+    obs                   = list(lineWidth = 1.485, radius = 1.62),
+    observationStatistics = list(color = ""#980B40"",
+                                 whiskersWidth = 0.81,
+                                 lineWidth     = 0.81)))","plh_comp_id69.txt","3_high",29,"gpt-5.6-sol [effort: none]","plotNCAData(
+  settings = list(
+    lines = FALSE,
+    dosingTimes = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    ylog = TRUE,
+    xlab = ""TIME"",
+    ylab = ""Konzentrationi"",
+    xlim = c(-5, 155),
+    ylim = c(0.1, 50),
+    ncol = 1,
+    binsSettings = list(
+      criteria = ""equalwidth"",
+      binRange = c(20, 50),
+      nbBinData = c(5, 100)
+    )
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""TREAT"",
+        definition = list(c(""A""), c(""B""))
+      )
+    ),
+    split = ""OCCevid"",
+    filter = list(""SEX"", c(2)),
+    individualSelection = list(
+      indices = c(1, 2),
+      isRange = TRUE
+    ),
+    color = ""TREAT"",
+    colors = c(""#E5920B"", ""#5A0EC0"")
+  ),
+  preferences = list(
+    obs = list(
+      radius = 1.62,
+      lineWidth = 1.485
+    ),
+    observationStatistics = list(
+      color = ""#980B40"",
+      whiskersWidth = 0.81,
+      lineWidth = 0.81
+    ),
+    binsValues = list(
+      color = ""#B600FF"",
+      lineWidth = 0.675
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+77,"p","continuous","prj10_Remi_infusion_SD.pkx","Observed data","plotObservedData(
+    settings = list(
+      mean        = FALSE,
+      error       = FALSE,
+      binsSettings = list(
+        is.fixedNbBins = TRUE,
+        nbBins         = 20),
+      legend = TRUE,
+      ylog   = TRUE,
+      ylim   = c(-28.612209844277, 245.4),
+      ncol   = 1),
+    stratify = list(
+      groups = list(
+        list(
+          name       = ""AGE"",
+          definition = c(32, 58)),
+        list(
+          name       = ""GROUP"",
+          definition = list(c(""1"", ""2""), c(""3""), c(""4"")))),
+      split  = ""GROUP"",
+      color  = ""AGE"",
+      colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")),
+    preferences = list(
+      obs     = list(radius = 0.54),
+      censObs = list(radius = 0.54)))","plh_comp_id77.txt","2_mid",15,"gpt-5.6-sol [effort: none]","plotObservedData(
+  settings = list(
+    mean = FALSE,
+    error = FALSE,
+    legend = TRUE,
+    ylog = TRUE,
+    ylim = c(-28.612209844277, 245.4),
+    binsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins = 20
+    ),
+    ncol = 1
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""AGE"",
+        definition = c(32, 58)
+      ),
+      list(
+        name = ""GROUP"",
+        definition = list(c(""1"", ""2""), c(""3""), c(""4"")),
+        colors = c(""#F17CB0"", ""#B2912F"", ""#B276B2"")
+      )
+    ),
+    split = ""GROUP"",
+    individualSelection = list(
+      indices = c(1, 3),
+      isRange = TRUE
+    ),
+    color = ""AGE"",
+    colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")
+  ),
+  preferences = list(
+    obs = list(radius = 0.54),
+    censObs = list(radius = 0.54)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+1,"m","continuous","prj01_warfarinPK.mlxtran","VPC","plotVpc(
+  settings = list(
+    useCorrpred = TRUE,
+    obs         = TRUE,
+    theoretical = TRUE,
+    legend      = TRUE,
+    grid        = FALSE,
+    ylog        = TRUE,
+    xlab        = ""Time"",
+    ylab        = ""(Concentration)"",
+    xlim        = c(0.5, 150),
+    ylim        = c(0.01, 50),
+    ncol        = 2,
+    binLimits = TRUE,
+    xBinsSettings = list(
+      criteria       = ""equalsize"",
+      is.fixedNbBins = TRUE,
+      nbBins         = 20,
+      nbBinData      = c(10, 200))),
+  stratify = list(
+    split  = ""sex"",
+    color  = ""sex"",
+    colors = c(""#04673D"", ""#7D0930"")),
+  preferences = list(
+    binsValues   = list(color = ""#FF7106"", lineWidth = 0.405),
+    empirical    = list(color = ""#5259E5""),
+    obs          = list(color = ""#1554BA"", radius = 1.08),
+    outlierDot   = list(radius = 0.54),
+    piMedian     = list(fill = ""#FF0000"", opacity = 0.4),
+    piPercentile = list(fill = ""#0080FF"", opacity = 0.41),
+    theoretical  = list(color = ""#7B7676"", lineWidth = 0.81)))","plh_comp_id01.txt","3_high",31,"gpt-5.6-sol [effort: low]","plotVpc(
+  settings = list(
+    useCensored = TRUE,
+    useCorrpred = TRUE,
+    binLimits = TRUE,
+    xBinsSettings = list(
+      criteria = ""equalsize"",
+      nbBins = 20,
+      is.fixedNbBins = TRUE,
+      nbBinData = c(10, 200)
+    ),
+    grid = FALSE,
+    legend = TRUE,
+    obs = TRUE,
+    theoretical = TRUE,
+    xlim = c(0.5, 150),
+    ylim = c(0.01, 50),
+    xlab = ""Time"",
+    ylab = ""(Concentration)"",
+    ylog = TRUE,
+    ncol = 2
+  ),
+  stratify = list(
+    split = ""sex"",
+    color = ""sex"",
+    colors = c(""#04673D"", ""#7D0930"")
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#FF7106"",
+      lineWidth = 0.405
+    ),
+    empirical = list(
+      color = ""#5259E5""
+    ),
+    obs = list(
+      color = ""#1554BA"",
+      radius = 1.08
+    ),
+    outlierDot = list(
+      radius = 0.54
+    ),
+    piMedian = list(
+      fill = ""#FF000066""
+    ),
+    piPercentile = list(
+      fill = ""#0080FF69""
+    ),
+    theoretical = list(
+      color = ""#7B7676"",
+      lineWidth = 0.81
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+9,"m","discrete","prj03_AD_logistic.mlxtran","VPC","plotVpc(
+  settings = list(
+    xBinsSettings = list(
+      criteria = ""equalsize""),         
+    yBinsSettings = list(
+      criteria       = ""equalsize"",
+      is.fixedNbBins = TRUE,      
+      nbBins         = 4,         
+      binRange       = c(1, 10)), 
+    binLimits           = TRUE,   
+    empirical           = TRUE,
+    theoretical         = TRUE,
+    legend              = TRUE,
+    grid                = FALSE,
+    linearInterpolation = FALSE,        
+    ncol                =2),
+  stratify = list(
+    split = ""STDY"",
+    filter = list(list(""STDY"", c(1)))),
+  preferences = list(empirical    = list(color = ""#092A92"", lineWidth = 0.945),  
+                     piPercentile = list(fill  = ""#5A39C6"", opacity = 0.67)))","plh_comp_id09.txt","2_mid",18,"gpt-5.6-sol [effort: low]","plotVpc(
+  settings = list(
+    xBinsSettings = list(
+      criteria = ""equalsize""
+    ),
+    yBinsSettings = list(
+      criteria = ""equalsize"",
+      nbBins = 4,
+      is.fixedNbBins = TRUE
+    ),
+    binLimits = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    linearInterpolation = FALSE,
+    theoretical = TRUE,
+    ncol = 2
+  ),
+  stratify = list(
+    split = ""STDY"",
+    filter = list(list(""STDY"", c(1)))
+  ),
+  preferences = list(
+    empirical = list(
+      color = ""#092A92"",
+      lineWidth = 0.945
+    ),
+    piPercentile = list(
+      fill = ""#5A39C6AB""
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+10,"m","discrete","prj03_AD_logistic.mlxtran","VPC","plotVpc(
+  settings = list(
+    xBinsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins         = 5),
+    yBinsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins         = 2,
+      nbBinData      = c(10, 200)),
+    binLimits    = TRUE,  
+    empirical    = TRUE,    
+    theoretical  = TRUE,    
+    outlierAreas = FALSE,   
+    legend       = TRUE,
+    ncol         = 2),      
+  stratify = list(          
+    groups = list(
+      list(name       = ""ARM"",
+           definition = list(c(""0"", ""1""), c(""2"")))),
+    split = ""ARM""),
+  preferences = list(
+    empirical    = list(color = ""#0B528E"", lineWidth = 1.35),
+    piPercentile = list(fill  = ""#0D8E69"", opacity   = 0.52)))","plh_comp_id10.txt","3_high",20,"gpt-5.6-sol [effort: low]","plotVpc(
+  settings = list(
+    xBinsSettings = list(
+      nbBins = 5,
+      is.fixedNbBins = TRUE
+    ),
+    yBinsSettings = list(
+      nbBins = 2,
+      is.fixedNbBins = TRUE,
+      nbBinData = c(10, 200)
+    ),
+    binLimits = TRUE,
+    outlierAreas = FALSE,
+    legend = TRUE,
+    theoretical = TRUE,
+    ncol = 2
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""ARM"",
+        definition = list(c(""0"", ""1""), c(""2"")),
+        colors = c(""#F17CB0"", ""#B2912F"")
+      )
+    ),
+    split = ""ARM""
+  ),
+  preferences = list(
+    empirical = list(
+      color = ""#0B528EE0"",
+      lineWidth = 1.35
+    ),
+    piPercentile = list(
+      fill = ""#0D8E6985""
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+11,"m","discrete","prj04_categoricalPK.mlxtran","Prediction distrib","plotPredictionDistribution(
+    obsName = ""Level"",
+    settings = list(
+      binsSettings = list(
+        criteria       = ""equalsize"",
+        is.fixedNbBins = TRUE,
+        nbBins         = 20),
+      binLimits = TRUE,   
+      legend    = TRUE,
+      grid      = FALSE,
+      xlab      = ""Zeit"",
+      ylab      = ""Wahrscheinlichkeit""),
+    preferences = list(
+      binsValues = list(
+        color     = ""#040404"",   
+        lineWidth = 0.54)))","plh_comp_id11.txt","2_mid",12,"gpt-5.6-sol [effort: low]","plotPredictionDistribution(
+  obsName = ""Level"",
+  settings = list(
+    binsSettings = list(
+      criteria = ""equalsize"",
+      is.fixedNbBins = TRUE,
+      nbBins = 20
+    ),
+    grid = FALSE,
+    legend = TRUE,
+    xlab = ""Zeit"",
+    ylab = ""Wahrscheinlichkeit""
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#040404"",
+      lineWidth = 0.54
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+12,"m","discrete","prj04_categoricalPK.mlxtran","Prediction distrib","plotPredictionDistribution(
+  obsName = ""Level"",
+  settings = list(
+    binsSettings = list(
+      criteria       = ""equalsize"",
+      is.fixedNbBins = TRUE,
+      nbBins         = 20),
+    binLimits = TRUE,
+    grid   = FALSE,
+    legend = TRUE,
+    xlab   = ""Zeit"",
+    ylab   = ""Wahrscheinlichkeit"",
+    ncol   = 2),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""lw70"",
+        definition = c(0.04606536684324683))),
+    split = c(""lw70"", ""logtAge"")),
+  preferences = list(
+    binsValues = list(color = ""#040404"", lineWidth = 0.54)))","plh_comp_id12.txt","2_mid",13,"gpt-5.6-sol [effort: low]","plotPredictionDistribution(
+  obsName = ""Level"",
+  settings = list(
+    binsSettings = list(
+      criteria = ""equalsize"",
+      is.fixedNbBins = TRUE,
+      nbBins = 20
+    ),
+    grid = FALSE,
+    legend = TRUE,
+    xlab = ""Zeit"",
+    ylab = ""Wahrscheinlichkeit"",
+    ncol = 2
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""lw70"",
+        definition = c(0.04606536684324683)
+      )
+    ),
+    split = c(""lw70"", ""logtAge"")
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#040404"",
+      lineWidth = 0.54
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 7"
+13,"m","discrete","prj04_categoricalPK.mlxtran","VPC","plotVpc(
+    obsName = ""Level"",
+    settings = list(
+      level = 85,
+      xBinsSettings = list(
+        is.fixedNbBins = TRUE,
+        nbBins         = 20,
+        binRange       = c(15, 200),
+        nbBinData      = c(2, 200)),
+      binLimits   = TRUE,
+      empirical   = TRUE,
+      theoretical = TRUE,
+      outlierAreas = FALSE,
+      legend      = TRUE,
+      grid        = FALSE,
+      ncol        = 1),
+    preferences = list(
+      binsValues   = list(color = ""#BE1414"", lineWidth = 0.675),
+      empirical    = list(color = ""#DF8309"", lineWidth = 0.945),
+      piPercentile = list(fill  = ""#E17F14"", opacity  = 0.57)))","plh_comp_id13.txt","3_high",20,"gpt-5.6-sol [effort: low]","plotVpc(
+  obsName = ""Level"",
+  settings = list(
+    level = 85,
+    binLimits = TRUE,
+    xBinsSettings = list(
+      nbBins = 20,
+      nbBinData = c(2, 200)
+    ),
+    outlierAreas = FALSE,
+    grid = FALSE,
+    legend = TRUE,
+    theoretical = TRUE
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#BE1414"",
+      lineWidth = 0.675
+    ),
+    empirical = list(
+      color = ""#DF8309"",
+      lineWidth = 0.945
+    ),
+    piPercentile = list(
+      fill = ""#E17F1491""
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+31,"m","continuous","prj06_IOV.mlxtran","Observed data","plotObservedData(
+  settings = list(
+    legend          = TRUE,
+    grid            = FALSE,
+    ylog            = TRUE,
+    ylab          = ""Konzentration"",
+    useCensored     = TRUE,
+    errorMethod  = ""standardError"",
+    mean         = TRUE,
+    error           = TRUE,
+    lines          = FALSE,
+    binLimits =TRUE,
+    binsSettings = list(
+      nbBins        = 20,        
+      is.fixedNbBins = TRUE,     
+      nbBinData     = c(15, 200))),
+  stratify = list(
+    groups = list(
+      list(
+        name       = ""DIET"",
+        definition = list(c(""noGuar""), c(""withGuar"")),
+        colors     = c(""#C665C6"", ""#E59C3A""))),
+    split = ""DIET"",
+    color = ""DIET"",
+    mergedSplits =TRUE))","plh_comp_id31.txt","3_high",20,"gpt-5.6-sol [effort: low]","plotObservedData(
+  settings = list(
+    mean = TRUE,
+    error = TRUE,
+    errorMethod = ""standardError"",
+    useCensored = TRUE,
+    lines = FALSE,
+    grid = FALSE,
+    legend = TRUE,
+    ylab = ""Konzentration"",
+    ylog = TRUE,
+    binsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins = 20,
+      nbBinData = c(15, 200)
+    )
+  ),
+  stratify = list(
+    split = ""DIET"",
+    mergedSplits = TRUE,
+    color = ""DIET"",
+    colors = c(""#C665C6"", ""#E59C3A"")
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 5"
+34,"m","continuous","prj06_IOV.mlxtran","VPC","plotVpc(
+  settings = list(
+    legend        = TRUE,
+    grid          = FALSE,
+    obs           = TRUE,
+    theoretical   = TRUE,
+    ylog          = TRUE,
+    xlab          = ""Zeit"",
+    xlim          = c(-1, 10),
+    ylab          = ""Konzentration"",
+    ylim          = c(1, 150),
+    level            = 85,
+    higherPercentile = 95,
+    cens          = TRUE,
+    censoring     = ""loq"",
+    useCorrpred   = TRUE,
+    binLimits = TRUE,
+    xBinsSettings = list(           
+      criteria      = ""equalwidth"", 
+      nbBins        = 12,           
+      is.fixedNbBins = TRUE,        
+      nbBinData     = c(1, 5)),
+    ncol=1),
+  stratify = list(
+    split = ""DIET"",
+    color = ""id"",
+    colors = c(
+      ""#0E13AE"", ""#52A371"", ""#CFA06B"", ""#9c9ede"", ""#637939"",
+      ""#E78D28"", ""#CF6BB7"", ""#9018D9"", ""#11CCD7"", ""#101010"",
+      ""#e7ba52"", ""#E7F313"", ""#960E08"", ""#75F56F"")),
+  preferences = list(
+    empirical    = list(color  = ""#1C4669"", lineWidth = 0.81),
+    obs          = list(radius = 1.08),
+    piMedian     = list(fill   = ""#FF0000"", opacity = 0.62),
+    piPercentile = list(fill   = ""#0080FF"", opacity = 0.68)))","plh_comp_id34.txt","3_high",29,"gpt-5.6-sol [effort: low]","plotVpc(
+  settings = list(
+    binLimits = TRUE,
+    xBinsSettings = list(
+      criteria = ""equalwidth"",
+      nbBins = 12,
+      is.fixedNbBins = TRUE,
+      nbBinData = c(1, 5)
+    ),
+    censoring = ""loq"",
+    useCensored = TRUE,
+    level = 85,
+    higherPercentile = 95,
+    useCorrpred = TRUE,
+    cens = TRUE,
+    obs = TRUE,
+    theoretical = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    xlim = c(-1, 10),
+    ylim = c(1, 150),
+    xlab = ""Zeit"",
+    ylab = ""Konzentration"",
+    ylog = TRUE,
+    ncol = 1
+  ),
+  stratify = list(
+    split = ""DIET"",
+    color = ""id"",
+    colors = c(
+      ""#0E13AE"", ""#52A371"", ""#CFA06B"", ""#9C9EDE"",
+      ""#637939"", ""#E78D28"", ""#CF6BB7"", ""#9018D9"",
+      ""#11CCD7"", ""#101010"", ""#E7BA52"", ""#E7F313"",
+      ""#960E08"", ""#75F56F""
+    )
+  ),
+  preferences = list(
+    empirical = list(
+      color = ""#1C4669"",
+      lineWidth = 0.81
+    ),
+    obs = list(
+      radius = 1.08
+    ),
+    piMedian = list(
+      fill = ""#FF00009E""
+    ),
+    piPercentile = list(
+      fill = ""#0080FFAD""
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+53,"m","continuous","prj08_iov2.mlxtran","RandomEff distrib","plotStandardizedRandomEffectsDistribution(
+    settings = list(
+      grid             = FALSE,
+      variabilityLevel = ""ID"",
+      ncol             = 2),
+    stratify = list(
+      split  = ""TREAT"",
+      filter = list(""SEX"", 1)),
+    preferences = list(
+      boxplot = list(
+        fill    = ""#6B14E1"",
+        opacity = 0.38),
+      boxplotOutlier = list(
+        size = 4.32),
+      quartile = list(          
+        color     = ""#0B36EB"",  
+        lineWidth = 1.215),
+      baseline = list(          
+        color     = ""#8C0B0B"",  
+        lineWidth = 0.945)))","plh_comp_id53.txt","2_mid",12,"gpt-5.6-sol [effort: low]","plotStandardizedRandomEffectsDistribution(
+  settings = list(
+    variabilityLevel = ""id"",
+    grid = FALSE,
+    ncol = 2
+  ),
+  stratify = list(
+    split = ""TREAT"",
+    filter = list(""SEX"", 1)
+  ),
+  preferences = list(
+    boxplot = list(
+      fill = ""#6B14E1"",
+      opacity = 0.38
+    ),
+    boxplotOutlier = list(
+      size = 16
+    ),
+    baseline = list(
+      color = ""#8C0B0B"",
+      lineWidth = 0.945
+    ),
+    quartile = list(
+      color = ""#0B36EBE6"",
+      lineWidth = 1.215
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+59,"m","continuous","prj08_iov2.mlxtran","VPC","plotVpc(
+  settings = list(
+    level             = 80,
+    higherPercentile  = 95,
+    timeAfterLastDose = TRUE,
+    useCorrpred       = TRUE,
+    xBinsSettings     = list(
+      binRange  = c(15, 40),
+      nbBinData = c(20, 50)),
+    binLimits          = TRUE,
+    empirical          = TRUE,
+    obs                = TRUE,
+    theoretical        = TRUE,
+    legend             = TRUE,
+    grid               = FALSE,
+    linearInterpolation = FALSE,
+    ylog               = TRUE,
+    xlab               = ""Time"",
+    ylab               = ""Concentration"",
+    xlim               = c(0, 25),
+    ylim               = c(0.1, 20),
+    ncol               = 2),
+  stratify = list(
+    split  = ""OCCevid"",
+    color  = ""TREAT"",
+    colors = c(""#1F9658"", ""#084392""),
+    filter = list(""SEX"", 1)),
+  preferences = list(
+    binsValues   = list(color = ""#E98B0D"", lineWidth = 1.08),
+    empirical    = list(color = ""#084D88"", lineWidth = 1.215, lineType = ""dashed""),
+    obs          = list(radius = 1.62),
+    outlierDot   = list(color = ""#B00808"", radius = 0.54),
+    outlierArea  = list(fill = ""#A60B0B""),
+    piMedian     = list(fill = ""#A40707"", opacity = 0.51),
+    piPercentile = list(fill = ""#085BAE"", opacity = 0.48),
+    theoretical  = list(color = ""#3B3838"", lineWidth = 1.08, lineType = ""solid"")))","plh_comp_id59.txt","3_high",39,"gpt-5.6-sol [effort: low]","plotVpc(
+  settings = list(
+    level = 80,
+    higherPercentile = 95,
+    useCorrpred = TRUE,
+    useCensored = TRUE,
+    timeAfterLastDose = TRUE,
+    binLimits = TRUE,
+    xBinsSettings = list(
+      nbBinData = c(20, 50)
+    ),
+    obs = TRUE,
+    theoretical = TRUE,
+    linearInterpolation = FALSE,
+    grid = FALSE,
+    legend = TRUE,
+    xlab = ""Time"",
+    ylab = ""Concentration"",
+    ylog = TRUE,
+    xlim = c(0, 25),
+    ylim = c(0.1, 20),
+    ncol = 2
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""SEX"",
+        definition = list(c(""F""), c(""M"")),
+        colors = c(""#3D7B63"", ""#E33281"")
+      ),
+      list(
+        name = ""TREAT"",
+        definition = list(c(""A""), c(""B""))
+      )
+    ),
+    split = ""OCCevid"",
+    filter = list(list(""SEX"", c(1))),
+    color = ""TREAT"",
+    colors = c(""#1F9658"", ""#084392"")
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#E98B0D"",
+      lineWidth = 1.08
+    ),
+    empirical = list(
+      color = ""#084D88"",
+      lineType = ""dashed"",
+      lineWidth = 1.215
+    ),
+    obs = list(
+      radius = 1.62
+    ),
+    outlierArea = list(
+      fill = ""#A60B0B""
+    ),
+    outlierDot = list(
+      color = ""#B00808"",
+      radius = 0.54
+    ),
+    piMedian = list(
+      fill = ""#A40707"",
+      opacity = 0.51
+    ),
+    piPercentile = list(
+      fill = ""#085BAE"",
+      opacity = 0.48
+    ),
+    theoretical = list(
+      color = ""#3B3838"",
+      lineType = ""solid"",
+      lineWidth = 1.08
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+64,"p","continuous","prj09_iov2.pkx","BE CI","plotBEConfidenceIntervals(
+    parameters = c(""AUClast"", ""Cmax""),
+    settings   = list(
+      legend = TRUE,
+      grid   = FALSE,
+      ncol   = 1),
+    preferences = list(
+      pi         = list(      
+        color     = ""#070EAC"",
+        lineWidth = 1.08),
+      BEParams   = list(      
+        color = ""#1B7B1B""),
+      noBEParams = list(      
+        color     = ""#AE1D1D"",
+        lineWidth = 0.945),
+      median     = list(      
+        color     = ""#ED8B0A"",
+        lineWidth = 0.675)))","plh_comp_id64.txt","2_mid",11,"gpt-5.6-sol [effort: low]","plotBEConfidenceIntervals(
+  parameters = c(""AUClast"", ""Cmax""),
+  settings = list(
+    grid = FALSE,
+    legend = TRUE
+  ),
+  preferences = list(
+    BEParams = list(color = ""#1B7B1B""),
+    noBEParams = list(color = ""#AE1D1D""),
+    median = list(
+      color = ""#ED8B0A"",
+      lineWidth = 0.675
+    ),
+    pi = list(
+      color = ""#070EAC"",
+      lineWidth = 1.08
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+69,"p","continuous","prj09_iov2.pkx","NCA data","plotNCAData(
+  settings = list(
+    legend      = TRUE,
+    grid        = FALSE,
+    lines       = FALSE,
+    dosingTimes = TRUE,
+    binLimits   = TRUE,
+    ylog        = TRUE,
+    xlab        = ""TIME"",
+    ylab        = ""Konzentrationi"",
+    xlim        = c(-5, 155),
+    ylim        = c(0.1, 50),
+    ncol        = 1,
+    binsSettings = list(
+      criteria  = ""equalwidth"",
+      binRange  = c(20, 50),
+      nbBinData = c(5, 100))),
+  stratify = list(
+    split  = ""OCCevid"",
+    color  = ""TREAT"",
+    colors = c(""#E5920B"", ""#5A0EC0""),
+    filter = list(""SEX"", 2),
+    groups = list(
+      list(
+        name       = ""TREAT"",
+        definition = list(c(""A""), c(""B""))))),
+  preferences = list(
+    binsValues            = list(color = ""#B600FF"", lineWidth = 0.675),
+    obs                   = list(lineWidth = 1.485, radius = 1.62),
+    observationStatistics = list(color = ""#980B40"",
+                                 whiskersWidth = 0.81,
+                                 lineWidth     = 0.81)))","plh_comp_id69.txt","3_high",29,"gpt-5.6-sol [effort: low]","plotNCAData(
+  settings = list(
+    lines = FALSE,
+    dosingTimes = TRUE,
+    legend = TRUE,
+    grid = FALSE,
+    ylog = TRUE,
+    xlab = ""TIME"",
+    ylab = ""Konzentrationi"",
+    xlim = c(-5, 155),
+    ylim = c(0.1, 50),
+    ncol = 1,
+    binsSettings = list(
+      criteria = ""equalwidth"",
+      binRange = c(20, 50),
+      nbBinData = c(5, 100)
+    )
+  ),
+  stratify = list(
+    individualSelection = list(
+      indices = c(1, 2),
+      isRange = TRUE
+    ),
+    split = ""OCCevid"",
+    color = ""TREAT"",
+    colors = c(""#E5920B"", ""#5A0EC0""),
+    filter = list(list(""SEX"", c(2)))
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#B600FF"",
+      lineWidth = 0.675
+    ),
+    obs = list(
+      lineWidth = 1.485,
+      radius = 1.62
+    ),
+    observationStatistics = list(
+      color = ""#980B40"",
+      whiskersWidth = 0.81,
+      lineWidth = 0.81
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+77,"p","continuous","prj10_Remi_infusion_SD.pkx","Observed data","plotObservedData(
+    settings = list(
+      mean        = FALSE,
+      error       = FALSE,
+      binsSettings = list(
+        is.fixedNbBins = TRUE,
+        nbBins         = 20),
+      legend = TRUE,
+      ylog   = TRUE,
+      ylim   = c(-28.612209844277, 245.4),
+      ncol   = 1),
+    stratify = list(
+      groups = list(
+        list(
+          name       = ""AGE"",
+          definition = c(32, 58)),
+        list(
+          name       = ""GROUP"",
+          definition = list(c(""1"", ""2""), c(""3""), c(""4"")))),
+      split  = ""GROUP"",
+      color  = ""AGE"",
+      colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")),
+    preferences = list(
+      obs     = list(radius = 0.54),
+      censObs = list(radius = 0.54)))","plh_comp_id77.txt","2_mid",15,"gpt-5.6-sol [effort: low]","plotObservedData(
+  settings = list(
+    mean = FALSE,
+    error = FALSE,
+    legend = TRUE,
+    ylog = TRUE,
+    ylim = c(-28.612209844277, 245.4),
+    ncol = 1,
+    binsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins = 20
+    )
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""AGE"",
+        definition = c(32, 58)
+      ),
+      list(
+        name = ""GROUP"",
+        definition = list(c(""1"", ""2""), c(""3""), c(""4"")),
+        colors = c(""#F17CB0"", ""#B2912F"", ""#B276B2"")
+      )
+    ),
+    split = ""GROUP"",
+    individualSelection = list(
+      indices = c(1, 3),
+      isRange = TRUE
+    ),
+    color = ""AGE"",
+    colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")
+  ),
+  preferences = list(
+    obs = list(radius = 0.54),
+    censObs = list(radius = 0.54)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+86,"p","continuous","prj11_Theo_extravasc_SS.pkx","Param vs Covs","plotCAParametersVsCovariates(
+    covariates = c(""FORM"", ""SEQ""),
+    settings = list(
+      grid = FALSE))","plh_comp_id86.txt","1_low",2,"gpt-5.6-sol [effort: low]","plotCAParametersVsCovariates(
+  parameters = c(""FORM"", ""SEQ""),
+  settings = list(
+    grid = FALSE
+  )
+)","EXECUTION_ERROR","N/A","Test Error: Invalid parameters: FORM, SEQ. Available elements: 'Tlag', 'ka', 'V', 'Cl'"
+10,"m","discrete","prj03_AD_logistic.mlxtran","VPC","plotVpc(
+  settings = list(
+    xBinsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins         = 5),
+    yBinsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins         = 2,
+      nbBinData      = c(10, 200)),
+    binLimits    = TRUE,  
+    empirical    = TRUE,    
+    theoretical  = TRUE,    
+    outlierAreas = FALSE,   
+    legend       = TRUE,
+    ncol         = 2),      
+  stratify = list(          
+    groups = list(
+      list(name       = ""ARM"",
+           definition = list(c(""0"", ""1""), c(""2"")))),
+    split = ""ARM""),
+  preferences = list(
+    empirical    = list(color = ""#0B528E"", lineWidth = 1.35),
+    piPercentile = list(fill  = ""#0D8E69"", opacity   = 0.52)))","plh_comp_id10.txt","3_high",20,"gpt-5.6-sol [effort: medium]","plotVpc(
+  settings = list(
+    xBinsSettings = list(
+      nbBins = 5,
+      is.fixedNbBins = TRUE
+    ),
+    yBinsSettings = list(
+      nbBins = 2,
+      is.fixedNbBins = TRUE,
+      nbBinData = c(10, 200)
+    ),
+    binLimits = TRUE,
+    outlierAreas = FALSE,
+    legend = TRUE,
+    theoretical = TRUE,
+    ncol = 2
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""ARM"",
+        definition = list(c(""0"", ""1""), c(""2"")),
+        colors = c(""#F17CB0"", ""#B2912F"")
+      )
+    ),
+    split = ""ARM""
+  ),
+  preferences = list(
+    empirical = list(
+      color = ""#0B528EE0"",
+      lineWidth = 1.35
+    ),
+    piPercentile = list(
+      fill = ""#0D8E6985""
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+12,"m","discrete","prj04_categoricalPK.mlxtran","Prediction distrib","plotPredictionDistribution(
+  obsName = ""Level"",
+  settings = list(
+    binsSettings = list(
+      criteria       = ""equalsize"",
+      is.fixedNbBins = TRUE,
+      nbBins         = 20),
+    binLimits = TRUE,
+    grid   = FALSE,
+    legend = TRUE,
+    xlab   = ""Zeit"",
+    ylab   = ""Wahrscheinlichkeit"",
+    ncol   = 2),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""lw70"",
+        definition = c(0.04606536684324683))),
+    split = c(""lw70"", ""logtAge"")),
+  preferences = list(
+    binsValues = list(color = ""#040404"", lineWidth = 0.54)))","plh_comp_id12.txt","2_mid",13,"gpt-5.6-sol [effort: medium]","plotPredictionDistribution(
+  obsName = ""Level"",
+  settings = list(
+    binsSettings = list(
+      criteria = ""equalsize"",
+      is.fixedNbBins = TRUE,
+      nbBins = 20
+    ),
+    grid = FALSE,
+    legend = TRUE,
+    xlab = ""Zeit"",
+    ylab = ""Wahrscheinlichkeit"",
+    ncol = 2
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""lw70"",
+        definition = c(0.04606536684324683)
+      )
+    ),
+    split = c(""lw70"", ""logtAge"")
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#040404"",
+      lineWidth = 0.54
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 7"
+13,"m","discrete","prj04_categoricalPK.mlxtran","VPC","plotVpc(
+    obsName = ""Level"",
+    settings = list(
+      level = 85,
+      xBinsSettings = list(
+        is.fixedNbBins = TRUE,
+        nbBins         = 20,
+        binRange       = c(15, 200),
+        nbBinData      = c(2, 200)),
+      binLimits   = TRUE,
+      empirical   = TRUE,
+      theoretical = TRUE,
+      outlierAreas = FALSE,
+      legend      = TRUE,
+      grid        = FALSE,
+      ncol        = 1),
+    preferences = list(
+      binsValues   = list(color = ""#BE1414"", lineWidth = 0.675),
+      empirical    = list(color = ""#DF8309"", lineWidth = 0.945),
+      piPercentile = list(fill  = ""#E17F14"", opacity  = 0.57)))","plh_comp_id13.txt","3_high",20,"gpt-5.6-sol [effort: medium]","plotVpc(
+  obsName = ""Level"",
+  settings = list(
+    level = 85,
+    xBinsSettings = list(
+      nbBins = 20,
+      binRange = c(15, 200),
+      nbBinData = c(2, 200)
+    ),
+    outlierAreas = FALSE,
+    binLimits = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    theoretical = TRUE
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#BE1414"",
+      lineWidth = 0.675
+    ),
+    empirical = list(
+      color = ""#DF8309"",
+      lineWidth = 0.945
+    ),
+    piPercentile = list(
+      fill = ""#E17F1491""
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+15,"m","continuous","prj01_warfarinPK.mlxtran","Observed data","plotObservedData(
+  obsName = ""y1"",                       
+  settings = list(
+    legend      = TRUE,
+    grid        = FALSE,
+    lines       = FALSE,                
+    mean        = TRUE,                 
+    error       = TRUE,                 
+    meanMethod  = ""geometric"",          
+    binLimits   = TRUE,
+    dosingTimes = TRUE,
+    binsSettings = list(                
+      criteria       = ""equalsize"",
+      is.fixedNbBins = TRUE)),
+  stratify = list(groups= list(
+    list(
+      name       = ""logtWt"",
+      definition = c(0.07332204956796999))),
+    split         = ""logtWt"",
+    color         = ""logWt"",
+    colors        = c(""#500596"", ""#C8082D""),
+    mergedSplits  = TRUE),
+  preferences = list(
+    binsValues = list(
+      color     = ""#000000""),
+    observationStatistics = list(        
+      whiskersWidth = 0.675,               
+      lineWidth     = 0.675)))","plh_comp_id15.txt","3_high",20,"gpt-5.6-sol [effort: medium]","plotObservedData(
+  obsName = ""y1"",
+  settings = list(
+    lines = FALSE,
+    mean = TRUE,
+    error = TRUE,
+    meanMethod = ""geometric"",
+    dosingTimes = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    binsSettings = list(
+      criteria = ""equalsize"",
+      is.fixedNbBins = TRUE
+    )
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""logtWt"",
+        definition = c(0.07332204956796999)
+      )
+    ),
+    split = ""logtWt"",
+    mergedSplits = TRUE,
+    color = ""logtWt"",
+    colors = c(""#500596"", ""#C8082D"")
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#000000""
+    ),
+    observationStatistics = list(
+      whiskersWidth = 0.675,
+      lineWidth = 0.675
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 7"
+31,"m","continuous","prj06_IOV.mlxtran","Observed data","plotObservedData(
+  settings = list(
+    legend          = TRUE,
+    grid            = FALSE,
+    ylog            = TRUE,
+    ylab          = ""Konzentration"",
+    useCensored     = TRUE,
+    errorMethod  = ""standardError"",
+    mean         = TRUE,
+    error           = TRUE,
+    lines          = FALSE,
+    binLimits =TRUE,
+    binsSettings = list(
+      nbBins        = 20,        
+      is.fixedNbBins = TRUE,     
+      nbBinData     = c(15, 200))),
+  stratify = list(
+    groups = list(
+      list(
+        name       = ""DIET"",
+        definition = list(c(""noGuar""), c(""withGuar"")),
+        colors     = c(""#C665C6"", ""#E59C3A""))),
+    split = ""DIET"",
+    color = ""DIET"",
+    mergedSplits =TRUE))","plh_comp_id31.txt","3_high",20,"gpt-5.6-sol [effort: medium]","plotObservedData(
+  settings = list(
+    lines = FALSE,
+    mean = TRUE,
+    error = TRUE,
+    errorMethod = ""standardError"",
+    useCensored = TRUE,
+    binsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins = 20,
+      nbBinData = c(15, 200)
+    ),
+    grid = FALSE,
+    legend = TRUE,
+    ylab = ""Konzentration"",
+    ylog = TRUE
+  ),
+  stratify = list(
+    split = ""DIET"",
+    mergedSplits = TRUE,
+    color = ""DIET"",
+    colors = c(""#C665C6"", ""#E59C3A"")
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 5"
+34,"m","continuous","prj06_IOV.mlxtran","VPC","plotVpc(
+  settings = list(
+    legend        = TRUE,
+    grid          = FALSE,
+    obs           = TRUE,
+    theoretical   = TRUE,
+    ylog          = TRUE,
+    xlab          = ""Zeit"",
+    xlim          = c(-1, 10),
+    ylab          = ""Konzentration"",
+    ylim          = c(1, 150),
+    level            = 85,
+    higherPercentile = 95,
+    cens          = TRUE,
+    censoring     = ""loq"",
+    useCorrpred   = TRUE,
+    binLimits = TRUE,
+    xBinsSettings = list(           
+      criteria      = ""equalwidth"", 
+      nbBins        = 12,           
+      is.fixedNbBins = TRUE,        
+      nbBinData     = c(1, 5)),
+    ncol=1),
+  stratify = list(
+    split = ""DIET"",
+    color = ""id"",
+    colors = c(
+      ""#0E13AE"", ""#52A371"", ""#CFA06B"", ""#9c9ede"", ""#637939"",
+      ""#E78D28"", ""#CF6BB7"", ""#9018D9"", ""#11CCD7"", ""#101010"",
+      ""#e7ba52"", ""#E7F313"", ""#960E08"", ""#75F56F"")),
+  preferences = list(
+    empirical    = list(color  = ""#1C4669"", lineWidth = 0.81),
+    obs          = list(radius = 1.08),
+    piMedian     = list(fill   = ""#FF0000"", opacity = 0.62),
+    piPercentile = list(fill   = ""#0080FF"", opacity = 0.68)))","plh_comp_id34.txt","3_high",29,"gpt-5.6-sol [effort: medium]","plotVpc(
+  settings = list(
+    binLimits = TRUE,
+    xBinsSettings = list(
+      criteria = ""equalwidth"",
+      nbBins = 12,
+      is.fixedNbBins = TRUE,
+      nbBinData = c(1, 5)
+    ),
+    censoring = ""loq"",
+    useCensored = TRUE,
+    level = 85,
+    higherPercentile = 95,
+    useCorrpred = TRUE,
+    cens = TRUE,
+    obs = TRUE,
+    theoretical = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    xlim = c(-1, 10),
+    ylim = c(1, 150),
+    xlab = ""Zeit"",
+    ylab = ""Konzentration"",
+    ylog = TRUE,
+    ncol = 1
+  ),
+  stratify = list(
+    split = ""DIET"",
+    color = ""id"",
+    colors = c(
+      ""#0E13AE"", ""#52A371"", ""#CFA06B"", ""#9C9EDE"",
+      ""#637939"", ""#E78D28"", ""#CF6BB7"", ""#9018D9"",
+      ""#11CCD7"", ""#101010"", ""#E7BA52"", ""#E7F313"",
+      ""#960E08"", ""#75F56F""
+    )
+  ),
+  preferences = list(
+    empirical = list(
+      color = ""#1C4669"",
+      lineWidth = 0.81
+    ),
+    obs = list(
+      radius = 1.08
+    ),
+    piMedian = list(
+      fill = ""#FF0000"",
+      opacity = 0.62
+    ),
+    piPercentile = list(
+      fill = ""#0080FF"",
+      opacity = 0.68
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+48,"m","continuous","prj07_TMDD_QE.mlxtran","Observed data","plotObservedData(
+    obsName = ""y1_totDrug"",
+    settings = list(
+      legend            = TRUE,
+      grid              = FALSE,
+      mean              = TRUE,                
+      error             = TRUE,                
+      meanMethod        = ""geometric"",         
+      errorMethod       = ""standardError"",     
+      useCensored       = TRUE,                
+      timeAfterLastDose = TRUE,
+      binLimits         = TRUE,                
+      binsSettings      = list(                
+        binRange  = c(10, 100),                
+        nbBinData = c(10, 200))),
+    preferences = list(
+      binsValues = list(                       
+        color     = ""#F19F19"",                 
+        lineWidth = 0.675,                     
+        lineType  = ""dashed"")))","plh_comp_id48.txt","2_mid",16,"gpt-5.6-sol [effort: medium]","plotObservedData(
+  obsName = ""y1_totDrug"",
+  settings = list(
+    mean = TRUE,
+    error = TRUE,
+    meanMethod = ""geometric"",
+    errorMethod = ""standardError"",
+    useCensored = TRUE,
+    timeAfterLastDose = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    binsSettings = list(
+      binRange = c(10L, 100L),
+      nbBinData = c(10L, 200L)
+    )
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#F19F19"",
+      lineType = ""dashed"",
+      lineWidth = 0.675
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+64,"p","continuous","prj09_iov2.pkx","BE CI","plotBEConfidenceIntervals(
+    parameters = c(""AUClast"", ""Cmax""),
+    settings   = list(
+      legend = TRUE,
+      grid   = FALSE,
+      ncol   = 1),
+    preferences = list(
+      pi         = list(      
+        color     = ""#070EAC"",
+        lineWidth = 1.08),
+      BEParams   = list(      
+        color = ""#1B7B1B""),
+      noBEParams = list(      
+        color     = ""#AE1D1D"",
+        lineWidth = 0.945),
+      median     = list(      
+        color     = ""#ED8B0A"",
+        lineWidth = 0.675)))","plh_comp_id64.txt","2_mid",11,"gpt-5.6-sol [effort: medium]","plotBEConfidenceIntervals(
+  parameters = c(""AUClast"", ""Cmax""),
+  settings = list(
+    grid = FALSE,
+    legend = TRUE
+  ),
+  preferences = list(
+    BEParams = list(color = ""#1B7B1B""),
+    noBEParams = list(color = ""#AE1D1D""),
+    median = list(
+      color = ""#ED8B0A"",
+      lineWidth = 0.675
+    ),
+    pi = list(
+      color = ""#070EAC"",
+      lineWidth = 1.08
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+69,"p","continuous","prj09_iov2.pkx","NCA data","plotNCAData(
+  settings = list(
+    legend      = TRUE,
+    grid        = FALSE,
+    lines       = FALSE,
+    dosingTimes = TRUE,
+    binLimits   = TRUE,
+    ylog        = TRUE,
+    xlab        = ""TIME"",
+    ylab        = ""Konzentrationi"",
+    xlim        = c(-5, 155),
+    ylim        = c(0.1, 50),
+    ncol        = 1,
+    binsSettings = list(
+      criteria  = ""equalwidth"",
+      binRange  = c(20, 50),
+      nbBinData = c(5, 100))),
+  stratify = list(
+    split  = ""OCCevid"",
+    color  = ""TREAT"",
+    colors = c(""#E5920B"", ""#5A0EC0""),
+    filter = list(""SEX"", 2),
+    groups = list(
+      list(
+        name       = ""TREAT"",
+        definition = list(c(""A""), c(""B""))))),
+  preferences = list(
+    binsValues            = list(color = ""#B600FF"", lineWidth = 0.675),
+    obs                   = list(lineWidth = 1.485, radius = 1.62),
+    observationStatistics = list(color = ""#980B40"",
+                                 whiskersWidth = 0.81,
+                                 lineWidth     = 0.81)))","plh_comp_id69.txt","3_high",29,"gpt-5.6-sol [effort: medium]","plotNCAData(
+  settings = list(
+    lines = FALSE,
+    dosingTimes = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    ylog = TRUE,
+    xlab = ""TIME"",
+    ylab = ""Konzentrationi"",
+    xlim = c(-5, 155),
+    ylim = c(0.1, 50),
+    ncol = 1,
+    binsSettings = list(
+      criteria = ""equalwidth"",
+      binRange = c(20L, 50L),
+      nbBinData = c(5L, 100L)
+    )
+  ),
+  stratify = list(
+    split = ""OCCevid"",
+    filter = list(""SEX"", c(2L)),
+    individualSelection = list(
+      indices = c(1L, 2L),
+      isRange = TRUE
+    ),
+    color = ""TREAT"",
+    colors = c(""#E5920B"", ""#5A0EC0"")
+  ),
+  preferences = list(
+    obs = list(
+      lineWidth = 1.485,
+      radius = 1.62
+    ),
+    observationStatistics = list(
+      color = ""#980B40"",
+      whiskersWidth = 0.81,
+      lineWidth = 0.81
+    ),
+    binsValues = list(
+      color = ""#B600FF"",
+      lineWidth = 0.675
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+77,"p","continuous","prj10_Remi_infusion_SD.pkx","Observed data","plotObservedData(
+    settings = list(
+      mean        = FALSE,
+      error       = FALSE,
+      binsSettings = list(
+        is.fixedNbBins = TRUE,
+        nbBins         = 20),
+      legend = TRUE,
+      ylog   = TRUE,
+      ylim   = c(-28.612209844277, 245.4),
+      ncol   = 1),
+    stratify = list(
+      groups = list(
+        list(
+          name       = ""AGE"",
+          definition = c(32, 58)),
+        list(
+          name       = ""GROUP"",
+          definition = list(c(""1"", ""2""), c(""3""), c(""4"")))),
+      split  = ""GROUP"",
+      color  = ""AGE"",
+      colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")),
+    preferences = list(
+      obs     = list(radius = 0.54),
+      censObs = list(radius = 0.54)))","plh_comp_id77.txt","2_mid",15,"gpt-5.6-sol [effort: medium]","plotObservedData(
+  settings = list(
+    mean = FALSE,
+    error = FALSE,
+    legend = TRUE,
+    ylog = TRUE,
+    ylim = c(-28.612209844277, 245.4),
+    ncol = 1,
+    binsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins = 20
+    )
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""AGE"",
+        definition = c(32, 58)
+      ),
+      list(
+        name = ""GROUP"",
+        definition = list(c(""1"", ""2""), c(""3""), c(""4"")),
+        colors = c(""#F17CB0"", ""#B2912F"", ""#B276B2"")
+      )
+    ),
+    split = ""GROUP"",
+    individualSelection = list(
+      indices = c(1, 3),
+      isRange = TRUE
+    ),
+    color = ""AGE"",
+    colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")
+  ),
+  preferences = list(
+    obs = list(radius = 0.54),
+    censObs = list(radius = 0.54)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+10,"m","discrete","prj03_AD_logistic.mlxtran","VPC","plotVpc(
+  settings = list(
+    xBinsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins         = 5),
+    yBinsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins         = 2,
+      nbBinData      = c(10, 200)),
+    binLimits    = TRUE,  
+    empirical    = TRUE,    
+    theoretical  = TRUE,    
+    outlierAreas = FALSE,   
+    legend       = TRUE,
+    ncol         = 2),      
+  stratify = list(          
+    groups = list(
+      list(name       = ""ARM"",
+           definition = list(c(""0"", ""1""), c(""2"")))),
+    split = ""ARM""),
+  preferences = list(
+    empirical    = list(color = ""#0B528E"", lineWidth = 1.35),
+    piPercentile = list(fill  = ""#0D8E69"", opacity   = 0.52)))","plh_comp_id10.txt","3_high",20,"gpt-5.6-terra [effort: none]","plotVpc(
+  settings = list(
+    theoretical = TRUE,
+    binLimits = TRUE,
+    legend = TRUE,
+    ncol = 2,
+    xBinsSettings = list(
+      nbBins = 5,
+      is.fixedNbBins = TRUE
+    ),
+    yBinsSettings = list(
+      nbBins = 2,
+      is.fixedNbBins = TRUE,
+      nbBinData = c(10, 200)
+    )
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""ARM"",
+        definition = list(c(""0"", ""1""), c(""2"")),
+        colors = c(""#F17CB0"", ""#B2912F"")
+      )
+    ),
+    split = ""ARM""
+  ),
+  preferences = list(
+    empirical = list(
+      color = ""#0B528E"",
+      lineWidth = 1.35
+    ),
+    piPercentile = list(
+      fill = ""#0D8E69"",
+      opacity = 0.52
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+13,"m","discrete","prj04_categoricalPK.mlxtran","VPC","plotVpc(
+    obsName = ""Level"",
+    settings = list(
+      level = 85,
+      xBinsSettings = list(
+        is.fixedNbBins = TRUE,
+        nbBins         = 20,
+        binRange       = c(15, 200),
+        nbBinData      = c(2, 200)),
+      binLimits   = TRUE,
+      empirical   = TRUE,
+      theoretical = TRUE,
+      outlierAreas = FALSE,
+      legend      = TRUE,
+      grid        = FALSE,
+      ncol        = 1),
+    preferences = list(
+      binsValues   = list(color = ""#BE1414"", lineWidth = 0.675),
+      empirical    = list(color = ""#DF8309"", lineWidth = 0.945),
+      piPercentile = list(fill  = ""#E17F14"", opacity  = 0.57)))","plh_comp_id13.txt","3_high",20,"gpt-5.6-terra [effort: none]","plotVpc(
+  obsName = ""Level"",
+  settings = list(
+    level = 85,
+    binLimits = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    theoretical = TRUE,
+    xBinsSettings = list(
+      nbBins = 20,
+      nbBinData = c(2, 200),
+      binRange = c(15, 200)
+    )
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#BE1414"",
+      lineWidth = 0.675
+    ),
+    empirical = list(
+      color = ""#DF8309"",
+      lineWidth = 0.945
+    ),
+    piPercentile = list(
+      fill = ""#E17F14"",
+      opacity = 0.57
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+14,"m","continuous","prj04_categoricalPK.mlxtran","VPC","plotVpc(
+    obsName = ""Concentration"",
+    settings = list(
+      xBinsSettings = list(
+        is.fixedNbBins = TRUE,
+        nbBins         = 20),
+      binLimits    = TRUE,
+      empirical    = TRUE,
+      obs          = TRUE,
+      theoretical  = TRUE,
+      useCorrpred  = TRUE,
+      legend       = TRUE,
+      grid         = FALSE,
+      linearInterpolation = FALSE,              
+      ylog         = TRUE,
+      xlab         = ""Time"",
+      ylab         = ""AntiBloodClotting"",
+      ylim         = c(0.1, 25),
+      ncol         = 1),
+    stratify = list(
+      groups = list(
+        list(
+          name       = ""lw70"",
+          definition = c(0.0460653668),
+          colors     = c(""#B2912F"", ""#B276B2"")),
+        list(
+          name       = ""wt"",
+          definition = c(73.3),
+          colors     = c(""#E18146"", ""#1D5B09""))),
+      split  = ""lw70"",
+      color  = ""wt"",
+      colors = c(""#E18146"", ""#1D5B09"")),                  
+    preferences = list(
+      binsValues   = list(color = ""#942828"", lineWidth = 0.54),   
+      empirical    = list(color = ""#103E9A"", lineWidth = 0.945),  
+      obs          = list(color = ""#103E9A"", radius = 1),         
+      theoretical  = list(lineWidth = 0.675),                     
+      piMedian     = list(fill = ""#C4870B"", opacity = 0.62),
+      piPercentile = list(fill = ""#1C7748"", opacity = 0.50),
+      outlierDot   = list(color = ""#942828"")       
+    )
+  )","plh_comp_id14.txt","3_high",39,"gpt-5.6-terra [effort: none]","plotVpc(
+  obsName = ""Concentration"",
+  settings = list(
+    useCorrpred = TRUE,
+    binLimits = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    obs = TRUE,
+    linearInterpolation = FALSE,
+    theoretical = TRUE,
+    xlab = ""Time"",
+    ylab = ""AntiBloodClotting"",
+    ylog = TRUE,
+    ylim = c(0.1, 25),
+    xBinsSettings = list(
+      nbBins = 20,
+      is.fixedNbBins = TRUE
+    )
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""lw70"",
+        definition = c(0.04606536684324683),
+        colors = c(""#B2912F"", ""#B276B2"")
+      ),
+      list(
+        name = ""wt"",
+        definition = c(73.3)
+      )
+    ),
+    split = ""lw70"",
+    color = ""wt"",
+    colors = c(""#E18146"", ""#1D5B09"")
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#942828"",
+      lineWidth = 0.54
+    ),
+    empirical = list(
+      color = ""#103E9A"",
+      lineWidth = 0.945
+    ),
+    obs = list(
+      color = ""#103E9A""
+    ),
+    outlierArea = list(
+      fill = ""#BC3131""
+    ),
+    outlierDot = list(
+      color = ""#942828""
+    ),
+    piMedian = list(
+      fill = ""#C4870B""
+    ),
+    piPercentile = list(
+      fill = ""#1C7748""
+    ),
+    theoretical = list(
+      lineWidth = 0.675
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 7"
+15,"m","continuous","prj01_warfarinPK.mlxtran","Observed data","plotObservedData(
+  obsName = ""y1"",                       
+  settings = list(
+    legend      = TRUE,
+    grid        = FALSE,
+    lines       = FALSE,                
+    mean        = TRUE,                 
+    error       = TRUE,                 
+    meanMethod  = ""geometric"",          
+    binLimits   = TRUE,
+    dosingTimes = TRUE,
+    binsSettings = list(                
+      criteria       = ""equalsize"",
+      is.fixedNbBins = TRUE)),
+  stratify = list(groups= list(
+    list(
+      name       = ""logtWt"",
+      definition = c(0.07332204956796999))),
+    split         = ""logtWt"",
+    color         = ""logWt"",
+    colors        = c(""#500596"", ""#C8082D""),
+    mergedSplits  = TRUE),
+  preferences = list(
+    binsValues = list(
+      color     = ""#000000""),
+    observationStatistics = list(        
+      whiskersWidth = 0.675,               
+      lineWidth     = 0.675)))","plh_comp_id15.txt","3_high",20,"gpt-5.6-terra [effort: none]","plotObservedData(
+  obsName = ""y1"",
+  settings = list(
+    lines = FALSE,
+    mean = TRUE,
+    error = TRUE,
+    meanMethod = ""geometric"",
+    dosingTimes = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    binsSettings = list(
+      criteria = ""equalsize"",
+      is.fixedNbBins = TRUE
+    )
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""logtWt"",
+        definition = c(0.07332204956796999)
+      )
+    ),
+    split = ""logtWt"",
+    mergedSplits = TRUE,
+    color = ""logtWt"",
+    colors = c(""#500596"", ""#C8082D"")
+  ),
+  preferences = list(
+    observationStatistics = list(
+      whiskersWidth = 0.675,
+      lineWidth = 0.675
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 7"
+34,"m","continuous","prj06_IOV.mlxtran","VPC","plotVpc(
+  settings = list(
+    legend        = TRUE,
+    grid          = FALSE,
+    obs           = TRUE,
+    theoretical   = TRUE,
+    ylog          = TRUE,
+    xlab          = ""Zeit"",
+    xlim          = c(-1, 10),
+    ylab          = ""Konzentration"",
+    ylim          = c(1, 150),
+    level            = 85,
+    higherPercentile = 95,
+    cens          = TRUE,
+    censoring     = ""loq"",
+    useCorrpred   = TRUE,
+    binLimits = TRUE,
+    xBinsSettings = list(           
+      criteria      = ""equalwidth"", 
+      nbBins        = 12,           
+      is.fixedNbBins = TRUE,        
+      nbBinData     = c(1, 5)),
+    ncol=1),
+  stratify = list(
+    split = ""DIET"",
+    color = ""id"",
+    colors = c(
+      ""#0E13AE"", ""#52A371"", ""#CFA06B"", ""#9c9ede"", ""#637939"",
+      ""#E78D28"", ""#CF6BB7"", ""#9018D9"", ""#11CCD7"", ""#101010"",
+      ""#e7ba52"", ""#E7F313"", ""#960E08"", ""#75F56F"")),
+  preferences = list(
+    empirical    = list(color  = ""#1C4669"", lineWidth = 0.81),
+    obs          = list(radius = 1.08),
+    piMedian     = list(fill   = ""#FF0000"", opacity = 0.62),
+    piPercentile = list(fill   = ""#0080FF"", opacity = 0.68)))","plh_comp_id34.txt","3_high",29,"gpt-5.6-terra [effort: none]","plotVpc(
+  settings = list(
+    level = 85,
+    higherPercentile = 95,
+    useCorrpred = TRUE,
+    useCensored = TRUE,
+    censoring = ""loq"",
+    binLimits = TRUE,
+    obs = TRUE,
+    theoretical = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    xlab = ""Zeit"",
+    ylab = ""Konzentration"",
+    ylog = TRUE,
+    xlim = c(-1, 10),
+    ylim = c(1, 150),
+    ncol = 1,
+    xBinsSettings = list(
+      criteria = ""equalwidth"",
+      nbBins = 12,
+      is.fixedNbBins = TRUE,
+      nbBinData = c(1, 5)
+    )
+  ),
+  stratify = list(
+    split = ""DIET"",
+    color = ""id"",
+    colors = c(
+      ""#0E13AE"", ""#52A371"", ""#CFA06B"", ""#9C9EDE"", ""#637939"",
+      ""#E78D28"", ""#CF6BB7"", ""#9018D9"", ""#11CCD7"", ""#101010"",
+      ""#E7BA52"", ""#E7F313"", ""#960E08"", ""#75F56F""
+    )
+  ),
+  preferences = list(
+    empirical = list(
+      color = ""#1C4669"",
+      lineWidth = 0.81
+    ),
+    obs = list(
+      radius = 1.08
+    ),
+    piMedian = list(
+      fill = ""#FF0000"",
+      opacity = 0.62
+    ),
+    piPercentile = list(
+      fill = ""#0080FF"",
+      opacity = 0.68
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+35,"p","continuous","prj07_aPCSK9_SAD.pkx","Individual fits","plotCAIndividualFits(
+  settings = list(
+    obsLines = TRUE,
+    legend   = TRUE,
+    grid     = FALSE,
+    xlab     = ""Time (#FAFAFF)"",
+    ylab     = ""Raviolizumab"",
+    ylog     = TRUE,
+    ylim     = c(0.01, 30),
+    ncol     = 4),
+  stratify = list(
+    color  = ""DOSE_mg"",
+    colors = c(""#162CB4"", ""#E3A50D"",""#CA148E""),
+    filter = list(""DOSE_mg"", c(1, 2)),
+    individualSelection =list(indices = c(1, 8), isRange = TRUE)),
+  preferences = list(
+    indivFits = list(lineWidth = 0.81, color = ""#043D65""),
+    obs       = list(radius = 1.35)))","plh_comp_id35.txt","2_mid",15,"gpt-5.6-terra [effort: none]","plotCAIndividualFits(
+  settings = list(
+    grid = FALSE,
+    legend = TRUE,
+    obsLines = TRUE,
+    ylab = ""Raviolizumab"",
+    ylog = TRUE,
+    ylim = c(0.01, 30),
+    ncol = 4
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""DOSE_mg"",
+        definition = list(c(""150mg""), c(""300mg""), c(""800mg""))
+      )
+    ),
+    color = ""DOSE_mg"",
+    colors = c(""#162CB4"", ""#E3A50D"", ""#CA148E""),
+    filter = list(""DOSE_mg"", c(1, 2)),
+    individualSelection = list(indices = c(1, 8), isRange = TRUE)
+  ),
+  preferences = list(
+    obs = list(radius = 1.35),
+    indivFits = list(
+      color = ""#043D65"",
+      lineWidth = 0.81
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+46,"p","continuous","prj08_4periods.pkx","Sequence by period","plotBESequenceByPeriod(
+  parameters = c(""AUCINF_obs"", ""AUClast"", ""Cmax""),
+  settings = list(
+    legend = TRUE,
+    grid   = FALSE,
+    error  = FALSE,
+    ncol   = 1),
+  stratify = list(
+    groups = list(
+      list(
+        name       = ""PER"",
+        definition = list(c(""1""), c(""3""), c(""4""), c(""2"")))),
+    filter = list(""PER"", c(4, 1, 2, 3))),
+  preferences = list(
+    formulationDot         = list(radius = 1.62, color = c(""#0D3598"",""#179848"")),             
+    observationStatistics  = list(lineWidth = 0.945),         
+    sequence               = list(color = ""#350808"",
+                                  lineWidth = 0.945)))","plh_comp_id46.txt","2_mid",13,"gpt-5.6-terra [effort: none]","plotBESequenceByPeriod(
+  parameters = c(""AUCINFobs"", ""AUClast"", ""Cmax""),
+  settings = list(
+    error = FALSE,
+    formulationColors = c(""#0D3598"", ""#179848"", ""#fdc086"", ""#ffff99"", ""#386cb0"", ""#f0027f"", ""#bf5b17"", ""#666666""),
+    legend = TRUE,
+    grid = FALSE
+  ),
+  preferences = list(
+    formulationDot = list(radius = 1.62),
+    observationStatistics = list(
+      whiskersWidth = 0.945,
+      lineWidth = 0.945
+    ),
+    sequence = list(
+      color = ""#350808"",
+      lineWidth = 0.945
+    )
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""PER"",
+        definition = list(c(""1""), c(""3""), c(""4""), c(""2"")),
+        colors = c(""#4682B4"", ""#4D4D4D"", ""#60BD68"", ""#F17CB0"")
+      )
+    ),
+    filter = list(list(""PER"", c(4, 1, 2, 3)))
+  )
+)","EXECUTION_ERROR","N/A","Test Error: Invalid parameters: AUCINFobs. Available elements: 'AUCINF_obs', 'AUClast', 'Cmax'"
+49,"m","continuous","prj07_TMDD_QE.mlxtran","Bivariate","plotBivariateDataViewer(
+    settings = list(
+      legend = TRUE,
+      grid   = FALSE),
+    stratify = list(
+      groups = list(
+        list(
+          name       = ""SEX"",
+          definition = list(c(""F""), c(""M"")))),
+      color  = c(""logtWEIGHT"", ""SEX""),
+      colors = c(""#60BD68"", ""#F17CB0"", ""#B2912F"", ""#B276B2"")))","plh_comp_id49.txt","1_low",5,"gpt-5.6-terra [effort: none]","plotBivariateDataViewer(
+  settings = list(
+    grid = FALSE,
+    legend = TRUE
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""SEX"",
+        definition = list(c(""F""), c(""M"")),
+        colors = c(""#1f77b4"", ""#ff7f0e"")
+      )
+    ),
+    color = c(""logtWEIGHT"", ""SEX"")
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 5"
+59,"m","continuous","prj08_iov2.mlxtran","VPC","plotVpc(
+  settings = list(
+    level             = 80,
+    higherPercentile  = 95,
+    timeAfterLastDose = TRUE,
+    useCorrpred       = TRUE,
+    xBinsSettings     = list(
+      binRange  = c(15, 40),
+      nbBinData = c(20, 50)),
+    binLimits          = TRUE,
+    empirical          = TRUE,
+    obs                = TRUE,
+    theoretical        = TRUE,
+    legend             = TRUE,
+    grid               = FALSE,
+    linearInterpolation = FALSE,
+    ylog               = TRUE,
+    xlab               = ""Time"",
+    ylab               = ""Concentration"",
+    xlim               = c(0, 25),
+    ylim               = c(0.1, 20),
+    ncol               = 2),
+  stratify = list(
+    split  = ""OCCevid"",
+    color  = ""TREAT"",
+    colors = c(""#1F9658"", ""#084392""),
+    filter = list(""SEX"", 1)),
+  preferences = list(
+    binsValues   = list(color = ""#E98B0D"", lineWidth = 1.08),
+    empirical    = list(color = ""#084D88"", lineWidth = 1.215, lineType = ""dashed""),
+    obs          = list(radius = 1.62),
+    outlierDot   = list(color = ""#B00808"", radius = 0.54),
+    outlierArea  = list(fill = ""#A60B0B""),
+    piMedian     = list(fill = ""#A40707"", opacity = 0.51),
+    piPercentile = list(fill = ""#085BAE"", opacity = 0.48),
+    theoretical  = list(color = ""#3B3838"", lineWidth = 1.08, lineType = ""solid"")))","plh_comp_id59.txt","3_high",39,"gpt-5.6-terra [effort: none]","plotVpc(
+  settings = list(
+    level = 80,
+    higherPercentile = 95,
+    useCorrpred = TRUE,
+    useCensored = TRUE,
+    timeAfterLastDose = TRUE,
+    binLimits = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    obs = TRUE,
+    theoretical = TRUE,
+    linearInterpolation = FALSE,
+    xlim = c(0, 25),
+    ylim = c(0.1, 20),
+    xlab = ""Time"",
+    ylab = ""Concentration"",
+    ylog = TRUE,
+    ncol = 2,
+    xBinsSettings = list(
+      binRange = c(15, 40),
+      nbBinData = c(20, 50)
+    )
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""SEX"",
+        definition = list(c(""F""), c(""M"")),
+        colors = c(""#3D7B63"", ""#E33281"")
+      )
+    ),
+    split = ""OCCevid"",
+    filter = list(list(""SEX"", 1)),
+    color = ""TREAT"",
+    colors = c(""#1F9658"", ""#084392"")
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#E98B0D"",
+      lineWidth = 1.08
+    ),
+    empirical = list(
+      color = ""#084D88"",
+      lineType = ""dashed"",
+      lineWidth = 1.215
+    ),
+    obs = list(
+      radius = 1.62
+    ),
+    outlierArea = list(
+      fill = ""#A60B0B""
+    ),
+    outlierDot = list(
+      color = ""#B00808"",
+      radius = 0.54
+    ),
+    piMedian = list(
+      fill = ""#A4070782""
+    ),
+    piPercentile = list(
+      fill = ""#085BAE7A""
+    ),
+    theoretical = list(
+      color = ""#3B3838"",
+      lineType = ""solid"",
+      lineWidth = 1.08
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+64,"p","continuous","prj09_iov2.pkx","BE CI","plotBEConfidenceIntervals(
+    parameters = c(""AUClast"", ""Cmax""),
+    settings   = list(
+      legend = TRUE,
+      grid   = FALSE,
+      ncol   = 1),
+    preferences = list(
+      pi         = list(      
+        color     = ""#070EAC"",
+        lineWidth = 1.08),
+      BEParams   = list(      
+        color = ""#1B7B1B""),
+      noBEParams = list(      
+        color     = ""#AE1D1D"",
+        lineWidth = 0.945),
+      median     = list(      
+        color     = ""#ED8B0A"",
+        lineWidth = 0.675)))","plh_comp_id64.txt","2_mid",11,"gpt-5.6-terra [effort: none]","plotBEConfidenceIntervals(
+  parameters = c(""AUClast"", ""Cmax""),
+  settings = list(
+    grid = FALSE,
+    legend = TRUE
+  ),
+  preferences = list(
+    BEParams = list(color = ""#1B7B1B""),
+    noBEParams = list(color = ""#AE1D1D""),
+    median = list(
+      color = ""#ED8B0A"",
+      lineWidth = 0.675
+    ),
+    pi = list(
+      color = ""#070EAC"",
+      lineWidth = 1.08
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+69,"p","continuous","prj09_iov2.pkx","NCA data","plotNCAData(
+  settings = list(
+    legend      = TRUE,
+    grid        = FALSE,
+    lines       = FALSE,
+    dosingTimes = TRUE,
+    binLimits   = TRUE,
+    ylog        = TRUE,
+    xlab        = ""TIME"",
+    ylab        = ""Konzentrationi"",
+    xlim        = c(-5, 155),
+    ylim        = c(0.1, 50),
+    ncol        = 1,
+    binsSettings = list(
+      criteria  = ""equalwidth"",
+      binRange  = c(20, 50),
+      nbBinData = c(5, 100))),
+  stratify = list(
+    split  = ""OCCevid"",
+    color  = ""TREAT"",
+    colors = c(""#E5920B"", ""#5A0EC0""),
+    filter = list(""SEX"", 2),
+    groups = list(
+      list(
+        name       = ""TREAT"",
+        definition = list(c(""A""), c(""B""))))),
+  preferences = list(
+    binsValues            = list(color = ""#B600FF"", lineWidth = 0.675),
+    obs                   = list(lineWidth = 1.485, radius = 1.62),
+    observationStatistics = list(color = ""#980B40"",
+                                 whiskersWidth = 0.81,
+                                 lineWidth     = 0.81)))","plh_comp_id69.txt","3_high",29,"gpt-5.6-terra [effort: none]","plotNCAData(
+  settings = list(
+    lines = FALSE,
+    binLimits = TRUE,
+    binsSettings = list(
+      criteria = ""equalwidth"",
+      is.fixedNbBins = FALSE,
+      binRange = c(20, 50),
+      nbBinData = c(5, 100)
+    ),
+    dosingTimes = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    xlog = FALSE,
+    ylog = TRUE,
+    xlab = ""TIME"",
+    ylab = ""Konzentrationi"",
+    xlim = c(-5, 155),
+    ylim = c(0.1, 50),
+    ncol = 1
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""TREAT"",
+        definition = list(c(""A""), c(""B""))
+      )
+    ),
+    split = ""OCCevid"",
+    filter = list(""SEX"", c(2)),
+    individualSelection = list(
+      indices = c(1, 2),
+      isRange = TRUE
+    ),
+    color = ""TREAT"",
+    colors = c(""#E5920B"", ""#5A0EC0"")
+  ),
+  preferences = list(
+    obs = list(
+      radius = 1.62,
+      lineWidth = 1.485
+    ),
+    observationStatistics = list(
+      color = ""#980B40"",
+      whiskersWidth = 0.81,
+      lineWidth = 0.81
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+77,"p","continuous","prj10_Remi_infusion_SD.pkx","Observed data","plotObservedData(
+    settings = list(
+      mean        = FALSE,
+      error       = FALSE,
+      binsSettings = list(
+        is.fixedNbBins = TRUE,
+        nbBins         = 20),
+      legend = TRUE,
+      ylog   = TRUE,
+      ylim   = c(-28.612209844277, 245.4),
+      ncol   = 1),
+    stratify = list(
+      groups = list(
+        list(
+          name       = ""AGE"",
+          definition = c(32, 58)),
+        list(
+          name       = ""GROUP"",
+          definition = list(c(""1"", ""2""), c(""3""), c(""4"")))),
+      split  = ""GROUP"",
+      color  = ""AGE"",
+      colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")),
+    preferences = list(
+      obs     = list(radius = 0.54),
+      censObs = list(radius = 0.54)))","plh_comp_id77.txt","2_mid",15,"gpt-5.6-terra [effort: none]","plotObservedData(
+  settings = list(
+    mean = FALSE,
+    error = FALSE,
+    legend = TRUE,
+    ylog = TRUE,
+    ylim = c(-28.612209844277, 245.4),
+    binsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins = 20
+    )
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""AGE"",
+        definition = c(32, 58)
+      ),
+      list(
+        name = ""GROUP"",
+        definition = list(c(""1"", ""2""), c(""3""), c(""4"")),
+        colors = c(""#F17CB0"", ""#B2912F"", ""#B276B2"")
+      )
+    ),
+    individualSelection = list(
+      indices = c(1, 3),
+      isRange = TRUE
+    ),
+    split = ""GROUP"",
+    color = ""AGE"",
+    colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")
+  ),
+  preferences = list(
+    obs = list(radius = 0.54),
+    censObs = list(radius = 0.54)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+78,"p","continuous","prj11_Theo_extravasc_SS.pkx","Individual fits","plotCAIndividualFits(
+    settings = list(
+      legend = TRUE,
+      grid   = FALSE,
+      xlab   = ""Tim"",
+      ylab   = ""Kaunsitrasion"",
+      ylog   = TRUE,
+      ncol   = 4),
+    stratify = list(
+      individualSelection = list(indices = c(1, 8), isRange = TRUE),
+      groups = list(
+        list(name = ""HT"", definition = c(186))),
+      color  = ""HT"",
+      colors = c(""#FFA500"", ""#4682B4"")),
+    preferences = list(
+      indivFits = list(
+        color = ""#1B9E77"")))","plh_comp_id78.txt","2_mid",12,"gpt-5.6-terra [effort: none]","plotCAIndividualFits(
+  settings = list(
+    grid = FALSE,
+    legend = TRUE,
+    xlab = ""Tim"",
+    ylab = ""Kaunsitrasion"",
+    ylog = TRUE,
+    ncol = 4
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""HT"",
+        definition = c(186)
+      )
+    ),
+    color = ""HT"",
+    colors = c(""#1B9E77"", ""#D95F02""),
+    individualSelection = list(
+      indices = c(1, 8),
+      isRange = TRUE
+    )
+  ),
+  preferences = list(
+    indivFits = list(
+      color = ""#1B9E77""
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+95,"m","event","prj09_PKrtte.mlxtran","VPC","plotVpc(
+    obsName = ""Hemorrhaging"",
+    settings = list(
+      nbDataPoints = 1000,
+      grid         = FALSE),
+    preferences = list(
+      bandsBase = list(
+        fill    = ""#107D63"",
+        opacity = 0.46),
+      empirical = list(                        
+        color = ""#03735E"")))","plh_comp_id95.txt","1_low",5,"gpt-5.6-terra [effort: none]","plotVpc(
+  obsName = ""Hemorrhaging"",
+  settings = list(
+    nbDataPoints = 1000,
+    grid = FALSE
+  ),
+  preferences = list(
+    bandsBase = list(fill = ""#107D63""),
+    empirical = list(color = ""#03735E"")
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+11,"m","discrete","prj04_categoricalPK.mlxtran","Prediction distrib","plotPredictionDistribution(
+    obsName = ""Level"",
+    settings = list(
+      binsSettings = list(
+        criteria       = ""equalsize"",
+        is.fixedNbBins = TRUE,
+        nbBins         = 20),
+      binLimits = TRUE,   
+      legend    = TRUE,
+      grid      = FALSE,
+      xlab      = ""Zeit"",
+      ylab      = ""Wahrscheinlichkeit""),
+    preferences = list(
+      binsValues = list(
+        color     = ""#040404"",   
+        lineWidth = 0.54)))","plh_comp_id11.txt","2_mid",12,"gpt-5.6-terra [effort: low]","plotPredictionDistribution(
+  obsName = ""Level"",
+  settings = list(
+    binsSettings = list(
+      criteria = ""equalsize"",
+      is.fixedNbBins = TRUE,
+      nbBins = 20
+    ),
+    grid = FALSE,
+    legend = TRUE,
+    xlab = ""Zeit"",
+    ylab = ""Wahrscheinlichkeit""
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#040404"",
+      lineWidth = 0.54
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+12,"m","discrete","prj04_categoricalPK.mlxtran","Prediction distrib","plotPredictionDistribution(
+  obsName = ""Level"",
+  settings = list(
+    binsSettings = list(
+      criteria       = ""equalsize"",
+      is.fixedNbBins = TRUE,
+      nbBins         = 20),
+    binLimits = TRUE,
+    grid   = FALSE,
+    legend = TRUE,
+    xlab   = ""Zeit"",
+    ylab   = ""Wahrscheinlichkeit"",
+    ncol   = 2),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""lw70"",
+        definition = c(0.04606536684324683))),
+    split = c(""lw70"", ""logtAge"")),
+  preferences = list(
+    binsValues = list(color = ""#040404"", lineWidth = 0.54)))","plh_comp_id12.txt","2_mid",13,"gpt-5.6-terra [effort: low]","plotPredictionDistribution(
+  obsName = ""Level"",
+  settings = list(
+    binsSettings = list(
+      criteria = ""equalsize"",
+      is.fixedNbBins = TRUE,
+      nbBins = 20
+    ),
+    grid = FALSE,
+    legend = TRUE,
+    xlab = ""Zeit"",
+    ylab = ""Wahrscheinlichkeit"",
+    ncol = 2
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""lw70"",
+        definition = c(0.04606536684324683),
+        colors = c(""#B2912F"", ""#B276B2"")
+      )
+    ),
+    split = c(""lw70"", ""logtAge"")
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#040404"",
+      lineWidth = 0.54
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 7"
+14,"m","continuous","prj04_categoricalPK.mlxtran","VPC","plotVpc(
+    obsName = ""Concentration"",
+    settings = list(
+      xBinsSettings = list(
+        is.fixedNbBins = TRUE,
+        nbBins         = 20),
+      binLimits    = TRUE,
+      empirical    = TRUE,
+      obs          = TRUE,
+      theoretical  = TRUE,
+      useCorrpred  = TRUE,
+      legend       = TRUE,
+      grid         = FALSE,
+      linearInterpolation = FALSE,              
+      ylog         = TRUE,
+      xlab         = ""Time"",
+      ylab         = ""AntiBloodClotting"",
+      ylim         = c(0.1, 25),
+      ncol         = 1),
+    stratify = list(
+      groups = list(
+        list(
+          name       = ""lw70"",
+          definition = c(0.0460653668),
+          colors     = c(""#B2912F"", ""#B276B2"")),
+        list(
+          name       = ""wt"",
+          definition = c(73.3),
+          colors     = c(""#E18146"", ""#1D5B09""))),
+      split  = ""lw70"",
+      color  = ""wt"",
+      colors = c(""#E18146"", ""#1D5B09"")),                  
+    preferences = list(
+      binsValues   = list(color = ""#942828"", lineWidth = 0.54),   
+      empirical    = list(color = ""#103E9A"", lineWidth = 0.945),  
+      obs          = list(color = ""#103E9A"", radius = 1),         
+      theoretical  = list(lineWidth = 0.675),                     
+      piMedian     = list(fill = ""#C4870B"", opacity = 0.62),
+      piPercentile = list(fill = ""#1C7748"", opacity = 0.50),
+      outlierDot   = list(color = ""#942828"")       
+    )
+  )","plh_comp_id14.txt","3_high",39,"gpt-5.6-terra [effort: low]","plotVpc(
+  obsName = ""Concentration"",
+  settings = list(
+    useCensored = TRUE,
+    useCorrpred = TRUE,
+    binLimits = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    obs = TRUE,
+    linearInterpolation = FALSE,
+    theoretical = TRUE,
+    xlab = ""Time"",
+    ylab = ""AntiBloodClotting"",
+    ylog = TRUE,
+    ylim = c(0.1, 25),
+    ncol = 1,
+    xBinsSettings = list(
+      nbBins = 20,
+      is.fixedNbBins = TRUE
+    )
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""lw70"",
+        definition = c(0.04606536684324683),
+        colors = c(""#B2912F"", ""#B276B2"")
+      ),
+      list(
+        name = ""wt"",
+        definition = c(73.3)
+      )
+    ),
+    split = ""lw70"",
+    color = ""wt"",
+    colors = c(""#E18146"", ""#1D5B09"")
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#942828"",
+      lineWidth = 0.54
+    ),
+    empirical = list(
+      color = ""#103E9A"",
+      lineWidth = 0.945
+    ),
+    obs = list(
+      color = ""#103E9A""
+    ),
+    outlierArea = list(
+      fill = ""#BC3131""
+    ),
+    outlierDot = list(
+      color = ""#942828""
+    ),
+    piMedian = list(
+      fill = ""#C4870B9E""
+    ),
+    piPercentile = list(
+      fill = ""#1C774880""
+    ),
+    theoretical = list(
+      lineWidth = 0.675
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 7"
+29,"m","continuous","prj06_IOV.mlxtran","Prediction distrib","plotPredictionDistribution(
+  settings = list(
+    nbBands= 4,
+    higherPercentile = 95,
+    legend = TRUE,
+    obs    = TRUE,      
+    cens   = TRUE,      
+    xlab   = ""TIEZ"",
+    ylim   = c(0.1, 150),
+    ylab   = ""Konzentration"",
+    ylog   = TRUE),
+  stratify = list(
+    groups = list(
+      list(
+        name       = ""OCC"",
+        definition = list(c(""1""), c(""2"")),
+        colors     = c(""#4C46B4"", ""#D17F0F""))),
+    split = ""OCC"",
+    color = ""OCC""),
+  preferences = list(
+    median = list(
+      color     = ""#097322"",  
+      lineWidth = 0.81 ),     
+    obs = list(
+      radius = 1.08)))","plh_comp_id29.txt","2_mid",15,"gpt-5.6-terra [effort: low]","plotPredictionDistribution(
+  settings = list(
+    nbBands = 4,
+    higherPercentile = 95,
+    cens = TRUE,
+    legend = TRUE,
+    obs = TRUE,
+    xlab = ""TIEZ"",
+    ylab = ""Konzentration"",
+    ylim = c(0.1, 150),
+    ylog = TRUE,
+    ncol = 2
+  ),
+  stratify = list(
+    split = ""OCC"",
+    color = ""OCC"",
+    colors = c(""#4C46B4"", ""#D17F0F"")
+  ),
+  preferences = list(
+    median = list(
+      color = ""#097322"",
+      lineWidth = 0.81
+    ),
+    obs = list(radius = 1.08),
+    censObs = list(radius = 1.08)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+30,"m","continuous","prj06_IOV.mlxtran","Numerical pred check","plotNpc(
+  settings = list(
+    level       = 85,
+    nbPoints    = 174,
+    useCensored = FALSE,
+    theoretical = TRUE,
+    legend      = TRUE,
+    grid        = FALSE),
+  preferences = list(
+    empirical = list(
+      color     = ""#180F6D"",
+      lineWidth = 1.08),
+    theoretical = list(
+      color     = ""#3F14AA"",
+      lineWidth = 0.675),
+    piPercentile = list(
+      fill    = ""#070D90"",
+      opacity = 0.3)))","plh_comp_id30.txt","2_mid",12,"gpt-5.6-terra [effort: low]","plotNpc(
+  settings = list(
+    nbPoints = 174,
+    level = 85,
+    useCensored = FALSE,
+    grid = FALSE,
+    legend = TRUE,
+    theoretical = TRUE
+  ),
+  preferences = list(
+    empirical = list(
+      color = ""#180F6D"",
+      lineWidth = 1.08
+    ),
+    piPercentile = list(
+      fill = ""#070D144D""
+    ),
+    theoretical = list(
+      color = ""#3F14AA"",
+      lineWidth = 0.675
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 5"
+31,"m","continuous","prj06_IOV.mlxtran","Observed data","plotObservedData(
+  settings = list(
+    legend          = TRUE,
+    grid            = FALSE,
+    ylog            = TRUE,
+    ylab          = ""Konzentration"",
+    useCensored     = TRUE,
+    errorMethod  = ""standardError"",
+    mean         = TRUE,
+    error           = TRUE,
+    lines          = FALSE,
+    binLimits =TRUE,
+    binsSettings = list(
+      nbBins        = 20,        
+      is.fixedNbBins = TRUE,     
+      nbBinData     = c(15, 200))),
+  stratify = list(
+    groups = list(
+      list(
+        name       = ""DIET"",
+        definition = list(c(""noGuar""), c(""withGuar"")),
+        colors     = c(""#C665C6"", ""#E59C3A""))),
+    split = ""DIET"",
+    color = ""DIET"",
+    mergedSplits =TRUE))","plh_comp_id31.txt","3_high",20,"gpt-5.6-terra [effort: low]","plotObservedData(
+  settings = list(
+    lines = FALSE,
+    mean = TRUE,
+    error = TRUE,
+    errorMethod = ""standardError"",
+    useCensored = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    ylab = ""Konzentration"",
+    ylog = TRUE,
+    binsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins = 20,
+      nbBinData = c(15, 200)
+    )
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""DIET"",
+        definition = list(c(""noGuar""), c(""withGuar""))
+      )
+    ),
+    split = ""DIET"",
+    mergedSplits = TRUE,
+    color = ""DIET"",
+    colors = c(""#C665C6"", ""#E59C3A"")
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 5"
+34,"m","continuous","prj06_IOV.mlxtran","VPC","plotVpc(
+  settings = list(
+    legend        = TRUE,
+    grid          = FALSE,
+    obs           = TRUE,
+    theoretical   = TRUE,
+    ylog          = TRUE,
+    xlab          = ""Zeit"",
+    xlim          = c(-1, 10),
+    ylab          = ""Konzentration"",
+    ylim          = c(1, 150),
+    level            = 85,
+    higherPercentile = 95,
+    cens          = TRUE,
+    censoring     = ""loq"",
+    useCorrpred   = TRUE,
+    binLimits = TRUE,
+    xBinsSettings = list(           
+      criteria      = ""equalwidth"", 
+      nbBins        = 12,           
+      is.fixedNbBins = TRUE,        
+      nbBinData     = c(1, 5)),
+    ncol=1),
+  stratify = list(
+    split = ""DIET"",
+    color = ""id"",
+    colors = c(
+      ""#0E13AE"", ""#52A371"", ""#CFA06B"", ""#9c9ede"", ""#637939"",
+      ""#E78D28"", ""#CF6BB7"", ""#9018D9"", ""#11CCD7"", ""#101010"",
+      ""#e7ba52"", ""#E7F313"", ""#960E08"", ""#75F56F"")),
+  preferences = list(
+    empirical    = list(color  = ""#1C4669"", lineWidth = 0.81),
+    obs          = list(radius = 1.08),
+    piMedian     = list(fill   = ""#FF0000"", opacity = 0.62),
+    piPercentile = list(fill   = ""#0080FF"", opacity = 0.68)))","plh_comp_id34.txt","3_high",29,"gpt-5.6-terra [effort: low]","plotVpc(
+  settings = list(
+    level = 85,
+    higherPercentile = 95,
+    useCorrpred = TRUE,
+    useCensored = TRUE,
+    censoring = ""loq"",
+    binLimits = TRUE,
+    obs = TRUE,
+    cens = TRUE,
+    theoretical = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    xlim = c(-1, 10),
+    ylim = c(1, 150),
+    xlab = ""Zeit"",
+    ylab = ""Konzentration"",
+    ylog = TRUE,
+    ncol = 1,
+    xBinsSettings = list(
+      criteria = ""equalwidth"",
+      is.fixedNbBins = TRUE,
+      nbBins = 12,
+      nbBinData = c(1, 5)
+    )
+  ),
+  stratify = list(
+    split = ""DIET"",
+    color = ""id"",
+    colors = c(
+      ""#0E13AE"", ""#52A371"", ""#CFA06B"", ""#9C9EDE"", ""#637939"",
+      ""#E78D28"", ""#CF6BB7"", ""#9018D9"", ""#11CCD7"", ""#101010"",
+      ""#E7BA52"", ""#E7F313"", ""#960E08"", ""#75F56F""
+    )
+  ),
+  preferences = list(
+    empirical = list(
+      color = ""#1C4669"",
+      lineWidth = 0.81
+    ),
+    obs = list(radius = 1.08),
+    piMedian = list(
+      fill = ""#FF0000"",
+      opacity = 0.62
+    ),
+    piPercentile = list(
+      fill = ""#0080FF"",
+      opacity = 0.68
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+59,"m","continuous","prj08_iov2.mlxtran","VPC","plotVpc(
+  settings = list(
+    level             = 80,
+    higherPercentile  = 95,
+    timeAfterLastDose = TRUE,
+    useCorrpred       = TRUE,
+    xBinsSettings     = list(
+      binRange  = c(15, 40),
+      nbBinData = c(20, 50)),
+    binLimits          = TRUE,
+    empirical          = TRUE,
+    obs                = TRUE,
+    theoretical        = TRUE,
+    legend             = TRUE,
+    grid               = FALSE,
+    linearInterpolation = FALSE,
+    ylog               = TRUE,
+    xlab               = ""Time"",
+    ylab               = ""Concentration"",
+    xlim               = c(0, 25),
+    ylim               = c(0.1, 20),
+    ncol               = 2),
+  stratify = list(
+    split  = ""OCCevid"",
+    color  = ""TREAT"",
+    colors = c(""#1F9658"", ""#084392""),
+    filter = list(""SEX"", 1)),
+  preferences = list(
+    binsValues   = list(color = ""#E98B0D"", lineWidth = 1.08),
+    empirical    = list(color = ""#084D88"", lineWidth = 1.215, lineType = ""dashed""),
+    obs          = list(radius = 1.62),
+    outlierDot   = list(color = ""#B00808"", radius = 0.54),
+    outlierArea  = list(fill = ""#A60B0B""),
+    piMedian     = list(fill = ""#A40707"", opacity = 0.51),
+    piPercentile = list(fill = ""#085BAE"", opacity = 0.48),
+    theoretical  = list(color = ""#3B3838"", lineWidth = 1.08, lineType = ""solid"")))","plh_comp_id59.txt","3_high",39,"gpt-5.6-terra [effort: low]","plotVpc(
+  settings = list(
+    level = 80,
+    higherPercentile = 95,
+    timeAfterLastDose = TRUE,
+    useCorrpred = TRUE,
+    useCensored = TRUE,
+    binLimits = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    obs = TRUE,
+    linearInterpolation = FALSE,
+    theoretical = TRUE,
+    xlim = c(0, 25),
+    ylim = c(0.1, 20),
+    xlab = ""Time"",
+    ylab = ""Concentration"",
+    ylog = TRUE,
+    ncol = 2,
+    xBinsSettings = list(
+      binRange = c(15, 40),
+      nbBinData = c(20, 50)
+    )
+  ),
+  stratify = list(
+    split = ""OCCevid"",
+    filter = list(list(""SEX"", c(1))),
+    color = ""TREAT"",
+    colors = c(""#1F9658"", ""#084392"")
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#E98B0D"",
+      lineWidth = 1.08
+    ),
+    empirical = list(
+      color = ""#084D88"",
+      lineType = ""dashed"",
+      lineWidth = 1.215
+    ),
+    obs = list(
+      radius = 1.62
+    ),
+    outlierArea = list(
+      fill = ""#A60B0B""
+    ),
+    outlierDot = list(
+      color = ""#B00808"",
+      radius = 0.54
+    ),
+    piMedian = list(
+      fill = ""#A4070782""
+    ),
+    piPercentile = list(
+      fill = ""#085BAE7A""
+    ),
+    theoretical = list(
+      color = ""#3B3838"",
+      lineType = ""solid"",
+      lineWidth = 1.08
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+64,"p","continuous","prj09_iov2.pkx","BE CI","plotBEConfidenceIntervals(
+    parameters = c(""AUClast"", ""Cmax""),
+    settings   = list(
+      legend = TRUE,
+      grid   = FALSE,
+      ncol   = 1),
+    preferences = list(
+      pi         = list(      
+        color     = ""#070EAC"",
+        lineWidth = 1.08),
+      BEParams   = list(      
+        color = ""#1B7B1B""),
+      noBEParams = list(      
+        color     = ""#AE1D1D"",
+        lineWidth = 0.945),
+      median     = list(      
+        color     = ""#ED8B0A"",
+        lineWidth = 0.675)))","plh_comp_id64.txt","2_mid",11,"gpt-5.6-terra [effort: low]","plotBEConfidenceIntervals(
+  parameters = c(""AUClast"", ""Cmax""),
+  settings = list(
+    grid = FALSE,
+    legend = TRUE
+  ),
+  preferences = list(
+    BEParams = list(
+      color = ""#1B7B1B""
+    ),
+    noBEParams = list(
+      color = ""#AE1D1D""
+    ),
+    median = list(
+      color = ""#ED8B0A"",
+      lineWidth = 0.675
+    ),
+    pi = list(
+      color = ""#070EAC"",
+      lineWidth = 1.08
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+69,"p","continuous","prj09_iov2.pkx","NCA data","plotNCAData(
+  settings = list(
+    legend      = TRUE,
+    grid        = FALSE,
+    lines       = FALSE,
+    dosingTimes = TRUE,
+    binLimits   = TRUE,
+    ylog        = TRUE,
+    xlab        = ""TIME"",
+    ylab        = ""Konzentrationi"",
+    xlim        = c(-5, 155),
+    ylim        = c(0.1, 50),
+    ncol        = 1,
+    binsSettings = list(
+      criteria  = ""equalwidth"",
+      binRange  = c(20, 50),
+      nbBinData = c(5, 100))),
+  stratify = list(
+    split  = ""OCCevid"",
+    color  = ""TREAT"",
+    colors = c(""#E5920B"", ""#5A0EC0""),
+    filter = list(""SEX"", 2),
+    groups = list(
+      list(
+        name       = ""TREAT"",
+        definition = list(c(""A""), c(""B""))))),
+  preferences = list(
+    binsValues            = list(color = ""#B600FF"", lineWidth = 0.675),
+    obs                   = list(lineWidth = 1.485, radius = 1.62),
+    observationStatistics = list(color = ""#980B40"",
+                                 whiskersWidth = 0.81,
+                                 lineWidth     = 0.81)))","plh_comp_id69.txt","3_high",29,"gpt-5.6-terra [effort: low]","plotNCAData(
+  settings = list(
+    binLimits = TRUE,
+    binsSettings = list(
+      criteria = ""equalwidth"",
+      nbBinData = c(5, 100)
+    ),
+    dosingTimes = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    lines = FALSE,
+    xlim = c(-5, 155),
+    xlab = ""TIME"",
+    ylim = c(0.1, 50),
+    ylab = ""Konzentrationi"",
+    ylog = TRUE,
+    ncol = 1
+  ),
+  stratify = list(
+    split = ""OCCevid"",
+    filter = list(""SEX"", c(2)),
+    individualSelection = list(indices = c(1, 2), isRange = TRUE),
+    color = ""TREAT"",
+    colors = c(""#E5920B"", ""#5A0EC0"")
+  ),
+  preferences = list(
+    obs = list(
+      radius = 1.62,
+      lineWidth = 1.485
+    ),
+    observationStatistics = list(
+      color = ""#980B40"",
+      whiskersWidth = 0.81,
+      lineWidth = 0.81
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+77,"p","continuous","prj10_Remi_infusion_SD.pkx","Observed data","plotObservedData(
+    settings = list(
+      mean        = FALSE,
+      error       = FALSE,
+      binsSettings = list(
+        is.fixedNbBins = TRUE,
+        nbBins         = 20),
+      legend = TRUE,
+      ylog   = TRUE,
+      ylim   = c(-28.612209844277, 245.4),
+      ncol   = 1),
+    stratify = list(
+      groups = list(
+        list(
+          name       = ""AGE"",
+          definition = c(32, 58)),
+        list(
+          name       = ""GROUP"",
+          definition = list(c(""1"", ""2""), c(""3""), c(""4"")))),
+      split  = ""GROUP"",
+      color  = ""AGE"",
+      colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")),
+    preferences = list(
+      obs     = list(radius = 0.54),
+      censObs = list(radius = 0.54)))","plh_comp_id77.txt","2_mid",15,"gpt-5.6-terra [effort: low]","plotObservedData(
+  settings = list(
+    mean = FALSE,
+    error = FALSE,
+    legend = TRUE,
+    ylog = TRUE,
+    ylim = c(-28.612209844277, 245.4),
+    ncol = 1,
+    binsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins = 20
+    )
+  ),
+  stratify = list(
+    groups = list(
+      list(name = ""AGE"", definition = c(32, 58)),
+      list(
+        name = ""GROUP"",
+        definition = list(c(""1"", ""2""), c(""3""), c(""4"")),
+        colors = c(""#F17CB0"", ""#B2912F"", ""#B276B2"")
+      )
+    ),
+    split = ""GROUP"",
+    individualSelection = list(indices = c(1, 3), isRange = TRUE),
+    color = ""AGE"",
+    colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")
+  ),
+  preferences = list(
+    obs = list(radius = 0.54),
+    censObs = list(radius = 0.54)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+92,"m","event","prj05_TTE.mlxtran","Observed data","plotObservedData(
+  settings = list(
+    legend = TRUE,
+    grid   = FALSE,
+    ncol   = 2),
+  stratify = list(
+    split = ""celltype_BI_grp"",          
+    individualSelection = list(         
+      indices = c(4, 7, 13, 14, 27, 40, 47, 63, 78, 103, 127),
+      isRange = FALSE)),
+  preferences = list(
+    censEvent = list(radius = 1.35),
+    empirical = list(                   
+      color     = ""#0754948F"",
+      lineWidth = 1.215)))","plh_comp_id92.txt","2_mid",11,"gpt-5.6-terra [effort: low]","plotObservedData(
+  settings = list(
+    grid = FALSE,
+    legend = TRUE,
+    ncol = 2
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""celltype_BI_grp"",
+        definition = list(
+          c(""G_adeno_smallcell""),
+          c(""G_large_squamous"")
+        )
+      )
+    ),
+    split = ""celltype_BI_grp"",
+    individualSelection = list(
+      indices = c(4, 7, 13, 14, 27, 40, 47, 63, 78, 103, 127),
+      isRange = FALSE
+    )
+  ),
+  preferences = list(
+    censEvent = list(radius = 1.35),
+    empirical = list(
+      color = ""#075494"",
+      lineWidth = 1.215
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+9,"m","discrete","prj03_AD_logistic.mlxtran","VPC","plotVpc(
+  settings = list(
+    xBinsSettings = list(
+      criteria = ""equalsize""),         
+    yBinsSettings = list(
+      criteria       = ""equalsize"",
+      is.fixedNbBins = TRUE,      
+      nbBins         = 4,         
+      binRange       = c(1, 10)), 
+    binLimits           = TRUE,   
+    empirical           = TRUE,
+    theoretical         = TRUE,
+    legend              = TRUE,
+    grid                = FALSE,
+    linearInterpolation = FALSE,        
+    ncol                =2),
+  stratify = list(
+    split = ""STDY"",
+    filter = list(list(""STDY"", c(1)))),
+  preferences = list(empirical    = list(color = ""#092A92"", lineWidth = 0.945),  
+                     piPercentile = list(fill  = ""#5A39C6"", opacity = 0.67)))","plh_comp_id09.txt","2_mid",18,"gpt-5.6-terra [effort: medium]","plotVpc(
+  settings = list(
+    binLimits = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    linearInterpolation = FALSE,
+    theoretical = TRUE,
+    xBinsSettings = list(
+      criteria = ""equalsize""
+    ),
+    yBinsSettings = list(
+      criteria = ""equalsize"",
+      nbBins = 4,
+      is.fixedNbBins = TRUE
+    ),
+    ncol = 2
+  ),
+  stratify = list(
+    split = ""STDY"",
+    filter = list(""STDY"", c(1))
+  ),
+  preferences = list(
+    empirical = list(
+      color = ""#092A92"",
+      lineWidth = 0.945
+    ),
+    piPercentile = list(
+      fill = ""#5A39C6AB""
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+10,"m","discrete","prj03_AD_logistic.mlxtran","VPC","plotVpc(
+  settings = list(
+    xBinsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins         = 5),
+    yBinsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins         = 2,
+      nbBinData      = c(10, 200)),
+    binLimits    = TRUE,  
+    empirical    = TRUE,    
+    theoretical  = TRUE,    
+    outlierAreas = FALSE,   
+    legend       = TRUE,
+    ncol         = 2),      
+  stratify = list(          
+    groups = list(
+      list(name       = ""ARM"",
+           definition = list(c(""0"", ""1""), c(""2"")))),
+    split = ""ARM""),
+  preferences = list(
+    empirical    = list(color = ""#0B528E"", lineWidth = 1.35),
+    piPercentile = list(fill  = ""#0D8E69"", opacity   = 0.52)))","plh_comp_id10.txt","3_high",20,"gpt-5.6-terra [effort: medium]","plotVpc(
+  settings = list(
+    xBinsSettings = list(
+      nbBins = 5,
+      is.fixedNbBins = TRUE
+    ),
+    yBinsSettings = list(
+      binRange = c(1, 10),
+      nbBins = 2,
+      is.fixedNbBins = TRUE,
+      nbBinData = c(10, 200)
+    ),
+    outlierAreas = FALSE,
+    binLimits = TRUE,
+    legend = TRUE,
+    theoretical = TRUE,
+    ncol = 2
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""ARM"",
+        definition = list(c(""0"", ""1""), c(""2"")),
+        colors = c(""#F17CB0"", ""#B2912F"")
+      )
+    ),
+    split = ""ARM""
+  ),
+  preferences = list(
+    empirical = list(
+      color = ""#0B528EE0"",
+      lineWidth = 1.35
+    ),
+    piPercentile = list(
+      fill = ""#0D8E6985""
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+11,"m","discrete","prj04_categoricalPK.mlxtran","Prediction distrib","plotPredictionDistribution(
+    obsName = ""Level"",
+    settings = list(
+      binsSettings = list(
+        criteria       = ""equalsize"",
+        is.fixedNbBins = TRUE,
+        nbBins         = 20),
+      binLimits = TRUE,   
+      legend    = TRUE,
+      grid      = FALSE,
+      xlab      = ""Zeit"",
+      ylab      = ""Wahrscheinlichkeit""),
+    preferences = list(
+      binsValues = list(
+        color     = ""#040404"",   
+        lineWidth = 0.54)))","plh_comp_id11.txt","2_mid",12,"gpt-5.6-terra [effort: medium]","plotPredictionDistribution(
+  obsName = ""Level"",
+  settings = list(
+    binsSettings = list(
+      criteria = ""equalsize"",
+      is.fixedNbBins = TRUE,
+      nbBins = 20
+    ),
+    grid = FALSE,
+    legend = TRUE,
+    xlab = ""Zeit"",
+    ylab = ""Wahrscheinlichkeit""
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#040404"",
+      lineWidth = 0.54
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+12,"m","discrete","prj04_categoricalPK.mlxtran","Prediction distrib","plotPredictionDistribution(
+  obsName = ""Level"",
+  settings = list(
+    binsSettings = list(
+      criteria       = ""equalsize"",
+      is.fixedNbBins = TRUE,
+      nbBins         = 20),
+    binLimits = TRUE,
+    grid   = FALSE,
+    legend = TRUE,
+    xlab   = ""Zeit"",
+    ylab   = ""Wahrscheinlichkeit"",
+    ncol   = 2),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""lw70"",
+        definition = c(0.04606536684324683))),
+    split = c(""lw70"", ""logtAge"")),
+  preferences = list(
+    binsValues = list(color = ""#040404"", lineWidth = 0.54)))","plh_comp_id12.txt","2_mid",13,"gpt-5.6-terra [effort: medium]","plotPredictionDistribution(
+  obsName = ""Level"",
+  settings = list(
+    binsSettings = list(
+      criteria = ""equalsize"",
+      is.fixedNbBins = TRUE,
+      nbBins = 20
+    ),
+    grid = FALSE,
+    legend = TRUE,
+    xlab = ""Zeit"",
+    ylab = ""Wahrscheinlichkeit"",
+    ncol = 2
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""lw70"",
+        definition = c(0.04606536684324683),
+        colors = c(""#B2912F"", ""#B276B2"")
+      )
+    ),
+    split = c(""lw70"", ""logtAge"")
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#040404"",
+      lineWidth = 0.54
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 7"
+13,"m","discrete","prj04_categoricalPK.mlxtran","VPC","plotVpc(
+    obsName = ""Level"",
+    settings = list(
+      level = 85,
+      xBinsSettings = list(
+        is.fixedNbBins = TRUE,
+        nbBins         = 20,
+        binRange       = c(15, 200),
+        nbBinData      = c(2, 200)),
+      binLimits   = TRUE,
+      empirical   = TRUE,
+      theoretical = TRUE,
+      outlierAreas = FALSE,
+      legend      = TRUE,
+      grid        = FALSE,
+      ncol        = 1),
+    preferences = list(
+      binsValues   = list(color = ""#BE1414"", lineWidth = 0.675),
+      empirical    = list(color = ""#DF8309"", lineWidth = 0.945),
+      piPercentile = list(fill  = ""#E17F14"", opacity  = 0.57)))","plh_comp_id13.txt","3_high",20,"gpt-5.6-terra [effort: medium]","plotVpc(
+  obsName = ""Level"",
+  settings = list(
+    level = 85,
+    outlierAreas = FALSE,
+    binLimits = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    theoretical = TRUE,
+    xBinsSettings = list(
+      binRange = c(15, 200),
+      nbBins = 20,
+      nbBinData = c(2, 200)
+    )
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#BE1414"",
+      lineWidth = 0.675
+    ),
+    empirical = list(
+      color = ""#DF8309"",
+      lineWidth = 0.945
+    ),
+    piPercentile = list(
+      fill = ""#E17F1491""
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+15,"m","continuous","prj01_warfarinPK.mlxtran","Observed data","plotObservedData(
+  obsName = ""y1"",                       
+  settings = list(
+    legend      = TRUE,
+    grid        = FALSE,
+    lines       = FALSE,                
+    mean        = TRUE,                 
+    error       = TRUE,                 
+    meanMethod  = ""geometric"",          
+    binLimits   = TRUE,
+    dosingTimes = TRUE,
+    binsSettings = list(                
+      criteria       = ""equalsize"",
+      is.fixedNbBins = TRUE)),
+  stratify = list(groups= list(
+    list(
+      name       = ""logtWt"",
+      definition = c(0.07332204956796999))),
+    split         = ""logtWt"",
+    color         = ""logWt"",
+    colors        = c(""#500596"", ""#C8082D""),
+    mergedSplits  = TRUE),
+  preferences = list(
+    binsValues = list(
+      color     = ""#000000""),
+    observationStatistics = list(        
+      whiskersWidth = 0.675,               
+      lineWidth     = 0.675)))","plh_comp_id15.txt","3_high",20,"gpt-5.6-terra [effort: medium]","plotObservedData(
+  obsName = ""y1"",
+  settings = list(
+    binsSettings = list(
+      criteria = ""equalsize"",
+      is.fixedNbBins = TRUE
+    ),
+    dosingTimes = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    lines = FALSE,
+    mean = TRUE,
+    error = TRUE,
+    meanMethod = ""geometric""
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""logtWt"",
+        definition = c(0.07332204956796999)
+      )
+    ),
+    split = ""logtWt"",
+    color = ""logtWt"",
+    colors = c(""#500596"", ""#C8082D""),
+    mergedSplits = TRUE
+  ),
+  preferences = list(
+    observationStatistics = list(
+      whiskersWidth = 0.675,
+      lineWidth = 0.675
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 7"
+29,"m","continuous","prj06_IOV.mlxtran","Prediction distrib","plotPredictionDistribution(
+  settings = list(
+    nbBands= 4,
+    higherPercentile = 95,
+    legend = TRUE,
+    obs    = TRUE,      
+    cens   = TRUE,      
+    xlab   = ""TIEZ"",
+    ylim   = c(0.1, 150),
+    ylab   = ""Konzentration"",
+    ylog   = TRUE),
+  stratify = list(
+    groups = list(
+      list(
+        name       = ""OCC"",
+        definition = list(c(""1""), c(""2"")),
+        colors     = c(""#4C46B4"", ""#D17F0F""))),
+    split = ""OCC"",
+    color = ""OCC""),
+  preferences = list(
+    median = list(
+      color     = ""#097322"",  
+      lineWidth = 0.81 ),     
+    obs = list(
+      radius = 1.08)))","plh_comp_id29.txt","2_mid",15,"gpt-5.6-terra [effort: medium]","plotPredictionDistribution(
+  settings = list(
+    nbBands = 4,
+    higherPercentile = 95,
+    cens = TRUE,
+    legend = TRUE,
+    obs = TRUE,
+    xlab = ""TIEZ"",
+    ylim = c(0.1, 150),
+    ylab = ""Konzentration"",
+    ylog = TRUE,
+    ncol = 2
+  ),
+  stratify = list(
+    split = ""OCC"",
+    color = ""OCC"",
+    colors = c(""#4C46B4"", ""#D17F0F"")
+  ),
+  preferences = list(
+    median = list(
+      color = ""#097322"",
+      lineWidth = 0.81
+    ),
+    obs = list(radius = 1.08),
+    censObs = list(radius = 1.08)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+31,"m","continuous","prj06_IOV.mlxtran","Observed data","plotObservedData(
+  settings = list(
+    legend          = TRUE,
+    grid            = FALSE,
+    ylog            = TRUE,
+    ylab          = ""Konzentration"",
+    useCensored     = TRUE,
+    errorMethod  = ""standardError"",
+    mean         = TRUE,
+    error           = TRUE,
+    lines          = FALSE,
+    binLimits =TRUE,
+    binsSettings = list(
+      nbBins        = 20,        
+      is.fixedNbBins = TRUE,     
+      nbBinData     = c(15, 200))),
+  stratify = list(
+    groups = list(
+      list(
+        name       = ""DIET"",
+        definition = list(c(""noGuar""), c(""withGuar"")),
+        colors     = c(""#C665C6"", ""#E59C3A""))),
+    split = ""DIET"",
+    color = ""DIET"",
+    mergedSplits =TRUE))","plh_comp_id31.txt","3_high",20,"gpt-5.6-terra [effort: medium]","plotObservedData(
+  settings = list(
+    lines = FALSE,
+    mean = TRUE,
+    error = TRUE,
+    errorMethod = ""standardError"",
+    useCensored = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    ylog = TRUE,
+    ylab = ""Konzentration"",
+    binsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins = 20,
+      nbBinData = c(15, 200)
+    )
+  ),
+  stratify = list(
+    split = ""DIET"",
+    mergedSplits = TRUE,
+    color = ""DIET"",
+    colors = c(""#C665C6"", ""#E59C3A"")
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 5"
+34,"m","continuous","prj06_IOV.mlxtran","VPC","plotVpc(
+  settings = list(
+    legend        = TRUE,
+    grid          = FALSE,
+    obs           = TRUE,
+    theoretical   = TRUE,
+    ylog          = TRUE,
+    xlab          = ""Zeit"",
+    xlim          = c(-1, 10),
+    ylab          = ""Konzentration"",
+    ylim          = c(1, 150),
+    level            = 85,
+    higherPercentile = 95,
+    cens          = TRUE,
+    censoring     = ""loq"",
+    useCorrpred   = TRUE,
+    binLimits = TRUE,
+    xBinsSettings = list(           
+      criteria      = ""equalwidth"", 
+      nbBins        = 12,           
+      is.fixedNbBins = TRUE,        
+      nbBinData     = c(1, 5)),
+    ncol=1),
+  stratify = list(
+    split = ""DIET"",
+    color = ""id"",
+    colors = c(
+      ""#0E13AE"", ""#52A371"", ""#CFA06B"", ""#9c9ede"", ""#637939"",
+      ""#E78D28"", ""#CF6BB7"", ""#9018D9"", ""#11CCD7"", ""#101010"",
+      ""#e7ba52"", ""#E7F313"", ""#960E08"", ""#75F56F"")),
+  preferences = list(
+    empirical    = list(color  = ""#1C4669"", lineWidth = 0.81),
+    obs          = list(radius = 1.08),
+    piMedian     = list(fill   = ""#FF0000"", opacity = 0.62),
+    piPercentile = list(fill   = ""#0080FF"", opacity = 0.68)))","plh_comp_id34.txt","3_high",29,"gpt-5.6-terra [effort: medium]","plotVpc(
+  settings = list(
+    level = 85,
+    higherPercentile = 95,
+    useCorrpred = TRUE,
+    useCensored = TRUE,
+    censoring = ""loq"",
+    binLimits = TRUE,
+    xBinsSettings = list(
+      criteria = ""equalwidth"",
+      is.fixedNbBins = TRUE,
+      nbBins = 12,
+      nbBinData = c(1, 5)
+    ),
+    cens = TRUE,
+    obs = TRUE,
+    theoretical = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    xlim = c(-1, 10),
+    ylim = c(1, 150),
+    xlab = ""Zeit"",
+    ylab = ""Konzentration"",
+    ylog = TRUE,
+    ncol = 1
+  ),
+  stratify = list(
+    split = ""DIET"",
+    color = ""id"",
+    colors = c(
+      ""#0E13AE"", ""#52A371"", ""#CFA06B"", ""#9C9EDE"", ""#637939"",
+      ""#E78D28"", ""#CF6BB7"", ""#9018D9"", ""#11CCD7"", ""#101010"",
+      ""#E7BA52"", ""#E7F313"", ""#960E08"", ""#75F56F""
+    )
+  ),
+  preferences = list(
+    empirical = list(
+      color = ""#1C4669"",
+      lineWidth = 0.81
+    ),
+    obs = list(radius = 1.08),
+    piMedian = list(
+      fill = ""#FF0000"",
+      opacity = 0.62
+    ),
+    piPercentile = list(
+      fill = ""#0080FF"",
+      opacity = 0.68
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+38,"p","continuous","prj07_aPCSK9_SAD.pkx","Individual fits","plotCAIndividualFits(
+  settings = list(
+    obsLines    = TRUE,
+    dosingTimes = TRUE,
+    cens        = FALSE,
+    units       = TRUE,
+    legend      = TRUE,
+    grid        = FALSE,
+    xlab        = ""Time (#FAFAFF)"",
+    ylab        = ""Raviolizumab"",
+    ylim        = c(0.01, 50),
+    ncol        = 3),
+  stratify = list(
+    individualSelection = list(indices = c(1, 9), isRange = TRUE), 
+    color  = ""DOSE_mg"",
+    colors = c(""#162CB4"", ""#E3A50D"", ""#CA148E""),
+    filter = list(list(""DOSE_mg"", c(1, 2)))),
+  preferences = list(
+    dosingTimes = list(color = ""#8C1D1D"", lineWidth = 0.945),  
+    indivFits   = list(color = ""#046529"", lineWidth = 0.81),   
+    obs         = list(radius = 1.35)))","plh_comp_id38.txt","2_mid",19,"gpt-5.6-terra [effort: medium]","plotCAIndividualFits(
+  settings = list(
+    cens = FALSE,
+    dosingTimes = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    obsLines = TRUE,
+    xlab = ""Time"",
+    ylab = ""Raviolizumab"",
+    ylim = c(0.01, 50),
+    ncol = 3
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""DOSE_mg"",
+        definition = list(c(""150mg""), c(""300mg""), c(""800mg""))
+      )
+    ),
+    individualSelection = list(indices = c(1, 9), isRange = TRUE),
+    color = ""DOSE_mg"",
+    colors = c(""#162CB4"", ""#E3A50D"", ""#CA148E""),
+    filter = list(list(""DOSE_mg"", c(1, 2)))
+  ),
+  preferences = list(
+    dosingTimes = list(
+      color = ""#8C1D1D"",
+      lineWidth = 0.945
+    ),
+    indivFits = list(
+      color = ""#046529"",
+      lineWidth = 0.81,
+      lineType = ""solid""
+    ),
+    obs = list(radius = 1.35)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+46,"p","continuous","prj08_4periods.pkx","Sequence by period","plotBESequenceByPeriod(
+  parameters = c(""AUCINF_obs"", ""AUClast"", ""Cmax""),
+  settings = list(
+    legend = TRUE,
+    grid   = FALSE,
+    error  = FALSE,
+    ncol   = 1),
+  stratify = list(
+    groups = list(
+      list(
+        name       = ""PER"",
+        definition = list(c(""1""), c(""3""), c(""4""), c(""2"")))),
+    filter = list(""PER"", c(4, 1, 2, 3))),
+  preferences = list(
+    formulationDot         = list(radius = 1.62, color = c(""#0D3598"",""#179848"")),             
+    observationStatistics  = list(lineWidth = 0.945),         
+    sequence               = list(color = ""#350808"",
+                                  lineWidth = 0.945)))","plh_comp_id46.txt","2_mid",13,"gpt-5.6-terra [effort: medium]","plotBESequenceByPeriod(
+  parameters = c(""AUCINFobs"", ""AUClast"", ""Cmax""),
+  settings = list(
+    grid = FALSE,
+    legend = TRUE,
+    error = FALSE,
+    formulationColors = c(""#0D3598"", ""#179848"", ""#fdc086"", ""#ffff99"", ""#386cb0"", ""#f0027f"", ""#bf5b17"", ""#666666"")
+  ),
+  preferences = list(
+    formulationDot = list(radius = 1.62),
+    observationStatistics = list(
+      whiskersWidth = 0.945,
+      lineWidth = 0.945
+    ),
+    sequence = list(
+      color = ""#350808"",
+      lineWidth = 0.945
+    )
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""PER"",
+        definition = list(c(""1""), c(""3""), c(""4""), c(""2"")),
+        colors = c(""#4682B4"", ""#4D4D4D"", ""#60BD68"", ""#F17CB0"")
+      )
+    ),
+    filter = list(list(""PER"", c(4, 1, 2, 3)))
+  )
+)","EXECUTION_ERROR","N/A","Test Error: Invalid parameters: AUCINFobs. Available elements: 'AUCINF_obs', 'AUClast', 'Cmax'"
+53,"m","continuous","prj08_iov2.mlxtran","RandomEff distrib","plotStandardizedRandomEffectsDistribution(
+    settings = list(
+      grid             = FALSE,
+      variabilityLevel = ""ID"",
+      ncol             = 2),
+    stratify = list(
+      split  = ""TREAT"",
+      filter = list(""SEX"", 1)),
+    preferences = list(
+      boxplot = list(
+        fill    = ""#6B14E1"",
+        opacity = 0.38),
+      boxplotOutlier = list(
+        size = 4.32),
+      quartile = list(          
+        color     = ""#0B36EB"",  
+        lineWidth = 1.215),
+      baseline = list(          
+        color     = ""#8C0B0B"",  
+        lineWidth = 0.945)))","plh_comp_id53.txt","2_mid",12,"gpt-5.6-terra [effort: medium]","plotStandardizedRandomEffectsDistribution(
+  settings = list(
+    variabilityLevel = ""id"",
+    grid = FALSE,
+    ncol = 2
+  ),
+  stratify = list(
+    split = ""TREAT"",
+    filter = list(""SEX"", c(1))
+  ),
+  preferences = list(
+    boxplot = list(fill = ""#6B14E161""),
+    boxplotOutlier = list(size = 16),
+    baseline = list(
+      color = ""#8C0B0B"",
+      lineWidth = 0.945
+    ),
+    quartile = list(
+      color = ""#0B36EBE6"",
+      lineWidth = 1.215
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+59,"m","continuous","prj08_iov2.mlxtran","VPC","plotVpc(
+  settings = list(
+    level             = 80,
+    higherPercentile  = 95,
+    timeAfterLastDose = TRUE,
+    useCorrpred       = TRUE,
+    xBinsSettings     = list(
+      binRange  = c(15, 40),
+      nbBinData = c(20, 50)),
+    binLimits          = TRUE,
+    empirical          = TRUE,
+    obs                = TRUE,
+    theoretical        = TRUE,
+    legend             = TRUE,
+    grid               = FALSE,
+    linearInterpolation = FALSE,
+    ylog               = TRUE,
+    xlab               = ""Time"",
+    ylab               = ""Concentration"",
+    xlim               = c(0, 25),
+    ylim               = c(0.1, 20),
+    ncol               = 2),
+  stratify = list(
+    split  = ""OCCevid"",
+    color  = ""TREAT"",
+    colors = c(""#1F9658"", ""#084392""),
+    filter = list(""SEX"", 1)),
+  preferences = list(
+    binsValues   = list(color = ""#E98B0D"", lineWidth = 1.08),
+    empirical    = list(color = ""#084D88"", lineWidth = 1.215, lineType = ""dashed""),
+    obs          = list(radius = 1.62),
+    outlierDot   = list(color = ""#B00808"", radius = 0.54),
+    outlierArea  = list(fill = ""#A60B0B""),
+    piMedian     = list(fill = ""#A40707"", opacity = 0.51),
+    piPercentile = list(fill = ""#085BAE"", opacity = 0.48),
+    theoretical  = list(color = ""#3B3838"", lineWidth = 1.08, lineType = ""solid"")))","plh_comp_id59.txt","3_high",39,"gpt-5.6-terra [effort: medium]","plotVpc(
+  settings = list(
+    level = 80,
+    higherPercentile = 95,
+    timeAfterLastDose = TRUE,
+    useCorrpred = TRUE,
+    useCensored = TRUE,
+    binLimits = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    obs = TRUE,
+    linearInterpolation = FALSE,
+    theoretical = TRUE,
+    xlim = c(0, 25),
+    ylim = c(0.1, 20),
+    xlab = ""Time"",
+    ylab = ""Concentration"",
+    ylog = TRUE,
+    ncol = 2,
+    xBinsSettings = list(
+      binRange = c(15, 40),
+      nbBinData = c(20, 50)
+    )
+  ),
+  stratify = list(
+    split = ""OCCevid"",
+    filter = list(""SEX"", c(1)),
+    color = ""TREAT"",
+    colors = c(""#1F9658"", ""#084392"")
+  ),
+  preferences = list(
+    binsValues = list(
+      color = ""#E98B0D"",
+      lineWidth = 1.08
+    ),
+    empirical = list(
+      color = ""#084D88"",
+      lineType = ""dashed"",
+      lineWidth = 1.215
+    ),
+    obs = list(
+      radius = 1.62
+    ),
+    outlierArea = list(
+      fill = ""#A60B0B""
+    ),
+    outlierDot = list(
+      color = ""#B00808"",
+      radius = 0.54
+    ),
+    piMedian = list(
+      fill = ""#A4070782""
+    ),
+    piPercentile = list(
+      fill = ""#085BAE7A""
+    ),
+    theoretical = list(
+      color = ""#3B3838"",
+      lineType = ""solid"",
+      lineWidth = 1.08
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+64,"p","continuous","prj09_iov2.pkx","BE CI","plotBEConfidenceIntervals(
+    parameters = c(""AUClast"", ""Cmax""),
+    settings   = list(
+      legend = TRUE,
+      grid   = FALSE,
+      ncol   = 1),
+    preferences = list(
+      pi         = list(      
+        color     = ""#070EAC"",
+        lineWidth = 1.08),
+      BEParams   = list(      
+        color = ""#1B7B1B""),
+      noBEParams = list(      
+        color     = ""#AE1D1D"",
+        lineWidth = 0.945),
+      median     = list(      
+        color     = ""#ED8B0A"",
+        lineWidth = 0.675)))","plh_comp_id64.txt","2_mid",11,"gpt-5.6-terra [effort: medium]","plotBEConfidenceIntervals(
+  parameters = c(""AUClast"", ""Cmax""),
+  settings = list(
+    grid = FALSE,
+    legend = TRUE
+  ),
+  preferences = list(
+    BEParams = list(color = ""#1B7B1B""),
+    noBEParams = list(color = ""#AE1D1D""),
+    median = list(
+      color = ""#ED8B0A"",
+      lineWidth = 0.675
+    ),
+    pi = list(
+      color = ""#070EAC"",
+      lineWidth = 1.08
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+69,"p","continuous","prj09_iov2.pkx","NCA data","plotNCAData(
+  settings = list(
+    legend      = TRUE,
+    grid        = FALSE,
+    lines       = FALSE,
+    dosingTimes = TRUE,
+    binLimits   = TRUE,
+    ylog        = TRUE,
+    xlab        = ""TIME"",
+    ylab        = ""Konzentrationi"",
+    xlim        = c(-5, 155),
+    ylim        = c(0.1, 50),
+    ncol        = 1,
+    binsSettings = list(
+      criteria  = ""equalwidth"",
+      binRange  = c(20, 50),
+      nbBinData = c(5, 100))),
+  stratify = list(
+    split  = ""OCCevid"",
+    color  = ""TREAT"",
+    colors = c(""#E5920B"", ""#5A0EC0""),
+    filter = list(""SEX"", 2),
+    groups = list(
+      list(
+        name       = ""TREAT"",
+        definition = list(c(""A""), c(""B""))))),
+  preferences = list(
+    binsValues            = list(color = ""#B600FF"", lineWidth = 0.675),
+    obs                   = list(lineWidth = 1.485, radius = 1.62),
+    observationStatistics = list(color = ""#980B40"",
+                                 whiskersWidth = 0.81,
+                                 lineWidth     = 0.81)))","plh_comp_id69.txt","3_high",29,"gpt-5.6-terra [effort: medium]","plotNCAData(
+  settings = list(
+    lines = FALSE,
+    dosingTimes = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    xlim = c(-5, 155),
+    xlab = ""TIME"",
+    ylim = c(0.1, 50),
+    ylab = ""Konzentrationi"",
+    ylog = TRUE,
+    ncol = 1,
+    binsSettings = list(
+      criteria = ""equalwidth"",
+      binRange = c(20, 50),
+      nbBinData = c(5, 100)
+    )
+  ),
+  stratify = list(
+    groups = list(
+      list(
+        name = ""TREAT"",
+        definition = list(c(""A""), c(""B""))
+      )
+    ),
+    individualSelection = list(
+      indices = c(1, 2),
+      isRange = TRUE
+    ),
+    split = ""OCCevid"",
+    color = ""TREAT"",
+    colors = c(""#E5920B"", ""#5A0EC0""),
+    filter = list(""SEX"", c(2))
+  ),
+  preferences = list(
+    obs = list(
+      radius = 1.62,
+      lineWidth = 1.485
+    ),
+    observationStatistics = list(
+      color = ""#980B40"",
+      whiskersWidth = 0.81,
+      lineWidth = 0.81
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+77,"p","continuous","prj10_Remi_infusion_SD.pkx","Observed data","plotObservedData(
+    settings = list(
+      mean        = FALSE,
+      error       = FALSE,
+      binsSettings = list(
+        is.fixedNbBins = TRUE,
+        nbBins         = 20),
+      legend = TRUE,
+      ylog   = TRUE,
+      ylim   = c(-28.612209844277, 245.4),
+      ncol   = 1),
+    stratify = list(
+      groups = list(
+        list(
+          name       = ""AGE"",
+          definition = c(32, 58)),
+        list(
+          name       = ""GROUP"",
+          definition = list(c(""1"", ""2""), c(""3""), c(""4"")))),
+      split  = ""GROUP"",
+      color  = ""AGE"",
+      colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")),
+    preferences = list(
+      obs     = list(radius = 0.54),
+      censObs = list(radius = 0.54)))","plh_comp_id77.txt","2_mid",15,"gpt-5.6-terra [effort: medium]","plotObservedData(
+  settings = list(
+    mean = FALSE,
+    error = FALSE,
+    legend = TRUE,
+    ylog = TRUE,
+    ylim = c(-28.612209844277, 245.4),
+    ncol = 1,
+    binsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins = 20
+    )
+  ),
+  stratify = list(
+    groups = list(
+      list(name = ""AGE"", definition = c(32, 58)),
+      list(
+        name = ""GROUP"",
+        definition = list(c(""1"", ""2""), c(""3""), c(""4"")),
+        colors = c(""#F17CB0"", ""#B2912F"", ""#B276B2"")
+      )
+    ),
+    individualSelection = list(indices = c(1, 3), isRange = TRUE),
+    split = ""GROUP"",
+    color = ""AGE"",
+    colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")
+  ),
+  preferences = list(
+    obs = list(radius = 0.54),
+    censObs = list(radius = 0.54)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+95,"m","event","prj09_PKrtte.mlxtran","VPC","plotVpc(
+    obsName = ""Hemorrhaging"",
+    settings = list(
+      nbDataPoints = 1000,
+      grid         = FALSE),
+    preferences = list(
+      bandsBase = list(
+        fill    = ""#107D63"",
+        opacity = 0.46),
+      empirical = list(                        
+        color = ""#03735E"")))","plh_comp_id95.txt","1_low",5,"gpt-5.6-terra [effort: medium]","plotVpc(
+  obsName = ""Hemorrhaging"",
+  settings = list(
+    nbDataPoints = 1000,
+    grid = FALSE
+  ),
+  preferences = list(
+    bandsBase = list(
+      fill = ""#107D63"",
+      opacity = 0.46
+    ),
+    empirical = list(
+      color = ""#03715E""
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+100,"m","continuous","prj09_PKrtte.mlxtran","RandomEff distrib","plotStandardizedRandomEffectsDistribution(
+  settings = list(
+    grid = FALSE),
+  preferences = list(
+    boxplot = list(opacity = 0.55),
+    quartile = list(lineWidth = 0.945),
+    baseline = list(lineWidth = 1.215)))","plh_comp_id100.txt","1_low",4,"gpt-5.6-terra [effort: medium]","plotStandardizedRandomEffectsDistribution(
+  settings = list(
+    indivEstimate = ""simulated"",
+    grid = FALSE
+  ),
+  preferences = list(
+    boxplot = list(fill = ""#8FBBD98C""),
+    baseline = list(lineWidth = 1.215),
+    quartile = list(lineWidth = 0.945)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 5"
+6,"m","continuous","prj02_phenobarbital.mlxtran","RandomEff distrib","plotStandardizedRandomEffectsDistribution(
+  settings = list(indivEstimate = ""mode"",  
+                  grid          = FALSE,
+                  ncol          = 2 ),      
+  stratify = list(split = ""WEIGHT""),          
+  preferences = list(boxplot = list(fill    = ""#1C4967"",    
+                                    opacity = 0.64),
+                     boxplotOutlier = list(color = ""#9C0505"",
+                                           size  = 0.54 ),  
+                     quartile       = list(lineWidth = 0.675),
+                     baseline       = list(color     = ""#C44040"",
+                                           lineWidth = 0.54)))","plh_comp_id06.txt","2_mid",11,"claude-opus-5 [effort: low]","plotStandardizedRandomEffectsDistribution(
+  plot = ""boxplot"",
+  settings = list(indivEstimate = ""mode"", grid = FALSE, ncol = 2),
+  stratify = list(split = ""WEIGHT""),
+  preferences = list(
+    boxplot = list(fill = ""#1C4967A3""),
+    boxplotOutlier = list(color = ""#9C0505""),
+    baseline = list(color = ""#C44040"", lineWidth = 0.54),
+    quartile = list(lineWidth = 0.675)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+69,"p","continuous","prj09_iov2.pkx","NCA data","plotNCAData(
+  settings = list(
+    legend      = TRUE,
+    grid        = FALSE,
+    lines       = FALSE,
+    dosingTimes = TRUE,
+    binLimits   = TRUE,
+    ylog        = TRUE,
+    xlab        = ""TIME"",
+    ylab        = ""Konzentrationi"",
+    xlim        = c(-5, 155),
+    ylim        = c(0.1, 50),
+    ncol        = 1,
+    binsSettings = list(
+      criteria  = ""equalwidth"",
+      binRange  = c(20, 50),
+      nbBinData = c(5, 100))),
+  stratify = list(
+    split  = ""OCCevid"",
+    color  = ""TREAT"",
+    colors = c(""#E5920B"", ""#5A0EC0""),
+    filter = list(""SEX"", 2),
+    groups = list(
+      list(
+        name       = ""TREAT"",
+        definition = list(c(""A""), c(""B""))))),
+  preferences = list(
+    binsValues            = list(color = ""#B600FF"", lineWidth = 0.675),
+    obs                   = list(lineWidth = 1.485, radius = 1.62),
+    observationStatistics = list(color = ""#980B40"",
+                                 whiskersWidth = 0.81,
+                                 lineWidth     = 0.81)))","plh_comp_id69.txt","3_high",29,"claude-opus-5 [effort: low]","plotNCAData(
+  settings = list(
+    lines = FALSE,
+    binLimits = TRUE,
+    binsSettings = list(criteria = ""equalwidth"", binRange = c(20, 50), nbBinData = c(5, 100)),
+    dosingTimes = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    xlab = ""TIME"",
+    ylab = ""Konzentrationi"",
+    ylog = TRUE,
+    xlim = c(-5, 155),
+    ylim = c(0.1, 50),
+    ncol = 1
+  ),
+  stratify = list(
+    groups = list(list(name = ""TREAT"", definition = list(c(""A""), c(""B"")))),
+    split = ""OCCevid"",
+    color = ""TREAT"",
+    colors = c(""#E5920B"", ""#5A0EC0""),
+    filter = list(""SEX"", c(2)),
+    individualSelection = list(indices = c(1, 2), isRange = TRUE)
+  ),
+  preferences = list(
+    obs = list(radius = 1.62, lineWidth = 1.485),
+    observationStatistics = list(color = ""#980B40"", whiskersWidth = 0.81, lineWidth = 0.81),
+    binsValues = list(color = ""#B600FF"", lineWidth = 0.675)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+77,"p","continuous","prj10_Remi_infusion_SD.pkx","Observed data","plotObservedData(
+    settings = list(
+      mean        = FALSE,
+      error       = FALSE,
+      binsSettings = list(
+        is.fixedNbBins = TRUE,
+        nbBins         = 20),
+      legend = TRUE,
+      ylog   = TRUE,
+      ylim   = c(-28.612209844277, 245.4),
+      ncol   = 1),
+    stratify = list(
+      groups = list(
+        list(
+          name       = ""AGE"",
+          definition = c(32, 58)),
+        list(
+          name       = ""GROUP"",
+          definition = list(c(""1"", ""2""), c(""3""), c(""4"")))),
+      split  = ""GROUP"",
+      color  = ""AGE"",
+      colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")),
+    preferences = list(
+      obs     = list(radius = 0.54),
+      censObs = list(radius = 0.54)))","plh_comp_id77.txt","2_mid",15,"claude-opus-5 [effort: low]","plotObservedData(
+  settings = list(
+    binsSettings = list(is.fixedNbBins = TRUE, nbBins = 20),
+    mean = FALSE,
+    error = FALSE,
+    legend = TRUE,
+    ylog = TRUE,
+    ylim = c(-28.612209844277, 245.4),
+    ncol = 1
+  ),
+  stratify = list(
+    groups = list(
+      list(name = ""AGE"", definition = c(32, 58)),
+      list(name = ""GROUP"", definition = list(c(""1"", ""2""), c(""3""), c(""4"")), colors = c(""#F17CB0"", ""#B2912F"", ""#B276B2""))
+    ),
+    split = ""GROUP"",
+    color = ""AGE"",
+    colors = c(""#0A518C"", ""#B42020"", ""#1B8C25""),
+    individualSelection = list(indices = c(1, 3), isRange = TRUE)
+  ),
+  preferences = list(
+    obs = list(radius = 0.54),
+    censObs = list(radius = 0.54)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+92,"m","event","prj05_TTE.mlxtran","Observed data","plotObservedData(
+  settings = list(
+    legend = TRUE,
+    grid   = FALSE,
+    ncol   = 2),
+  stratify = list(
+    split = ""celltype_BI_grp"",          
+    individualSelection = list(         
+      indices = c(4, 7, 13, 14, 27, 40, 47, 63, 78, 103, 127),
+      isRange = FALSE)),
+  preferences = list(
+    censEvent = list(radius = 1.35),
+    empirical = list(                   
+      color     = ""#0754948F"",
+      lineWidth = 1.215)))","plh_comp_id92.txt","2_mid",11,"claude-opus-5 [effort: low]","plotObservedData(
+  settings = list(
+    grid = FALSE,
+    legend = TRUE,
+    ncol = 2
+  ),
+  stratify = list(
+    groups = list(
+      list(name = ""celltype_BI_grp"", definition = list(c(""G_adeno_smallcell""), c(""G_large_squamous"")))
+    ),
+    split = ""celltype_BI_grp""
+  ),
+  preferences = list(
+    censEvent = list(radius = 1.35),
+    empirical = list(color = ""#07549490"", lineWidth = 1.215)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+69,"p","continuous","prj09_iov2.pkx","NCA data","plotNCAData(
+  settings = list(
+    legend      = TRUE,
+    grid        = FALSE,
+    lines       = FALSE,
+    dosingTimes = TRUE,
+    binLimits   = TRUE,
+    ylog        = TRUE,
+    xlab        = ""TIME"",
+    ylab        = ""Konzentrationi"",
+    xlim        = c(-5, 155),
+    ylim        = c(0.1, 50),
+    ncol        = 1,
+    binsSettings = list(
+      criteria  = ""equalwidth"",
+      binRange  = c(20, 50),
+      nbBinData = c(5, 100))),
+  stratify = list(
+    split  = ""OCCevid"",
+    color  = ""TREAT"",
+    colors = c(""#E5920B"", ""#5A0EC0""),
+    filter = list(""SEX"", 2),
+    groups = list(
+      list(
+        name       = ""TREAT"",
+        definition = list(c(""A""), c(""B""))))),
+  preferences = list(
+    binsValues            = list(color = ""#B600FF"", lineWidth = 0.675),
+    obs                   = list(lineWidth = 1.485, radius = 1.62),
+    observationStatistics = list(color = ""#980B40"",
+                                 whiskersWidth = 0.81,
+                                 lineWidth     = 0.81)))","plh_comp_id69.txt","3_high",29,"claude-opus-5 [effort: medium]","plotNCAData(
+  settings = list(
+    lines = FALSE,
+    binLimits = TRUE,
+    binsSettings = list(
+      criteria = ""equalwidth"",
+      binRange = c(20, 50),
+      nbBinData = c(5, 100)
+    ),
+    dosingTimes = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    ylog = TRUE,
+    xlab = ""TIME"",
+    ylab = ""Konzentrationi"",
+    xlim = c(-5, 155),
+    ylim = c(0.1, 50),
+    ncol = 1
+  ),
+  stratify = list(
+    groups = list(list(name = ""TREAT"", definition = list(c(""A""), c(""B"")))),
+    split = ""OCCevid"",
+    color = ""TREAT"",
+    colors = c(""#E5920B"", ""#5A0EC0""),
+    filter = list(""SEX"", c(2)),
+    individualSelection = list(indices = c(1, 2), isRange = TRUE)
+  ),
+  preferences = list(
+    obs = list(radius = 1.62, lineWidth = 1.485),
+    observationStatistics = list(color = ""#980B40"", whiskersWidth = 0.81, lineWidth = 0.81),
+    binsValues = list(color = ""#B600FF"", lineWidth = 0.675)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+77,"p","continuous","prj10_Remi_infusion_SD.pkx","Observed data","plotObservedData(
+    settings = list(
+      mean        = FALSE,
+      error       = FALSE,
+      binsSettings = list(
+        is.fixedNbBins = TRUE,
+        nbBins         = 20),
+      legend = TRUE,
+      ylog   = TRUE,
+      ylim   = c(-28.612209844277, 245.4),
+      ncol   = 1),
+    stratify = list(
+      groups = list(
+        list(
+          name       = ""AGE"",
+          definition = c(32, 58)),
+        list(
+          name       = ""GROUP"",
+          definition = list(c(""1"", ""2""), c(""3""), c(""4"")))),
+      split  = ""GROUP"",
+      color  = ""AGE"",
+      colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")),
+    preferences = list(
+      obs     = list(radius = 0.54),
+      censObs = list(radius = 0.54)))","plh_comp_id77.txt","2_mid",15,"claude-opus-5 [effort: medium]","plotObservedData(
+  settings = list(
+    mean = FALSE,
+    error = FALSE,
+    binsSettings = list(is.fixedNbBins = TRUE, nbBins = 20),
+    legend = TRUE,
+    ylog = TRUE,
+    ylim = c(-28.612209844277, 245.4),
+    ncol = 1
+  ),
+  stratify = list(
+    groups = list(
+      list(name = ""AGE"", definition = c(32, 58)),
+      list(name = ""GROUP"", definition = list(c(""1"", ""2""), c(""3""), c(""4"")), colors = c(""#F17CB0"", ""#B2912F"", ""#B276B2""))
+    ),
+    split = ""GROUP"",
+    individualSelection = list(indices = c(1, 3), isRange = TRUE),
+    color = ""AGE"",
+    colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")
+  ),
+  preferences = list(
+    obs = list(radius = 0.54),
+    censObs = list(radius = 0.54)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+92,"m","event","prj05_TTE.mlxtran","Observed data","plotObservedData(
+  settings = list(
+    legend = TRUE,
+    grid   = FALSE,
+    ncol   = 2),
+  stratify = list(
+    split = ""celltype_BI_grp"",          
+    individualSelection = list(         
+      indices = c(4, 7, 13, 14, 27, 40, 47, 63, 78, 103, 127),
+      isRange = FALSE)),
+  preferences = list(
+    censEvent = list(radius = 1.35),
+    empirical = list(                   
+      color     = ""#0754948F"",
+      lineWidth = 1.215)))","plh_comp_id92.txt","2_mid",11,"claude-opus-5 [effort: medium]","plotObservedData(
+  settings = list(
+    grid = FALSE,
+    legend = TRUE,
+    ncol = 2
+  ),
+  stratify = list(
+    groups = list(name = ""celltype_BI_grp"", definition = list(c(""G_adeno_smallcell""), c(""G_large_squamous""))),
+    split = ""celltype_BI_grp"",
+    individualSelection = list(indices = c(4, 7, 13, 14, 27, 40, 47, 63, 78, 103, 127), isRange = FALSE)
+  ),
+  preferences = list(
+    censEvent = list(radius = 1.35),
+    empirical = list(color = ""#075494"", lineWidth = 1.215)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+1,"m","continuous","prj01_warfarinPK.mlxtran","VPC","plotVpc(
+  settings = list(
+    useCorrpred = TRUE,
+    obs         = TRUE,
+    theoretical = TRUE,
+    legend      = TRUE,
+    grid        = FALSE,
+    ylog        = TRUE,
+    xlab        = ""Time"",
+    ylab        = ""(Concentration)"",
+    xlim        = c(0.5, 150),
+    ylim        = c(0.01, 50),
+    ncol        = 2,
+    binLimits = TRUE,
+    xBinsSettings = list(
+      criteria       = ""equalsize"",
+      is.fixedNbBins = TRUE,
+      nbBins         = 20,
+      nbBinData      = c(10, 200))),
+  stratify = list(
+    split  = ""sex"",
+    color  = ""sex"",
+    colors = c(""#04673D"", ""#7D0930"")),
+  preferences = list(
+    binsValues   = list(color = ""#FF7106"", lineWidth = 0.405),
+    empirical    = list(color = ""#5259E5""),
+    obs          = list(color = ""#1554BA"", radius = 1.08),
+    outlierDot   = list(radius = 0.54),
+    piMedian     = list(fill = ""#FF0000"", opacity = 0.4),
+    piPercentile = list(fill = ""#0080FF"", opacity = 0.41),
+    theoretical  = list(color = ""#7B7676"", lineWidth = 0.81)))","plh_comp_id01.txt","3_high",31,"claude-sonnet-5 [effort: low]","plotVpc(
+  settings = list(
+    xBinsSettings = list(
+      criteria = ""equalsize"",
+      is.fixedNbBins = TRUE,
+      nbBins = 20,
+      nbBinData = c(10, 200)
+    ),
+    useCorrpred = TRUE,
+    binLimits = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    obs = TRUE,
+    theoretical = TRUE,
+    xlab = ""Time"",
+    ylab = ""(Concentration)"",
+    ylog = TRUE,
+    xlim = c(0.5, 150),
+    ylim = c(0.01, 50),
+    ncol = 2
+  ),
+  stratify = list(
+    groups = list(
+      list(name = ""sex"", definition = list(c(""0""), c(""1"")))
+    ),
+    split = ""sex"",
+    color = ""sex"",
+    colors = c(""#04673D"", ""#7D0930"")
+  ),
+  preferences = list(
+    binsValues = list(color = ""#FF7106"", lineWidth = 0.405),
+    empirical = list(color = ""#5259E5""),
+    obs = list(color = ""#1554BA"", radius = 1.08),
+    outlierDot = list(radius = 0.54),
+    piMedian = list(fill = ""#FF0000""),
+    piPercentile = list(fill = ""#0080FF""),
+    theoretical = list(color = ""#7B7676"", lineWidth = 0.81)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+5,"m","continuous","prj02_phenobarbital.mlxtran","Individual param distrib","plotParametersDistribution(
+  settings = list(legend = TRUE,
+                  grid   = FALSE,
+                  ncol   = 2),
+  preferences = list(histogramBar = list(
+                       fill        = ""#941735"",   
+                       strokeWidth = 0.54,
+                       opacity     = 0.67),        
+    theoretical = list(color     = ""#594E4E"",     
+                       lineType  = ""dashed"",      
+                       lineWidth = 0.81)),        
+  stratify = list(split = ""tAPGAR""))","plh_comp_id05.txt","2_mid",10,"claude-sonnet-5 [effort: low]","plotParametersDistribution(
+  settings = list(
+    grid = FALSE,
+    legend = TRUE,
+    ncol = 2
+  ),
+  preferences = list(
+    histogramBar = list(fill = ""rgba(148, 23, 53, 0.65)"", strokeWidth = 0.54),
+    theoretical = list(color = ""#594E4E"", lineType = ""dashed"", lineWidth = 0.81)
+  ),
+  stratify = list(
+    groups = list(list(name = ""tAPGAR"", definition = list(c(""High""), c(""Low""), c(""Med"")), colors = c(""#1F43B8"", ""#0A6D12"", ""#E10B2A""))),
+    split = ""tAPGAR""
+  )
+)","EXECUTION_ERROR","N/A","Test Error: Problem while converting geom to grob."
+6,"m","continuous","prj02_phenobarbital.mlxtran","RandomEff distrib","plotStandardizedRandomEffectsDistribution(
+  settings = list(indivEstimate = ""mode"",  
+                  grid          = FALSE,
+                  ncol          = 2 ),      
+  stratify = list(split = ""WEIGHT""),          
+  preferences = list(boxplot = list(fill    = ""#1C4967"",    
+                                    opacity = 0.64),
+                     boxplotOutlier = list(color = ""#9C0505"",
+                                           size  = 0.54 ),  
+                     quartile       = list(lineWidth = 0.675),
+                     baseline       = list(color     = ""#C44040"",
+                                           lineWidth = 0.54)))","plh_comp_id06.txt","2_mid",11,"claude-sonnet-5 [effort: low]","plotStandardizedRandomEffectsDistribution(
+  settings = list(
+    indivEstimate = ""mode"",
+    grid = FALSE,
+    ncol = 2
+  ),
+  stratify = list(
+    split = c(""WEIGHT"")
+  ),
+  preferences = list(
+    boxplot = list(
+      fill = ""#1C4967""
+    ),
+    boxplotOutlier = list(
+      color = ""#9C0505""
+    ),
+    baseline = list(
+      color = ""#C44040"",
+      lineWidth = 0.54
+    ),
+    quartile = list(
+      lineWidth = 0.675
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+9,"m","discrete","prj03_AD_logistic.mlxtran","VPC","plotVpc(
+  settings = list(
+    xBinsSettings = list(
+      criteria = ""equalsize""),         
+    yBinsSettings = list(
+      criteria       = ""equalsize"",
+      is.fixedNbBins = TRUE,      
+      nbBins         = 4,         
+      binRange       = c(1, 10)), 
+    binLimits           = TRUE,   
+    empirical           = TRUE,
+    theoretical         = TRUE,
+    legend              = TRUE,
+    grid                = FALSE,
+    linearInterpolation = FALSE,        
+    ncol                =2),
+  stratify = list(
+    split = ""STDY"",
+    filter = list(list(""STDY"", c(1)))),
+  preferences = list(empirical    = list(color = ""#092A92"", lineWidth = 0.945),  
+                     piPercentile = list(fill  = ""#5A39C6"", opacity = 0.67)))","plh_comp_id09.txt","2_mid",18,"claude-sonnet-5 [effort: low]","plotVpc(
+  settings = list(
+    yBinsSettings = list(
+      criteria = ""equalsize"",
+      is.fixedNbBins = TRUE,
+      nbBins = 4,
+      binRange = c(1, 10)
+    ),
+    xBinsSettings = list(
+      criteria = ""equalsize""
+    ),
+    binLimits = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    linearInterpolation = FALSE,
+    theoretical = TRUE,
+    ncol = 2
+  ),
+  stratify = list(
+    groups = list(
+      list(name = ""STDY"", definition = list(c(""1""), c(""2"")), colors = c(""#B2912F"", ""#B276B2""))
+    ),
+    split = ""STDY"",
+    filter = list(list(""STDY"", c(1)))
+  ),
+  preferences = list(
+    empirical = list(color = ""#092A92"", lineWidth = 0.945),
+    piPercentile = list(fill = ""#5A39C6"")
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+10,"m","discrete","prj03_AD_logistic.mlxtran","VPC","plotVpc(
+  settings = list(
+    xBinsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins         = 5),
+    yBinsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins         = 2,
+      nbBinData      = c(10, 200)),
+    binLimits    = TRUE,  
+    empirical    = TRUE,    
+    theoretical  = TRUE,    
+    outlierAreas = FALSE,   
+    legend       = TRUE,
+    ncol         = 2),      
+  stratify = list(          
+    groups = list(
+      list(name       = ""ARM"",
+           definition = list(c(""0"", ""1""), c(""2"")))),
+    split = ""ARM""),
+  preferences = list(
+    empirical    = list(color = ""#0B528E"", lineWidth = 1.35),
+    piPercentile = list(fill  = ""#0D8E69"", opacity   = 0.52)))","plh_comp_id10.txt","3_high",20,"claude-sonnet-5 [effort: low]","plotVpc(
+  settings = list(
+    outlierAreas = FALSE,
+    binLimits = TRUE,
+    legend = TRUE,
+    theoretical = TRUE,
+    yBinsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins = 2,
+      nbBinData = c(10, 200)
+    ),
+    xBinsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins = 5
+    ),
+    ncol = 1
+  ),
+  stratify = list(
+    groups = list(
+      list(name = ""ARM"", definition = list(c(""0"", ""1""), c(""2"")))
+    ),
+    split = ""ARM""
+  ),
+  preferences = list(
+    empirical = list(color = ""#0B528E"", lineWidth = 1.35),
+    piPercentile = list(fill = ""#0D8E69"")
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+14,"m","continuous","prj04_categoricalPK.mlxtran","VPC","plotVpc(
+    obsName = ""Concentration"",
+    settings = list(
+      xBinsSettings = list(
+        is.fixedNbBins = TRUE,
+        nbBins         = 20),
+      binLimits    = TRUE,
+      empirical    = TRUE,
+      obs          = TRUE,
+      theoretical  = TRUE,
+      useCorrpred  = TRUE,
+      legend       = TRUE,
+      grid         = FALSE,
+      linearInterpolation = FALSE,              
+      ylog         = TRUE,
+      xlab         = ""Time"",
+      ylab         = ""AntiBloodClotting"",
+      ylim         = c(0.1, 25),
+      ncol         = 1),
+    stratify = list(
+      groups = list(
+        list(
+          name       = ""lw70"",
+          definition = c(0.0460653668),
+          colors     = c(""#B2912F"", ""#B276B2"")),
+        list(
+          name       = ""wt"",
+          definition = c(73.3),
+          colors     = c(""#E18146"", ""#1D5B09""))),
+      split  = ""lw70"",
+      color  = ""wt"",
+      colors = c(""#E18146"", ""#1D5B09"")),                  
+    preferences = list(
+      binsValues   = list(color = ""#942828"", lineWidth = 0.54),   
+      empirical    = list(color = ""#103E9A"", lineWidth = 0.945),  
+      obs          = list(color = ""#103E9A"", radius = 1),         
+      theoretical  = list(lineWidth = 0.675),                     
+      piMedian     = list(fill = ""#C4870B"", opacity = 0.62),
+      piPercentile = list(fill = ""#1C7748"", opacity = 0.50),
+      outlierDot   = list(color = ""#942828"")       
+    )
+  )","plh_comp_id14.txt","3_high",39,"claude-sonnet-5 [effort: low]","plotVpc(
+  obsName = ""Concentration"",
+  settings = list(
+    xBinsSettings = list(
+      is.fixedNbBins = TRUE,
+      nbBins = 20
+    ),
+    useCorrpred = TRUE,
+    binLimits = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    obs = TRUE,
+    linearInterpolation = FALSE,
+    theoretical = TRUE,
+    xlab = ""Time"",
+    ylab = ""AntiBloodClotting"",
+    ylog = TRUE,
+    ylim = c(0.1, 25),
+    useCensored = TRUE,
+    ncol = 1
+  ),
+  stratify = list(
+    groups = list(
+      list(name = ""lw70"", definition = c(0.04606536684324683)),
+      list(name = ""wt"", definition = c(73.3))
+    ),
+    split = ""lw70"",
+    color = ""wt"",
+    colors = c(""#E18146"", ""#1D5B09"")
+  ),
+  preferences = list(
+    binsValues = list(color = ""#942828"", lineWidth = 0.54),
+    empirical = list(color = ""#103E9A"", lineWidth = 0.945),
+    obs = list(color = ""#103E9A""),
+    outlierArea = list(fill = ""#BC3131""),
+    outlierDot = list(color = ""#942828""),
+    piMedian = list(fill = ""#C4870B""),
+    piPercentile = list(fill = ""#1C7748""),
+    theoretical = list(lineWidth = 0.675)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 7"
+27,"m","continuous","prj06_IOV.mlxtran","BLQ pred check","plotBlqPredictiveCheck(
+  settings = list(
+    legend = TRUE,
+    grid = FALSE,
+    theoretical  =TRUE),
+  preferences = list(
+    piPercentile = list(
+      fill = ""#004992"",
+      opacity = 0.43)))","plh_comp_id27.txt","1_low",5,"claude-sonnet-5 [effort: low]","plotBlqPredictiveCheck(
+  settings = list(
+    grid = FALSE,
+    legend = TRUE,
+    theoretical = TRUE
+  ),
+  preferences = list(
+    piPercentile = list(fill = ""#004992"")
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 5"
+34,"m","continuous","prj06_IOV.mlxtran","VPC","plotVpc(
+  settings = list(
+    legend        = TRUE,
+    grid          = FALSE,
+    obs           = TRUE,
+    theoretical   = TRUE,
+    ylog          = TRUE,
+    xlab          = ""Zeit"",
+    xlim          = c(-1, 10),
+    ylab          = ""Konzentration"",
+    ylim          = c(1, 150),
+    level            = 85,
+    higherPercentile = 95,
+    cens          = TRUE,
+    censoring     = ""loq"",
+    useCorrpred   = TRUE,
+    binLimits = TRUE,
+    xBinsSettings = list(           
+      criteria      = ""equalwidth"", 
+      nbBins        = 12,           
+      is.fixedNbBins = TRUE,        
+      nbBinData     = c(1, 5)),
+    ncol=1),
+  stratify = list(
+    split = ""DIET"",
+    color = ""id"",
+    colors = c(
+      ""#0E13AE"", ""#52A371"", ""#CFA06B"", ""#9c9ede"", ""#637939"",
+      ""#E78D28"", ""#CF6BB7"", ""#9018D9"", ""#11CCD7"", ""#101010"",
+      ""#e7ba52"", ""#E7F313"", ""#960E08"", ""#75F56F"")),
+  preferences = list(
+    empirical    = list(color  = ""#1C4669"", lineWidth = 0.81),
+    obs          = list(radius = 1.08),
+    piMedian     = list(fill   = ""#FF0000"", opacity = 0.62),
+    piPercentile = list(fill   = ""#0080FF"", opacity = 0.68)))","plh_comp_id34.txt","3_high",29,"claude-sonnet-5 [effort: low]","plotVpc(
+  settings = list(
+    binLimits = TRUE,
+    xBinsSettings = list(
+      criteria = ""equalwidth"",
+      nbBins = 12,
+      is.fixedNbBins = TRUE,
+      nbBinData = c(1, 5)
+    ),
+    level = 85,
+    higherPercentile = 95,
+    useCorrpred = TRUE,
+    useCensored = TRUE,
+    censoring = ""loq"",
+    grid = FALSE,
+    legend = TRUE,
+    obs = TRUE,
+    theoretical = TRUE,
+    xlab = ""Zeit"",
+    ylab = ""Konzentration"",
+    ylog = TRUE,
+    xlim = c(-1, 10),
+    ylim = c(1, 150),
+    ncol = 1
+  ),
+  stratify = list(
+    groups = list(
+      list(name = ""DIET"", definition = list(c(""noGuar""), c(""withGuar"")), colors = c(""#C665C6"", ""#E59C3A""))
+    ),
+    split = ""DIET"",
+    color = ""id"",
+    colors = c(""#0E13AE"", ""#52A371"", ""#CFA06B"", ""#9c9ede"", ""#637939"", ""#E78D28"",
+               ""#CF6BB7"", ""#9018D9"", ""#11CCD7"", ""#101010"", ""#e7ba52"", ""#E7F313"",
+               ""#960E08"", ""#75F56F"")
+  ),
+  preferences = list(
+    empirical = list(color = ""#1C4669"", lineWidth = 0.81),
+    obs = list(radius = 1.08),
+    censObs = list(radius = 1.08),
+    piMedian = list(fill = ""rgba(255, 0, 0, 0.62)""),
+    piPercentile = list(fill = ""rgba(0, 128, 255, 0.68)"")
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+38,"p","continuous","prj07_aPCSK9_SAD.pkx","Individual fits","plotCAIndividualFits(
+  settings = list(
+    obsLines    = TRUE,
+    dosingTimes = TRUE,
+    cens        = FALSE,
+    units       = TRUE,
+    legend      = TRUE,
+    grid        = FALSE,
+    xlab        = ""Time (#FAFAFF)"",
+    ylab        = ""Raviolizumab"",
+    ylim        = c(0.01, 50),
+    ncol        = 3),
+  stratify = list(
+    individualSelection = list(indices = c(1, 9), isRange = TRUE), 
+    color  = ""DOSE_mg"",
+    colors = c(""#162CB4"", ""#E3A50D"", ""#CA148E""),
+    filter = list(list(""DOSE_mg"", c(1, 2)))),
+  preferences = list(
+    dosingTimes = list(color = ""#8C1D1D"", lineWidth = 0.945),  
+    indivFits   = list(color = ""#046529"", lineWidth = 0.81),   
+    obs         = list(radius = 1.35)))","plh_comp_id38.txt","2_mid",19,"claude-sonnet-5 [effort: low]","plotCAIndividualFits(
+  settings = list(
+    obsLines = TRUE,
+    cens = FALSE,
+    dosingTimes = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    xlab = ""Time (#FAFAFF)"",
+    ylab = ""Raviolizumab"",
+    ylim = c(0.01, 50),
+    ncol = 3
+  ),
+  stratify = list(
+    color = ""DOSE_mg"",
+    colors = c(""#162CB4"", ""#E3A50D"", ""#CA148E""),
+    filter = list(""DOSE_mg"", c(1, 2)),
+    individualSelection = list(indices = c(1, 9), isRange = TRUE)
+  ),
+  preferences = list(
+    dosingTimes = list(color = ""#8C1D1D"", lineWidth = 0.945),
+    indivFits = list(color = ""#046529"", lineWidth = 0.81, lineType = ""solid""),
+    obs = list(radius = 1.35)
+  ),
+  settings = list(ncol = 3)
+)","EXECUTION_ERROR","N/A","Test Error: formal argument ""settings"" matched by multiple actual arguments"
+47,"m","continuous","prj07_TMDD_QE.mlxtran","Observed data","plotObservedData(
+  obsName = ""y1_totDrug"",
+  settings = list(
+    legend      = TRUE,
+    grid        = FALSE,
+    mean        = TRUE,      
+    error       = TRUE,      
+    dosingTimes = TRUE,
+    ylog        = TRUE,
+    ylim        = c(0.1, 772.07),
+    ncol        = 1),
+  stratify = list(
+    split  = ""DOSE"",
+    color  = ""DOSE"",
+    colors = c(""#4682B4"", ""#4D4D4D"", ""#60BD68"")),
+  preferences = list(
+    obs                   = list(lineWidth = 1.35, radius = 1.35),
+    censObs               = list(color = ""#FB9E06"", radius = 1.35),
+    dosingTimes           = list(color = ""#FF00DB"", lineWidth = 1.215),
+    observationStatistics = list(color = ""#E71313"", whiskersWidth = 1.215, lineType = ""dashed"", lineWidth = 1.215)))","plh_comp_id47.txt","3_high",21,"claude-sonnet-5 [effort: low]","plotObservedData(
+  obsName = ""y1_totDrug"",
+  settings = list(
+    dosingTimes = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    mean = TRUE,
+    error = TRUE,
+    ylog = TRUE,
+    ylim = c(0.1, 772.07),
+    ncol = 1
+  ),
+  stratify = list(
+    split = ""DOSE"",
+    color = ""DOSE"",
+    colors = c(""#4682B4"", ""#4D4D4D"", ""#60BD68"")
+  ),
+  preferences = list(
+    censObs = list(color = ""#FB9E06""),
+    dosingTimes = list(color = ""#FF00DB"", lineWidth = 1.215),
+    obs = list(lineWidth = 1.35, radius = 1.35),
+    observationStatistics = list(color = ""#E71313"", lineType = ""dashed"", lineWidth = 1.215, whiskersWidth = 1.215)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 7"
+53,"m","continuous","prj08_iov2.mlxtran","RandomEff distrib","plotStandardizedRandomEffectsDistribution(
+    settings = list(
+      grid             = FALSE,
+      variabilityLevel = ""ID"",
+      ncol             = 2),
+    stratify = list(
+      split  = ""TREAT"",
+      filter = list(""SEX"", 1)),
+    preferences = list(
+      boxplot = list(
+        fill    = ""#6B14E1"",
+        opacity = 0.38),
+      boxplotOutlier = list(
+        size = 4.32),
+      quartile = list(          
+        color     = ""#0B36EB"",  
+        lineWidth = 1.215),
+      baseline = list(          
+        color     = ""#8C0B0B"",  
+        lineWidth = 0.945)))","plh_comp_id53.txt","2_mid",12,"claude-sonnet-5 [effort: low]","plotStandardizedRandomEffectsDistribution(
+  settings = list(
+    variabilityLevel = ""id"",
+    indivEstimate = ""simulated"",
+    grid = FALSE
+  ),
+  preferences = list(
+    boxplot = list(fill = ""rgba(107, 20, 225, 0.38)""),
+    boxplotOutlier = list(size = 16, strokeWidth = 0.54),
+    baseline = list(color = ""rgb(140, 11, 11)"", lineWidth = 0.945),
+    quartile = list(color = ""rgba(11, 54, 235, 0.9)"", lineWidth = 1.215)
+  ),
+  stratify = list(
+    groups = list(list(name = ""TREAT"", definition = list(c(""A""), c(""B"")))),
+    split = c(""TREAT""),
+    filter = list(""SEX"", c(1))
+  ),
+  settings = list(ncol = 2)
+)","EXECUTION_ERROR","N/A","Test Error: formal argument ""settings"" matched by multiple actual arguments"
+54,"m","continuous","prj08_iov2.mlxtran","RandomEff distrib","plotStandardizedRandomEffectsDistribution(
+    plot = ""cdf"",
+    settings = list(
+      variabilityLevel = ""OCCevid"",
+      empirical        = TRUE,    
+      theoretical      = TRUE,
+      legend           = TRUE,
+      grid             = FALSE,
+      ncol             = 1),
+    stratify = list(
+      groups = list(
+        list(name       = ""TREAT"",
+             definition = list(c(""A""), c(""B"")))),
+      split  = ""SEX"",                       
+      filter = list(""TREAT"", 1)),
+    preferences = list(
+      empirical   = list(     
+        color     = ""#452FA4"",
+        lineWidth = 1.62),    
+      theoretical = list(
+        lineType  = ""dashed"", 
+        lineWidth = 1.08)))","plh_comp_id54.txt","2_mid",15,"claude-sonnet-5 [effort: low]","plotStandardizedRandomEffectsDistribution(
+  plot = ""cdf"",
+  settings = list(
+    variabilityLevel = ""id"",
+    grid = FALSE,
+    legend = TRUE
+  ),
+  stratify = list(
+    groups = list(list(name = ""TREAT"", definition = list(c(""A""), c(""B"")))),
+    split = ""SEX"",
+    filter = list(""TREAT"", c(1))
+  ),
+  preferences = list(
+    boxplot = list(
+      fill = ""#6B14E1""
+    ),
+    baseline = list(
+      color = ""#8C0B0B"",
+      lineWidth = 0.945
+    ),
+    quartile = list(
+      color = ""#0B36EB"",
+      lineWidth = 1.215
+    ),
+    empirical = list(
+      color = ""#452FA4"",
+      lineWidth = 1.62
+    ),
+    theoretical = list(
+      lineWidth = 1.08,
+      lineType = ""dashed""
+    )
+  ),
+  settings = list(ncol = 1)
+)","EXECUTION_ERROR","N/A","Test Error: formal argument ""settings"" matched by multiple actual arguments"
+58,"m","continuous","prj08_iov2.mlxtran","Param vs Covs","plotParametersVsCovariates(
+    settings = list(
+      indivEstimate = ""mode"",   
+      boxplotData   = ""spread"", 
+      regressionLine = FALSE,   
+      ncol          = 2),
+    stratify = list(
+      split  = ""OCCevid"",
+      color  = ""SEX"",
+      colors = c(""#3D7B63"", ""#E33281""),
+      filter = list(""SEX"", 1)),
+    preferences = list(
+      boxplot = list(                       
+        fill    = ""#2E9196"",                
+        opacity = 0.56),
+      boxplotOutlier = list(                
+        color = ""#A00808"",
+        size  = 3.51),                 
+      boxplotValues = list(
+        color  = ""#1542B2"",
+        radius = 1.62,
+        opacity= 0.67)))","plh_comp_id58.txt","2_mid",15,"claude-sonnet-5 [effort: low]","plotParametersVsCovariates(
+  settings = list(
+    indivEstimate = ""mode"",
+    boxplotData = ""spread"",
+    regressionLine = FALSE
+  ),
+  stratify = list(
+    filter = list(""SEX"", c(1)),
+    split = ""OCCevid"",
+    color = ""SEX"",
+    colors = c(""#3D7B63"", ""#E33281"")
+  ),
+  preferences = list(
+    boxplot = list(fill = ""rgba(46, 145, 150, 0.56)""),
+    boxplotOutlier = list(color = ""rgb(160, 8, 8)"", size = 3.51),
+    boxplotValues = list(color = ""rgba(21, 66, 178, 0.67)"", radius = 1.62),
+    regressionLine = list(lineWidth = 1.485)
+  ),
+  settings = list(ncol = 2)
+)","EXECUTION_ERROR","N/A","Test Error: formal argument ""settings"" matched by multiple actual arguments"
+59,"m","continuous","prj08_iov2.mlxtran","VPC","plotVpc(
+  settings = list(
+    level             = 80,
+    higherPercentile  = 95,
+    timeAfterLastDose = TRUE,
+    useCorrpred       = TRUE,
+    xBinsSettings     = list(
+      binRange  = c(15, 40),
+      nbBinData = c(20, 50)),
+    binLimits          = TRUE,
+    empirical          = TRUE,
+    obs                = TRUE,
+    theoretical        = TRUE,
+    legend             = TRUE,
+    grid               = FALSE,
+    linearInterpolation = FALSE,
+    ylog               = TRUE,
+    xlab               = ""Time"",
+    ylab               = ""Concentration"",
+    xlim               = c(0, 25),
+    ylim               = c(0.1, 20),
+    ncol               = 2),
+  stratify = list(
+    split  = ""OCCevid"",
+    color  = ""TREAT"",
+    colors = c(""#1F9658"", ""#084392""),
+    filter = list(""SEX"", 1)),
+  preferences = list(
+    binsValues   = list(color = ""#E98B0D"", lineWidth = 1.08),
+    empirical    = list(color = ""#084D88"", lineWidth = 1.215, lineType = ""dashed""),
+    obs          = list(radius = 1.62),
+    outlierDot   = list(color = ""#B00808"", radius = 0.54),
+    outlierArea  = list(fill = ""#A60B0B""),
+    piMedian     = list(fill = ""#A40707"", opacity = 0.51),
+    piPercentile = list(fill = ""#085BAE"", opacity = 0.48),
+    theoretical  = list(color = ""#3B3838"", lineWidth = 1.08, lineType = ""solid"")))","plh_comp_id59.txt","3_high",39,"claude-sonnet-5 [effort: low]","plotVpc(
+  settings = list(
+    level = 80,
+    higherPercentile = 95,
+    timeAfterLastDose = TRUE,
+    useCorrpred = TRUE,
+    useCensored = TRUE,
+    binLimits = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    obs = TRUE,
+    linearInterpolation = FALSE,
+    theoretical = TRUE,
+    xlim = c(0, 25),
+    ylim = c(0.1, 20),
+    xlab = ""Time"",
+    ylab = ""Concentration"",
+    ylog = TRUE,
+    ncol = 2,
+    xBinsSettings = list(
+      binRange = c(15, 40),
+      nbBinData = c(20, 50)
+    )
+  ),
+  stratify = list(
+    groups = list(
+      list(name = ""SEX"", definition = list(c(""F""), c(""M""))),
+      list(name = ""TREAT"", definition = list(c(""A""), c(""B"")), colors = c(""#1F9658"", ""#084392""))
+    ),
+    split = ""OCCevid"",
+    color = ""TREAT"",
+    colors = c(""#1F9658"", ""#084392""),
+    filter = list(""SEX"", 1)
+  ),
+  preferences = list(
+    binsValues = list(color = ""#E98B0D"", lineWidth = 1.08),
+    empirical = list(color = ""#084D88"", lineWidth = 1.215, lineType = ""dashed""),
+    obs = list(radius = 1.62),
+    censObs = list(radius = 1.62),
+    outlierArea = list(fill = ""#A60B0B""),
+    outlierDot = list(color = ""#B00808"", radius = 0.54),
+    piMedian = list(fill = ""#A40707""),
+    piPercentile = list(fill = ""#085BAE""),
+    theoretical = list(color = ""#3B3838"", lineWidth = 1.08, lineType = ""solid"")
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+61,"m","continuous","prj08_iov2.mlxtran","Residual scatter","plotResidualsScatterPlot(
+    xaxis      = ""prediction"",
+    residuals = c(""indiv"",
+                  ""pop"",  
+                  ""npde""),
+    settings = list(
+      binsSettings = list(            
+        criteria       = ""equalwidth"",
+        nbBins         = 15,
+        is.fixedNbBins = TRUE,
+        nbBinData      = c(10, 100)),
+      binLimits       = TRUE, 
+      empPercentiles  = TRUE, 
+      predPercentiles = TRUE, 
+      predInterval    = TRUE, 
+      spline          = TRUE,
+      outlierDots     = TRUE,
+      legend          = TRUE,
+      grid            = FALSE,
+      xlog            = TRUE),
+    stratify = list(
+      split  = ""SEX"",
+      color  = ""TREAT"",
+      colors = c(""#F39C0F"", ""#028E0F""),
+      filter = list(""SEX"", 1)),
+    preferences = list(
+      binsValues = list(
+        color     = ""#1A1111"",
+        lineWidth = 0.675),
+      empirical = list(
+        color     = ""#064C86"",
+        lineWidth = 1.215,  
+        lineType  = ""dashed""),
+      obs = list(
+        color   = ""#4682B4"",
+        radius  = 2.43),
+      censObs = list(       
+        radius = 2.43),
+      outlierArea = list(
+        fill = ""#B00B0B""),
+      outlierDot = list(
+        color = ""#B00707""),
+      piMedian = list(
+        fill    = ""#9C1B1B"",
+        opacity = 0.57),
+      piPercentile = list(
+        fill    = ""#3E06B0"",
+        opacity = 0.52),
+      spline = list(
+        color     = ""#DD5F00"",
+        lineWidth = 1.215)))","plh_comp_id61.txt","3_high",35,"claude-sonnet-5 [effort: low]","plotResidualsScatterPlot(
+  residuals = c(""indiv"", ""pop"", ""npde""),
+  settings = list(
+    empPercentiles = TRUE,
+    predPercentiles = TRUE,
+    predInterval = TRUE,
+    outlierDots = TRUE,
+    spline = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    xlog = TRUE,
+    binLimits = TRUE,
+    ncol = 3,
+    binsSettings = list(
+      criteria = ""equalwidth"",
+      is.fixedNbBins = TRUE,
+      nbBins = 15,
+      nbBinData = c(10, 100)
+    )
+  ),
+  preferences = list(
+    obs = list(color = ""rgba(70, 130, 180, 0.48)"", radius = 2.43),
+    censObs = list(radius = 2.43),
+    spline = list(color = ""rgb(221, 95, 0)"", lineWidth = 1.215),
+    empirical = list(color = ""rgb(6, 76, 134)"", lineWidth = 1.215, lineType = ""dashed""),
+    piMedian = list(fill = ""rgba(156, 27, 27, 0.57)""),
+    piPercentile = list(fill = ""rgba(62, 6, 176, 0.52)""),
+    outlierArea = list(fill = ""rgb(176, 11, 11)""),
+    outlierDot = list(color = ""rgb(176, 7, 7)""),
+    binsValues = list(color = ""rgb(26, 17, 17)"", lineWidth = 0.675)
+  ),
+  stratify = list(
+    filter = list(""SEX"", c(1)),
+    split = ""SEX"",
+    groups = list(list(name = ""TREAT"", definition = list(c(""A""), c(""B"")))),
+    color = ""TREAT"",
+    colors = c(""#F39C0F"", ""#028E0F"")
+  )
+)","EXECUTION_ERROR","N/A","Test Error: Problem while converting geom to grob."
+69,"p","continuous","prj09_iov2.pkx","NCA data","plotNCAData(
+  settings = list(
+    legend      = TRUE,
+    grid        = FALSE,
+    lines       = FALSE,
+    dosingTimes = TRUE,
+    binLimits   = TRUE,
+    ylog        = TRUE,
+    xlab        = ""TIME"",
+    ylab        = ""Konzentrationi"",
+    xlim        = c(-5, 155),
+    ylim        = c(0.1, 50),
+    ncol        = 1,
+    binsSettings = list(
+      criteria  = ""equalwidth"",
+      binRange  = c(20, 50),
+      nbBinData = c(5, 100))),
+  stratify = list(
+    split  = ""OCCevid"",
+    color  = ""TREAT"",
+    colors = c(""#E5920B"", ""#5A0EC0""),
+    filter = list(""SEX"", 2),
+    groups = list(
+      list(
+        name       = ""TREAT"",
+        definition = list(c(""A""), c(""B""))))),
+  preferences = list(
+    binsValues            = list(color = ""#B600FF"", lineWidth = 0.675),
+    obs                   = list(lineWidth = 1.485, radius = 1.62),
+    observationStatistics = list(color = ""#980B40"",
+                                 whiskersWidth = 0.81,
+                                 lineWidth     = 0.81)))","plh_comp_id69.txt","3_high",29,"claude-sonnet-5 [effort: low]","plotNCAData(
+  settings = list(
+    lines = FALSE,
+    binLimits = TRUE,
+    binsSettings = list(
+      criteria = ""equalwidth"",
+      is.fixedNbBins = FALSE,
+      binRange = c(20, 50),
+      nbBinData = c(5, 100)
+    ),
+    dosingTimes = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    ylog = TRUE,
+    xlab = ""TIME"",
+    ylab = ""Konzentrationi"",
+    xlim = c(-5, 155),
+    ylim = c(0.1, 50),
+    ncol = 1
+  ),
+  stratify = list(
+    individualSelection = list(indices = c(1, 2), isRange = TRUE),
+    split = ""OCCevid"",
+    color = ""TREAT"",
+    colors = c(""#E5920B"", ""#5A0EC0""),
+    filter = list(""SEX"", c(2))
+  ),
+  preferences = list(
+    obs = list(
+      lineWidth = 1.485,
+      radius = 1.62
+    ),
+    observationStatistics = list(
+      color = ""#980B40"",
+      lineWidth = 0.81
+    ),
+    binsValues = list(
+      color = ""#B600FF"",
+      lineWidth = 0.675
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+75,"p","continuous","prj10_Remi_infusion_SD.pkx","Obs vs Pred","plotCAObservationsVsPredictions(
+  settings = list(
+    legend = TRUE,
+    grid   = FALSE,
+    xlog   = TRUE,
+    ylog   = TRUE,
+    ncol   = 3),
+  stratify = list(
+    groups = list(
+      list(                           
+        name       = ""AGE"",
+        definition = c(32, 58)),
+      list(                           
+        name       = ""TINFCAT"",
+        definition = c(8, 11)),
+      list(                           
+        name       = ""GROUP"",
+        definition = list(c(""1"", ""2""), c(""3""), c(""4"")))),
+    split  = ""GROUP"",                 
+    color  = ""AGE"",                   
+    colors = c(""#0A518C"", ""#B42020"", ""#1B8C25""),
+    filter = list(""TINFCAT"", 2)),
+  preferences = list(
+    obs     = list(radius = 1.62),
+    censObs = list(radius = 1.62),
+    identityLine = list(color = ""#EB9F0A"", lineWidth = 1.08)))","plh_comp_id75.txt","2_mid",14,"claude-sonnet-5 [effort: low]","plotCAObservationsVsPredictions(
+  settings = list(
+    grid = FALSE,
+    legend = TRUE,
+    xlog = TRUE,
+    ylog = TRUE,
+    ncol = 3
+  ),
+  preferences = list(
+    obs = list(radius = 1.62),
+    censObs = list(radius = 1.62),
+    identityLine = list(color = ""#EB9F0A"", lineWidth = 1.08)
+  ),
+  stratify = list(
+    groups = list(
+      list(name = ""TINFCAT"", definition = c(8, 11)),
+      list(name = ""GROUP"", definition = list(c(""1"", ""2""), c(""3""), c(""4"")), colors = c(""#F17CB0"", ""#B2912F"", ""#B276B2""))
+    ),
+    individualSelection = list(indices = c(1, 3), isRange = TRUE),
+    split = ""GROUP"",
+    color = ""AGE"",
+    colors = c(""#0A518C"", ""#B42020"", ""#1B8C25""),
+    filter = list(""TINFCAT"", c(2))
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+76,"p","continuous","prj10_Remi_infusion_SD.pkx","Covariates","plotCovariates(
+    settings = list(
+      legend          = TRUE,
+      grid            = FALSE,
+      histogramColors = c(
+        ""#1F77B4"", ""#FF7F0E"", ""#2CA02C"", ""#D62728"", ""#9467BD"",
+        ""#8C564B"", ""#E377C2"", ""#7F7F7F"", ""#BCBD22"", ""#17BECF"")),
+    stratify = list(
+      groups = list(
+        list(
+          name       = ""AGE"",
+          definition = c(32, 58))),
+      color  = ""AGE"",
+      colors = c(""#0A518C"", ""#B42020"", ""#1B8C25""),
+      filter = list(""AGE"", c(2, 1))),
+    preferences = list(
+      boxplot = list(
+        fill      = ""#1036D6"",  
+        opacity   = 0.48),
+      histogramBar = list(
+        fill      = ""#068AF7"",   
+        opacity   = 0.56,
+        strokeWidth = 0.54),
+      obs = list(
+        color     = ""#390CAA"",
+        radius    = 1.62),
+      regressionLine = list(
+        color     = ""#BD2671"",
+        lineWidth = 1.08)))","plh_comp_id76.txt","2_mid",16,"claude-sonnet-5 [effort: low]","plotCovariates(
+  settings = list(
+    grid = FALSE,
+    legend = TRUE,
+    histogramColors = c(""#1f77b4"", ""rgb(255, 127, 14)"", ""rgb(44, 160, 44)"", ""rgb(214, 39, 40)"", ""rgb(148, 103, 189)"", ""rgb(140, 86, 75)"", ""rgb(227, 119, 194)"", ""rgb(127, 127, 127)"", ""rgb(188, 189, 34)"", ""rgb(23, 190, 207)"")
+  ),
+  stratify = list(
+    filter = list(""AGE"", c(2, 1)),
+    groups = list(name = ""AGE"", definition = c(32, 58))
+  ),
+  preferences = list(
+    boxplot = list(fill = ""#1036D6""),
+    histogramBar = list(fill = ""#068AF7""),
+    obs = list(color = ""#390CAA"", radius = 1.62),
+    regressionLine = list(color = ""#BD2671"", lineWidth = 1.08)
+  )
+)","EXECUTION_ERROR","N/A","Test Error: Problem while converting geom to grob."
+77,"p","continuous","prj10_Remi_infusion_SD.pkx","Observed data","plotObservedData(
+    settings = list(
+      mean        = FALSE,
+      error       = FALSE,
+      binsSettings = list(
+        is.fixedNbBins = TRUE,
+        nbBins         = 20),
+      legend = TRUE,
+      ylog   = TRUE,
+      ylim   = c(-28.612209844277, 245.4),
+      ncol   = 1),
+    stratify = list(
+      groups = list(
+        list(
+          name       = ""AGE"",
+          definition = c(32, 58)),
+        list(
+          name       = ""GROUP"",
+          definition = list(c(""1"", ""2""), c(""3""), c(""4"")))),
+      split  = ""GROUP"",
+      color  = ""AGE"",
+      colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")),
+    preferences = list(
+      obs     = list(radius = 0.54),
+      censObs = list(radius = 0.54)))","plh_comp_id77.txt","2_mid",15,"claude-sonnet-5 [effort: low]","plotObservedData(
+  settings = list(
+    mean = FALSE,
+    error = FALSE,
+    binsSettings = list(is.fixedNbBins = TRUE, nbBins = 20),
+    legend = TRUE,
+    ylog = TRUE,
+    ylim = c(-28.612209844277, 245.4)
+  ),
+  stratify = list(
+    groups = list(
+      list(name = ""AGE"", definition = c(32, 58)),
+      list(name = ""GROUP"", definition = list(c(""1"", ""2""), c(""3""), c(""4"")), colors = c(""#F17CB0"", ""#B2912F"", ""#B276B2""))
+    ),
+    individualSelection = list(indices = c(1, 3), isRange = TRUE),
+    split = ""GROUP"",
+    color = ""AGE"",
+    colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")
+  ),
+  settings = list(ncol = 1),
+  preferences = list(
+    obs = list(radius = 0.54),
+    censObs = list(radius = 0.54)
+  )
+)","EXECUTION_ERROR","N/A","Test Error: formal argument ""settings"" matched by multiple actual arguments"
+92,"m","event","prj05_TTE.mlxtran","Observed data","plotObservedData(
+  settings = list(
+    legend = TRUE,
+    grid   = FALSE,
+    ncol   = 2),
+  stratify = list(
+    split = ""celltype_BI_grp"",          
+    individualSelection = list(         
+      indices = c(4, 7, 13, 14, 27, 40, 47, 63, 78, 103, 127),
+      isRange = FALSE)),
+  preferences = list(
+    censEvent = list(radius = 1.35),
+    empirical = list(                   
+      color     = ""#0754948F"",
+      lineWidth = 1.215)))","plh_comp_id92.txt","2_mid",11,"claude-sonnet-5 [effort: low]","plotObservedData(
+  settings = list(
+    grid = FALSE,
+    legend = TRUE,
+    ncol = 2
+  ),
+  stratify = list(
+    groups = list(list(name = ""celltype_BI_grp"", definition = list(c(""G_adeno_smallcell""), c(""G_large_squamous"")))),
+    split = ""celltype_BI_grp"",
+    individualSelection = list(indices = c(4, 7, 13, 14, 27, 40, 47, 63, 78, 103, 127), isRange = FALSE)
+  ),
+  preferences = list(
+    censEvent = list(radius = 1.35),
+    empirical = list(color = ""#075494"", lineWidth = 1.215)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+3,"m","continuous","prj01_warfarinPK.mlxtran","Individual fits","plotIndividualFits(
+  settings = list(indivEstimate = ""mean"",          # from chosenPhiType = phimean
+                  popFits       = TRUE,
+                  popCov        = TRUE,
+                  predMedian    = TRUE,            # placeholder piMedian
+                  predInterval  = TRUE,            # placeholder piPercentile
+                  legend        = TRUE,
+                  grid          = FALSE,
+                  xlab          = ""Zeit"",
+                  ylab          = ""Anti-Jam mg/mL"",
+                  ylog          = TRUE,
+                  ylim          = c(0.05, 30),
+                  ncol          = 3),              # mainLayout cols
+  stratify = list(groups = list(list(name       = ""sex"",
+                                     definition = list(c(""0""), c(""1"")))),
+                  color               = ""sex"",
+                  colors              = c(""#04673D"", ""#7D0930""),
+                  individualSelection = list(indices = c(1, 6), isRange = TRUE)),
+  preferences = list(
+    indivFits  = list(lineWidth = 0.81,  color    = ""#10259E""),
+    popFits    = list(lineWidth = 0.675),
+    popCov     = list(lineWidth = 0.675),
+    predMedian = list(lineWidth = 0.945,  lineType = ""dashed""),
+    obs        = list(radius    = 1.35)))","plh_comp_id03.txt","3_high",25,"claude-sonnet-5 [effort: medium]","plotIndividualFits(
+  settings = list(
+    grid = FALSE,
+    legend = TRUE,
+    predMedian = TRUE,
+    predInterval = TRUE,
+    popFits = TRUE,
+    popCov = TRUE,
+    xlab = ""Zeit"",
+    ylab = ""Anti-Jam mg/mL"",
+    ylog = TRUE,
+    ylim = c(0.05, 30),
+    ncol = 3
+  ),
+  stratify = list(
+    individualSelection = list(indices = c(1, 6), isRange = TRUE),
+    groups = list(list(name = ""sex"", definition = list(c(""0""), c(""1"")))),
+    color = ""sex"",
+    colors = c(""#04673D"", ""#7D0930"")
+  ),
+  preferences = list(
+    obs = list(radius = 1.35),
+    censObsIntervals = list(radius = 1.35),
+    indivFits = list(color = ""#10259E"", lineWidth = 0.81),
+    popFits = list(lineWidth = 0.675),
+    popCov = list(lineWidth = 0.675),
+    predMedian = list(lineWidth = 0.945, lineType = ""dashed"")
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+5,"m","continuous","prj02_phenobarbital.mlxtran","Individual param distrib","plotParametersDistribution(
+  settings = list(legend = TRUE,
+                  grid   = FALSE,
+                  ncol   = 2),
+  preferences = list(histogramBar = list(
+                       fill        = ""#941735"",   
+                       strokeWidth = 0.54,
+                       opacity     = 0.67),        
+    theoretical = list(color     = ""#594E4E"",     
+                       lineType  = ""dashed"",      
+                       lineWidth = 0.81)),        
+  stratify = list(split = ""tAPGAR""))","plh_comp_id05.txt","2_mid",10,"claude-sonnet-5 [effort: medium]","plotParametersDistribution(
+  settings = list(
+    grid = FALSE,
+    legend = TRUE,
+    ncol = 2
+  ),
+  stratify = list(
+    groups = list(list(name = ""tAPGAR"", definition = list(c(""High""), c(""Low""), c(""Med"")))),
+    split = ""tAPGAR""
+  ),
+  preferences = list(
+    histogramBar = list(fill = ""rgba(148, 23, 53, 0.65)"", strokeWidth = 0.54),
+    theoretical = list(color = ""#594E4E"", lineType = ""dashed"", lineWidth = 0.81)
+  )
+)","EXECUTION_ERROR","N/A","Test Error: Problem while converting geom to grob."
+6,"m","continuous","prj02_phenobarbital.mlxtran","RandomEff distrib","plotStandardizedRandomEffectsDistribution(
+  settings = list(indivEstimate = ""mode"",  
+                  grid          = FALSE,
+                  ncol          = 2 ),      
+  stratify = list(split = ""WEIGHT""),          
+  preferences = list(boxplot = list(fill    = ""#1C4967"",    
+                                    opacity = 0.64),
+                     boxplotOutlier = list(color = ""#9C0505"",
+                                           size  = 0.54 ),  
+                     quartile       = list(lineWidth = 0.675),
+                     baseline       = list(color     = ""#C44040"",
+                                           lineWidth = 0.54)))","plh_comp_id06.txt","2_mid",11,"claude-sonnet-5 [effort: medium]","plotStandardizedRandomEffectsDistribution(
+  settings = list(
+    indivEstimate = ""mode"",
+    grid = FALSE
+  ),
+  stratify = list(
+    split = ""WEIGHT""
+  ),
+  preferences = list(
+    boxplot = list(fill = ""#1C4967""),
+    boxplotOutlier = list(color = ""#9C0505"", size = 0.54),
+    baseline = list(color = ""#C44040"", lineWidth = 0.54),
+    quartile = list(lineWidth = 0.675)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+9,"m","discrete","prj03_AD_logistic.mlxtran","VPC","plotVpc(
+  settings = list(
+    xBinsSettings = list(
+      criteria = ""equalsize""),         
+    yBinsSettings = list(
+      criteria       = ""equalsize"",
+      is.fixedNbBins = TRUE,      
+      nbBins         = 4,         
+      binRange       = c(1, 10)), 
+    binLimits           = TRUE,   
+    empirical           = TRUE,
+    theoretical         = TRUE,
+    legend              = TRUE,
+    grid                = FALSE,
+    linearInterpolation = FALSE,        
+    ncol                =2),
+  stratify = list(
+    split = ""STDY"",
+    filter = list(list(""STDY"", c(1)))),
+  preferences = list(empirical    = list(color = ""#092A92"", lineWidth = 0.945),  
+                     piPercentile = list(fill  = ""#5A39C6"", opacity = 0.67)))","plh_comp_id09.txt","2_mid",18,"claude-sonnet-5 [effort: medium]","plotVpc(
+  settings = list(
+    theoretical = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    linearInterpolation = FALSE,
+    binLimits = TRUE,
+    xBinsSettings = list(
+      criteria = ""equalsize""
+    ),
+    yBinsSettings = list(
+      criteria = ""equalsize"",
+      is.fixedNbBins = TRUE,
+      nbBins = 4,
+      binRange = c(1, 10)
+    ),
+    ncol = 2
+  ),
+  stratify = list(
+    groups = list(
+      list(name = ""STDY"", definition = list(c(""1""), c(""2"")), colors = c(""#B2912F"", ""#B276B2""))
+    ),
+    split = ""STDY"",
+    filter = list(list(""STDY"", c(1)))
+  ),
+  preferences = list(
+    empirical = list(
+      color = ""#092A92"",
+      lineWidth = 0.945
+    ),
+    piPercentile = list(
+      fill = ""#5A39C6AB""
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+34,"m","continuous","prj06_IOV.mlxtran","VPC","plotVpc(
+  settings = list(
+    legend        = TRUE,
+    grid          = FALSE,
+    obs           = TRUE,
+    theoretical   = TRUE,
+    ylog          = TRUE,
+    xlab          = ""Zeit"",
+    xlim          = c(-1, 10),
+    ylab          = ""Konzentration"",
+    ylim          = c(1, 150),
+    level            = 85,
+    higherPercentile = 95,
+    cens          = TRUE,
+    censoring     = ""loq"",
+    useCorrpred   = TRUE,
+    binLimits = TRUE,
+    xBinsSettings = list(           
+      criteria      = ""equalwidth"", 
+      nbBins        = 12,           
+      is.fixedNbBins = TRUE,        
+      nbBinData     = c(1, 5)),
+    ncol=1),
+  stratify = list(
+    split = ""DIET"",
+    color = ""id"",
+    colors = c(
+      ""#0E13AE"", ""#52A371"", ""#CFA06B"", ""#9c9ede"", ""#637939"",
+      ""#E78D28"", ""#CF6BB7"", ""#9018D9"", ""#11CCD7"", ""#101010"",
+      ""#e7ba52"", ""#E7F313"", ""#960E08"", ""#75F56F"")),
+  preferences = list(
+    empirical    = list(color  = ""#1C4669"", lineWidth = 0.81),
+    obs          = list(radius = 1.08),
+    piMedian     = list(fill   = ""#FF0000"", opacity = 0.62),
+    piPercentile = list(fill   = ""#0080FF"", opacity = 0.68)))","plh_comp_id34.txt","3_high",29,"claude-sonnet-5 [effort: medium]","plotVpc(
+  obsName = NULL,
+  settings = list(
+    binLimits = TRUE,
+    level = 85,
+    higherPercentile = 95,
+    useCorrpred = TRUE,
+    useCensored = TRUE,
+    censoring = ""loq"",
+    cens = TRUE,
+    obs = TRUE,
+    theoretical = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    xlab = ""Zeit"",
+    ylab = ""Konzentration"",
+    ylog = TRUE,
+    xlim = c(-1, 10),
+    ylim = c(1, 150),
+    ncol = 1,
+    xBinsSettings = list(
+      criteria = ""equalwidth"",
+      is.fixedNbBins = TRUE,
+      nbBins = 12,
+      nbBinData = c(1, 5)
+    )
+  ),
+  stratify = list(
+    split = ""DIET"",
+    groups = list(
+      list(name = ""DIET"", definition = list(c(""noGuar""), c(""withGuar"")))
+    ),
+    color = ""id"",
+    colors = c(""#0E13AE"", ""#52A371"", ""#CFA06B"", ""#9c9ede"", ""#637939"",
+               ""#E78D28"", ""#CF6BB7"", ""#9018D9"", ""#11CCD7"", ""#101010"",
+               ""#e7ba52"", ""#E7F313"", ""#960E08"", ""#75F56F"")
+  ),
+  preferences = list(
+    empirical = list(
+      color = ""#1C4669"",
+      lineWidth = 0.81
+    ),
+    obs = list(
+      radius = 1.08
+    ),
+    censObs = list(
+      radius = 1.08
+    ),
+    piMedian = list(
+      fill = ""#FF0000"",
+      opacity = 0.62
+    ),
+    piPercentile = list(
+      fill = ""#0080FF"",
+      opacity = 0.68
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+38,"p","continuous","prj07_aPCSK9_SAD.pkx","Individual fits","plotCAIndividualFits(
+  settings = list(
+    obsLines    = TRUE,
+    dosingTimes = TRUE,
+    cens        = FALSE,
+    units       = TRUE,
+    legend      = TRUE,
+    grid        = FALSE,
+    xlab        = ""Time (#FAFAFF)"",
+    ylab        = ""Raviolizumab"",
+    ylim        = c(0.01, 50),
+    ncol        = 3),
+  stratify = list(
+    individualSelection = list(indices = c(1, 9), isRange = TRUE), 
+    color  = ""DOSE_mg"",
+    colors = c(""#162CB4"", ""#E3A50D"", ""#CA148E""),
+    filter = list(list(""DOSE_mg"", c(1, 2)))),
+  preferences = list(
+    dosingTimes = list(color = ""#8C1D1D"", lineWidth = 0.945),  
+    indivFits   = list(color = ""#046529"", lineWidth = 0.81),   
+    obs         = list(radius = 1.35)))","plh_comp_id38.txt","2_mid",19,"claude-sonnet-5 [effort: medium]","plotCAIndividualFits(
+  settings = list(
+    obsLines = TRUE,
+    cens = FALSE,
+    dosingTimes = TRUE,
+    grid = FALSE,
+    legend = TRUE,
+    xlab = ""Time (#FAFAFF)"",
+    ylab = ""Raviolizumab"",
+    ylim = c(0.01, 50),
+    ncol = 3
+  ),
+  stratify = list(
+    individualSelection = list(indices = c(1, 9), isRange = TRUE),
+    groups = list(list(name = ""DOSE_mg"",
+                        definition = list(c(""150mg""), c(""300mg""), c(""800mg"")))),
+    color = ""DOSE_mg"",
+    colors = c(""#162CB4"", ""#E3A50D"", ""#CA148E""),
+    filter = list(""DOSE_mg"", c(1, 2))
+  ),
+  preferences = list(
+    obs = list(radius = 1.35),
+    dosingTimes = list(color = ""#8C1D1D"", lineWidth = 0.945),
+    indivFits = list(color = ""#046529"", lineWidth = 0.81, lineType = ""solid"")
+  ),
+  settings = list(ncol = 3)
+)","EXECUTION_ERROR","N/A","Test Error: formal argument ""settings"" matched by multiple actual arguments"
+69,"p","continuous","prj09_iov2.pkx","NCA data","plotNCAData(
+  settings = list(
+    legend      = TRUE,
+    grid        = FALSE,
+    lines       = FALSE,
+    dosingTimes = TRUE,
+    binLimits   = TRUE,
+    ylog        = TRUE,
+    xlab        = ""TIME"",
+    ylab        = ""Konzentrationi"",
+    xlim        = c(-5, 155),
+    ylim        = c(0.1, 50),
+    ncol        = 1,
+    binsSettings = list(
+      criteria  = ""equalwidth"",
+      binRange  = c(20, 50),
+      nbBinData = c(5, 100))),
+  stratify = list(
+    split  = ""OCCevid"",
+    color  = ""TREAT"",
+    colors = c(""#E5920B"", ""#5A0EC0""),
+    filter = list(""SEX"", 2),
+    groups = list(
+      list(
+        name       = ""TREAT"",
+        definition = list(c(""A""), c(""B""))))),
+  preferences = list(
+    binsValues            = list(color = ""#B600FF"", lineWidth = 0.675),
+    obs                   = list(lineWidth = 1.485, radius = 1.62),
+    observationStatistics = list(color = ""#980B40"",
+                                 whiskersWidth = 0.81,
+                                 lineWidth     = 0.81)))","plh_comp_id69.txt","3_high",29,"claude-sonnet-5 [effort: medium]","plotNCAData(
+  settings = list(
+    lines = FALSE,
+    dosingTimes = TRUE,
+    binLimits = TRUE,
+    binsSettings = list(
+      criteria = ""equalwidth"",
+      is.fixedNbBins = FALSE,
+      binRange = c(20, 50),
+      nbBinData = c(5, 100)
+    ),
+    grid = FALSE,
+    legend = TRUE,
+    ylog = TRUE,
+    xlab = ""TIME"",
+    ylab = ""Konzentrationi"",
+    xlim = c(-5, 155),
+    ylim = c(0.1, 50),
+    ncol = 1
+  ),
+  stratify = list(
+    individualSelection = list(indices = c(1, 2), isRange = TRUE),
+    groups = list(
+      list(name = ""TREAT"", definition = list(c(""A""), c(""B"")))
+    ),
+    split = ""OCCevid"",
+    color = ""TREAT"",
+    colors = c(""#E5920B"", ""#5A0EC0""),
+    filter = list(""SEX"", c(2))
+  ),
+  preferences = list(
+    obs = list(
+      lineWidth = 1.485,
+      radius = 1.62
+    ),
+    observationStatistics = list(
+      color = ""#980B40"",
+      lineWidth = 0.81
+    ),
+    binsValues = list(
+      color = ""#B600FF"",
+      lineWidth = 0.675
+    )
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
+77,"p","continuous","prj10_Remi_infusion_SD.pkx","Observed data","plotObservedData(
+    settings = list(
+      mean        = FALSE,
+      error       = FALSE,
+      binsSettings = list(
+        is.fixedNbBins = TRUE,
+        nbBins         = 20),
+      legend = TRUE,
+      ylog   = TRUE,
+      ylim   = c(-28.612209844277, 245.4),
+      ncol   = 1),
+    stratify = list(
+      groups = list(
+        list(
+          name       = ""AGE"",
+          definition = c(32, 58)),
+        list(
+          name       = ""GROUP"",
+          definition = list(c(""1"", ""2""), c(""3""), c(""4"")))),
+      split  = ""GROUP"",
+      color  = ""AGE"",
+      colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")),
+    preferences = list(
+      obs     = list(radius = 0.54),
+      censObs = list(radius = 0.54)))","plh_comp_id77.txt","2_mid",15,"claude-sonnet-5 [effort: medium]","plotObservedData(
+  settings = list(
+    mean = FALSE,
+    error = FALSE,
+    legend = TRUE,
+    ylog = TRUE,
+    ylim = c(-28.612209844277, 245.4),
+    binsSettings = list(is.fixedNbBins = TRUE, nbBins = 20),
+    ncol = 1
+  ),
+  stratify = list(
+    individualSelection = list(indices = c(1, 3), isRange = TRUE),
+    groups = list(
+      list(name = ""AGE"", definition = c(32, 58)),
+      list(name = ""GROUP"", definition = list(c(""1"", ""2""), c(""3""), c(""4"")), colors = c(""#F17CB0"", ""#B2912F"", ""#B276B2""))
+    ),
+    split = ""GROUP"",
+    color = ""AGE"",
+    colors = c(""#0A518C"", ""#B42020"", ""#1B8C25"")
+  ),
+  preferences = list(
+    obs = list(radius = 0.54),
+    censObs = list(radius = 0.54)
+  )
+)","MISMATCH","3 SEVERE MISMATCH (>=5 logic diffs)","Object mismatch. Logic diffs: 6"
