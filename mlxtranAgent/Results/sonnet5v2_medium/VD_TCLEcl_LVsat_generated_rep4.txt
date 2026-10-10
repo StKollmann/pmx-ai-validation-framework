@@ -1,0 +1,27 @@
+[LONGITUDINAL]
+input = {R0, kI, delta, p, c, V0, T0}
+
+EQUATION:
+odeType = stiff
+
+; infection rate constant derived from R0 (assuming quasi steady-state relation R0 = beta*p*T0/(c*delta))
+beta = R0*c*delta/(p*T0)
+
+; initial conditions
+T_0 = T0
+E_0 = 0
+I_0 = 0
+V_0 = 10^V0
+
+; target cell limited model with eclipse phase (T-E-I-V)
+; virions are lost upon successful infection (beta*T*V term subtracted from both T and V)
+ddt_T = -beta*T*V
+ddt_E =  beta*T*V - kI*E
+ddt_I =  kI*E - delta*I
+ddt_V =  p*I - c*V - beta*T*V
+
+; log10 viral load with lower saturation at -5 to avoid displaying too small values
+LV = max(log10(V), -5)
+
+OUTPUT:
+output = {LV}

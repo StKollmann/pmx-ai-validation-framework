@@ -1,0 +1,27 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, kprod, Circ0, ktr, kdeg, beta, EC50}
+
+PK:
+depot(target=Ac, ka)
+compartment(cmt=1, amount=Ac, volume=V, concentration=Cc)
+elimination(cmt=1, Cl)
+
+EQUATION:
+odeType = stiff
+
+; PK
+ddt_Ac = -(Cl/V)*Ac
+Cc = Ac/V
+
+; PD - Turnover model with proliferating and circulating neutrophils
+Prol_0 = Circ0
+Circ_0 = Circ0
+
+Edrug = Cc/(EC50+Cc)
+ddt_Prol = kprod*Prol*(1-Edrug)*(Circ0/Circ)^beta - ktr*Prol
+ddt_Circ = ktr*Prol - kdeg*Circ
+
+CN = Circ
+
+OUTPUT:
+output = {Cc, CN}

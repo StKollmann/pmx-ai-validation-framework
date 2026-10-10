@@ -1,0 +1,32 @@
+[LONGITUDINAL]
+input = {k12, k21, V, k10, V_payload, k_payload}
+
+PK:
+; ADC model: Central (cmt=1) and Peripheral (cmt=2) compartments
+compartment(cmt=1, amount=Ac_ADC, volume=V, concentration=Cc_ADC)
+peripheral(k12, k21, amount=Ap_ADC) ; k12: transfer from central to peripheral, k21: transfer from peripheral to central
+iv(cmt=1, adm=1) ; IV administration into the central compartment (cmt=1)
+elimination(cmt=1, k=k10) ; Linear elimination from the central compartment (cmt=1)
+
+EQUATION:
+; Define DAR (Drug-to-Antibody Ratio) as a constant
+DAR = 4
+
+; Payload model: Released from ADC central compartment, follows 1-compartment disposition
+; The payload is released from the ADC in the central compartment via a proteolytic pathway.
+; This means payload generation is proportional to the ADC elimination rate from the central compartment.
+; ADC elimination rate from central compartment = k10 * Ac_ADC
+; Payload generation rate = DAR * (ADC elimination rate from central compartment)
+
+; Initial amount of payload in its central compartment is 0
+Ac_payload_0 = 0
+
+; ODE for payload amount in its central compartment (Ac_payload)
+; d(Ac_payload)/dt = (payload generation rate) - (payload elimination rate)
+ddt_Ac_payload = DAR * k10 * Ac_ADC - k_payload * Ac_payload
+
+; Payload concentration
+Cc_payload = Ac_payload / V_payload
+
+OUTPUT:
+output = {Cc_ADC, Cc_payload}

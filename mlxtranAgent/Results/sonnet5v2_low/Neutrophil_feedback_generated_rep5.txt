@@ -1,0 +1,29 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, kprod, Circ0, ktr, kdeg, beta, EC50}
+
+PK:
+depot(target=Ad, ka)
+
+EQUATION:
+odeType = stiff
+
+; PK: one-compartment, first-order absorption, linear elimination
+ddt_Ad = -ka*Ad
+ddt_Ac = ka*Ad - (Cl/V)*Ac
+Cc = Ac/V
+
+; PD initial conditions (steady-state assumption)
+Prol_0 = Circ0*kdeg/ktr
+CN_0 = Circ0
+
+; Drug inhibition of proliferating neutrophil production (Emax=1, EC50 model)
+Edrug = EC50/(EC50+Cc)
+
+; Feedback of circulating neutrophils on proliferation
+Feedback = (Circ0/CN)^beta
+
+ddt_Prol = kprod*Edrug*Feedback*Prol - ktr*Prol
+ddt_CN = ktr*Prol - kdeg*CN
+
+OUTPUT:
+output = {Cc, CN}

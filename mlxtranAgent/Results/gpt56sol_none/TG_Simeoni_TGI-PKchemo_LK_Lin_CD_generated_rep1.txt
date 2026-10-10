@@ -1,0 +1,41 @@
+[LONGITUDINAL]
+input = {TS0, kge, kgl, kkill, tau}
+
+PK:
+Vd_cis = 65.1131
+ka_cis = 66.5421
+k_cis = 0.2868
+compartment(cmt=2, volume=Vd_cis, concentration=C_cis)
+absorption(adm=2, cmt=2, ka=ka_cis)
+elimination(cmt=2, k=k_cis)
+
+Vd_pem = 102.7673
+ka_pem = 28.6
+k_pem = 2.1328
+compartment(cmt=3, volume=Vd_pem, concentration=C_pem)
+absorption(adm=1, cmt=3, ka=ka_pem)
+elimination(cmt=3, k=k_pem)
+
+EQUATION:
+odeType = stiff
+psi = 20
+ktr = 1/tau
+EXPOSURE = C_cis + C_pem
+
+TS_0 = TS0
+TS1_0 = 0
+TS2_0 = 0
+TS3_0 = 0
+
+growth = (kge*TS)/(1 + (kge*TS/kgl)^psi)^(1/psi)
+kill = kkill*EXPOSURE*TS
+
+ddt_TS = growth - kill
+ddt_TS1 = kill - ktr*TS1
+ddt_TS2 = ktr*(TS1 - TS2)
+ddt_TS3 = ktr*(TS2 - TS3)
+
+TotalTS = TS + TS1 + TS2 + TS3
+
+OUTPUT:
+output = {TotalTS}

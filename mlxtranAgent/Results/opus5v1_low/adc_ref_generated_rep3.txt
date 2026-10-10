@@ -1,0 +1,21 @@
+DESCRIPTION: ADC 2-cmt IV with payload release (DAR=4), payload 1-cmt
+
+[LONGITUDINAL]
+input = {V, k10, k12, k21, V_payload, k_payload}
+
+PK:
+compartment(cmt=1, amount=Ac, volume=V, concentration=Cc_ADC)
+iv(cmt=1, adm=1)
+peripheral(k12, k21)
+elimination(cmt=1, k=k10)
+
+EQUATION:
+odeType = stiff
+DAR = 4
+A_payload_0 = 0
+release = DAR * k10 * Ac
+ddt_A_payload = release - k_payload * A_payload
+Cc_payload = A_payload / V_payload
+
+OUTPUT:
+output = {Cc_ADC, Cc_payload}

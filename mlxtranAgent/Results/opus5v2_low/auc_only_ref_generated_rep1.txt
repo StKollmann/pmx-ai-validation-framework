@@ -1,0 +1,17 @@
+[LONGITUDINAL]
+input = {k, V}
+
+PK:
+depot(target=Ac)
+
+EQUATION:
+t_0 = 0
+Ac_0 = 0
+AUC_0 = 0
+
+ddt_Ac = -k*Ac
+Cc = Ac/V
+ddt_AUC = Cc
+
+OUTPUT:
+output = {Cc, AUC}

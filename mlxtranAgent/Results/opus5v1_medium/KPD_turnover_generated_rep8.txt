@@ -1,0 +1,37 @@
+DESCRIPTION:
+K-PD model: virtual PK compartment with first-order degradation (no volume, no
+absorption) driving an indirect response (turnover) model with inhibition of the
+production (proliferation) rate through a sigmoidal Imax function.
+
+[LONGITUDINAL]
+input = {k, R0, kdeg, IC50, Imax, gamma}
+
+PK:
+; virtual KPD compartment receiving the doses
+depot(target=Ak)
+
+EQUATION:
+odeType = stiff
+
+; initial conditions
+t_0 = 0
+Ak_0 = 0
+R_0 = R0
+
+; virtual concentration (amount, no volume)
+Ck = Ak
+
+; sigmoidal Imax inhibition of the production rate
+INH = Imax * Ck^gamma / (IC50^gamma + Ck^gamma)
+
+; zero-order production rate at baseline
+kin = R0 * kdeg
+
+; K-PD kinetics
+ddt_Ak = -k * Ak
+
+; turnover with inhibition of production
+ddt_R = kin * (1 - INH) - kdeg * R
+
+OUTPUT:
+output = {R}

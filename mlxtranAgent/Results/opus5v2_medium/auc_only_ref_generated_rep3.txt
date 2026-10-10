@@ -1,0 +1,23 @@
+DESCRIPTION: One-compartment IV model with linear elimination, written with ODEs.
+Outputs: plasma concentration (Cc) and cumulative AUC.
+
+[LONGITUDINAL]
+input = {k, V}
+
+PK:
+; IV doses (bolus or infusion) enter the central compartment amount Ac
+depot(target=Ac)
+
+EQUATION:
+t_0 = 0
+Ac_0 = 0
+AUC_0 = 0
+
+; Define concentration BEFORE using it
+Cc = Ac/V
+
+ddt_Ac = -k*Ac
+ddt_AUC = Cc
+
+OUTPUT:
+output = {Cc, AUC}

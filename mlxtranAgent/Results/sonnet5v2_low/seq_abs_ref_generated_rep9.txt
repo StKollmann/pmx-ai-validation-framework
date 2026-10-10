@@ -1,0 +1,8 @@
+```json
+{
+  "model": "[LONGITUDINAL]\ninput = {Tk0, ka, V, Cl, Q, V2}\n\nPK:\ncompartment(cmt=1, amount=Ad)\nabsorption(cmt=1, Tk0=Tk0)\ntransfer(from=1, to=2, kt=ka)\ncompartment(cmt=2, amount=Ac, volume=V, concentration=Cc)\nelimination(cmt=2, Cl)\nk23 = Q/V\nk32 = Q/V2\nperipheral(k23=k23, k32=k32)\n\nOUTPUT:\noutput = {Cc}",
+  "annotations": "Model designed for Monolix, built entirely with PK macros (no ODEs).\n\n- Sequential absorption modeled as: zero-order input (Tk0) into a depot compartment (cmt=1, amount Ad), then first-order transfer (rate ka) from the depot into the central compartment (cmt=2, amount Ac) - achieving zero-order followed by first-order absorption.\n- Central compartment (cmt=2) has volume V and linear clearance Cl.\n- Peripheral compartment added via `peripheral()` macro with micro-rate constants k23=Q/V and k32=Q/V2, representing distribution governed by intercompartmental clearance Q and peripheral volume V2. Note: peripheral() macro auto-assigns internal compartment numbering starting from the next available index, here using k23/k32 naming to avoid conflicts with existing cmt=1 and cmt=2.
+- Bioavailability and lag times assumed default (1 and 0, respectively) since not specified.
+- Single output: central compartment concentration (Cc)."
+}
+```

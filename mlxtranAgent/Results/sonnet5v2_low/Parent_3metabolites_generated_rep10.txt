@@ -1,0 +1,38 @@
+[LONGITUDINAL]
+input = {V1, Cl, Q, V2, ka1, ka2, ka3, ka4, Clm2, Clm3, Clm4, kpm2, kpm3, kpm4}
+
+PK:
+depot(target=Ad1, adm=1, p=0.1284, ka=ka1)
+depot(target=Ad2, adm=1, p=0.5952, ka=ka2)
+depot(target=Ad3, adm=1, p=0.2381, ka=ka3)
+depot(target=Ad4, adm=1, p=0.0383, ka=ka4)
+
+EQUATION:
+odeType=stiff
+
+k12 = Q/V1
+k21 = Q/V2
+ke  = Cl/V1
+
+; parent depot compartments (manual absorption, Pattern A)
+ddt_Ad1 = -ka1*Ad1
+ddt_Ad2 = -ka2*Ad2
+ddt_Ad3 = -ka3*Ad3
+ddt_Ad4 = -ka4*Ad4
+
+; parent 2-compartment disposition with transformation to metabolites
+ddt_Ac1 = ka1*Ad1 - ke*Ac1 - k12*Ac1 + k21*Ap1 - kpm2*Ac1 - kpm3*Ac1 - kpm4*Ac1
+ddt_Ap1 = k12*Ac1 - k21*Ap1
+
+; metabolites, one-compartment each, volume fixed to V1
+ddt_Am2 = ka2*Ad2 + kpm2*Ac1 - (Clm2/V1)*Am2
+ddt_Am3 = ka3*Ad3 + kpm3*Ac1 - (Clm3/V1)*Am3
+ddt_Am4 = ka4*Ad4 + kpm4*Ac1 - (Clm4/V1)*Am4
+
+Cp  = Ac1/V1
+Cm2 = Am2/V1
+Cm3 = Am3/V1
+Cm4 = Am4/V1
+
+OUTPUT:
+output = {Cp, Cm2, Cm3, Cm4}

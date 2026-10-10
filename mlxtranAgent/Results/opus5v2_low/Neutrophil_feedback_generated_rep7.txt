@@ -1,0 +1,25 @@
+DESCRIPTION: PK (1cmt, first-order absorption, linear elimination) + turnover neutrophil model
+
+[LONGITUDINAL]
+input = {ka, V, Cl, kprod, Circ0, ktr, kdeg, beta, EC50}
+
+PK:
+depot(target=Ac, ka)
+
+EQUATION:
+odeType = stiff
+t_0 = 0
+Ac_0 = 0
+P_0 = Circ0*kdeg/ktr
+CN_0 = Circ0
+
+Cc = Ac/V
+Inh = Cc/(EC50 + Cc)
+FB = (Circ0/max(CN,1e-6))^beta
+
+ddt_Ac = -(Cl/V)*Ac
+ddt_P = kprod*P*(1 - Inh)*FB - ktr*P
+ddt_CN = ktr*P - kdeg*CN
+
+OUTPUT:
+output = {Cc, CN}

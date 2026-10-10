@@ -1,0 +1,24 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, kprod, Circ0, ktr, kdeg, beta, EC50}
+
+PK:
+depot(target=Ac)
+
+EQUATION:
+odeType = stiff
+
+Cc = Ac/V
+Inh = Cc/(EC50 + Cc)
+Feedback = (Circ0/CN)^beta
+Prod = kprod*P*(1 - Inh)*Feedback
+
+P_0 = Circ0*ktr/kprod
+CN_0 = Circ0
+
+ddt_Ac = ka*Ad - (Cl/V)*Ac
+ddt_Ad = -ka*Ad
+ddt_P = Prod - ktr*P
+ddt_CN = ktr*P - kdeg*CN
+
+OUTPUT:
+output = {Cc, CN}

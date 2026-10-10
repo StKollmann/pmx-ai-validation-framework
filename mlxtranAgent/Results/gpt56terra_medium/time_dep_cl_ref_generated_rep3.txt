@@ -1,0 +1,9 @@
+[LONGITUDINAL]
+input = {V, CL0, slope}
+
+PK:
+Cl = CL0 + slope*t
+Cc = pkmodel(V, Cl)
+
+OUTPUT:
+output = {Cc}

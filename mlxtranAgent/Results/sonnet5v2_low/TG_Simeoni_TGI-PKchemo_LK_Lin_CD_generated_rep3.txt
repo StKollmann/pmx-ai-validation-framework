@@ -1,0 +1,41 @@
+[LONGITUDINAL]
+input = {TS0, kge, kgl, kkill, tau}
+
+PK:
+; Fixed PK parameters (not estimated)
+ka_cis = 66.5421
+k_cis  = 0.2868
+Vd_cis = 65.1131
+ka_pem = 28.6
+k_pem  = 2.1328
+Vd_pem = 102.7673
+psi    = 20
+
+; Cisplatin - cmt=2, adm=2
+compartment(cmt=2, amount=Ac_cis, volume=Vd_cis, concentration=Ccis)
+absorption(cmt=2, adm=2, ka=ka_cis)
+elimination(cmt=2, k=k_cis)
+
+; Pemetrexed - cmt=3, adm=1
+compartment(cmt=3, amount=Ac_pem, volume=Vd_pem, concentration=Cpem)
+absorption(cmt=3, adm=1, ka=ka_pem)
+elimination(cmt=3, k=k_pem)
+
+EQUATION:
+odeType = stiff
+
+Prol_0 = TS0
+TS1_0 = 0
+TS2_0 = 0
+TS3_0 = 0
+
+EXPOSURE = Ccis + Cpem
+TotalTS = Prol + TS1 + TS2 + TS3
+
+ddt_Prol = kge*Prol/(1+(kge/kgl*TotalTS)^psi)^(1/psi) - kkill*EXPOSURE*Prol
+ddt_TS1 = kkill*EXPOSURE*Prol - TS1/tau
+ddt_TS2 = (TS1 - TS2)/tau
+ddt_TS3 = (TS2 - TS3)/tau
+
+OUTPUT:
+output = {TotalTS}

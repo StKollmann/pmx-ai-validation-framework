@@ -1,0 +1,19 @@
+[LONGITUDINAL]
+input = {k, R0, kdeg, IC50, Imax, gamma}
+
+PK:
+depot(target=Ad)
+
+EQUATION:
+; PK: simple degradation of drug amount (K-PD, no volume, no absorption)
+ddt_Ad = -k*Ad
+
+; PD: turnover model with inhibition of proliferation rate (sigmoidal Imax)
+kin = R0*kdeg
+Inh = Imax*Ad^gamma/(IC50^gamma + Ad^gamma)
+
+R_0 = R0
+ddt_R = kin*(1 - Inh) - kdeg*R
+
+OUTPUT:
+output = {R}

@@ -1,0 +1,12 @@
+[LONGITUDINAL]
+input = {V, k, Vm, Km}
+
+PK:
+compartment(cmt=1, amount=Ac, volume=V, concentration=Cc)
+iv(cmt=1)
+
+EQUATION:
+ddt_Ac = -k*Ac - Vm*Ac/(Km*V + Ac)
+
+OUTPUT:
+output = {Cc}

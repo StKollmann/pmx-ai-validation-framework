@@ -1,0 +1,12 @@
+[LONGITUDINAL]
+input = {V, k, Vm, Km}
+
+PK:
+depot(target=Ac)
+
+EQUATION:
+ddt_Ac = -k*Ac - Vm*Ac/(Km + Ac)
+Cc = Ac/V
+
+OUTPUT:
+output = {Cc}

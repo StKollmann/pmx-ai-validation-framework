@@ -1,0 +1,29 @@
+DESCRIPTION:
+Antibody-drug conjugate (ADC) model.
+- ADC: 2-compartment linear disposition, IV administration (macros)
+- Payload: released from ADC in central compartment via proteolytic
+  degradation (rate k10, DAR molecules of payload per ADC),
+  1-compartment disposition (ODE)
+
+[LONGITUDINAL]
+input = {V, k10, k12, k21, V_payload, k_payload}
+
+PK:
+; --- ADC disposition using macros ---
+compartment(cmt=1, amount=Ac, volume=V, concentration=Cc_ADC)
+iv(cmt=1, adm=1)
+elimination(cmt=1, k=k10)
+peripheral(k12, k21)
+
+EQUATION:
+odeType = stiff
+DAR = 4
+
+; --- Payload disposition using ODEs ---
+t_0 = 0
+Ap_0 = 0
+ddt_Ap = DAR*k10*Ac - k_payload*Ap
+Cc_payload = Ap/V_payload
+
+OUTPUT:
+output = {Cc_ADC, Cc_payload}

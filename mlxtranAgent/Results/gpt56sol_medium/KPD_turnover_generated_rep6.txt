@@ -1,0 +1,15 @@
+[LONGITUDINAL]
+input = {k, R0, kdeg, IC50, Imax, gamma}
+
+PK:
+depot(target=A)
+
+EQUATION:
+R_0 = R0
+drug_effect = Imax*A^gamma/(IC50^gamma + A^gamma)
+proliferation = kdeg*R0*(1 - drug_effect)
+ddt_A = -k*A
+ddt_R = proliferation - kdeg*R
+
+OUTPUT:
+output = {R}

@@ -1,0 +1,23 @@
+DESCRIPTION:
+Exposure-response model with Cavg (average concentration) read from the dataset as a
+regressor, driving an effect compartment (rate constant ke0). The effect-site
+concentration Ce drives an Emax response with baseline E0.
+
+[LONGITUDINAL]
+input = {Cavg, E0, ke0, Emax, EC50}
+Cavg = {use=regressor}
+
+EQUATION:
+odeType = stiff
+
+; Effect compartment (initial condition at baseline exposure = 0)
+t_0 = 0
+Ce_0 = 0
+ddt_Ce = ke0 * (Cavg - Ce)
+
+; Emax response
+E = E0 + Emax * Ce / (EC50 + Ce)
+
+OUTPUT:
+output = {E}
+table = {Ce}

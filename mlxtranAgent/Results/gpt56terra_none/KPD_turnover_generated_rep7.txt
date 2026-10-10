@@ -1,0 +1,16 @@
+[LONGITUDINAL]
+input = {k, R0, kdeg, IC50, Imax, gamma}
+
+PK:
+iv(cmt=1)
+
+EQUATION:
+Cc_0 = 0
+R_0 = R0
+Cc = Ac
+Inh = Imax*Cc^gamma/(IC50^gamma + Cc^gamma)
+ddt_Ac = -k*Ac
+ddt_R = kdeg*R0*(1-Inh) - kdeg*R
+
+OUTPUT:
+output = {R}

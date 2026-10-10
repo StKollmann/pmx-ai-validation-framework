@@ -1,0 +1,78 @@
+[LONGITUDINAL]
+DESCRIPTION:
+; PK model for one parent drug (2 compartments) and 3 metabolites (1 compartment each).
+; Includes first-pass effect (dose split into fractions) and transformation from parent to metabolites.
+
+input = {V1, Cl, Q, V2, ka1, ka2, ka3, ka4, Clm2, Clm3, Clm4, kpm2, kpm3, kpm4}
+
+PK:
+; Fixed fractions for first-pass effect. These are constants, not parameters.
+F1 = 0.1284
+F2 = 0.5952
+F3 = 0.2381
+F4 = 0.0383
+
+; Define depot compartments for parent and metabolites (first-pass fractions).
+; Doses are administered to these depot compartments.
+; 'p' argument in depot macro applies the fraction to the administered dose.
+depot(target=Ad_P, p=F1, adm=1)   ; Parent absorption compartment
+depot(target=Ad_M2, p=F2, adm=1)  ; Metabolite 2 absorption compartment (first-pass)
+depot(target=Ad_M3, p=F3, adm=1)  ; Metabolite 3 absorption compartment (first-pass)
+depot(target=Ad_M4, p=F4, adm=1)  ; Metabolite 4 absorption compartment (first-pass)
+
+EQUATION:
+odeType = stiff
+
+
+
+; Define volumes for metabolite compartments.
+; Since Vm2, Vm3, Vm4 are not provided as input parameters, they are defined as identical to parent volume
+Vm2 = V1
+Vm3 = V1
+Vm4 = V1
+
+; Parent drug (2 compartments)
+; Ad_P: Amount in parent absorption compartment
+; A1_P: Amount in parent central compartment
+; A2_P: Amount in parent peripheral compartment
+
+ddt_Ad_P = -ka1*Ad_P                                   ; Absorption from depot to central
+
+; The previous error was likely due to the line continuation (...) with comments.
+; Combining the ODEs onto a single line is a robust way to avoid such parsing issues.
+ddt_A1_P = ka1*Ad_P - (Cl/V1)*A1_P - (Q/V1)*A1_P + (Q/V2)*A2_P - kpm2*A1_P - kpm3*A1_P - kpm4*A1_P ; Absorption, elimination, transfer, and transformation
+
+ddt_A2_P = (Q/V1)*A1_P - (Q/V2)*A2_P                   ; Transfer between peripheral and central
+
+; Metabolite 2 (1 compartment)
+; Ad_M2: Amount in metabolite 2 absorption compartment (first-pass)
+; Am2: Amount in metabolite 2 central compartment
+
+ddt_Ad_M2 = -ka2*Ad_M2                                 ; Absorption from first-pass depot to M2 central
+
+ddt_Am2 = ka2*Ad_M2 + kpm2*A1_P - (Clm2/Vm2)*Am2       ; Absorption, formation, and elimination
+
+; Metabolite 3 (1 compartment)
+; Ad_M3: Amount in metabolite 3 absorption compartment (first-pass)
+; Am3: Amount in metabolite 3 central compartment
+
+ddt_Ad_M3 = -ka3*Ad_M3                                 ; Absorption from first-pass depot to M3 central
+
+ddt_Am3 = ka3*Ad_M3 + kpm3*A1_P - (Clm3/Vm3)*Am3       ; Absorption, formation, and elimination
+
+; Metabolite 4 (1 compartment)
+; Ad_M4: Amount in metabolite 4 absorption compartment (first-pass)
+; Am4: Amount in metabolite 4 central compartment
+
+ddt_Ad_M4 = -ka4*Ad_M4                                 ; Absorption from first-pass depot to M4 central
+
+ddt_Am4 = ka4*Ad_M4 + kpm4*A1_P - (Clm4/Vm4)*Am4       ; Absorption, formation, and elimination
+
+; Define concentrations for output
+Cp = A1_P/V1
+Cm2 = Am2/Vm2
+Cm3 = Am3/Vm3
+Cm4 = Am4/Vm4
+
+OUTPUT:
+output = {Cp, Cm2, Cm3, Cm4}

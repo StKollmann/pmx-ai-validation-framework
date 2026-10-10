@@ -1,0 +1,32 @@
+[LONGITUDINAL]
+input = {Tk0, ka, V, Cl, Q, V2}
+
+PK:
+; The dose is absorbed via a zero-order process into the absorption compartment (Aabs)
+; for a duration defined by Tk0.
+depot(target=Aabs, Tk0=Tk0)
+
+EQUATION:
+; Define initial conditions for the ODEs
+Aabs_0 = 0 ; Initial amount in the absorption compartment
+Ac_0 = 0   ; Initial amount in the central compartment
+Ap_0 = 0   ; Initial amount in the peripheral compartment
+
+; ODE for the absorption compartment (Aabs)
+; Drug leaves Aabs via a first-order absorption process into the central compartment (Ac)
+ddt_Aabs = -ka * Aabs
+
+; ODE for the central compartment (Ac)
+; Receives drug from Aabs (first-order absorption), eliminates drug,
+; and exchanges drug with the peripheral compartment (Ap)
+ddt_Ac = ka * Aabs - (Cl/V) * Ac - (Q/V) * Ac + (Q/V2) * Ap
+
+; ODE for the peripheral compartment (Ap)
+; Exchanges drug with the central compartment (Ac)
+ddt_Ap = (Q/V) * Ac - (Q/V2) * Ap
+
+; Define the concentration in the central compartment
+Cc = Ac / V
+
+OUTPUT:
+output = {Cc}

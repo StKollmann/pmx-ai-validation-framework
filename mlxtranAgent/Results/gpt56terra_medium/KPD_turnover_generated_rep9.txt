@@ -1,0 +1,16 @@
+[LONGITUDINAL]
+input = {k, R0, kdeg, IC50, Imax, gamma}
+
+PK:
+depot(target=Drug)
+
+EQUATION:
+kin = kdeg*R0
+DrugGamma = Drug^gamma
+IC50Gamma = IC50^gamma
+Inhibition = Imax*DrugGamma/(IC50Gamma + DrugGamma)
+ddt_Drug = -k*Drug
+ddt_R = kin*(1 - Inhibition) - kdeg*R
+
+OUTPUT:
+output = {R}

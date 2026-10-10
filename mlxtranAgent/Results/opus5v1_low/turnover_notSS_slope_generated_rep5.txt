@@ -1,0 +1,20 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, R0, intercept, slope, kout, Emax, EC50}
+ka = {use=regressor}
+V = {use=regressor}
+Cl = {use=regressor}
+
+PK:
+Cc = pkmodel(ka, V, Cl)
+
+EQUATION:
+odeType = stiff
+; response at steady state linked to R0 by a linear relationship
+Rss = intercept + slope*R0
+kin = kout*Rss
+R_0 = R0
+Estim = Emax*Cc/(EC50 + Cc)
+ddt_R = kin*(1 + Estim) - kout*R
+
+OUTPUT:
+output = {Cc, R}

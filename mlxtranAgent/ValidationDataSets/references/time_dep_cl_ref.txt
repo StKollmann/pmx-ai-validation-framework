@@ -1,0 +1,18 @@
+[LONGITUDINAL]
+input = {V, CL0, slope}
+
+PK:
+; Define the depot compartment where doses are administered
+depot(target=Ac)
+
+EQUATION:
+; Define time-dependent clearance
+Cl_t = CL0 + slope * t
+
+ddt_Ac = - (Cl_t / V) * Ac
+
+; Calculate the concentration in the central compartment
+Cc = Ac / V
+
+OUTPUT:
+output = {Cc}

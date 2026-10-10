@@ -1,0 +1,12 @@
+[LONGITUDINAL]
+input = {V, k, Vm, Km}
+
+PK:
+; one-compartment model, IV bolus, parallel linear + Michaelis-Menten elimination
+compartment(cmt=1, amount=Ac, volume=V, concentration=Cc)
+iv(cmt=1, adm=1)
+elimination(cmt=1, k)
+elimination(cmt=1, Vm, Km)
+
+OUTPUT:
+output = {Cc}

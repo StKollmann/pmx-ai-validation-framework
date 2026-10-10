@@ -1,0 +1,23 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, R0, intercept, slope, kout, Emax, EC50}
+
+ka = {use=regressor}
+V = {use=regressor}
+Cl = {use=regressor}
+
+PK:
+Cc = pkmodel(ka, V, Cl)
+
+EQUATION:
+; --- Baseline relationship between R0 and Rss ---
+Rss = intercept + slope*R0
+kin = kout*Rss
+
+; --- Initial condition: PD not at steady-state at t=0 ---
+R_0 = R0
+
+; --- Turnover model with stimulation of production by drug ---
+ddt_R = kin*(1 + Emax*Cc/(EC50 + Cc)) - kout*R
+
+OUTPUT:
+output = {Cc, R}

@@ -1,0 +1,28 @@
+DESCRIPTION: One-compartment IV model with linear elimination, written with ODEs. Outputs concentration (Cc) and cumulative AUC.
+
+[LONGITUDINAL]
+input = {k, V}
+
+PK:
+; doses (IV bolus or infusion) enter the central compartment amount Ac
+depot(target=Ac)
+
+EQUATION:
+odeType = nonStiff
+
+; initial conditions
+t_0 = 0
+Ac_0 = 0
+AUC_0 = 0
+
+; central compartment
+ddt_Ac = -k*Ac
+
+; define concentration BEFORE using it
+Cc = Ac/V
+
+; cumulative AUC of the concentration
+ddt_AUC = Cc
+
+OUTPUT:
+output = {Cc, AUC}

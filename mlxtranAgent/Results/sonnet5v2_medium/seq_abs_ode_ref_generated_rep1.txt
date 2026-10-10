@@ -1,0 +1,20 @@
+[LONGITUDINAL]
+input = {Tk0, ka, V, Cl, Q, V2}
+
+PK:
+; Zero-order input into absorption compartment Ad (depot only, no implicit absorption)
+depot(target=Ad, Tk0)
+
+EQUATION:
+; First-order absorption from Ad into central compartment, defined manually via ODEs
+k12 = Q/V
+k21 = Q/V2
+
+ddt_Ad = -ka*Ad
+ddt_Ac = ka*Ad - (Cl/V)*Ac - k12*Ac + k21*Ap
+ddt_Ap = k12*Ac - k21*Ap
+
+Cc = Ac/V
+
+OUTPUT:
+output = {Cc}

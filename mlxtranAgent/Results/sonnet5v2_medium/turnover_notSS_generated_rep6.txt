@@ -1,0 +1,18 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, kout, Emax, EC50, R0, Rss}
+ka = {use=regressor}
+V = {use=regressor}
+Cl = {use=regressor}
+
+PK:
+Cc = pkmodel(ka, V, Cl)
+
+EQUATION:
+; turnover model: kin*(1+stimulation) - kout*R
+kin = kout*Rss              ; production rate constant derived from steady-state Rss
+R_0 = R0                    ; initial condition, not necessarily equal to Rss (non-steady-state at t=0)
+Estim = Emax*Cc/(EC50+Cc)   ; stimulation of production by drug
+ddt_R = kin*(1+Estim) - kout*R
+
+OUTPUT:
+output = {Cc, R}

@@ -1,0 +1,23 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, R0, intercept, slope, kout, Emax, EC50}
+ka = {use=regressor}
+V = {use=regressor}
+Cl = {use=regressor}
+
+PK:
+Cc = pkmodel(ka, V, Cl)
+
+EQUATION:
+; baseline response at steady-state, linearly correlated with R0
+Rss = intercept + slope*R0
+; production rate constant derived from kout and Rss (drug-free steady-state)
+kin = kout*Rss
+
+; initial condition: PD not at steady-state at time 0
+R_0 = R0
+
+; turnover model with stimulation of production by the drug
+ddt_R = kin*(1 + Emax*Cc/(EC50+Cc)) - kout*R
+
+OUTPUT:
+output = {Cc, R}

@@ -1,0 +1,21 @@
+[LONGITUDINAL]
+input = {k, V}
+
+PK:
+; IV administration (bolus or infusion) directly into the central compartment
+depot(target=Ac)
+
+EQUATION:
+t_0 = 0
+Ac_0 = 0
+AUC_0 = 0
+
+ddt_Ac = -k*Ac
+
+; define concentration before use
+Cc = Ac/V
+
+ddt_AUC = Cc
+
+OUTPUT:
+output = {Cc, AUC}

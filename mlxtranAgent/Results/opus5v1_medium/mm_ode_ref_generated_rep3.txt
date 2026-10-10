@@ -1,0 +1,19 @@
+[LONGITUDINAL]
+input = {V, k, Vm, Km}
+
+PK:
+; IV bolus doses go directly into the central compartment amount Ac
+depot(target=Ac)
+
+EQUATION:
+odeType = stiff
+Ac_0 = 0
+
+; Define concentration before use
+Cc = Ac/V
+
+; Parallel linear and Michaelis-Menten elimination
+ddt_Ac = -k*Ac - Vm*Cc/(Km + Cc)
+
+OUTPUT:
+output = {Cc}

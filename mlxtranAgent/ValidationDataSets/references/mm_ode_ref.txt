@@ -1,0 +1,20 @@
+[LONGITUDINAL]
+input = {V, k, Vm, Km}
+
+PK:
+; Define 'Ac' as the target variable for doses, representing the amount in the central compartment.
+; Monolix will automatically handle IV bolus administration into 'Ac'.
+depot(target=Ac)
+
+EQUATION:
+; Define concentration (Cc) from the amount (Ac) and volume (V)
+Cc = Ac/V
+
+; Define the ordinary differential equation for the amount in the central compartment (Ac)
+; ddt_Ac = - (linear elimination rate) - (Michaelis-Menten elimination rate)
+; Linear elimination rate: k * Ac
+; Michaelis-Menten elimination rate: (Vm * Ac) / (Km * V + Ac)
+ddt_Ac = -k*Ac - (Vm*Ac / (Km*V + Ac))
+
+OUTPUT:
+output = {Cc}

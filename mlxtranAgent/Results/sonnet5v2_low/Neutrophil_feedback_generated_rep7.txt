@@ -1,0 +1,29 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, kprod, Circ0, ktr, kdeg, beta, EC50}
+
+PK:
+depot(target=Ad, ka)
+
+EQUATION:
+odeType = stiff
+
+; PK
+ddt_Ad = -ka*Ad
+ddt_Ac = ka*Ad - (Cl/V)*Ac
+Cc = Ac/V
+
+; Drug inhibition of proliferation (Emax model)
+Edrug = Cc/(EC50+Cc)
+
+; Initial conditions (assume system starts at steady-state baseline)
+Prol_0 = Circ0
+Circ_0 = Circ0
+
+; PD - Turnover model with proliferating and circulating neutrophil subpopulations
+ddt_Prol = kprod*Prol*(1-Edrug)*(Circ0/Circ)^beta - ktr*Prol
+ddt_Circ = ktr*Prol - kdeg*Circ
+
+CN = Circ
+
+OUTPUT:
+output = {Cc, CN}

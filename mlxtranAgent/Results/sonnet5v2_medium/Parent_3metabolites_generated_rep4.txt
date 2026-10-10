@@ -1,0 +1,52 @@
+[LONGITUDINAL]
+input = {V1, Cl, Q, V2, ka1, ka2, ka3, ka4, Clm2, Clm3, Clm4, kpm2, kpm3, kpm4}
+
+EQUATION:
+odeType = stiff
+
+; --- Fixed first-pass fractions ---
+F1 = 0.1284
+F2 = 0.5952
+F3 = 0.2381
+F4 = 0.0383
+
+; --- Volumes of metabolite central compartments fixed to parent V1 ---
+Vm2 = V1
+Vm3 = V1
+Vm4 = V1
+
+PK:
+; Dose split into 4 fractions via depot macros (Pattern A: manual absorption)
+depot(target=Ad1, p=F1, adm=1)
+depot(target=Ad2, p=F2, adm=1)
+depot(target=Ad3, p=F3, adm=1)
+depot(target=Ad4, p=F4, adm=1)
+
+EQUATION:
+; --- Parent absorption depot ---
+ddt_Ad1 = -ka1*Ad1
+
+; --- Parent 2-compartment disposition + transformation to metabolites ---
+ddt_Ac1 = ka1*Ad1 - (Cl/V1)*Ac1 - (Q/V1)*Ac1 + (Q/V2)*Ac2 - kpm2*Ac1 - kpm3*Ac1 - kpm4*Ac1
+ddt_Ac2 = (Q/V1)*Ac1 - (Q/V2)*Ac2
+
+; --- Metabolite 2 ---
+ddt_Ad2 = -ka2*Ad2
+ddt_Am2 = ka2*Ad2 + kpm2*Ac1 - (Clm2/Vm2)*Am2
+
+; --- Metabolite 3 ---
+ddt_Ad3 = -ka3*Ad3
+ddt_Am3 = ka3*Ad3 + kpm3*Ac1 - (Clm3/Vm3)*Am3
+
+; --- Metabolite 4 ---
+ddt_Ad4 = -ka4*Ad4
+ddt_Am4 = ka4*Ad4 + kpm4*Ac1 - (Clm4/Vm4)*Am4
+
+; --- Outputs ---
+Cp = Ac1/V1
+Cm2 = Am2/Vm2
+Cm3 = Am3/Vm3
+Cm4 = Am4/Vm4
+
+OUTPUT:
+output = {Cp, Cm2, Cm3, Cm4}

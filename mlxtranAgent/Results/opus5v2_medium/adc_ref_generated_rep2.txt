@@ -1,0 +1,28 @@
+DESCRIPTION:
+ADC model: 2-compartment disposition for the ADC (IV administration), with
+proteolytic degradation in the central compartment releasing DAR molecules of
+cytotoxic payload. The payload follows a 1-compartment disposition.
+
+[LONGITUDINAL]
+input = {V, k10, k12, k21, V_payload, k_payload}
+
+PK:
+; --- ADC disposition (macros) ---
+compartment(cmt=1, amount=Ac_ADC, volume=V, concentration=Cc_ADC)
+iv(cmt=1, adm=1)
+peripheral(k12, k21)
+elimination(cmt=1, k=k10)
+
+EQUATION:
+; --- Constant drug-to-antibody ratio ---
+DAR = 4
+
+; --- Payload disposition (ODE) ---
+t_0 = 0
+Ap_payload_0 = 0
+ddt_Ap_payload = DAR * k10 * Ac_ADC - k_payload * Ap_payload
+
+Cc_payload = Ap_payload / V_payload
+
+OUTPUT:
+output = {Cc_ADC, Cc_payload}

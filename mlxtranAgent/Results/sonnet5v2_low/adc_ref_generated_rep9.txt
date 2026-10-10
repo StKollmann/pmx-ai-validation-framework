@@ -1,0 +1,18 @@
+[LONGITUDINAL]
+input = {k12, k21, V, k10, V_payload, k_payload, DAR}
+
+PK:
+compartment(cmt=1, amount=Ac, volume=V, concentration=Cc_ADC)
+iv(cmt=1)
+peripheral(k12, k21)
+elimination(cmt=1, k=k10)
+
+EQUATION:
+; Payload release from ADC proteolytic degradation (DAR molecules of payload per ADC molecule)
+release_rate = k10*Ac*DAR
+
+ddt_Apayload = release_rate - k_payload*Apayload
+Cc_payload = Apayload/V_payload
+
+OUTPUT:
+output = {Cc_ADC, Cc_payload}

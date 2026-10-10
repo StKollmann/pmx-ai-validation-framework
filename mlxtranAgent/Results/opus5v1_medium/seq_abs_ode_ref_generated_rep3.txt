@@ -1,0 +1,42 @@
+DESCRIPTION: Two-compartment PK model with sequential zero-order then first-order absorption.
+Doses enter the absorption compartment (Ad) at a constant rate over a duration Tk0
+(zero-order input), then the drug is absorbed into the central compartment with a
+first-order rate constant ka. Disposition is described by a central compartment
+(V, Cl) and one peripheral compartment (V2) with intercompartmental clearance Q.
+
+[LONGITUDINAL]
+input = {Tk0, ka, V, Cl, Q, V2}
+
+PK:
+; Zero-order input of the dose into the absorption compartment Ad.
+; No ka is passed to the macro: first-order absorption is written explicitly below.
+depot(target=Ad, Tk0)
+
+EQUATION:
+odeType = stiff
+
+; Initial conditions
+t_0  = 0
+Ad_0 = 0
+Ac_0 = 0
+Ap_0 = 0
+
+; Micro-constants
+k   = Cl/V
+k12 = Q/V
+k21 = Q/V2
+
+; Absorption compartment (first-order absorption into central)
+ddt_Ad = -ka*Ad
+
+; Central compartment
+ddt_Ac = ka*Ad - k*Ac - k12*Ac + k21*Ap
+
+; Peripheral compartment
+ddt_Ap = k12*Ac - k21*Ap
+
+; Plasma concentration
+Cc = Ac/V
+
+OUTPUT:
+output = {Cc}

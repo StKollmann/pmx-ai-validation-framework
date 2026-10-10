@@ -1,0 +1,26 @@
+DESCRIPTION:
+Target cell limited model of viral dynamics.
+States: T (target cells), I (infected cells), V (virus).
+
+[LONGITUDINAL]
+input = {beta, delta, p, c, V0, T0}
+
+EQUATION:
+odeType = stiff
+
+; Initial conditions
+t_0 = 0
+T_0 = T0
+I_0 = 0
+V_0 = V0
+
+; ODE system
+ddt_T = -beta*T*V
+ddt_I = beta*T*V - delta*I
+ddt_V = p*I - c*V
+
+; Log10 viral load with lower saturation at -5
+LV = max(log10(max(V, 1e-10)), -5)
+
+OUTPUT:
+output = {LV}

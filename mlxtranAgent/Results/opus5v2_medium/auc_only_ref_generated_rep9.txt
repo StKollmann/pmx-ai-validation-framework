@@ -1,0 +1,25 @@
+DESCRIPTION:
+One-compartment model with IV administration (bolus or infusion), written with ODEs.
+Elimination described by a first-order rate constant k. Outputs: plasma concentration
+Cc and cumulative area under the concentration-time curve AUC.
+
+[LONGITUDINAL]
+input = {k, V}
+
+PK:
+; doses are administered directly into the central compartment amount Ac
+depot(target=Ac)
+
+EQUATION:
+t_0 = 0
+Ac_0 = 0
+AUC_0 = 0
+
+; define concentration BEFORE it is used
+Cc = Ac/V
+
+ddt_Ac = -k*Ac
+ddt_AUC = Cc
+
+OUTPUT:
+output = {Cc, AUC}

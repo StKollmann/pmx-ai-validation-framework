@@ -1,0 +1,51 @@
+DESCRIPTION: Parent (2-cmt) + 3 metabolites (1-cmt each), first-pass splitting of dose
+
+[LONGITUDINAL]
+input = {V1, Cl, Q, V2, ka1, ka2, ka3, ka4, Clm2, Clm3, Clm4, kpm2, kpm3, kpm4}
+
+PK:
+; Dose split into fixed fractions (first-pass effect)
+depot(target = Ad1, p = 0.1284)
+depot(target = Ad2, p = 0.5952)
+depot(target = Ad3, p = 0.2381)
+depot(target = Ad4, p = 0.0383)
+
+EQUATION:
+odeType = stiff
+
+t_0 = 0
+Ad1_0 = 0
+Ad2_0 = 0
+Ad3_0 = 0
+Ad4_0 = 0
+Ap_0  = 0
+Ap2_0 = 0
+Am2_0 = 0
+Am3_0 = 0
+Am4_0 = 0
+
+; --- Parent ---
+ddt_Ad1 = -ka1*Ad1
+ddt_Ap  = ka1*Ad1 - (Cl/V1)*Ap - (Q/V1)*Ap + (Q/V2)*Ap2 - (kpm2 + kpm3 + kpm4)*Ap
+ddt_Ap2 = (Q/V1)*Ap - (Q/V2)*Ap2
+
+; --- Metabolite 2 ---
+ddt_Ad2 = -ka2*Ad2
+ddt_Am2 = ka2*Ad2 + kpm2*Ap - (Clm2/V1)*Am2
+
+; --- Metabolite 3 ---
+ddt_Ad3 = -ka3*Ad3
+ddt_Am3 = ka3*Ad3 + kpm3*Ap - (Clm3/V1)*Am3
+
+; --- Metabolite 4 ---
+ddt_Ad4 = -ka4*Ad4
+ddt_Am4 = ka4*Ad4 + kpm4*Ap - (Clm4/V1)*Am4
+
+; --- Concentrations (metabolite volumes fixed to V1) ---
+Cp  = Ap/V1
+Cm2 = Am2/V1
+Cm3 = Am3/V1
+Cm4 = Am4/V1
+
+OUTPUT:
+output = {Cp, Cm2, Cm3, Cm4}

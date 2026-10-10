@@ -1,0 +1,21 @@
+[LONGITUDINAL]
+input = {k12, k21, V, k10, V_payload, k_payload}
+
+PK:
+; ADC disposition: central + peripheral compartments, IV administration
+compartment(cmt=1, amount=Ac_ADC, volume=V, concentration=Cc_ADC)
+iv(cmt=1)
+elimination(cmt=1, k=k10)
+peripheral(k12, k21)
+
+EQUATION:
+; Constant drug-to-antibody ratio
+DAR = 4
+
+; Payload release via proteolytic degradation of ADC in central compartment
+; and its own one-compartment disposition
+ddt_Ap = DAR*k10*Ac_ADC - k_payload*Ap
+Cc_payload = Ap/V_payload
+
+OUTPUT:
+output = {Cc_ADC, Cc_payload}

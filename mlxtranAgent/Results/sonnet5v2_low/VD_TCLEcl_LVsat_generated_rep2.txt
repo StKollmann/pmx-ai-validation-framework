@@ -1,0 +1,28 @@
+[LONGITUDINAL]
+input = {R0, kI, delta, p, c, V0, T0}
+
+EQUATION:
+odeType = stiff
+
+; convert R0 into infection rate beta
+beta = R0*c*delta/(p*T0)
+
+; initial conditions
+T_0 = T0
+E_0 = 0
+I_0 = 0
+V_0 = 10^V0
+
+; ODEs: target cell limited model with eclipse phase
+; virus is lost both by clearance and by infecting target cells
+ddt_T = -beta*T*V
+ddt_E =  beta*T*V - kI*E
+ddt_I =  kI*E - delta*I
+ddt_V =  p*I - c*V - beta*T*V
+
+; log10 viral load with lower saturation at -5
+LV_raw = log10(max(V,1e-30))
+LV = max(LV_raw, -5)
+
+OUTPUT:
+output = {LV}

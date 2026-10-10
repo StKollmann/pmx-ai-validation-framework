@@ -1,0 +1,21 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, kprod, Circ0, ktr, kdeg, beta, EC50}
+
+PK:
+depot(target=Ac, ka)
+
+EQUATION:
+odeType = stiff
+Prol_0 = Circ0*kdeg/ktr
+Circ_0 = Circ0
+Cc = Ac/V
+CN = Circ
+DrugInhib = Cc/(EC50 + Cc)
+Feedback = (Circ0/CN)^beta
+ProlProduction = kprod*Prol*(1 - DrugInhib)*Feedback
+ddt_Ac = -(Cl/V)*Ac
+ddt_Prol = ProlProduction - ktr*Prol
+ddt_Circ = ktr*Prol - kdeg*Circ
+
+OUTPUT:
+output = {Cc, CN}

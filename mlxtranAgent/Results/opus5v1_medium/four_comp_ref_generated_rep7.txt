@@ -1,0 +1,19 @@
+DESCRIPTION: Four-compartment PK model (1 central + 3 peripheral), first-order absorption, linear elimination
+
+[LONGITUDINAL]
+input = {ka, k12, k21, k13, k31, k14, k41, k, V}
+
+PK:
+; Central compartment
+compartment(cmt=1, amount=Ac, volume=V, concentration=Cc)
+; First-order absorption into central compartment
+absorption(cmt=1, ka)
+; Peripheral compartments
+peripheral(k12, k21)
+peripheral(k13, k31)
+peripheral(k14, k41)
+; Linear elimination from central compartment
+elimination(cmt=1, k)
+
+OUTPUT:
+output = {Cc}

@@ -1,0 +1,13 @@
+run,model,prompt_version,reasoning_effort,runs,passed,pass_rate_pct,infrastructure_failures,pass_rate_excl_infra_pct,mean_generation_time_s,generated_models_included
+gpt56sol_none,gpt-5.6-sol,v1,none,200,188,94.0,0,94.0,11.4,190
+gpt56sol_low,gpt-5.6-sol,v1,low,200,195,97.5,0,97.5,19.9,190
+gpt56sol_medium,gpt-5.6-sol,v1,medium,200,191,95.5,0,95.5,15.6,190
+gpt56terra_none,gpt-5.6-terra,v1,none,200,143,71.5,0,71.5,13.3,190
+gpt56terra_low,gpt-5.6-terra,v1,low,200,180,90.0,0,90.0,15.7,190
+gpt56terra_medium,gpt-5.6-terra,v1,medium,200,187,93.5,0,93.5,15.5,190
+opus5v1_low,claude-opus-5,v1,low,200,98,49.0,8,51.0,17.1,182
+opus5v1_medium,claude-opus-5,v1,medium,200,83,41.5,0,41.5,21.5,190
+opus5v2_low,claude-opus-5,v2,low,200,164,82.0,0,82.0,16.3,190
+opus5v2_medium,claude-opus-5,v2,medium,200,148,74.0,19,81.8,24.1,171
+sonnet5v2_low,claude-sonnet-5,v2,low,200,148,74.0,6,76.3,24.0,190
+sonnet5v2_medium,claude-sonnet-5,v2,medium,200,169,84.5,0,84.5,24.0,190

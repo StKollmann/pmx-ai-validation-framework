@@ -1,0 +1,23 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, kprod, Circ0, ktr, kdeg, beta, EC50}
+
+PK:
+depot(target=Ac, ka)
+
+EQUATION:
+odeType = stiff
+
+Circ_0 = Circ0
+Prol_0 = Circ0*kdeg/ktr
+Cc = Ac/V
+DrugInhibition = Cc/(EC50 + Cc)
+Feedback = (Circ0/Circ)^beta
+CN = Circ
+
+; proliferating and circulating neutrophils
+ddt_Ac = -(Cl/V)*Ac
+ddt_Prol = kprod*Prol*(1 - DrugInhibition)*Feedback - ktr*Prol
+ddt_Circ = ktr*Prol - kdeg*Circ
+
+OUTPUT:
+output = {Cc, CN}

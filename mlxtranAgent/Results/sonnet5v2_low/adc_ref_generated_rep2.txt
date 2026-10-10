@@ -1,0 +1,17 @@
+[LONGITUDINAL]
+input = {k12, k21, V, k10, V_payload, k_payload}
+
+PK:
+compartment(cmt=1, amount=Ac, volume=V, concentration=Cc_ADC)
+iv(cmt=1)
+peripheral(k12, k21)
+elimination(cmt=1, k=k10)
+
+EQUATION:
+; Payload release: proteolytic degradation of ADC in central compartment releases payload
+; DAR (drug-antibody ratio) = 4 is constant, so payload release rate = k10 * Ac * DAR
+ddt_Ap = k10*Ac*4 - k_payload*Ap
+Cc_payload = Ap/V_payload
+
+OUTPUT:
+output = {Cc_ADC, Cc_payload}

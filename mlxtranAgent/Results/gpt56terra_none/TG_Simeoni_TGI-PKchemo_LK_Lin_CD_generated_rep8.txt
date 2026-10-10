@@ -1,0 +1,30 @@
+[LONGITUDINAL]
+input = {TS0_init, kge, kgl, kkill, tau}
+
+PK:
+Cc_cis = pkmodel(ka=66.5421, k=0.2868, V=65.1131)
+Cc_pem = pkmodel(ka=28.6, k=2.1328, V=102.7673)
+
+EQUATION:
+odeType = stiff
+psi = 20
+EXPOSURE = Cc_cis + Cc_pem
+ktrans = 1/tau
+TS0_0 = TS0_init
+TS1_0 = 0
+TS2_0 = 0
+TS3_0 = 0
+if TS0 <= psi
+    growth = kge*TS0
+else
+    growth = kgl
+end
+kill = kkill*EXPOSURE*TS0
+ddt_TS0 = growth - kill
+ddt_TS1 = kill - ktrans*TS1
+ddt_TS2 = ktrans*(TS1 - TS2)
+ddt_TS3 = ktrans*(TS2 - TS3)
+TotalTS = TS0 + TS1 + TS2 + TS3
+
+OUTPUT:
+output = {TotalTS}

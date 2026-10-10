@@ -1,0 +1,13 @@
+[LONGITUDINAL]
+input = {V, CL0, slope}
+
+PK:
+depot(target=Ad)
+
+EQUATION:
+CL_t = CL0 + slope*t
+ddt_Ad = -CL_t/V*Ad
+Cc = Ad/V
+
+OUTPUT:
+output = {Cc}
