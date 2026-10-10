@@ -1,0 +1,26 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, Circ0, MTT, gam, Emax, EC50}
+
+PK:
+depot(target=Ac, ka)
+
+EQUATION:
+ktr = 4/MTT
+Cc = Ac/V
+DrugEffect = Emax*Cc/(EC50 + Cc)
+Feedback = (Circ0/Circ)^gam
+Proliferation = ktr*Prol*Feedback*(1 - DrugEffect)
+Prol_0 = Circ0
+Transit1_0 = Circ0
+Transit2_0 = Circ0
+Transit3_0 = Circ0
+Circ_0 = Circ0
+ddt_Prol = Proliferation - ktr*Prol
+ddt_Transit1 = ktr*Prol - ktr*Transit1
+ddt_Transit2 = ktr*Transit1 - ktr*Transit2
+ddt_Transit3 = ktr*Transit2 - ktr*Transit3
+ddt_Circ = ktr*Transit3 - ktr*Circ
+ddt_Ac = -(Cl/V)*Ac
+
+OUTPUT:
+output = {Cc, Circ}

@@ -1,0 +1,28 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, kprod, Circ0, ktr, kdeg, beta, EC50}
+
+PK:
+depot(target=Ac, ka)
+
+EQUATION:
+odeType = stiff
+
+; --- PK ---
+Cc = Ac/V
+
+; --- Drug inhibitory effect on proliferating neutrophil production ---
+Inh = 1 - Cc/(EC50 + Cc)
+
+; --- Feedback from circulating neutrophils on proliferation ---
+Fb = (Circ0/CN)^beta
+
+; --- Initial conditions (steady-state at baseline) ---
+Prol_0 = Circ0
+CN_0 = Circ0
+
+ddt_Ac   = -Cl/V*Ac
+ddt_Prol = kprod*Prol*Inh*Fb - ktr*Prol
+ddt_CN   = ktr*Prol - kdeg*CN
+
+OUTPUT:
+output = {Cc, CN}

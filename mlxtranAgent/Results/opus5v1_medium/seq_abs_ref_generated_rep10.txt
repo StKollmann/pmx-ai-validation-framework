@@ -1,0 +1,29 @@
+DESCRIPTION:
+Two-compartment PK model with sequential zero-order then first-order absorption.
+Doses enter a depot compartment by zero-order input (duration Tk0), then transfer
+to the central compartment by a first-order process (rate ka).
+
+[LONGITUDINAL]
+input = {Tk0, ka, V, Cl, Q, V2}
+
+PK:
+; transfer rate constants for the peripheral compartment
+k23 = Q/V
+k32 = Q/V2
+
+; depot compartment (cmt=1) with zero-order input
+compartment(cmt=1, amount=Ad)
+absorption(cmt=1, Tk0)
+
+; first-order transfer from depot to central compartment
+transfer(from=1, to=2, kt=ka)
+
+; central compartment (cmt=2)
+compartment(cmt=2, amount=Ac, volume=V, concentration=Cc)
+elimination(cmt=2, Cl)
+
+; peripheral compartment (cmt=3) linked to central compartment
+peripheral(k23, k32)
+
+OUTPUT:
+output = {Cc}

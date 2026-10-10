@@ -1,0 +1,27 @@
+DESCRIPTION:
+One-compartment PK model with IV administration and time-dependent (linear) clearance.
+CL(t) = max(CL0 + slope*t, 0)
+
+[LONGITUDINAL]
+input = {V, CL0, slope}
+
+PK:
+; dose enters the central compartment
+depot(target=Ac)
+
+EQUATION:
+odeType = stiff
+t_0 = 0
+Ac_0 = 0
+
+; time-varying clearance (bounded below by 0)
+CLt = max(CL0 + slope*t, 0)
+k = CLt/V
+
+ddt_Ac = -k*Ac
+
+Cc = Ac/V
+
+OUTPUT:
+output = {Cc}
+table = {CLt}

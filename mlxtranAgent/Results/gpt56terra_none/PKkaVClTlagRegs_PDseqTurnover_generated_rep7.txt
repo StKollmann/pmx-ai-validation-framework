@@ -1,0 +1,13 @@
+[LONGITUDINAL]
+input = {Tlag, ka, V, Cl, IC50, Rin, kout}
+
+PK:
+Cc = pkmodel(Tlag, ka, V, Cl)
+
+EQUATION:
+kin = Rin*kout
+I = Cc/(IC50 + Cc)
+ddt_E = kin*(1 - I) - kout*E
+
+OUTPUT:
+output = {Cc, E}

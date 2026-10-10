@@ -1,0 +1,19 @@
+[LONGITUDINAL]
+input = {Tk0, ka, V, Cl, Q, V2}
+
+PK:
+; Zero-order input into the absorption compartment Ad
+depot(target=Ad, Tk0)
+
+EQUATION:
+; Define concentrations before use
+Cc = Ac/V
+Cp = Ap/V2
+
+; First-order absorption and two-compartment disposition
+ddt_Ad = -ka*Ad
+ddt_Ac = ka*Ad - (Cl/V)*Ac - (Q/V)*Ac + (Q/V2)*Ap
+ddt_Ap = (Q/V)*Ac - (Q/V2)*Ap
+
+OUTPUT:
+output = {Cc}

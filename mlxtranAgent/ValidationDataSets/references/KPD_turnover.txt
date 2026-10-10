@@ -1,0 +1,32 @@
+DESCRIPTION:
+    K-PD model with a simple PK degradation and a turnover PD model with sigmoidal Imax inhibition of proliferation.
+[LONGITUDINAL]
+input = {k, R0, kdeg, IC50, Imax, gamma}
+
+PK:
+    ; Define the target variable for doses. Doses will be added to A_drug.
+    ; This macro handles the administration of doses into the A_drug variable.
+    depot(target=A_drug)
+
+EQUATION:
+    ; PK model: Simple first-order degradation of drug amount
+    ; Initial amount of drug is 0 at time t=0
+    A_drug_0 = 0
+    ddt_A_drug = -k * A_drug
+
+    ; PD model: Turnover with inhibition of proliferation
+    ; Initial PD response is R0 (baseline steady-state)
+    R_0 = R0
+
+    ; Calculate the inhibition factor using a sigmoidal Imax model
+    ; A_drug is used directly as the driver for the PD effect, as no volume is specified.
+    inhibition_effect = Imax * A_drug^gamma / (IC50^gamma + A_drug^gamma)
+
+    ; production rate
+    ksyn = R0*kdeg
+    
+    ; ODE for the PD response
+    ddt_R = ksyn * (1 - inhibition_effect) - kdeg*R
+
+OUTPUT:
+    output = {R}

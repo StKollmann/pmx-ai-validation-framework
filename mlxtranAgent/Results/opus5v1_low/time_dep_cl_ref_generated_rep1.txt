@@ -1,0 +1,15 @@
+[LONGITUDINAL]
+input = {V, CL0, slope}
+
+PK:
+depot(target=Ac)
+
+EQUATION:
+odeType = stiff
+; time-dependent clearance, linear in time, floored at 0
+CLt = max(CL0 + slope*t, 0)
+ddt_Ac = -(CLt/V)*Ac
+Cc = Ac/V
+
+OUTPUT:
+output = {Cc}

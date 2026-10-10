@@ -1,0 +1,14 @@
+[LONGITUDINAL]
+input = {V, k, Vm, Km}
+
+PK:
+iv(cmt=1)
+
+EQUATION:
+Cc = Ac/V
+elim_linear = k*Ac
+elim_MM = Vm*Cc/(Km + Cc)
+ddt_Ac = -elim_linear - elim_MM
+
+OUTPUT:
+output = {Cc}

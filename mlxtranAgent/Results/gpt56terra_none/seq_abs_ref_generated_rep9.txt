@@ -1,0 +1,8 @@
+[LONGITUDINAL]
+input = {Tk0, ka, V, Cl, Q, V2}
+
+PK:
+Cc = pkmodel(Tk0, ka, V, Cl, k12=Q/V, k21=Q/V2)
+
+OUTPUT:
+output = {Cc}

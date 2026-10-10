@@ -1,0 +1,14 @@
+[LONGITUDINAL]
+input = {Tlag, ka, V, Cl, IC50, Rin, kout}
+
+PK:
+Cc = pkmodel(Tlag, ka, V, Cl)
+
+EQUATION:
+inhibition = Cc/(IC50 + Cc)
+production = Rin*(1 - inhibition)
+E_0 = Rin/kout
+ddt_E = production - kout*E
+
+OUTPUT:
+output = {Cc, E}

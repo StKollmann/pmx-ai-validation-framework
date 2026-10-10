@@ -1,0 +1,15 @@
+[LONGITUDINAL]
+input = {k12, k21, V, k10, V_payload, k_payload}
+
+PK:
+compartment(cmt=1, amount=Ac_ADC, volume=V, concentration=Cc_ADC)
+iv(cmt=1)
+peripheral(k12, k21, amount=Ap_ADC)
+elimination(cmt=1, k=k10)
+
+EQUATION:
+ddt_A_payload = 4*k10*Ac_ADC - k_payload*A_payload
+Cc_payload = A_payload/V_payload
+
+OUTPUT:
+output = {Cc_ADC, Cc_payload}

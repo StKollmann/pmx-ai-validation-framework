@@ -1,0 +1,28 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, Circ0, MTT, gam, Emax, EC50}
+
+PK:
+depot(target=Ac)
+
+EQUATION:
+k_tr = 4/MTT
+k_el = Cl/V
+Cc = Ac/V
+Edrug = Emax*Cc/(EC50 + Cc)
+Feedback = (Circ0/Circ)^gam
+Proliferation = k_tr*Prol*Feedback*(1 - Edrug)
+ddt_Ad = -ka*Ad
+ddt_Ac = ka*Ad - k_el*Ac
+ddt_Prol = Proliferation - k_tr*Prol
+ddt_Transit1 = k_tr*(Prol - Transit1)
+ddt_Transit2 = k_tr*(Transit1 - Transit2)
+ddt_Transit3 = k_tr*(Transit2 - Transit3)
+ddt_Circ = k_tr*Transit3 - k_tr*Circ
+Prol_0 = Circ0
+Transit1_0 = Circ0
+Transit2_0 = Circ0
+Transit3_0 = Circ0
+Circ_0 = Circ0
+
+OUTPUT:
+output = {Cc, Circ}

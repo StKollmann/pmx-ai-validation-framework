@@ -1,0 +1,25 @@
+DESCRIPTION: K-PD model with turnover response model, inhibition of production (sigmoidal Imax)
+
+[LONGITUDINAL]
+input = {k, R0, kdeg, IC50, Imax, gamma}
+
+PK:
+depot(target=A)
+
+EQUATION:
+odeType = stiff
+t_0 = 0
+A_0 = 0
+R_0 = R0
+
+; K-PD "concentration" = amount in virtual depot
+ddt_A = -k*A
+
+; sigmoidal inhibition of the production rate
+INH = Imax*A^gamma/(IC50^gamma + A^gamma)
+kin = R0*kdeg
+
+ddt_R = kin*(1 - INH) - kdeg*R
+
+OUTPUT:
+output = {R}

@@ -1,0 +1,21 @@
+DESCRIPTION: K-PD model with turnover PD, inhibition of production (Imax sigmoid)
+
+[LONGITUDINAL]
+input = {k, R0, kdeg, IC50, Imax, gamma}
+
+PK:
+depot(target=A)
+
+EQUATION:
+odeType = nonStiff
+t_0 = 0
+A_0 = 0
+R_0 = R0
+
+ddt_A = -k*A
+Inh = Imax*A^gamma/(A^gamma + IC50^gamma)
+kin = R0*kdeg
+ddt_R = kin*(1 - Inh) - kdeg*R
+
+OUTPUT:
+output = {R}

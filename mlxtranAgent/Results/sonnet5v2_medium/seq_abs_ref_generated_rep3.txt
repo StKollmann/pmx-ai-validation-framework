@@ -1,0 +1,24 @@
+[LONGITUDINAL]
+input = {Tk0, ka, V, Cl, Q, V2}
+
+PK:
+; --- Zero-order input into depot compartment 1 ---
+compartment(cmt=1, amount=A1)
+absorption(cmt=1, Tk0=Tk0)
+
+; --- First-order transfer from depot (1) to central (2) ---
+transfer(from=1, to=2, kt=ka)
+
+; --- Central compartment ---
+compartment(cmt=2, amount=Ac, volume=V, concentration=Cc)
+
+; --- Peripheral compartment (base=2, peripheral=3) ---
+k23 = Q/V
+k32 = Q/V2
+peripheral(k23=k23, k32=k32)
+
+; --- Elimination from central compartment ---
+elimination(cmt=2, Cl)
+
+OUTPUT:
+output = {Cc}

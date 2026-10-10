@@ -1,0 +1,19 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, R0, intercept, slope, kout, Emax, EC50}
+
+ka = {use=regressor}
+V = {use=regressor}
+Cl = {use=regressor}
+
+PK:
+Cc = pkmodel(ka, V, Cl)
+
+EQUATION:
+Rss = intercept + slope*R0
+kin = kout*Rss
+Edrug = Emax*Cc/(EC50 + Cc)
+R_0 = R0
+ddt_R = kin*(1 + Edrug) - kout*R
+
+OUTPUT:
+output = {Cc, R}

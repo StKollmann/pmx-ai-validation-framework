@@ -1,0 +1,17 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, R0, Rss, kout, Emax, EC50}
+ka = {use=regressor}
+V = {use=regressor}
+Cl = {use=regressor}
+
+PK:
+Cc = pkmodel(ka, V, Cl)
+
+EQUATION:
+stim = Emax*Cc/(EC50 + Cc)
+kin = Rss*kout
+R_0 = R0
+ddt_R = kin*(1 + stim) - kout*R
+
+OUTPUT:
+output = {Cc, R}

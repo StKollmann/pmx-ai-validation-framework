@@ -1,0 +1,34 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, Circ0, MTT, gam, Emax, EC50}
+
+PK:
+depot(target=Ad, ka)
+
+EQUATION:
+; PK: one-compartment with first-order absorption and linear elimination
+ddt_Ad = -ka*Ad
+ddt_Ac = ka*Ad - (Cl/V)*Ac
+Cc = Ac/V
+
+; PD: Friberg semi-mechanistic myelosuppression model
+; 3 transit compartments -> ktr = (n+1)/MTT with n=3
+ktr = 4/MTT
+kprol = ktr
+kcirc = ktr
+
+Edrug = Emax*Cc/(EC50 + Cc)
+
+Prol_0 = Circ0
+Transit1_0 = Circ0
+Transit2_0 = Circ0
+Transit3_0 = Circ0
+Circ_0 = Circ0
+
+ddt_Prol = kprol*Prol*(1 - Edrug)*(Circ0/Circ)^gam - ktr*Prol
+ddt_Transit1 = ktr*Prol - ktr*Transit1
+ddt_Transit2 = ktr*Transit1 - ktr*Transit2
+ddt_Transit3 = ktr*Transit2 - ktr*Transit3
+ddt_Circ = ktr*Transit3 - kcirc*Circ
+
+OUTPUT:
+output = {Cc, Circ}

@@ -1,0 +1,29 @@
+DESCRIPTION:
+ADC PK model (2-compartment, IV) with released cytotoxic payload (1-compartment).
+ADC disposition written with PK macros; payload disposition written with ODEs.
+Only the proteolytic (catabolism) pathway releases payload; DAR is constant = 4.
+
+[LONGITUDINAL]
+input = {V, k10, k12, k21, V_payload, k_payload}
+
+PK:
+; --- ADC disposition (macros) ---
+compartment(cmt=1, amount=Ac_ADC, volume=V, concentration=Cc_ADC)
+iv(cmt=1, adm=1)
+peripheral(k12, k21)
+elimination(cmt=1, k=k10)
+
+EQUATION:
+; --- Constant drug-to-antibody ratio ---
+DAR = 4
+
+; --- Payload disposition (ODE) ---
+; Payload is released in the central compartment through proteolytic
+; degradation of the ADC (rate k10*Ac_ADC), each ADC releasing DAR payload molecules
+A_payload_0 = 0
+ddt_A_payload = DAR * k10 * Ac_ADC - k_payload * A_payload
+
+Cc_payload = A_payload / V_payload
+
+OUTPUT:
+output = {Cc_ADC, Cc_payload}

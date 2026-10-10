@@ -1,0 +1,12 @@
+[LONGITUDINAL]
+input = {Cavg, ke0, Emax, EC50, E0}
+Cavg = {use=regressor}
+
+EQUATION:
+Ce_0 = 0
+ddt_Ce = ke0*(Cavg - Ce)
+
+E = E0 + Emax*Ce/(EC50 + Ce)
+
+OUTPUT:
+output = {E}

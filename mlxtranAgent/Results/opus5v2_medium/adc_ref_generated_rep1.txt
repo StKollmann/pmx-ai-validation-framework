@@ -1,0 +1,27 @@
+DESCRIPTION:
+ADC PK model: 2-compartment disposition for the ADC (macros) with proteolytic
+release of the cytotoxic payload from the central compartment (DAR = 4 constant).
+The released payload follows a one-compartment disposition (ODE).
+
+[LONGITUDINAL]
+input = {k12, k21, V, k10, V_payload, k_payload}
+
+PK:
+; ---- ADC disposition (macros) ----
+compartment(cmt=1, amount=Ac, volume=V, concentration=Cc_ADC)
+iv(cmt=1, adm=1)
+peripheral(k12, k21)
+elimination(cmt=1, k=k10)
+
+EQUATION:
+; ---- constant drug-to-antibody ratio ----
+DAR = 4
+
+; ---- payload released by proteolytic degradation of the ADC ----
+t_0 = 0
+A_payload_0 = 0
+ddt_A_payload = DAR*k10*Ac - k_payload*A_payload
+Cc_payload = A_payload/V_payload
+
+OUTPUT:
+output = {Cc_ADC, Cc_payload}

@@ -1,0 +1,36 @@
+DESCRIPTION:
+Two-compartment PK model with sequential zero-order then first-order absorption.
+Doses enter the absorption compartment Ad as a zero-order input of duration Tk0,
+then Ad empties into the central compartment with first-order rate constant ka.
+
+[LONGITUDINAL]
+input = {Tk0, ka, V, Cl, Q, V2}
+
+PK:
+; Zero-order input of duration Tk0 into the absorption compartment Ad
+depot(target=Ad, Tk0)
+
+EQUATION:
+odeType = stiff
+
+; Initial conditions
+t_0  = 0
+Ad_0 = 0
+Ac_0 = 0
+Ap_0 = 0
+
+; Micro-constants
+k   = Cl/V
+k12 = Q/V
+k21 = Q/V2
+
+; ODE system
+ddt_Ad = -ka*Ad
+ddt_Ac = ka*Ad - k*Ac - k12*Ac + k21*Ap
+ddt_Ap = k12*Ac - k21*Ap
+
+; Central concentration
+Cc = Ac/V
+
+OUTPUT:
+output = {Cc}

@@ -1,0 +1,30 @@
+DESCRIPTION:
+PKPD model: 1-compartment PK with first-order absorption and lag time,
+linear elimination (PK macros). PD: indirect response (turnover) model with
+inhibition of production (Rin, kout, IC50).
+
+[LONGITUDINAL]
+input = {Tlag, ka, V, Cl, IC50, Rin, kout}
+
+Tlag = {use=regressor}
+ka = {use=regressor}
+V = {use=regressor}
+Cl = {use=regressor}
+
+PK:
+; PK model defined with macros
+Cc = pkmodel(Tlag, ka, V, Cl)
+
+EQUATION:
+odeType = stiff
+
+; initial condition at baseline steady state
+t_0 = 0
+E_0 = Rin/kout
+
+; inhibition of production (Imax = 1)
+inh = 1 - Cc/(Cc + IC50)
+ddt_E = Rin*inh - kout*E
+
+OUTPUT:
+output = {Cc, E}

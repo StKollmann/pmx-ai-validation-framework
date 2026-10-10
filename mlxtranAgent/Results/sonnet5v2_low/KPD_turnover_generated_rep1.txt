@@ -1,0 +1,20 @@
+[LONGITUDINAL]
+input = {k, R0, kdeg, IC50, Imax, gamma}
+
+PK:
+depot(target=Ac)
+
+EQUATION:
+ddt_Ac = -k*Ac
+
+; Sigmoidal Imax inhibition of proliferation rate driven by K-PD 'PK' amount Ac
+Inh = Imax*Ac^gamma/(IC50^gamma + Ac^gamma)
+
+t_0 = 0
+R_0 = R0
+
+; Turnover model: proliferation (kdeg*R0) inhibited by drug, degradation kdeg*R
+ddt_R = kdeg*R0*(1-Inh) - kdeg*R
+
+OUTPUT:
+output = {R}

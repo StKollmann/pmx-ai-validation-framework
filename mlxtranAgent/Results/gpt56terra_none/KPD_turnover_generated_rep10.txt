@@ -1,0 +1,17 @@
+[LONGITUDINAL]
+input = {k, R0, kdeg, IC50, Imax, gamma}
+
+PK:
+compartment(cmt=1, amount=A)
+iv(cmt=1)
+elimination(cmt=1, k)
+
+EQUATION:
+C = A
+Inhib = Imax*C^gamma/(IC50^gamma + C^gamma)
+kprol = kdeg*R0
+R_0 = R0
+ddt_R = kprol*(1-Inhib) - kdeg*R
+
+OUTPUT:
+output = {R}

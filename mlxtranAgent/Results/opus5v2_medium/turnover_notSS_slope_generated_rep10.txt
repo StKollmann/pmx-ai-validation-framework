@@ -1,0 +1,33 @@
+DESCRIPTION:
+Sequential PK-PD model. PK: one-compartment with first-order absorption,
+PK parameters (ka, V, Cl) given as regressors. PD: turnover model with
+stimulation of the production (Emax) by the drug concentration.
+The response is not at steady-state at t=0: R(0) = R0 while the
+steady-state response Rss is linearly related to R0.
+
+[LONGITUDINAL]
+input = {ka, V, Cl, R0, intercept, slope, kout, Emax, EC50}
+ka = {use=regressor}
+V = {use=regressor}
+Cl = {use=regressor}
+
+PK:
+; one-compartment model with first-order absorption
+Cc = pkmodel(ka, V, Cl)
+
+EQUATION:
+t_0 = 0
+R_0 = R0
+
+; steady-state response linearly related to the baseline response
+Rss = intercept + slope*R0
+; production rate constant derived from steady state
+kin = kout*Rss
+
+; stimulation of the production by the drug
+stim = 1 + Emax*Cc/(EC50 + Cc)
+
+ddt_R = kin*stim - kout*R
+
+OUTPUT:
+output = {Cc, R}

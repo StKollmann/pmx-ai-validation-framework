@@ -1,0 +1,35 @@
+DESCRIPTION:
+One-compartment PK with first-order absorption and linear elimination,
+coupled with a two-subpopulation (proliferating / circulating) neutrophil
+turnover model with drug inhibition of proliferation and feedback.
+
+[LONGITUDINAL]
+input = {ka, V, Cl, kprod, Circ0, ktr, kdeg, beta, EC50}
+
+PK:
+; doses enter a hidden depot, absorbed into Ac with rate ka
+depot(target=Ac, ka)
+
+EQUATION:
+odeType = stiff
+
+; --- Initial conditions ---
+t_0 = 0
+Ac_0 = 0
+Prol_0 = Circ0*kdeg/ktr
+Circ_0 = Circ0
+
+; --- PK ---
+ddt_Ac = -(Cl/V)*Ac
+Cc = Ac/V
+
+; --- PD: neutrophil turnover ---
+CN = Circ
+INH = 1 - Cc/(EC50 + Cc)
+FDBK = (Circ0/max(CN, 1e-6))^beta
+
+ddt_Prol = kprod*Prol*INH*FDBK - ktr*Prol
+ddt_Circ = ktr*Prol - kdeg*Circ
+
+OUTPUT:
+output = {Cc, CN}

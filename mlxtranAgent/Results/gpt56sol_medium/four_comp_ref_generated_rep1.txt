@@ -1,0 +1,13 @@
+[LONGITUDINAL]
+input = {ka, k12, k21, k13, k31, k14, k41, k, V}
+
+PK:
+compartment(cmt=1, volume=V, concentration=Cc)
+absorption(cmt=1, ka)
+elimination(cmt=1, k)
+peripheral(k12, k21)
+peripheral(k13, k31)
+peripheral(k14, k41)
+
+OUTPUT:
+output = {Cc}

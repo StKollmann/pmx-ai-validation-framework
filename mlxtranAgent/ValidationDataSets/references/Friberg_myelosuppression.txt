@@ -1,0 +1,49 @@
+[LONGITUDINAL]
+DESCRIPTION:
+; Friberg semi-mechanistic model for chemotherapy-induced myelosuppression.
+; PK: 1-compartment, first-order absorption, linear elimination.
+; PD: Proliferating cells -> 3 transit compartments -> circulating cells.
+; Drug inhibits proliferation via Emax model; feedback from Circ drives homeostasis.
+
+input = {ka, V, Cl, Circ0, MTT, gam, Emax, EC50}
+
+PK:
+; 1-compartment oral PK
+depot(target=Ac, ka)
+
+EQUATION:
+; PK concentration
+ddt_Ac = -(Cl/V)*Ac
+Cc = Ac/V
+
+; Transit rate (n=3 transit compartments)
+ktr = 4/MTT
+
+; At steady-state: kprol = ktr, kcirc = ktr
+kprol = ktr
+kcirc = ktr
+
+; Drug effect (Emax model)
+Edrug = Emax*Cc/(EC50 + Cc)
+
+; Feedback
+Circ_safe = max(Circ, 1e-12)
+Feedback = (Circ0/Circ_safe)^gam
+
+; Initial conditions (all compartments at baseline)
+Ac_0   = 0
+Prol_0 = Circ0
+T1_0   = Circ0
+T2_0   = Circ0
+T3_0   = Circ0
+Circ_0 = Circ0
+
+; ODEs
+ddt_Prol = kprol*Prol*(1 - Edrug)*Feedback - ktr*Prol
+ddt_T1   = ktr*Prol - ktr*T1
+ddt_T2   = ktr*T1   - ktr*T2
+ddt_T3   = ktr*T2   - ktr*T3
+ddt_Circ = ktr*T3   - kcirc*Circ
+
+OUTPUT:
+output = {Cc, Circ}

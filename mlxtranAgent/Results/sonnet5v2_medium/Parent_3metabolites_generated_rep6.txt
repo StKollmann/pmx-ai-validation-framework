@@ -1,0 +1,37 @@
+[LONGITUDINAL]
+input = {V1, Cl, Q, V2, ka1, ka2, ka3, ka4, Clm2, Clm3, Clm4, kpm2, kpm3, kpm4}
+
+PK:
+; Fixed first-pass fractions of the dose
+F1 = 0.1284
+F2 = 0.5952
+F3 = 0.2381
+F4 = 0.0383
+
+; Fraction F1 undergoes first-order absorption into the parent central compartment
+depot(target=Ac1, ka=ka1, p=F1)
+
+; Fractions F2, F3, F4 are absorbed directly and presystemically converted into the metabolites
+depot(target=Am2, ka=ka2, p=F2)
+depot(target=Am3, ka=ka3, p=F3)
+depot(target=Am4, ka=ka4, p=F4)
+
+EQUATION:
+odeType = stiff
+
+; Parent: 2-compartment disposition + elimination + transformation to metabolites
+ddt_Ac1 = -(Cl/V1)*Ac1 - (Q/V1)*Ac1 + (Q/V2)*Ac2 - kpm2*Ac1 - kpm3*Ac1 - kpm4*Ac1
+ddt_Ac2 = (Q/V1)*Ac1 - (Q/V2)*Ac2
+
+; Metabolites: one compartment each, volume fixed to V1
+ddt_Am2 = kpm2*Ac1 - (Clm2/V1)*Am2
+ddt_Am3 = kpm3*Ac1 - (Clm3/V1)*Am3
+ddt_Am4 = kpm4*Ac1 - (Clm4/V1)*Am4
+
+Cp  = Ac1/V1
+Cm2 = Am2/V1
+Cm3 = Am3/V1
+Cm4 = Am4/V1
+
+OUTPUT:
+output = {Cp, Cm2, Cm3, Cm4}

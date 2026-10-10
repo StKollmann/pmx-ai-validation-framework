@@ -1,0 +1,37 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, Circ0, MTT, gam, Emax, EC50}
+
+PK:
+depot(target=Ad, ka)
+compartment(cmt=1, amount=Ac, volume=V, concentration=Cc)
+elimination(cmt=1, Cl)
+
+EQUATION:
+; --- Transit rate constant from mean transit time (3 transit cmts + circulating) ---
+ktr = 4/MTT
+
+; --- Initial conditions: all PD compartments start at baseline Circ0 ---
+Prol_0 = Circ0
+Transit1_0 = Circ0
+Transit2_0 = Circ0
+Transit3_0 = Circ0
+Circ_0 = Circ0
+
+; --- Drug effect (Emax model) on proliferation, driven by plasma concentration Cc ---
+Edrug = Emax*Cc/(EC50 + Cc)
+
+; --- Homeostatic feedback on proliferation ---
+Fb = (Circ0/Circ)^gam
+
+; --- Proliferation and circulating loss rates equal ktr at steady state ---
+ddt_Prol = ktr*Prol*(1 - Edrug)*Fb - ktr*Prol
+ddt_Transit1 = ktr*Prol - ktr*Transit1
+ddt_Transit2 = ktr*Transit1 - ktr*Transit2
+ddt_Transit3 = ktr*Transit2 - ktr*Transit3
+ddt_Circ = ktr*Transit3 - ktr*Circ
+
+ddt_Ad = -ka*Ad
+ddt_Ac = ka*Ad - (Cl/V)*Ac
+
+OUTPUT:
+output = {Cc, Circ}

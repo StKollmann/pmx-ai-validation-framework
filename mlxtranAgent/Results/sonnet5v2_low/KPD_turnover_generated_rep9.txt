@@ -1,0 +1,18 @@
+[LONGITUDINAL]
+input = {k, R0, kdeg, IC50, Imax, gamma}
+
+PK:
+depot(target=Ad)
+
+EQUATION:
+t_0 = 0
+Ad_0 = 0
+R_0 = R0
+
+Inh = Imax*Ad^gamma/(IC50^gamma + Ad^gamma)
+
+ddt_Ad = -k*Ad
+ddt_R = kdeg*R0*(1 - Inh) - kdeg*R
+
+OUTPUT:
+output = {R}

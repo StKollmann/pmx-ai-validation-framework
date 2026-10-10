@@ -1,0 +1,22 @@
+[LONGITUDINAL]
+input = {V, CL0, slope}
+
+PK:
+; IV bolus/infusion doses enter the central compartment amount Ac
+depot(target=Ac)
+
+EQUATION:
+t_0 = 0
+Ac_0 = 0
+
+; time-varying clearance (linear in time, bounded below by 0)
+CLt = max(CL0 + slope*t, 0)
+k = CLt/V
+
+ddt_Ac = -k*Ac
+
+Cc = Ac/V
+
+OUTPUT:
+output = {Cc}
+table = {CLt}

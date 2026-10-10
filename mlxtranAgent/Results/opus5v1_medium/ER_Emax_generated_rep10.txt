@@ -1,0 +1,21 @@
+DESCRIPTION:
+Exposure-response model with average concentration (Cavg) read from the dataset
+as a regressor, an effect compartment (link model) and an Emax response.
+
+[LONGITUDINAL]
+input = {E0, ke0, Emax, EC50, Cavg}
+Cavg = {use=regressor}
+
+EQUATION:
+odeType = stiff
+; effect compartment driven by the observed exposure Cavg
+t_0 = 0
+Ce_0 = Cavg
+ddt_Ce = ke0*(Cavg - Ce)
+
+; Emax response
+E = E0 + Emax*Ce/(EC50 + Ce)
+
+OUTPUT:
+output = {E}
+table = {Ce}

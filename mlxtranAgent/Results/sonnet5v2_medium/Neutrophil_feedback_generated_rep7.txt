@@ -1,0 +1,28 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, kprod, Circ0, ktr, kdeg, beta, EC50}
+
+PK:
+depot(target=Ad, ka)
+
+EQUATION:
+odeType = stiff
+
+; PK
+ddt_Ad = -ka*Ad
+ddt_Ac = ka*Ad - (Cl/V)*Ac
+Cc = Ac/V
+
+; PD - turnover model with proliferating and circulating neutrophils
+Prol_0 = kdeg*Circ0/ktr
+Circ_0 = Circ0
+
+INH = 1 - Cc/(EC50+Cc)
+FB = (Circ0/Circ)^beta
+
+ddt_Prol = kprod*Prol*INH*FB - ktr*Prol
+ddt_Circ = ktr*Prol - kdeg*Circ
+
+CN = Circ
+
+OUTPUT:
+output = {Cc, CN}

@@ -1,0 +1,30 @@
+DESCRIPTION:
+One-compartment model with IV administration (bolus or infusion), written with ODEs.
+Outputs: plasma concentration (Cc) and cumulative AUC.
+
+[LONGITUDINAL]
+input = {k, V}
+
+PK:
+; doses are administered directly into the central compartment amount Ac
+depot(target=Ac)
+
+EQUATION:
+odeType = nonStiff
+
+; initial conditions
+t_0 = 0
+Ac_0 = 0
+AUC_0 = 0
+
+; central compartment
+ddt_Ac = -k*Ac
+
+; concentration must be defined before being used
+Cc = Ac/V
+
+; cumulative area under the concentration-time curve
+ddt_AUC = Cc
+
+OUTPUT:
+output = {Cc, AUC}

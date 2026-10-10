@@ -1,0 +1,26 @@
+DESCRIPTION: Four-compartment model (1 central + 3 peripheral), first-order absorption, linear elimination.
+
+[LONGITUDINAL]
+input = {ka, k12, k21, k13, k31, k14, k41, k, V}
+
+PK:
+depot(target=Ad)
+
+EQUATION:
+t_0 = 0
+Ad_0 = 0
+Ac_0 = 0
+Ap2_0 = 0
+Ap3_0 = 0
+Ap4_0 = 0
+
+ddt_Ad  = -ka*Ad
+ddt_Ac  =  ka*Ad - k*Ac - k12*Ac + k21*Ap2 - k13*Ac + k31*Ap3 - k14*Ac + k41*Ap4
+ddt_Ap2 =  k12*Ac - k21*Ap2
+ddt_Ap3 =  k13*Ac - k31*Ap3
+ddt_Ap4 =  k14*Ac - k41*Ap4
+
+Cc = Ac/V
+
+OUTPUT:
+output = {Cc}

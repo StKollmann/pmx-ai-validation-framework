@@ -1,0 +1,17 @@
+[LONGITUDINAL]
+input = {ka, k12, k21, k13, k31, k14, k41, k, V}
+
+PK:
+; Central compartment (cmt=1)
+compartment(cmt=1, amount=Ac, volume=V, concentration=Cc)
+; First-order absorption into the central compartment
+absorption(cmt=1, ka)
+; Three peripheral compartments (cmt=2, 3, 4)
+peripheral(k12, k21)
+peripheral(k13, k31)
+peripheral(k14, k41)
+; Linear elimination from the central compartment
+elimination(cmt=1, k)
+
+OUTPUT:
+output = {Cc}

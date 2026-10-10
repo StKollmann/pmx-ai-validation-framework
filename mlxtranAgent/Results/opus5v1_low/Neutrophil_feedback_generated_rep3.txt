@@ -1,0 +1,26 @@
+DESCRIPTION: PK-PD model, 1-cmt PK with first-order absorption and turnover neutrophil model
+
+[LONGITUDINAL]
+input = {ka, V, Cl, kprod, Circ0, ktr, kdeg, beta, EC50}
+
+PK:
+depot(target=Ac, ka)
+
+EQUATION:
+odeType = stiff
+t_0 = 0
+Ac_0 = 0
+PN_0 = Circ0*kdeg/ktr
+CN_0 = Circ0
+
+Cc = Ac/V
+ddt_Ac = -(Cl/V)*Ac
+
+inh = 1 - Cc/(EC50 + Cc)
+fb = (Circ0/max(CN,1e-6))^beta
+
+ddt_PN = kprod*PN*inh*fb - ktr*PN
+ddt_CN = ktr*PN - kdeg*CN
+
+OUTPUT:
+output = {Cc, CN}

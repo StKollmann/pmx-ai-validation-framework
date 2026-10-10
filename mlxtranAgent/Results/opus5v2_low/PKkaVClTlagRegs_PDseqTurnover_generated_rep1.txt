@@ -1,0 +1,21 @@
+[LONGITUDINAL]
+input = {Tlag, ka, V, Cl, IC50, Rin, kout}
+Tlag = {use=regressor}
+ka = {use=regressor}
+V = {use=regressor}
+Cl = {use=regressor}
+
+PK:
+; 1-compartment, first-order absorption with lag time, linear elimination
+compartment(cmt=1, amount=Ac, volume=V, concentration=Cc)
+absorption(cmt=1, ka, Tlag=Tlag)
+elimination(cmt=1, Cl)
+
+EQUATION:
+; Turnover model with inhibition of production
+E_0 = Rin/kout
+inh = 1 - Cc/(Cc + IC50)
+ddt_E = Rin*inh - kout*E
+
+OUTPUT:
+output = {Cc, E}

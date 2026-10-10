@@ -1,0 +1,30 @@
+DESCRIPTION:
+Two-compartment PK model with sequential zero-order (depot, duration Tk0)
+then first-order (ka) absorption. Zero-order input into the absorption
+compartment Ad via the depot macro; first-order transfer Ad -> Ac by ODE.
+
+[LONGITUDINAL]
+input = {Tk0, ka, V, Cl, Q, V2}
+
+PK:
+; doses enter the absorption compartment Ad at zero order over duration Tk0
+depot(target=Ad, Tk0)
+
+EQUATION:
+; initial conditions
+t_0 = 0
+Ad_0 = 0
+Ac_0 = 0
+Ap_0 = 0
+
+; concentrations defined before use
+Cc = Ac/V
+Cp = Ap/V2
+
+; ODE system
+ddt_Ad = -ka*Ad
+ddt_Ac = ka*Ad - (Cl/V)*Cc*V - Q*(Cc - Cp)
+ddt_Ap = Q*(Cc - Cp)
+
+OUTPUT:
+output = {Cc}

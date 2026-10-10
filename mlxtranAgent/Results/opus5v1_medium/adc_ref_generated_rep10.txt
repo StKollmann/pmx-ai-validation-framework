@@ -1,0 +1,24 @@
+DESCRIPTION:
+ADC model: 2-compartment ADC disposition (macros) with proteolytic release of payload
+into a 1-compartment payload model (ODEs). Constant DAR = 4.
+
+[LONGITUDINAL]
+input = {k12, k21, V, k10, V_payload, k_payload}
+
+PK:
+; constant drug-to-antibody ratio
+DAR = 4
+
+; ADC disposition (central + peripheral), IV administration, proteolytic elimination
+compartment(cmt=1, amount=A_ADC, volume=V, concentration=Cc_ADC)
+peripheral(k12, k21)
+iv(cmt=1, adm=1)
+elimination(cmt=1, k=k10)
+
+EQUATION:
+; payload released from ADC catabolism in the central compartment
+ddt_A_payload = DAR*k10*A_ADC - k_payload*A_payload
+Cc_payload = A_payload/V_payload
+
+OUTPUT:
+output = {Cc_ADC, Cc_payload}

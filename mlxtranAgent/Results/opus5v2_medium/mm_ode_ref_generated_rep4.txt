@@ -1,0 +1,23 @@
+[LONGITUDINAL]
+input = {V, k, Vm, Km}
+
+PK:
+; IV bolus doses go directly into the central amount Ac
+depot(target=Ac)
+
+EQUATION:
+; initial condition
+t_0 = 0
+Ac_0 = 0
+
+; central concentration (defined before use)
+Cc = Ac/V
+
+; linear + Michaelis-Menten elimination, written on amounts
+elim_lin = k*Ac
+elim_mm = Vm*Cc/(Km + Cc)
+
+ddt_Ac = -elim_lin - elim_mm
+
+OUTPUT:
+output = {Cc}

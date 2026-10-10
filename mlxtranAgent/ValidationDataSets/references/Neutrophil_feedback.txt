@@ -1,0 +1,56 @@
+[LONGITUDINAL]
+DESCRIPTION:
+; PK-PD model for drug effect on neutrophil turnover.
+; PK: One-compartment model with first-order absorption and linear elimination.
+; PD: Two-compartment turnover model for proliferating and circulating neutrophils.
+;     Drug inhibits proliferating neutrophil production.
+;     Circulating neutrophils provide feedback on proliferating neutrophil production.
+
+input = {ka, V, Cl, kprod, Circ0, ktr, kdeg, beta, EC50}
+
+PK:
+; Define the depot compartment for oral administration.
+; 'Ad' will be the amount in the absorption compartment.
+; The 'ka' argument here indicates that the drug leaves the depot compartment
+; with a first-order rate constant 'ka' and enters the central compartment (Ac).
+depot(target=Ac, ka)
+
+EQUATION:
+odeType = stiff
+
+; PK model equations (ODEs)
+; Amount in central compartment (Ac)
+; Drug enters from the absorption compartment (Ad) at rate ka*Ad (this input is implicitly handled by the 'depot' definition)
+; Drug leaves via linear elimination at rate (Cl/V)*Ac
+ddt_Ac = - (Cl/V)*Ac 
+
+; Concentration in central compartment (Cc)
+Cc = Ac/V
+
+; PD model equations (ODEs)
+
+; Drug effect on production of proliferating neutrophils (Emax inhibition)
+; Inhibition term: Cc / (EC50 + Cc)
+Inhibition = Cc / (EC50 + Cc)
+
+; ODE for Proliferating Neutrophils (PN)
+; Production term: kprod * (Circ0/CN)^beta * (1 - Inhibition)
+;   - kprod: Baseline production rate
+;   - (Circ0/CN)^beta: Feedback from circulating neutrophils (CN)
+;   - (1 - Inhibition): Drug effect reducing production
+; Loss term: ktr * PN (transfer to circulating neutrophils)
+ddt_PN = kprod * (Circ0/CN)^beta * (1 - Inhibition) * PN - ktr * PN
+
+; ODE for Circulating Neutrophils (CN)
+; Formation term: ktr * PN (from proliferating neutrophils)
+; Loss term: kdeg * CN (degradation)
+ddt_CN = ktr * PN - kdeg * CN
+
+; Initial conditions for ODEs
+Ad_0 = 0        ; Initial amount in absorption compartment is zero
+Ac_0 = 0        ; Initial amount in central compartment is zero
+CN_0 = Circ0    ; Initial level of circulating neutrophils is the baseline (Circ0)
+PN_0 = (kdeg * Circ0) / ktr ; Initial level of proliferating neutrophils at steady-state
+
+OUTPUT:
+output = {Cc, CN}

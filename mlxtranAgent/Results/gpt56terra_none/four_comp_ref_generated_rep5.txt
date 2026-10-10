@@ -1,0 +1,16 @@
+[LONGITUDINAL]
+input = {ka, k12, k21, k13, k31, k14, k41, k, V}
+
+PK:
+depot(target=Ad)
+
+EQUATION:
+Cc = Ac/V
+ddt_Ad = -ka*Ad
+ddt_Ac = ka*Ad - k*Ac - k12*Ac + k21*A2 - k13*Ac + k31*A3 - k14*Ac + k41*A4
+ddt_A2 = k12*Ac - k21*A2
+ddt_A3 = k13*Ac - k31*A3
+ddt_A4 = k14*Ac - k41*A4
+
+OUTPUT:
+output = {Cc}

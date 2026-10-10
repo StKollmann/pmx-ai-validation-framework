@@ -1,0 +1,32 @@
+[LONGITUDINAL]
+DESCRIPTION:
+; Sequential PK-PD turnover model with stimulation of production.
+; PK: One-compartment model with first-order absorption. PK parameters (ka, V, Cl) are provided as regressors.
+; PD: Turnover model with stimulation of production by drug concentration (Cc).
+; The PD response is not at steady-state at time 0, allowing for a distinct initial value (R0).
+
+input = {ka, V, Cl, R0, Rss, kout, Emax, EC50}
+
+; Declare PK parameters as regressors, meaning their values are read directly from the dataset
+ka = {use=regressor}
+V = {use=regressor}
+Cl = {use=regressor}
+
+PK:
+Cc = pkmodel(ka, V, Cl)
+
+EQUATION:
+
+; reparametrization
+kin = Rss * kout
+
+; Initial condition for the PD response variable (R)
+; R0 is the initial value of the response at t=0, as PD is not at steady-state.
+R_0 = R0
+
+; ODE for the response variable (R)
+ddt_R = kin*(1 + Emax * Cc / (EC50 + Cc)) - kout * R
+
+OUTPUT:
+; Specify the variables to be outputted for analysis
+output = {Cc, R}

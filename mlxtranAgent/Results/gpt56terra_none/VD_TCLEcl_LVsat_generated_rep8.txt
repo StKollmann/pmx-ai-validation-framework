@@ -1,0 +1,24 @@
+[LONGITUDINAL]
+input = {R0, kI, delta, p, c, V0, T0}
+
+EQUATION:
+odeType = stiff
+Vinit = 10^V0
+beta = R0*delta*c/(p*T0)
+T_0 = T0
+I1_0 = 0
+I2_0 = 0
+V_0 = Vinit
+ddt_T = -beta*T*V
+ddt_I1 = beta*T*V - kI*I1
+ddt_I2 = kI*I1 - delta*I2
+ddt_V = p*I2 - c*V - beta*T*V
+LVraw = log10(V)
+if LVraw < -5
+    LV = -5
+else
+    LV = LVraw
+end
+
+OUTPUT:
+output = {LV}
