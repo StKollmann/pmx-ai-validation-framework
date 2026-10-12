@@ -1,0 +1,34 @@
+DESCRIPTION:
+One-compartment PK (first-order absorption, linear elimination) linked to a
+turnover PD model with proliferating (NP) and circulating (CN) neutrophils.
+Drug inhibits proliferation via an Emax (Imax=1) term; circulating neutrophils
+exert a feedback on proliferation.
+
+[LONGITUDINAL]
+input = {ka, V, Cl, kprod, Circ0, ktr, kdeg, beta, EC50}
+
+PK:
+; Pattern B: depot handles first-order absorption into the central compartment
+depot(target=Ac, ka)
+
+EQUATION:
+odeType = stiff
+
+; --- Initial conditions ---
+t_0 = 0
+Ac_0 = 0
+NP_0 = Circ0*kdeg/ktr
+CN_0 = Circ0
+
+; --- Define intermediate variables BEFORE use ---
+Cc = Ac/V
+inhib = 1 - Cc/(EC50 + Cc)
+feedback = (Circ0/max(CN, 1e-6))^beta
+
+; --- ODEs ---
+ddt_Ac = -(Cl/V)*Ac
+ddt_NP = kprod*NP*inhib*feedback - ktr*NP
+ddt_CN = ktr*NP - kdeg*CN
+
+OUTPUT:
+output = {Cc, CN}

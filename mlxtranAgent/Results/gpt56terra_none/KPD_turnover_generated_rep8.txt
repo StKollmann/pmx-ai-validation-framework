@@ -1,0 +1,13 @@
+[LONGITUDINAL]
+input = {k, R0, kdeg, IC50, Imax, gamma}
+
+EQUATION:
+K_0 = 1
+R_0 = R0
+ddt_K = -k*K
+inhib = Imax*K^gamma/(IC50^gamma + K^gamma)
+kprol = kdeg*R0*(1-inhib)
+ddt_R = kprol - kdeg*R
+
+OUTPUT:
+output = {R}

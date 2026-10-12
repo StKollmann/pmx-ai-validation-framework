@@ -1,0 +1,30 @@
+[LONGITUDINAL]
+input = {R0, kI, delta, p, c, V0, T0}
+
+EQUATION:
+odeType = stiff
+
+; derive infection rate beta from R0 = beta*p*T0/(delta*c)
+beta = R0*delta*c/(p*T0)
+
+t_0 = 0
+T_0 = T0
+E_0 = 0
+I_0 = 0
+V_0 = 10^V0
+
+ddt_T = -beta*T*V
+ddt_E =  beta*T*V - kI*E
+ddt_I =  kI*E - delta*I
+ddt_V =  p*I - c*V - beta*T*V
+
+; log10 viral load with lower saturation at -5
+log10V = log10(V)
+if log10V < -5
+    LV = -5
+else
+    LV = log10V
+end
+
+OUTPUT:
+output = {LV}

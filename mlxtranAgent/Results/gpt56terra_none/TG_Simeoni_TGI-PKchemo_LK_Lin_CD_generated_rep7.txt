@@ -1,0 +1,22 @@
+[LONGITUDINAL]
+input = {TS0, kge, kgl, kkill, tau}
+
+PK:
+Cc_cis = pkmodel(ka=66.5421, k=0.2868, V=65.1131)
+Cc_pem = pkmodel(ka=28.6, k=2.1328, V=102.7673)
+
+EQUATION:
+odeType = stiff
+psi = 20
+EXPOSURE = Cc_cis + Cc_pem
+ktransit = 1/tau
+kill = kkill*EXPOSURE
+TS_0 = TS0
+ddt_TS = (kge*TS)/(1 + (kge*TS/kgl)^psi)^(1/psi) - kill*TS
+ddt_TS1 = kill*TS - ktransit*TS1
+ddt_TS2 = ktransit*TS1 - ktransit*TS2
+ddt_TS3 = ktransit*TS2 - ktransit*TS3
+TotalTS = TS + TS1 + TS2 + TS3
+
+OUTPUT:
+output = {TotalTS}

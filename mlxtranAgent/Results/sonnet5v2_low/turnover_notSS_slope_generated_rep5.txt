@@ -1,0 +1,25 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, R0, intercept, slope, kout, Emax, EC50}
+ka = {use=regressor}
+V = {use=regressor}
+Cl = {use=regressor}
+
+PK:
+Cc = pkmodel(ka, V, Cl)
+
+EQUATION:
+; Rss is linearly related to R0
+Rss = intercept + slope*R0
+; kin is derived from Rss and kout assuming baseline steady-state relationship (no drug)
+kin = kout*Rss
+
+; initial condition for R is R0 (not at steady state at t=0)
+R_0 = R0
+
+; stimulation of production by the drug
+stim = Emax*Cc/(EC50+Cc)
+
+ddt_R = kin*(1+stim) - kout*R
+
+OUTPUT:
+output = {Cc, R}

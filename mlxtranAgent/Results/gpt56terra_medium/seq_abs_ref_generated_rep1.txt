@@ -1,0 +1,15 @@
+[LONGITUDINAL]
+input = {Tk0, ka, V, Cl, Q, V2}
+
+PK:
+k13 = Q/V
+k31 = Q/V2
+compartment(cmt=1, amount=Ac, volume=V, concentration=Cc)
+compartment(cmt=2, amount=Aabs)
+absorption(cmt=2, Tk0)
+transfer(from=2, to=1, kt=ka)
+peripheral(k13, k31, amount=A2, volume=V2)
+elimination(cmt=1, Cl)
+
+OUTPUT:
+output = {Cc}

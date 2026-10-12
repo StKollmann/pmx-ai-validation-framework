@@ -1,0 +1,15 @@
+[LONGITUDINAL]
+input = {k, R0, kdeg, IC50, Imax, gamma}
+
+PK:
+depot(target=A)          ; K-PD: doses enter directly into the 'kinetics' compartment A
+
+EQUATION:
+Kin = R0*kdeg            ; turnover input rate, defined so that R=R0 at baseline (Kin/kdeg = R0)
+Inh = Imax*(A^gamma)/(IC50^gamma + A^gamma)  ; sigmoidal Imax inhibition of proliferation/input
+ddt_A = -k*A             ; simple monoexponential decay (K-PD driver, no volume/absorption)
+ddt_R = Kin*(1-Inh) - kdeg*R
+R_0 = R0
+
+OUTPUT:
+output = {R}

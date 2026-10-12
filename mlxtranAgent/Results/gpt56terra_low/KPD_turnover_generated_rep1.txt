@@ -1,0 +1,13 @@
+[LONGITUDINAL]
+input = {k, R0, kdeg, IC50, Imax, gamma}
+
+PK:
+depot(target=A)
+
+EQUATION:
+Effect = Imax*A^gamma/(IC50^gamma + A^gamma)
+ddt_A = -k*A
+ddt_R = kdeg*R0*(1-Effect) - kdeg*R
+
+OUTPUT:
+output = {R}

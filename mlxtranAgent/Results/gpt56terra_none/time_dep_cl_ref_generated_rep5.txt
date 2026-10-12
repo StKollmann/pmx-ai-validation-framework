@@ -1,0 +1,14 @@
+[LONGITUDINAL]
+input = {V, CL0, slope}
+
+PK:
+iv(cmt=1)
+compartment(cmt=1, amount=Ac, volume=V, concentration=Cc)
+
+EQUATION:
+CL = CL0 + slope*t
+k = CL/V
+ddt_Ac = -k*Ac
+
+OUTPUT:
+output = {Cc}

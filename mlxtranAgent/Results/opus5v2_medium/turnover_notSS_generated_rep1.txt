@@ -1,0 +1,22 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, R0, Rss, kout, Emax, EC50}
+ka = {use=regressor}
+V = {use=regressor}
+Cl = {use=regressor}
+
+PK:
+; One-compartment model with first-order absorption
+Cc = pkmodel(ka, V, Cl)
+
+EQUATION:
+odeType = nonStiff
+t_0 = 0
+R_0 = R0
+
+; Turnover model with stimulation of production
+kin = Rss*kout
+E = Emax*Cc/(EC50+Cc)
+ddt_R = kin*(1+E) - kout*R
+
+OUTPUT:
+output = {Cc, R}

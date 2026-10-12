@@ -1,0 +1,15 @@
+[LONGITUDINAL]
+input = {k, R0, kdeg, IC50, Imax, gamma}
+
+PK:
+depot(target=A)
+
+EQUATION:
+R_0 = R0
+Edrug = Imax*A^gamma/(IC50^gamma + A^gamma)
+prolif = kdeg*R0*(1 - Edrug)
+ddt_A = -k*A
+ddt_R = prolif - kdeg*R
+
+OUTPUT:
+output = {R}

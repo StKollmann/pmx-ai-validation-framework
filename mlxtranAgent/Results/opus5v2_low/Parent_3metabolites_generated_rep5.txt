@@ -1,0 +1,57 @@
+[LONGITUDINAL]
+input = {V1, Cl, Q, V2, ka1, ka2, ka3, ka4, Clm2, Clm3, Clm4, kpm2, kpm3, kpm4}
+
+PK:
+; Fixed first-pass fractions of the dose
+F1 = 0.1284
+F2 = 0.5952
+F3 = 0.2381
+F4 = 0.0383
+
+depot(target=Ad1, p=F1)
+depot(target=Ad2, p=F2)
+depot(target=Ad3, p=F3)
+depot(target=Ad4, p=F4)
+
+EQUATION:
+odeType = stiff
+
+t_0 = 0
+Ad1_0 = 0
+Ad2_0 = 0
+Ad3_0 = 0
+Ad4_0 = 0
+Ac_0 = 0
+Ap_0 = 0
+Am2_0 = 0
+Am3_0 = 0
+Am4_0 = 0
+
+; metabolite volumes fixed to parent central volume
+Vm2 = V1
+Vm3 = V1
+Vm4 = V1
+
+k = Cl/V1
+k12 = Q/V1
+k21 = Q/V2
+
+ddt_Ad1 = -ka1*Ad1
+ddt_Ad2 = -ka2*Ad2
+ddt_Ad3 = -ka3*Ad3
+ddt_Ad4 = -ka4*Ad4
+
+ddt_Ac = ka1*Ad1 - k*Ac - k12*Ac + k21*Ap - (kpm2 + kpm3 + kpm4)*Ac
+ddt_Ap = k12*Ac - k21*Ap
+
+ddt_Am2 = ka2*Ad2 + kpm2*Ac - (Clm2/Vm2)*Am2
+ddt_Am3 = ka3*Ad3 + kpm3*Ac - (Clm3/Vm3)*Am3
+ddt_Am4 = ka4*Ad4 + kpm4*Ac - (Clm4/Vm4)*Am4
+
+Cp  = Ac/V1
+Cm2 = Am2/Vm2
+Cm3 = Am3/Vm3
+Cm4 = Am4/Vm4
+
+OUTPUT:
+output = {Cp, Cm2, Cm3, Cm4}

@@ -1,0 +1,24 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, R0, intercept, slope, kout, Emax, EC50}
+ka = {use=regressor}
+V = {use=regressor}
+Cl = {use=regressor}
+
+PK:
+; PK: one-compartment model with first-order absorption
+Cc = pkmodel(ka, V, Cl)
+
+EQUATION:
+; PD: turnover model with stimulation of the production
+; Response at steady state linearly related to the response at time 0
+Rss = intercept + slope*R0
+kin = kout*Rss
+
+t_0 = 0
+R_0 = R0
+
+Stim = Emax*Cc/(EC50 + Cc)
+ddt_R = kin*(1 + Stim) - kout*R
+
+OUTPUT:
+output = {Cc, R}

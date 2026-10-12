@@ -1,0 +1,12 @@
+[LONGITUDINAL]
+input = {Tk0, ka, V, Cl}
+
+PK:
+compartment(cmt=1, amount=Ad)
+absorption(cmt=1, Tk0)
+transfer(from=1, to=2, kt=ka)
+compartment(cmt=2, amount=Ac, volume=V, concentration=Cc)
+elimination(cmt=2, Cl)
+
+OUTPUT:
+output = {Cc}

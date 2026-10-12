@@ -1,0 +1,20 @@
+[LONGITUDINAL]
+input = {V, k}
+
+PK:
+; Define the central compartment as the target for IV doses
+depot(target=Ac)
+
+EQUATION:
+; Define the ordinary differential equation for the amount in the central compartment (Ac)
+ddt_Ac = -k*Ac
+
+; Calculate the concentration in the central compartment (Cc)
+Cc = Ac/V
+
+; Define the ordinary differential equation for the Area Under the Curve (AUC)
+ddt_AUC = Cc
+
+OUTPUT:
+output = {Cc}
+table = {AUC}

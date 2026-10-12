@@ -1,0 +1,21 @@
+[LONGITUDINAL]
+input = {V, CL0, slope}
+
+PK:
+; IV administration directly into the central compartment
+depot(target=Ac)
+
+EQUATION:
+odeType = stiff
+t_0 = 0
+Ac_0 = 0
+
+; Time-dependent (linear) clearance, constrained to stay non-negative
+CLt = max(CL0 + slope*t, 0)
+
+ddt_Ac = -(CLt/V)*Ac
+
+Cc = Ac/V
+
+OUTPUT:
+output = {Cc}

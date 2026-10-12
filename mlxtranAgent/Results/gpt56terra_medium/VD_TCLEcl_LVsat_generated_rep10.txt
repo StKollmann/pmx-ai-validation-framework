@@ -1,0 +1,22 @@
+[LONGITUDINAL]
+input = {R0, kI, delta, p, c, V0, T0}
+
+EQUATION:
+odeType = stiff
+beta = R0*c*delta/(p*T0)
+T_0 = T0
+IE_0 = 0
+IP_0 = 0
+V_0 = 10^V0
+ddt_T = -beta*V*T
+ddt_IE = beta*V*T - kI*IE
+ddt_IP = kI*IE - delta*IP
+ddt_V = p*IP - c*V - beta*V*T
+if V <= 1e-5
+  LV = -5
+else
+  LV = log(V)/log(10)
+end
+
+OUTPUT:
+output = {LV}

@@ -1,0 +1,14 @@
+[LONGITUDINAL]
+input = {k12, k21, V, k10, V_payload, k_payload}
+
+PK:
+Cc_ADC = pkmodel(k12=k12, k21=k21, k=k10, V=V)
+
+EQUATION:
+DAR = 4
+Ac_ADC = Cc_ADC*V
+ddt_Ap = DAR*k10*Ac_ADC - k_payload*Ap
+Cc_payload = Ap/V_payload
+
+OUTPUT:
+output = {Cc_ADC, Cc_payload}

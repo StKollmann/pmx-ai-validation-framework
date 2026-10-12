@@ -1,0 +1,20 @@
+[LONGITUDINAL]
+input = {Tlag, ka, V, Cl, IC50, Rin, kout}
+
+Tlag = {use=regressor}
+ka = {use=regressor}
+V = {use=regressor}
+Cl = {use=regressor}
+
+PK:
+{Cc} = pkmodel(Tlag, ka, V, Cl)
+
+EQUATION:
+E_0 = Rin/kout
+
+Inh = IC50/(IC50 + Cc)
+
+ddt_E = Rin*Inh - kout*E
+
+OUTPUT:
+output = {Cc, E}

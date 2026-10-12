@@ -1,0 +1,57 @@
+DESCRIPTION: Parent drug (2 compartments) with 3 metabolites (1 compartment each),
+first-pass effect modeled as a split of the oral dose into fixed fractions,
+plus systemic conversion of parent into each metabolite.
+
+[LONGITUDINAL]
+input = {V1, Cl, Q, V2, ka1, ka2, ka3, ka4, Clm2, Clm3, Clm4, kpm2, kpm3, kpm4}
+
+PK:
+; fixed dose fractions (first-pass effect)
+F1 = 0.1284
+F2 = 0.5952
+F3 = 0.2381
+F4 = 0.0383
+
+; the dose is split between the parent depot and the three metabolite depots
+depot(target=Ad1, adm=1, p=F1)
+depot(target=Ad2, adm=1, p=F2)
+depot(target=Ad3, adm=1, p=F3)
+depot(target=Ad4, adm=1, p=F4)
+
+EQUATION:
+odeType=stiff
+
+t_0 = 0
+Ad1_0 = 0
+Ad2_0 = 0
+Ad3_0 = 0
+Ad4_0 = 0
+Ap_0  = 0
+Ap2_0 = 0
+Am2_0 = 0
+Am3_0 = 0
+Am4_0 = 0
+
+; absorption compartments
+ddt_Ad1 = -ka1*Ad1
+ddt_Ad2 = -ka2*Ad2
+ddt_Ad3 = -ka3*Ad3
+ddt_Ad4 = -ka4*Ad4
+
+; parent: central (Ap) and peripheral (Ap2)
+ddt_Ap  = ka1*Ad1 - (Cl/V1)*Ap - (Q/V1)*Ap + (Q/V2)*Ap2 - (kpm2 + kpm3 + kpm4)*Ap
+ddt_Ap2 = (Q/V1)*Ap - (Q/V2)*Ap2
+
+; metabolites: one compartment each, volume fixed to V1
+ddt_Am2 = ka2*Ad2 + kpm2*Ap - (Clm2/V1)*Am2
+ddt_Am3 = ka3*Ad3 + kpm3*Ap - (Clm3/V1)*Am3
+ddt_Am4 = ka4*Ad4 + kpm4*Ap - (Clm4/V1)*Am4
+
+; concentrations
+Cp  = Ap/V1
+Cm2 = Am2/V1
+Cm3 = Am3/V1
+Cm4 = Am4/V1
+
+OUTPUT:
+output = {Cp, Cm2, Cm3, Cm4}

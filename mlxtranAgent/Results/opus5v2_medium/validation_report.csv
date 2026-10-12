@@ -1,0 +1,201 @@
+Row,Replicate,Model type,Reference,Pass,Details,Error,Time_s
+1,1,PK,four_comp_ref,PASS,Cc: MATCH,,27.3
+1,2,PK,four_comp_ref,PASS,Cc: MATCH,,15.9
+1,3,PK,four_comp_ref,PASS,Cc: MATCH,,14.5
+1,4,PK,four_comp_ref,PASS,Cc: MATCH,,20.3
+1,5,PK,four_comp_ref,PASS,Cc: MATCH,,15.4
+1,6,PK,four_comp_ref,PASS,Cc: MATCH,,26.8
+1,7,PK,four_comp_ref,PASS,Cc: MATCH,,13.6
+1,8,PK,four_comp_ref,PASS,Cc: MATCH,,16.0
+1,9,PK,four_comp_ref,PASS,Cc: MATCH,,15.7
+1,10,PK,four_comp_ref,PASS,Cc: MATCH,,18.6
+2,1,PK,time_dep_cl_ref,FAIL,,Generation: litellm.MidStreamFallbackError: litellm.InternalServerError: AnthropicError - Overloaded Original exception: InternalServerError: litellm.InternalServerError: AnthropicError - Overloaded,0.0
+2,2,PK,time_dep_cl_ref,FAIL,,Generation: litellm.MidStreamFallbackError: litellm.InternalServerError: AnthropicError - Overloaded Original exception: InternalServerError: litellm.InternalServerError: AnthropicError - Overloaded,0.0
+2,3,PK,time_dep_cl_ref,FAIL,,Generation: litellm.MidStreamFallbackError: litellm.InternalServerError: AnthropicError - Overloaded Original exception: InternalServerError: litellm.InternalServerError: AnthropicError - Overloaded,0.0
+2,4,PK,time_dep_cl_ref,FAIL,,Generation: litellm.MidStreamFallbackError: litellm.InternalServerError: AnthropicError - Overloaded Original exception: InternalServerError: litellm.InternalServerError: AnthropicError - Overloaded,0.0
+2,5,PK,time_dep_cl_ref,FAIL,,Generation: litellm.MidStreamFallbackError: litellm.InternalServerError: AnthropicError - Overloaded Original exception: InternalServerError: litellm.InternalServerError: AnthropicError - Overloaded,0.0
+2,6,PK,time_dep_cl_ref,FAIL,,Generation: litellm.MidStreamFallbackError: litellm.InternalServerError: AnthropicError - Overloaded Original exception: InternalServerError: litellm.InternalServerError: AnthropicError - Overloaded,0.0
+2,7,PK,time_dep_cl_ref,FAIL,,Generation: litellm.MidStreamFallbackError: litellm.InternalServerError: AnthropicError - Overloaded Original exception: InternalServerError: litellm.InternalServerError: AnthropicError - Overloaded,0.0
+2,8,PK,time_dep_cl_ref,FAIL,,Generation: litellm.MidStreamFallbackError: litellm.InternalServerError: AnthropicError - Overloaded Original exception: InternalServerError: litellm.InternalServerError: AnthropicError - Overloaded,0.0
+2,9,PK,time_dep_cl_ref,FAIL,,Generation: litellm.MidStreamFallbackError: litellm.InternalServerError: AnthropicError - Overloaded Original exception: InternalServerError: litellm.InternalServerError: AnthropicError - Overloaded,0.0
+2,10,PK,time_dep_cl_ref,FAIL,,Generation: litellm.MidStreamFallbackError: litellm.InternalServerError: AnthropicError - Overloaded Original exception: InternalServerError: litellm.InternalServerError: AnthropicError - Overloaded,0.0
+3,1,PK,mm_macro_ref,PASS,Cc: MATCH,,15.5
+3,2,PK,mm_macro_ref,PASS,Cc: MATCH,,14.0
+3,3,PK,mm_macro_ref,PASS,Cc: MATCH,,13.3
+3,4,PK,mm_macro_ref,PASS,Cc: MATCH,,16.7
+3,5,PK,mm_macro_ref,PASS,Cc: MATCH,,13.6
+3,6,PK,mm_macro_ref,PASS,Cc: MATCH,,14.4
+3,7,PK,mm_macro_ref,PASS,Cc: MATCH,,15.2
+3,8,PK,mm_macro_ref,PASS,Cc: MATCH,,12.2
+3,9,PK,mm_macro_ref,PASS,Cc: MATCH,,15.9
+3,10,PK,mm_macro_ref,PASS,Cc: MATCH,,17.3
+4,1,PK,mm_ode_ref,PASS,Cc: MATCH,,23.5
+4,2,PK,mm_ode_ref,PASS,Cc: MATCH,,19.1
+4,3,PK,mm_ode_ref,PASS,Cc: MATCH,,22.5
+4,4,PK,mm_ode_ref,PASS,Cc: MATCH,,24.2
+4,5,PK,mm_ode_ref,PASS,Cc: MATCH,,20.6
+4,6,PK,mm_ode_ref,PASS,Cc: MATCH,,19.6
+4,7,PK,mm_ode_ref,PASS,Cc: MATCH,,21.4
+4,8,PK,mm_ode_ref,PASS,Cc: MATCH,,18.9
+4,9,PK,mm_ode_ref,PASS,Cc: MATCH,,21.3
+4,10,PK,mm_ode_ref,PASS,Cc: MATCH,,24.0
+5,1,PK,adc_ref,PASS,Cc_ADC: MATCH; Cc_payload: MATCH,,21.9
+5,2,PK,adc_ref,PASS,Cc_ADC: MATCH; Cc_payload: MATCH,,31.4
+5,3,PK,adc_ref,PASS,Cc_ADC: MATCH; Cc_payload: MATCH,,25.1
+5,4,PK,adc_ref,PASS,Cc_ADC: MATCH; Cc_payload: MATCH,,24.4
+5,5,PK,adc_ref,PASS,Cc_ADC: MATCH; Cc_payload: MATCH,,22.0
+5,6,PK,adc_ref,PASS,Cc_ADC: MATCH; Cc_payload: MATCH,,26.5
+5,7,PK,adc_ref,PASS,Cc_ADC: MATCH; Cc_payload: MATCH,,25.1
+5,8,PK,adc_ref,PASS,Cc_ADC: MATCH; Cc_payload: MATCH,,20.9
+5,9,PK,adc_ref,PASS,Cc_ADC: MATCH; Cc_payload: MATCH,,25.4
+5,10,PK,adc_ref,PASS,Cc_ADC: MATCH; Cc_payload: MATCH,,29.1
+6,1,PK,seq_abs_ref,PASS,,,18.0
+6,2,PK,seq_abs_ref,PASS,,,33.1
+6,3,PK,seq_abs_ref,PASS,,,30.2
+6,4,PK,seq_abs_ref,PASS,,,35.6
+6,5,PK,seq_abs_ref,PASS,,,23.5
+6,6,PK,seq_abs_ref,PASS,,,26.6
+6,7,PK,seq_abs_ref,PASS,Cc: MATCH,,20.9
+6,8,PK,seq_abs_ref,PASS,Cc: MATCH,,20.7
+6,9,PK,seq_abs_ref,PASS,,,24.7
+6,10,PK,seq_abs_ref,PASS,,,32.3
+7,1,PK,auc_only_ref,PASS,AUC: MATCH; Cc: MATCH,,19.2
+7,2,PK,auc_only_ref,PASS,AUC: MATCH; Cc: MATCH,,19.2
+7,3,PK,auc_only_ref,PASS,AUC: MATCH; Cc: MATCH,,22.4
+7,4,PK,auc_only_ref,PASS,AUC: MATCH; Cc: MATCH,,18.8
+7,5,PK,auc_only_ref,PASS,AUC: MATCH; Cc: MATCH,,16.9
+7,6,PK,auc_only_ref,PASS,AUC: MATCH; Cc: MATCH,,18.7
+7,7,PK,auc_only_ref,PASS,AUC: MATCH; Cc: MATCH,,14.9
+7,8,PK,auc_only_ref,PASS,AUC: MATCH; Cc: MATCH,,15.1
+7,9,PK,auc_only_ref,PASS,AUC: MATCH; Cc: MATCH,,17.3
+7,10,PK,auc_only_ref,PASS,AUC: MATCH; Cc: MATCH,,19.1
+8,1,PK,seq_abs_ode_ref,PASS,Cc: MATCH,,15.8
+8,2,PK,seq_abs_ode_ref,PASS,Cc: MATCH,,13.9
+8,3,PK,seq_abs_ode_ref,PASS,Cc: MATCH,,16.6
+8,4,PK,seq_abs_ode_ref,PASS,Cc: MATCH,,15.8
+8,5,PK,seq_abs_ode_ref,PASS,Cc: MATCH,,17.6
+8,6,PK,seq_abs_ode_ref,PASS,Cc: MATCH,,20.4
+8,7,PK,seq_abs_ode_ref,PASS,Cc: MATCH,,15.2
+8,8,PK,seq_abs_ode_ref,PASS,Cc: MATCH,,19.3
+8,9,PK,seq_abs_ode_ref,PASS,Cc: MATCH,,20.7
+8,10,PK,seq_abs_ode_ref,PASS,Cc: MATCH,,20.6
+9,1,PKPD,PKkaVClTlagRegs_PDseqTurnover,PASS,Cc: MATCH; E: MATCH,,19.8
+9,2,PKPD,PKkaVClTlagRegs_PDseqTurnover,PASS,Cc: MATCH; E: MATCH,,21.0
+9,3,PKPD,PKkaVClTlagRegs_PDseqTurnover,PASS,Cc: MATCH; E: MATCH,,23.9
+9,4,PKPD,PKkaVClTlagRegs_PDseqTurnover,PASS,Cc: MATCH; E: MATCH,,21.7
+9,5,PKPD,PKkaVClTlagRegs_PDseqTurnover,PASS,Cc: MATCH; E: MATCH,,18.3
+9,6,PKPD,PKkaVClTlagRegs_PDseqTurnover,PASS,Cc: MATCH; E: MATCH,,19.5
+9,7,PKPD,PKkaVClTlagRegs_PDseqTurnover,PASS,Cc: MATCH; E: MATCH,,22.4
+9,8,PKPD,PKkaVClTlagRegs_PDseqTurnover,PASS,Cc: MATCH; E: MATCH,,19.8
+9,9,PKPD,PKkaVClTlagRegs_PDseqTurnover,PASS,Cc: MATCH; E: MATCH,,17.8
+9,10,PKPD,PKkaVClTlagRegs_PDseqTurnover,PASS,Cc: MATCH; E: MATCH,,20.2
+10,1,VD,VD_TCL_LVsat,PASS,LV: MATCH,,16.8
+10,2,VD,VD_TCL_LVsat,PASS,LV: MATCH,,23.0
+10,3,VD,VD_TCL_LVsat,PASS,I: MATCH; LV: MATCH; T: MATCH; V: MATCH,,19.1
+10,4,VD,VD_TCL_LVsat,PASS,LV: MATCH,,22.7
+10,5,VD,VD_TCL_LVsat,PASS,I: MATCH; LV: MATCH; T: MATCH; V: MATCH,,18.3
+10,6,VD,VD_TCL_LVsat,PASS,LV: MATCH,,18.6
+10,7,VD,VD_TCL_LVsat,PASS,LV: MATCH,,14.8
+10,8,VD,VD_TCL_LVsat,PASS,I: MATCH; LV: MATCH; T: MATCH; V: MATCH,,17.5
+10,9,VD,VD_TCL_LVsat,PASS,I: MATCH; LV: MATCH; T: MATCH; V: MATCH,,35.5
+10,10,VD,VD_TCL_LVsat,PASS,I: MATCH; LV: MATCH; T: MATCH; V: MATCH,,16.1
+11,1,VD,VD_TCLEcl_LVsat,FAIL,"I1: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; I2: MATCH; LV: MATCH; T: MATCH; V: MATCH","I1: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; I2: MATCH; LV: MATCH; T: MATCH; V: MATCH",25.5
+11,2,VD,VD_TCLEcl_LVsat,PASS,LV: MATCH,,23.3
+11,3,VD,VD_TCLEcl_LVsat,FAIL,"I1: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; I2: Component ""I2"": Mean relative difference: 0.16058; LV: Component ""LV"": Mean relative difference: 0.03298084; T: Component ""T"": Mean relative difference: 0.05520416; V: Component ""V"": Mean relative difference: 0.1423218","I1: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; I2: Component ""I2"": Mean relative difference: 0.16058; LV: Component ""LV"": Mean relative difference: 0.03298084; T: Component ""T"": Mean relative difference: 0.05520416; V: Component ""V"": Mean relative difference: 0.1423218",29.8
+11,4,VD,VD_TCLEcl_LVsat,PASS,LV: MATCH,,24.2
+11,5,VD,VD_TCLEcl_LVsat,FAIL,"I1: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; I2: MATCH; LV: MATCH; T: MATCH; V: MATCH","I1: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; I2: MATCH; LV: MATCH; T: MATCH; V: MATCH",27.1
+11,6,VD,VD_TCLEcl_LVsat,FAIL,"I1: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; I2: MATCH; LV: MATCH; T: MATCH; V: MATCH","I1: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; I2: MATCH; LV: MATCH; T: MATCH; V: MATCH",26.2
+11,7,VD,VD_TCLEcl_LVsat,FAIL,"I1: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; I2: Component ""I2"": Mean relative difference: 0.16058; LV: Component ""LV"": Mean relative difference: 0.03298084; T: Component ""T"": Mean relative difference: 0.05520416; V: Component ""V"": Mean relative difference: 0.1423218; beta: Component ""beta"": Mean relative difference: 0.133195","I1: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; I2: Component ""I2"": Mean relative difference: 0.16058; LV: Component ""LV"": Mean relative difference: 0.03298084; T: Component ""T"": Mean relative difference: 0.05520416; V: Component ""V"": Mean relative difference: 0.1423218; beta: Component ""beta"": Mean relative difference: 0.133195",30.3
+11,8,VD,VD_TCLEcl_LVsat,FAIL,"E: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; I: Component ""I"": Mean relative difference: 0.8049038; LV: MATCH; T: MATCH; V: MATCH","E: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; I: Component ""I"": Mean relative difference: 0.8049038; LV: MATCH; T: MATCH; V: MATCH",27.0
+11,9,VD,VD_TCLEcl_LVsat,FAIL,"E: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; I: Component ""I"": Mean relative difference: 0.8049038; LV: MATCH; T: MATCH; V: MATCH","E: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; I: Component ""I"": Mean relative difference: 0.8049038; LV: MATCH; T: MATCH; V: MATCH",24.3
+11,10,VD,VD_TCLEcl_LVsat,FAIL,"E: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; I: Component ""I"": Mean relative difference: 0.8049038; LV: MATCH; T: MATCH; V: MATCH","E: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; I: Component ""I"": Mean relative difference: 0.8049038; LV: MATCH; T: MATCH; V: MATCH",30.3
+12,1,TGI,TG_Simeoni_TGI-PKchemo_LK_Lin_CD,FAIL,"C_cis: Component ""C_cis"": 'is.NA' value mismatch: 0 in current 1 in target; C_pem: Component ""C_pem"": 'is.NA' value mismatch: 0 in current 1 in target; EXPOSURE: Component ""EXPOSURE"": 'is.NA' value mismatch: 0 in current 1 in target; TotalTS: Component ""TotalTS"": 'is.NA' value mismatch: 0 in current 1 in target","C_cis: Component ""C_cis"": 'is.NA' value mismatch: 0 in current 1 in target; C_pem: Component ""C_pem"": 'is.NA' value mismatch: 0 in current 1 in target; EXPOSURE: Component ""EXPOSURE"": 'is.NA' value mismatch: 0 in current 1 in target; TotalTS: Component ""TotalTS"": 'is.NA' value mismatch: 0 in current 1 in target",31.8
+12,2,TGI,TG_Simeoni_TGI-PKchemo_LK_Lin_CD,FAIL,"TotalTS: Component ""TotalTS"": Mean relative difference: 0.02726966","TotalTS: Component ""TotalTS"": Mean relative difference: 0.02726966",33.8
+12,3,TGI,TG_Simeoni_TGI-PKchemo_LK_Lin_CD,FAIL,"TotalTS: Component ""TotalTS"": Mean relative difference: 0.02726966","TotalTS: Component ""TotalTS"": Mean relative difference: 0.02726966",33.5
+12,4,TGI,TG_Simeoni_TGI-PKchemo_LK_Lin_CD,FAIL,"TotalTS: Component ""TotalTS"": Mean relative difference: 40994.19","TotalTS: Component ""TotalTS"": Mean relative difference: 40994.19",31.0
+12,5,TGI,TG_Simeoni_TGI-PKchemo_LK_Lin_CD,FAIL,"TotalTS: Component ""TotalTS"": Mean relative difference: 0.02726966","TotalTS: Component ""TotalTS"": Mean relative difference: 0.02726966",34.7
+12,6,TGI,TG_Simeoni_TGI-PKchemo_LK_Lin_CD,FAIL,"C_cis: MATCH; C_pem: MATCH; EXPOSURE: MATCH; TotalTS: Component ""TotalTS"": Mean relative difference: 0.02726966","C_cis: MATCH; C_pem: MATCH; EXPOSURE: MATCH; TotalTS: Component ""TotalTS"": Mean relative difference: 0.02726966",37.1
+12,7,TGI,TG_Simeoni_TGI-PKchemo_LK_Lin_CD,FAIL,"C_cis: MATCH; C_pem: MATCH; EXPOSURE: MATCH; TotalTS: Component ""TotalTS"": Mean relative difference: 0.02726966","C_cis: MATCH; C_pem: MATCH; EXPOSURE: MATCH; TotalTS: Component ""TotalTS"": Mean relative difference: 0.02726966",34.3
+12,8,TGI,TG_Simeoni_TGI-PKchemo_LK_Lin_CD,FAIL,"TotalTS: Component ""TotalTS"": Mean relative difference: 0.01491354","TotalTS: Component ""TotalTS"": Mean relative difference: 0.01491354",39.7
+12,9,TGI,TG_Simeoni_TGI-PKchemo_LK_Lin_CD,FAIL,"TotalTS: Component ""TotalTS"": Mean relative difference: 0.02726966","TotalTS: Component ""TotalTS"": Mean relative difference: 0.02726966",32.5
+12,10,TGI,TG_Simeoni_TGI-PKchemo_LK_Lin_CD,FAIL,"TotalTS: Component ""TotalTS"": Mean relative difference: 0.02726966","TotalTS: Component ""TotalTS"": Mean relative difference: 0.02726966",31.8
+13,1,KPD,KPD_turnover,FAIL,"Ck: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; R: MATCH","Ck: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; R: MATCH",22.7
+13,2,KPD,KPD_turnover,PASS,R: MATCH,,30.4
+13,3,KPD,KPD_turnover,PASS,R: MATCH,,23.4
+13,4,KPD,KPD_turnover,PASS,R: MATCH,,21.6
+13,5,KPD,KPD_turnover,PASS,R: MATCH,,24.1
+13,6,KPD,KPD_turnover,PASS,R: MATCH,,20.9
+13,7,KPD,KPD_turnover,FAIL,"Ce: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; INH: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; R: MATCH","Ce: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; INH: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; R: MATCH",24.0
+13,8,KPD,KPD_turnover,PASS,R: MATCH,,21.8
+13,9,KPD,KPD_turnover,PASS,R: MATCH,,23.0
+13,10,KPD,KPD_turnover,FAIL,"Ckpd: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; INH: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; R: MATCH","Ckpd: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; INH: Modes: list, NULL; Lengths: 3, 0; names for target but not for current; Attributes: < Modes: list, NULL >; Attributes: < Lengths: 2, 0 >; Attributes: < names for target but not for current >; Attributes: < current is not list-like >; current is not list-like; R: MATCH",27.4
+14,1,Neutrophils,Neutrophil_feedback,FAIL,,Generation: litellm.MidStreamFallbackError: litellm.InternalServerError: AnthropicError - Overloaded Original exception: InternalServerError: litellm.InternalServerError: AnthropicError - Overloaded,0.0
+14,2,Neutrophils,Neutrophil_feedback,FAIL,,Generation: litellm.MidStreamFallbackError: litellm.InternalServerError: AnthropicError - Overloaded Original exception: InternalServerError: litellm.InternalServerError: AnthropicError - Overloaded,0.0
+14,3,Neutrophils,Neutrophil_feedback,FAIL,,Generation: litellm.MidStreamFallbackError: litellm.InternalServerError: AnthropicError - Overloaded Original exception: InternalServerError: litellm.InternalServerError: AnthropicError - Overloaded,0.0
+14,4,Neutrophils,Neutrophil_feedback,FAIL,,Generation: litellm.MidStreamFallbackError: litellm.InternalServerError: AnthropicError - Overloaded Original exception: InternalServerError: litellm.InternalServerError: AnthropicError - Overloaded,0.0
+14,5,Neutrophils,Neutrophil_feedback,FAIL,,Generation: litellm.MidStreamFallbackError: litellm.InternalServerError: AnthropicError - Overloaded Original exception: InternalServerError: litellm.InternalServerError: AnthropicError - Overloaded,0.0
+14,6,Neutrophils,Neutrophil_feedback,FAIL,,Generation: litellm.MidStreamFallbackError: litellm.InternalServerError: AnthropicError - Overloaded Original exception: InternalServerError: litellm.InternalServerError: AnthropicError - Overloaded,0.0
+14,7,Neutrophils,Neutrophil_feedback,FAIL,,Generation: litellm.MidStreamFallbackError: litellm.InternalServerError: AnthropicError - Overloaded Original exception: InternalServerError: litellm.InternalServerError: AnthropicError - Overloaded,0.0
+14,8,Neutrophils,Neutrophil_feedback,FAIL,,Generation: litellm.MidStreamFallbackError: litellm.InternalServerError: AnthropicError - Overloaded Original exception: InternalServerError: litellm.InternalServerError: AnthropicError - Overloaded,0.0
+14,9,Neutrophils,Neutrophil_feedback,FAIL,,Generation: litellm.MidStreamFallbackError: litellm.InternalServerError: AnthropicError - Overloaded Original exception: InternalServerError: litellm.InternalServerError: AnthropicError - Overloaded,0.0
+14,10,Neutrophils,Neutrophil_feedback,PASS,CN: MATCH; Cc: MATCH,,44.9
+15,1,ER,ER_Emax,PASS,E: MATCH,,13.4
+15,2,ER,ER_Emax,PASS,Ce: MATCH; E: MATCH,,13.6
+15,3,ER,ER_Emax,PASS,E: MATCH,,12.3
+15,4,ER,ER_Emax,PASS,Ce: MATCH; E: MATCH,,13.8
+15,5,ER,ER_Emax,PASS,E: MATCH,,14.2
+15,6,ER,ER_Emax,PASS,Ce: MATCH; E: MATCH,,13.9
+15,7,ER,ER_Emax,PASS,E: MATCH,,14.5
+15,8,ER,ER_Emax,FAIL,"Ce: Component ""Ce"": Mean relative difference: 0.000279; E: Component ""E"": Mean relative difference: 5.745191e-05","Ce: Component ""Ce"": Mean relative difference: 0.000279; E: Component ""E"": Mean relative difference: 5.745191e-05",14.6
+15,9,ER,ER_Emax,PASS,E: MATCH,,14.2
+15,10,ER,ER_Emax,FAIL,"Ce: Component ""Ce"": Mean relative difference: 0.000279; E: Component ""E"": Mean relative difference: 5.745191e-05","Ce: Component ""Ce"": Mean relative difference: 0.000279; E: Component ""E"": Mean relative difference: 5.745191e-05",14.2
+16,1,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,36.8
+16,2,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,33.3
+16,3,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,36.5
+16,4,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,37.8
+16,5,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,35.5
+16,6,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,36.0
+16,7,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,35.4
+16,8,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,38.0
+16,9,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,35.9
+16,10,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,34.9
+17,1,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,28.6
+17,2,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,30.8
+17,3,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,35.3
+17,4,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,31.0
+17,5,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,32.9
+17,6,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,31.3
+17,7,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,34.2
+17,8,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,32.5
+17,9,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,29.7
+17,10,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,34.8
+18,1,PD,turnover_notSS,PASS,Cc: MATCH; R: MATCH,,35.0
+18,2,PD,turnover_notSS,PASS,Cc: MATCH; R: MATCH,,25.9
+18,3,PD,turnover_notSS,PASS,Cc: MATCH; R: MATCH,,23.9
+18,4,PD,turnover_notSS,PASS,Cc: MATCH; R: MATCH,,25.4
+18,5,PD,turnover_notSS,PASS,Cc: MATCH; R: MATCH,,25.8
+18,6,PD,turnover_notSS,PASS,Cc: MATCH; R: MATCH,,28.5
+18,7,PD,turnover_notSS,PASS,Cc: MATCH; R: MATCH,,23.0
+18,8,PD,turnover_notSS,PASS,Cc: MATCH; R: MATCH,,18.8
+18,9,PD,turnover_notSS,PASS,Cc: MATCH; R: MATCH,,28.0
+18,10,PD,turnover_notSS,PASS,Cc: MATCH; R: MATCH,,22.0
+19,1,PD,turnover_notSS_slope,PASS,Cc: MATCH; R: MATCH,,20.9
+19,2,PD,turnover_notSS_slope,PASS,Cc: MATCH; R: MATCH,,16.9
+19,3,PD,turnover_notSS_slope,PASS,Cc: MATCH; R: MATCH,,22.9
+19,4,PD,turnover_notSS_slope,PASS,Cc: MATCH; R: MATCH,,28.0
+19,5,PD,turnover_notSS_slope,PASS,Cc: MATCH; R: MATCH,,38.8
+19,6,PD,turnover_notSS_slope,PASS,Cc: MATCH; R: MATCH,,32.1
+19,7,PD,turnover_notSS_slope,PASS,Cc: MATCH; R: MATCH,,25.1
+19,8,PD,turnover_notSS_slope,PASS,Cc: MATCH; R: MATCH,,21.4
+19,9,PD,turnover_notSS_slope,PASS,Cc: MATCH; R: MATCH,,31.5
+19,10,PD,turnover_notSS_slope,PASS,Cc: MATCH; R: MATCH,,22.7
+20,1,Myelosuppression,Friberg_myelosuppression,FAIL,"Cc: MATCH; Circ: Component ""Circ"": Mean relative difference: 0.0004814274","Cc: MATCH; Circ: Component ""Circ"": Mean relative difference: 0.0004814274",25.7
+20,2,Myelosuppression,Friberg_myelosuppression,FAIL,"Cc: MATCH; Circ: Component ""Circ"": Mean relative difference: 0.0004814274","Cc: MATCH; Circ: Component ""Circ"": Mean relative difference: 0.0004814274",32.5
+20,3,Myelosuppression,Friberg_myelosuppression,FAIL,"Cc: MATCH; Circ: Component ""Circ"": Mean relative difference: 0.0004814274","Cc: MATCH; Circ: Component ""Circ"": Mean relative difference: 0.0004814274",32.8
+20,4,Myelosuppression,Friberg_myelosuppression,FAIL,"Cc: MATCH; Circ: Component ""Circ"": Mean relative difference: 0.0004814274","Cc: MATCH; Circ: Component ""Circ"": Mean relative difference: 0.0004814274",34.6
+20,5,Myelosuppression,Friberg_myelosuppression,FAIL,"Cc: MATCH; Circ: Component ""Circ"": Mean relative difference: 0.0004814274","Cc: MATCH; Circ: Component ""Circ"": Mean relative difference: 0.0004814274",25.1
+20,6,Myelosuppression,Friberg_myelosuppression,FAIL,"Cc: MATCH; Circ: Component ""Circ"": Mean relative difference: 0.0004814274","Cc: MATCH; Circ: Component ""Circ"": Mean relative difference: 0.0004814274",32.8
+20,7,Myelosuppression,Friberg_myelosuppression,FAIL,"Cc: MATCH; Circ: Component ""Circ"": Mean relative difference: 0.0004814274","Cc: MATCH; Circ: Component ""Circ"": Mean relative difference: 0.0004814274",34.2
+20,8,Myelosuppression,Friberg_myelosuppression,FAIL,"Cc: MATCH; Circ: Component ""Circ"": Mean relative difference: 0.0004814274","Cc: MATCH; Circ: Component ""Circ"": Mean relative difference: 0.0004814274",34.9
+20,9,Myelosuppression,Friberg_myelosuppression,FAIL,"Cc: MATCH; Circ: Component ""Circ"": Mean relative difference: 0.0004814274","Cc: MATCH; Circ: Component ""Circ"": Mean relative difference: 0.0004814274",25.0
+20,10,Myelosuppression,Friberg_myelosuppression,FAIL,"Cc: MATCH; Circ: Component ""Circ"": Mean relative difference: 0.0004814274","Cc: MATCH; Circ: Component ""Circ"": Mean relative difference: 0.0004814274",24.0

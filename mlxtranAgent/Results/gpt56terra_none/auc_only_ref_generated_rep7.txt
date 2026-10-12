@@ -1,0 +1,13 @@
+[LONGITUDINAL]
+input = {k, V}
+
+PK:
+compartment(cmt=1, amount=Ac, volume=V, concentration=Cc)
+iv(cmt=1)
+
+EQUATION:
+ddt_Ac = -k*Ac
+ddt_AUC = Cc
+
+OUTPUT:
+output = {Cc, AUC}

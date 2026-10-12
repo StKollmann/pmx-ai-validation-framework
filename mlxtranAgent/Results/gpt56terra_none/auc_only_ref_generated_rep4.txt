@@ -1,0 +1,15 @@
+[LONGITUDINAL]
+input = {k, V}
+
+PK:
+iv(cmt=1)
+
+EQUATION:
+Auc_0 = 0
+ddt_Ac = -k*Ac
+ddt_Auc = Ac/V
+Cc = Ac/V
+AUC = Auc
+
+OUTPUT:
+output = {Cc, AUC}

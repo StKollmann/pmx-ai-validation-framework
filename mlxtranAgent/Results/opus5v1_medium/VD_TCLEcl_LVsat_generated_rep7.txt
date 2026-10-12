@@ -1,0 +1,32 @@
+DESCRIPTION:
+Target cell limited viral dynamics model with an eclipse phase.
+Loss of virions due to infection of target cells is included.
+
+[LONGITUDINAL]
+input = {R0, kI, delta, p, c, V0, T0}
+
+EQUATION:
+odeType = stiff
+
+; --- infection rate constant derived from R0 ---
+beta = R0*c*delta/(p*T0)
+
+; --- initial conditions ---
+t_0 = 0
+T_0 = T0
+I1_0 = 0
+I2_0 = 0
+V_0 = 10^V0
+
+; --- system of ODEs ---
+ddt_T  = -beta*T*V
+ddt_I1 = beta*T*V - kI*I1
+ddt_I2 = kI*I1 - delta*I2
+ddt_V  = p*I2 - c*V - beta*T*V
+
+; --- output : log10 viral load with lower saturation at -5 ---
+LV = max(log10(max(V, 1e-30)), -5)
+
+OUTPUT:
+output = {LV}
+table = {T, I1, I2, V}

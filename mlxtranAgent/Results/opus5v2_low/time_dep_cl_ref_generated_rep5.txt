@@ -1,0 +1,16 @@
+[LONGITUDINAL]
+input = {V, CL0, slope}
+
+PK:
+depot(target=Ac)
+
+EQUATION:
+t_0 = 0
+Ac_0 = 0
+CL = max(CL0 + slope*t, 0)
+ddt_Ac = -(CL/V)*Ac
+Cc = Ac/V
+
+OUTPUT:
+output = {Cc}
+table = {CL}

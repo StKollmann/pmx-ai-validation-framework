@@ -1,0 +1,26 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, R0, intercept, slope, kout, Emax, EC50}
+
+ka = {use=regressor}
+V = {use=regressor}
+Cl = {use=regressor}
+
+PK:
+Cc = pkmodel(ka, V, Cl)
+
+EQUATION:
+; Rss (steady-state response) is linearly correlated with R0
+Rss = intercept + slope*R0
+
+; kin derived from Rss and kout (baseline turnover relationship at equilibrium)
+kin = kout*Rss
+
+; Drug stimulates the production (kin) of the response
+Stim = 1 + Emax*Cc/(EC50+Cc)
+
+ddt_R = kin*Stim - kout*R
+
+R_0 = R0
+
+OUTPUT:
+output = {Cc, R}

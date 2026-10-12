@@ -1,0 +1,14 @@
+[LONGITUDINAL]
+input = {E0, ke0, Emax, EC50, Cavg}
+Cavg = {use=regressor}
+
+EQUATION:
+; Effect compartment driven by the average concentration read from the dataset
+Ce_0 = 0
+ddt_Ce = ke0*(Cavg - Ce)
+
+; Emax response
+E = E0 + Emax*Ce/(EC50 + Ce)
+
+OUTPUT:
+output = {E}

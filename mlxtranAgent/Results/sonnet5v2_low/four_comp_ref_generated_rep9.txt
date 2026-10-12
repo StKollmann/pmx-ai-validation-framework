@@ -1,0 +1,17 @@
+[LONGITUDINAL]
+input = {ka, k12, k21, k13, k31, k14, k41, k, V}
+
+PK:
+depot(target=Ad)
+compartment(cmt=1, amount=Ac, volume=V, concentration=Cc)
+elimination(cmt=1, k)
+peripheral(k12, k21)
+peripheral(k13, k31)
+peripheral(k14, k41)
+
+EQUATION:
+ddt_Ad = -ka*Ad
+ddt_Ac = ka*Ad - k*Ac
+
+OUTPUT:
+output = {Cc}

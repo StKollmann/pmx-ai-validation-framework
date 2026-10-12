@@ -1,0 +1,29 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, Circ0, MTT, gam, Emax, EC50}
+
+PK:
+depot(target=Ac, ka)
+
+EQUATION:
+odeType = stiff
+t_0 = 0
+Prol_0 = Circ0
+Tr1_0 = Circ0
+Tr2_0 = Circ0
+Tr3_0 = Circ0
+Circ_0 = Circ0
+
+ktr = 4/MTT
+Cc = Ac/V
+EDRUG = Emax*Cc/(EC50+Cc)
+FB = (Circ0/Circ)^gam
+
+ddt_Ac = -(Cl/V)*Ac
+ddt_Prol = ktr*Prol*(1-EDRUG)*FB - ktr*Prol
+ddt_Tr1 = ktr*(Prol - Tr1)
+ddt_Tr2 = ktr*(Tr1 - Tr2)
+ddt_Tr3 = ktr*(Tr2 - Tr3)
+ddt_Circ = ktr*(Tr3 - Circ)
+
+OUTPUT:
+output = {Cc, Circ}

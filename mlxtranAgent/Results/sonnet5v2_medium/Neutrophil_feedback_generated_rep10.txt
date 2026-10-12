@@ -1,0 +1,27 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, kprod, Circ0, ktr, kdeg, beta, EC50}
+
+PK:
+depot(target=Ac, ka)
+
+EQUATION:
+odeType = stiff
+
+ddt_Ac = -(Cl/V)*Ac
+Cc = Ac/V
+
+; --- PD: inhibition of proliferation and feedback ---
+Inh = EC50/(EC50+Cc)
+Feedback = (Circ0/Circ)^beta
+
+; initial conditions (steady-state approximation at baseline)
+Prol_0 = kdeg*Circ0/ktr
+Circ_0 = Circ0
+
+ddt_Prol = kprod*Inh*Feedback*Prol - ktr*Prol
+ddt_Circ = ktr*Prol - kdeg*Circ
+
+CN = Circ
+
+OUTPUT:
+output = {Cc, CN}

@@ -1,0 +1,10 @@
+```json
+{
+  "model": "[LONGITUDINAL]\ninput = {Tk0, ka, V, Cl, Q, V2}\n\nPK:\ndepot(target=Ad, Tk0=Tk0)\n\nEQUATION:\nk12 = Q/V\nk21 = Q/V2\nCc = Ac/V\n\nddt_Ad = -ka*Ad\nddt_Ac = ka*Ad - (Cl/V)*Ac - k12*Ac + k21*Ap\nddt_Ap = k12*Ac - k21*Ap\n\nOUTPUT:\noutput = {Cc}",
+  "annotations": "- Zero-order input into absorption depot compartment (Ad) implemented via `depot(target=Ad, Tk0=Tk0)`, per Pattern A of the depot macro (no `ka` passed to depot macro to avoid double-counting).\n- First-order absorption from Ad to central compartment (Ac) manually written as an ODE (`ddt_Ad = -ka*Ad`), giving sequential zero-order-then-first-order absorption kinetics.\n- Two-compartment disposition model assumed: central compartment (V, Cl) and peripheral compartment (V2, Q), connected via inter-compartmental rate constants k12 = Q/V and k21 = Q/V2, implemented manually via ODEs (Ac, Ap) since the `peripheral()` macro cannot be combined with a manually-written `depot`/ODE-based absorption model in this structure.
+- Central compartment concentration Cc = Ac/V is the single model output.
+- Linear elimination from the central compartment only (Cl).
+- No lag time or bioavailability fraction specified; defaults assumed (Tlag=0, F=1) since not requested.
+- odeType=stiff explicitly not used, as instructed."
+}
+```

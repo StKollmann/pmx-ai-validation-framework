@@ -1,0 +1,28 @@
+DESCRIPTION:
+PKPD model: 1-compartment PK with first-order absorption (lag time) and linear
+elimination, coupled to an indirect response (turnover) model with inhibition of
+production. PK parameters are provided as regressors.
+
+[LONGITUDINAL]
+input = {Tlag, ka, V, Cl, IC50, Rin, kout}
+Tlag = {use=regressor}
+ka = {use=regressor}
+V = {use=regressor}
+Cl = {use=regressor}
+
+PK:
+; PK model defined with macros
+compartment(cmt=1, amount=Ac, volume=V, concentration=Cc)
+absorption(cmt=1, ka, Tlag)
+elimination(cmt=1, Cl)
+
+EQUATION:
+; Turnover model with inhibition of production
+t_0 = 0
+E_0 = Rin/kout
+
+inh = 1 - Cc/(Cc + IC50)
+ddt_E = Rin*inh - kout*E
+
+OUTPUT:
+output = {Cc, E}

@@ -1,0 +1,22 @@
+DESCRIPTION: One-compartment model with IV bolus administration, parallel linear and Michaelis-Menten elimination, written with ODEs on amounts.
+
+[LONGITUDINAL]
+input = {V, k, Vm, Km}
+
+PK:
+; IV bolus doses enter the central compartment amount Ac
+depot(target=Ac)
+
+EQUATION:
+; initial condition
+t_0 = 0
+Ac_0 = 0
+
+; define concentration BEFORE use
+Cc = Ac/V
+
+; ODE on amount: linear + Michaelis-Menten elimination
+ddt_Ac = -k*Ac - Vm*Cc/(Km + Cc)
+
+OUTPUT:
+output = {Cc}

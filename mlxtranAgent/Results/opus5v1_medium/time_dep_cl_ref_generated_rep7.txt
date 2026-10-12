@@ -1,0 +1,26 @@
+DESCRIPTION:
+One-compartment model with IV administration and time-dependent (linear) clearance:
+CL(t) = max(CL0 + slope*t, 0)
+
+[LONGITUDINAL]
+input = {V, CL0, slope}
+
+PK:
+; dose goes directly into the central compartment (IV bolus/infusion)
+depot(target=Ac)
+
+EQUATION:
+odeType = stiff
+t_0 = 0
+Ac_0 = 0
+
+; time-varying clearance (kept non-negative)
+CLt = max(CL0 + slope*t, 0)
+k = CLt/V
+
+ddt_Ac = -k*Ac
+Cc = Ac/V
+
+OUTPUT:
+output = {Cc}
+table = {CLt}

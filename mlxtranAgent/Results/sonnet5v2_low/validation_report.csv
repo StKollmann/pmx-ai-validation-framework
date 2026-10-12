@@ -1,0 +1,201 @@
+Row,Replicate,Model type,Reference,Pass,Details,Error,Time_s
+1,1,PK,four_comp_ref,FAIL,"Cc: Component ""Cc"": Mean absolute difference: 6.52032","Cc: Component ""Cc"": Mean absolute difference: 6.52032",30.1
+1,2,PK,four_comp_ref,PASS,Cc: MATCH,,33.4
+1,3,PK,four_comp_ref,PASS,Cc: MATCH,,22.0
+1,4,PK,four_comp_ref,PASS,Cc: MATCH,,25.4
+1,5,PK,four_comp_ref,PASS,Cc: MATCH,,31.0
+1,6,PK,four_comp_ref,PASS,Cc: MATCH,,27.3
+1,7,PK,four_comp_ref,PASS,Cc: MATCH,,28.0
+1,8,PK,four_comp_ref,PASS,Cc: MATCH,,28.9
+1,9,PK,four_comp_ref,FAIL,"Cc: Component ""Cc"": Mean relative difference: 1.855094","Cc: Component ""Cc"": Mean relative difference: 1.855094",24.5
+1,10,PK,four_comp_ref,PASS,Cc: MATCH,,23.9
+2,1,PK,time_dep_cl_ref,PASS,Cc: MATCH,,12.8
+2,2,PK,time_dep_cl_ref,PASS,Cc: MATCH,,15.9
+2,3,PK,time_dep_cl_ref,PASS,Cc: MATCH,,10.4
+2,4,PK,time_dep_cl_ref,FAIL,"Cc: Component ""Cc"": Mean relative difference: 0.009892239","Cc: Component ""Cc"": Mean relative difference: 0.009892239",13.9
+2,5,PK,time_dep_cl_ref,PASS,Cc: MATCH,,13.4
+2,6,PK,time_dep_cl_ref,PASS,Cc: MATCH,,13.0
+2,7,PK,time_dep_cl_ref,PASS,Cc: MATCH,,10.9
+2,8,PK,time_dep_cl_ref,PASS,Cc: MATCH,,12.4
+2,9,PK,time_dep_cl_ref,FAIL,"Cc: Component ""Cc"": Mean absolute difference: 7.18041e-08","Cc: Component ""Cc"": Mean absolute difference: 7.18041e-08",13.8
+2,10,PK,time_dep_cl_ref,PASS,Cc: MATCH,,10.7
+3,1,PK,mm_macro_ref,PASS,Cc: MATCH,,10.0
+3,2,PK,mm_macro_ref,PASS,Cc: MATCH,,10.1
+3,3,PK,mm_macro_ref,PASS,Cc: MATCH,,11.0
+3,4,PK,mm_macro_ref,PASS,Cc: MATCH,,8.7
+3,5,PK,mm_macro_ref,PASS,Cc: MATCH,,10.0
+3,6,PK,mm_macro_ref,PASS,Cc: MATCH,,8.7
+3,7,PK,mm_macro_ref,PASS,Cc: MATCH,,12.8
+3,8,PK,mm_macro_ref,PASS,Cc: MATCH,,8.9
+3,9,PK,mm_macro_ref,PASS,Cc: MATCH,,9.4
+3,10,PK,mm_macro_ref,PASS,Cc: MATCH,,13.0
+4,1,PK,mm_ode_ref,PASS,Cc: MATCH,,18.7
+4,2,PK,mm_ode_ref,FAIL,"Cc: Component ""Cc"": Mean relative difference: 0.99829","Cc: Component ""Cc"": Mean relative difference: 0.99829",15.1
+4,3,PK,mm_ode_ref,FAIL,"Cc: Component ""Cc"": Mean relative difference: 0.99829","Cc: Component ""Cc"": Mean relative difference: 0.99829",17.4
+4,4,PK,mm_ode_ref,PASS,Cc: MATCH,,13.2
+4,5,PK,mm_ode_ref,FAIL,"Cc: Component ""Cc"": Mean relative difference: 0.99829","Cc: Component ""Cc"": Mean relative difference: 0.99829",22.4
+4,6,PK,mm_ode_ref,PASS,Cc: MATCH,,20.8
+4,7,PK,mm_ode_ref,PASS,Cc: MATCH,,15.7
+4,8,PK,mm_ode_ref,FAIL,"Cc: Component ""Cc"": Mean relative difference: 0.99829","Cc: Component ""Cc"": Mean relative difference: 0.99829",13.3
+4,9,PK,mm_ode_ref,FAIL,"Cc: Component ""Cc"": Mean relative difference: 0.99829","Cc: Component ""Cc"": Mean relative difference: 0.99829",12.2
+4,10,PK,mm_ode_ref,FAIL,"Cc: Component ""Cc"": Mean relative difference: 0.99829","Cc: Component ""Cc"": Mean relative difference: 0.99829",14.3
+5,1,PK,adc_ref,FAIL,"Cc_ADC: MATCH; Cc_payload: Component ""Cc_payload"": Mean relative difference: 6.577896","Cc_ADC: MATCH; Cc_payload: Component ""Cc_payload"": Mean relative difference: 6.577896",24.1
+5,2,PK,adc_ref,PASS,Cc_ADC: MATCH; Cc_payload: MATCH,,20.8
+5,3,PK,adc_ref,PASS,Cc_ADC: MATCH; Cc_payload: MATCH,,19.8
+5,4,PK,adc_ref,PASS,Cc_ADC: MATCH; Cc_payload: MATCH,,22.8
+5,5,PK,adc_ref,PASS,Cc_ADC: MATCH; Cc_payload: MATCH,,21.8
+5,6,PK,adc_ref,PASS,Cc_ADC: MATCH; Cc_payload: MATCH,,21.3
+5,7,PK,adc_ref,PASS,Cc_ADC: MATCH; Cc_payload: MATCH,,21.4
+5,8,PK,adc_ref,PASS,Cc_ADC: MATCH; Cc_payload: MATCH,,17.8
+5,9,PK,adc_ref,FAIL,"Cc_ADC: MATCH; Cc_payload: Component ""Cc_payload"": Mean relative difference: 6.577896","Cc_ADC: MATCH; Cc_payload: Component ""Cc_payload"": Mean relative difference: 6.577896",20.5
+5,10,PK,adc_ref,PASS,Cc_ADC: MATCH; Cc_payload: MATCH,,22.0
+6,1,PK,seq_abs_ref,PASS,,,23.9
+6,2,PK,seq_abs_ref,PASS,Cc: MATCH,,29.0
+6,3,PK,seq_abs_ref,PASS,,,22.1
+6,4,PK,seq_abs_ref,PASS,Cc: MATCH,,22.8
+6,5,PK,seq_abs_ref,PASS,Cc: MATCH,,22.4
+6,6,PK,seq_abs_ref,PASS,,,29.3
+6,7,PK,seq_abs_ref,PASS,Cc: MATCH,,21.8
+6,8,PK,seq_abs_ref,PASS,,,86.9
+6,9,PK,seq_abs_ref,PASS,,,30.5
+6,10,PK,seq_abs_ref,PASS,Cc: MATCH,,25.9
+7,1,PK,auc_only_ref,PASS,AUC: MATCH; Cc: MATCH,,17.2
+7,2,PK,auc_only_ref,PASS,AUC: MATCH; Cc: MATCH,,14.4
+7,3,PK,auc_only_ref,PASS,AUC: MATCH; Cc: MATCH,,25.3
+7,4,PK,auc_only_ref,PASS,AUC: MATCH; Cc: MATCH,,16.6
+7,5,PK,auc_only_ref,PASS,AUC: MATCH; Cc: MATCH,,25.6
+7,6,PK,auc_only_ref,PASS,AUC: MATCH; Cc: MATCH,,29.6
+7,7,PK,auc_only_ref,PASS,AUC: MATCH; Cc: MATCH,,17.7
+7,8,PK,auc_only_ref,PASS,AUC: MATCH; Cc: MATCH,,35.6
+7,9,PK,auc_only_ref,PASS,AUC: MATCH; Cc: MATCH,,71.6
+7,10,PK,auc_only_ref,PASS,AUC: MATCH; Cc: MATCH,,38.5
+8,1,PK,seq_abs_ode_ref,PASS,Cc: MATCH,,21.9
+8,2,PK,seq_abs_ode_ref,PASS,Cc: MATCH,,29.0
+8,3,PK,seq_abs_ode_ref,PASS,Cc: MATCH,,18.6
+8,4,PK,seq_abs_ode_ref,PASS,Cc: MATCH,,27.7
+8,5,PK,seq_abs_ode_ref,PASS,Cc: MATCH,,28.6
+8,6,PK,seq_abs_ode_ref,PASS,Cc: MATCH,,28.4
+8,7,PK,seq_abs_ode_ref,PASS,Cc: MATCH,,25.8
+8,8,PK,seq_abs_ode_ref,FAIL,"Cc: Component ""Cc"": Mean relative difference: 0.07030661","Cc: Component ""Cc"": Mean relative difference: 0.07030661",25.9
+8,9,PK,seq_abs_ode_ref,FAIL,"Cc: Component ""Cc"": Mean relative difference: 0.07030661","Cc: Component ""Cc"": Mean relative difference: 0.07030661",29.1
+8,10,PK,seq_abs_ode_ref,PASS,,,27.3
+9,1,PKPD,PKkaVClTlagRegs_PDseqTurnover,PASS,Cc: MATCH; E: MATCH,,18.8
+9,2,PKPD,PKkaVClTlagRegs_PDseqTurnover,PASS,Cc: MATCH; E: MATCH,,15.7
+9,3,PKPD,PKkaVClTlagRegs_PDseqTurnover,PASS,Cc: MATCH; E: MATCH,,18.0
+9,4,PKPD,PKkaVClTlagRegs_PDseqTurnover,PASS,Cc: MATCH; E: MATCH,,19.8
+9,5,PKPD,PKkaVClTlagRegs_PDseqTurnover,PASS,Cc: MATCH; E: MATCH,,18.3
+9,6,PKPD,PKkaVClTlagRegs_PDseqTurnover,PASS,,,18.2
+9,7,PKPD,PKkaVClTlagRegs_PDseqTurnover,PASS,Cc: MATCH; E: MATCH,,20.6
+9,8,PKPD,PKkaVClTlagRegs_PDseqTurnover,PASS,Cc: MATCH; E: MATCH,,15.1
+9,9,PKPD,PKkaVClTlagRegs_PDseqTurnover,PASS,Cc: MATCH; E: MATCH,,17.9
+9,10,PKPD,PKkaVClTlagRegs_PDseqTurnover,PASS,Cc: MATCH; E: MATCH,,16.6
+10,1,VD,VD_TCL_LVsat,PASS,LV: MATCH,,18.2
+10,2,VD,VD_TCL_LVsat,PASS,LV: MATCH,,18.0
+10,3,VD,VD_TCL_LVsat,PASS,LV: MATCH,,16.9
+10,4,VD,VD_TCL_LVsat,PASS,LV: MATCH,,18.7
+10,5,VD,VD_TCL_LVsat,PASS,LV: MATCH,,18.2
+10,6,VD,VD_TCL_LVsat,PASS,LV: MATCH,,18.5
+10,7,VD,VD_TCL_LVsat,PASS,LV: MATCH,,18.1
+10,8,VD,VD_TCL_LVsat,PASS,LV: MATCH,,17.2
+10,9,VD,VD_TCL_LVsat,PASS,LV: MATCH,,26.3
+10,10,VD,VD_TCL_LVsat,PASS,LV: MATCH,,15.3
+11,1,VD,VD_TCLEcl_LVsat,FAIL,"LV: Component ""LV"": Mean relative difference: 0.4440419","LV: Component ""LV"": Mean relative difference: 0.4440419",19.8
+11,2,VD,VD_TCLEcl_LVsat,PASS,LV: MATCH,,29.4
+11,3,VD,VD_TCLEcl_LVsat,PASS,LV: MATCH,,24.8
+11,4,VD,VD_TCLEcl_LVsat,PASS,LV: MATCH,,22.9
+11,5,VD,VD_TCLEcl_LVsat,PASS,LV: MATCH,,23.7
+11,6,VD,VD_TCLEcl_LVsat,PASS,LV: MATCH,,19.2
+11,7,VD,VD_TCLEcl_LVsat,PASS,LV: MATCH,,21.0
+11,8,VD,VD_TCLEcl_LVsat,FAIL,"LV: Component ""LV"": Mean relative difference: 0.4440419","LV: Component ""LV"": Mean relative difference: 0.4440419",24.2
+11,9,VD,VD_TCLEcl_LVsat,PASS,LV: MATCH,,22.2
+11,10,VD,VD_TCLEcl_LVsat,PASS,LV: MATCH,,20.8
+12,1,TGI,TG_Simeoni_TGI-PKchemo_LK_Lin_CD,FAIL,"TotalTS: Component ""TotalTS"": 'is.NA' value mismatch: 0 in current 1 in target","TotalTS: Component ""TotalTS"": 'is.NA' value mismatch: 0 in current 1 in target",42.1
+12,2,TGI,TG_Simeoni_TGI-PKchemo_LK_Lin_CD,FAIL,"TotalTS: Component ""TotalTS"": Mean relative difference: 45050.13","TotalTS: Component ""TotalTS"": Mean relative difference: 45050.13",46.1
+12,3,TGI,TG_Simeoni_TGI-PKchemo_LK_Lin_CD,FAIL,"TotalTS: Component ""TotalTS"": Mean relative difference: 0.02726966","TotalTS: Component ""TotalTS"": Mean relative difference: 0.02726966",63.7
+12,4,TGI,TG_Simeoni_TGI-PKchemo_LK_Lin_CD,FAIL,"TotalTS: Component ""TotalTS"": Mean relative difference: 45050.13","TotalTS: Component ""TotalTS"": Mean relative difference: 45050.13",36.6
+12,5,TGI,TG_Simeoni_TGI-PKchemo_LK_Lin_CD,FAIL,"TotalTS: Component ""TotalTS"": Mean relative difference: 114161.5","TotalTS: Component ""TotalTS"": Mean relative difference: 114161.5",42.2
+12,6,TGI,TG_Simeoni_TGI-PKchemo_LK_Lin_CD,FAIL,"TotalTS: Component ""TotalTS"": 'is.NA' value mismatch: 0 in current 1 in target","TotalTS: Component ""TotalTS"": 'is.NA' value mismatch: 0 in current 1 in target",51.7
+12,7,TGI,TG_Simeoni_TGI-PKchemo_LK_Lin_CD,FAIL,"TotalTS: Component ""TotalTS"": Mean relative difference: 45051.79","TotalTS: Component ""TotalTS"": Mean relative difference: 45051.79",36.9
+12,8,TGI,TG_Simeoni_TGI-PKchemo_LK_Lin_CD,FAIL,"TotalTS: Component ""TotalTS"": 'is.NA' value mismatch: 0 in current 1 in target","TotalTS: Component ""TotalTS"": 'is.NA' value mismatch: 0 in current 1 in target",37.8
+12,9,TGI,TG_Simeoni_TGI-PKchemo_LK_Lin_CD,FAIL,"TotalTS: Component ""TotalTS"": Mean relative difference: 45050.13","TotalTS: Component ""TotalTS"": Mean relative difference: 45050.13",52.1
+12,10,TGI,TG_Simeoni_TGI-PKchemo_LK_Lin_CD,PASS,TotalTS: MATCH,,46.3
+13,1,KPD,KPD_turnover,PASS,R: MATCH,,27.5
+13,2,KPD,KPD_turnover,PASS,R: MATCH,,25.8
+13,3,KPD,KPD_turnover,PASS,R: MATCH,,22.5
+13,4,KPD,KPD_turnover,PASS,R: MATCH,,23.5
+13,5,KPD,KPD_turnover,PASS,R: MATCH,,24.4
+13,6,KPD,KPD_turnover,PASS,R: MATCH,,23.5
+13,7,KPD,KPD_turnover,PASS,R: MATCH,,22.8
+13,8,KPD,KPD_turnover,PASS,R: MATCH,,19.6
+13,9,KPD,KPD_turnover,PASS,R: MATCH,,23.5
+13,10,KPD,KPD_turnover,PASS,R: MATCH,,24.4
+14,1,Neutrophils,Neutrophil_feedback,PASS,CN: MATCH; Cc: MATCH,,29.1
+14,2,Neutrophils,Neutrophil_feedback,FAIL,"CN: Component ""CN"": Mean relative difference: 0.2356969; Cc: Component ""Cc"": Mean relative difference: 0.5896236","CN: Component ""CN"": Mean relative difference: 0.2356969; Cc: Component ""Cc"": Mean relative difference: 0.5896236",18.7
+14,3,Neutrophils,Neutrophil_feedback,FAIL,"CN: Component ""CN"": Mean relative difference: 2.985723; Cc: Component ""Cc"": Mean relative difference: 0.5896236","CN: Component ""CN"": Mean relative difference: 2.985723; Cc: Component ""Cc"": Mean relative difference: 0.5896236",18.9
+14,4,Neutrophils,Neutrophil_feedback,FAIL,"CN: Component ""CN"": Mean relative difference: 2.985723; Cc: Component ""Cc"": Mean relative difference: 0.5896236","CN: Component ""CN"": Mean relative difference: 2.985723; Cc: Component ""Cc"": Mean relative difference: 0.5896236",23.2
+14,5,Neutrophils,Neutrophil_feedback,FAIL,"CN: Component ""CN"": Mean relative difference: 0.2356969; Cc: Component ""Cc"": Mean relative difference: 0.5896236","CN: Component ""CN"": Mean relative difference: 0.2356969; Cc: Component ""Cc"": Mean relative difference: 0.5896236",40.2
+14,6,Neutrophils,Neutrophil_feedback,PASS,CN: MATCH; Cc: MATCH,,33.1
+14,7,Neutrophils,Neutrophil_feedback,FAIL,"CN: Component ""CN"": Mean relative difference: 2.985723; Cc: Component ""Cc"": Mean relative difference: 0.5896236","CN: Component ""CN"": Mean relative difference: 2.985723; Cc: Component ""Cc"": Mean relative difference: 0.5896236",21.5
+14,8,Neutrophils,Neutrophil_feedback,FAIL,"CN: Component ""CN"": Mean relative difference: 2.985723; Cc: Component ""Cc"": Mean relative difference: 0.5896236","CN: Component ""CN"": Mean relative difference: 2.985723; Cc: Component ""Cc"": Mean relative difference: 0.5896236",18.7
+14,9,Neutrophils,Neutrophil_feedback,FAIL,"CN: Component ""CN"": Mean relative difference: 2.985723; Cc: Component ""Cc"": Mean relative difference: 0.5896236","CN: Component ""CN"": Mean relative difference: 2.985723; Cc: Component ""Cc"": Mean relative difference: 0.5896236",19.7
+14,10,Neutrophils,Neutrophil_feedback,FAIL,"CN: Component ""CN"": Mean relative difference: 2.985723; Cc: Component ""Cc"": Mean relative difference: 0.5896236","CN: Component ""CN"": Mean relative difference: 2.985723; Cc: Component ""Cc"": Mean relative difference: 0.5896236",17.8
+15,1,ER,ER_Emax,PASS,E: MATCH,,11.1
+15,2,ER,ER_Emax,PASS,E: MATCH,,10.0
+15,3,ER,ER_Emax,PASS,E: MATCH,,10.3
+15,4,ER,ER_Emax,PASS,E: MATCH,,10.2
+15,5,ER,ER_Emax,PASS,E: MATCH,,10.5
+15,6,ER,ER_Emax,PASS,E: MATCH,,11.0
+15,7,ER,ER_Emax,FAIL,"E: Component ""E"": Mean relative difference: 5.745191e-05","E: Component ""E"": Mean relative difference: 5.745191e-05",10.6
+15,8,ER,ER_Emax,PASS,E: MATCH,,11.2
+15,9,ER,ER_Emax,PASS,E: MATCH,,11.2
+15,10,ER,ER_Emax,PASS,E: MATCH,,12.2
+16,1,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,35.0
+16,2,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,44.2
+16,3,Metabolites,Parent_3metabolites,FAIL,,Generation: litellm.InternalServerError: AnthropicException - Cannot connect to host <llm-gateway>:443 ssl [The semaphore timeout period has expired]. Handle with `litellm.InternalServerError`.,0.0
+16,4,Metabolites,Parent_3metabolites,FAIL,,Generation: litellm.InternalServerError: AnthropicException - Cannot connect to host <llm-gateway>:443 ssl [The semaphore timeout period has expired]. Handle with `litellm.InternalServerError`.,0.0
+16,5,Metabolites,Parent_3metabolites,FAIL,,Generation: Timed out while waiting for response to ClientRequest. Waited 300.0 seconds.,0.0
+16,6,Metabolites,Parent_3metabolites,FAIL,,Generation: Timed out while waiting for response to ClientRequest. Waited 300.0 seconds.,0.0
+16,7,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,50.4
+16,8,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,37.3
+16,9,Metabolites,Parent_3metabolites,FAIL,,"Generation: litellm.MidStreamFallbackError: litellm.APIConnectionError: AnthropicException - Response payload is not completed: <TransferEncodingError: 400, message='Not enough data to satisfy transfer length header.'>. ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None) Original exception: APIConnectionError: litellm.APIConnectionError: AnthropicException - Response payload is not completed: <TransferEncodingError: 400, message='Not enough data to satisfy transfer length header.'>. ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)",0.0
+16,10,Metabolites,Parent_3metabolites,PASS,,,98.1
+17,1,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,38.8
+17,2,Metabolites,Parent_3metabolites,FAIL,,R comparison timed out,34.8
+17,3,Metabolites,Parent_3metabolites,FAIL,"Cm2: Component ""Cm2"": Mean relative difference: 0.3676746; Cm3: Component ""Cm3"": Mean relative difference: 0.5054462; Cm4: Component ""Cm4"": Mean relative difference: 0.9517023; Cp: Component ""Cp"": Mean relative difference: 0.5535115","Cm2: Component ""Cm2"": Mean relative difference: 0.3676746; Cm3: Component ""Cm3"": Mean relative difference: 0.5054462; Cm4: Component ""Cm4"": Mean relative difference: 0.9517023; Cp: Component ""Cp"": Mean relative difference: 0.5535115",51.7
+17,4,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,47.8
+17,5,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,49.1
+17,6,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,61.5
+17,7,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,38.4
+17,8,Metabolites,Parent_3metabolites,PASS,Cm2: MATCH; Cm3: MATCH; Cm4: MATCH; Cp: MATCH,,38.8
+17,9,Metabolites,Parent_3metabolites,FAIL,"Cm2: Component ""Cm2"": Mean relative difference: 0.8073814; Cm3: Component ""Cm3"": Mean relative difference: 0.7820724; Cm4: Component ""Cm4"": Mean relative difference: 0.9606734; Cp: Component ""Cp"": Mean relative difference: 0.8202566","Cm2: Component ""Cm2"": Mean relative difference: 0.8073814; Cm3: Component ""Cm3"": Mean relative difference: 0.7820724; Cm4: Component ""Cm4"": Mean relative difference: 0.9606734; Cp: Component ""Cp"": Mean relative difference: 0.8202566",33.5
+17,10,Metabolites,Parent_3metabolites,FAIL,"Cm2: Component ""Cm2"": Mean relative difference: 0.9049124; Cm3: Component ""Cm3"": Mean relative difference: 0.8075256; Cm4: Component ""Cm4"": Mean relative difference: 0.4491177; Cp: Component ""Cp"": Mean relative difference: 0.3781581","Cm2: Component ""Cm2"": Mean relative difference: 0.9049124; Cm3: Component ""Cm3"": Mean relative difference: 0.8075256; Cm4: Component ""Cm4"": Mean relative difference: 0.4491177; Cp: Component ""Cp"": Mean relative difference: 0.3781581",38.7
+18,1,PD,turnover_notSS,PASS,Cc: MATCH; R: MATCH,,14.0
+18,2,PD,turnover_notSS,PASS,Cc: MATCH; R: MATCH,,16.9
+18,3,PD,turnover_notSS,PASS,Cc: MATCH; R: MATCH,,16.4
+18,4,PD,turnover_notSS,PASS,Cc: MATCH; R: MATCH,,18.0
+18,5,PD,turnover_notSS,PASS,Cc: MATCH; R: MATCH,,16.5
+18,6,PD,turnover_notSS,PASS,Cc: MATCH; R: MATCH,,17.2
+18,7,PD,turnover_notSS,PASS,Cc: MATCH; R: MATCH,,16.1
+18,8,PD,turnover_notSS,PASS,Cc: MATCH; R: MATCH,,19.5
+18,9,PD,turnover_notSS,PASS,Cc: MATCH; R: MATCH,,18.3
+18,10,PD,turnover_notSS,PASS,Cc: MATCH; R: MATCH,,14.8
+19,1,PD,turnover_notSS_slope,PASS,Cc: MATCH; R: MATCH,,13.2
+19,2,PD,turnover_notSS_slope,PASS,Cc: MATCH; R: MATCH,,21.1
+19,3,PD,turnover_notSS_slope,PASS,Cc: MATCH; R: MATCH,,17.0
+19,4,PD,turnover_notSS_slope,PASS,Cc: MATCH; R: MATCH,,16.1
+19,5,PD,turnover_notSS_slope,PASS,Cc: MATCH; R: MATCH,,20.0
+19,6,PD,turnover_notSS_slope,PASS,Cc: MATCH; R: MATCH,,23.8
+19,7,PD,turnover_notSS_slope,PASS,Cc: MATCH; R: MATCH,,20.0
+19,8,PD,turnover_notSS_slope,PASS,Cc: MATCH; R: MATCH,,23.8
+19,9,PD,turnover_notSS_slope,PASS,,,24.5
+19,10,PD,turnover_notSS_slope,PASS,Cc: MATCH; R: MATCH,,22.5
+20,1,Myelosuppression,Friberg_myelosuppression,FAIL,"Cc: Component ""Cc"": Mean relative difference: 0.5895754; Circ: Component ""Circ"": Mean relative difference: 0.0316634","Cc: Component ""Cc"": Mean relative difference: 0.5895754; Circ: Component ""Circ"": Mean relative difference: 0.0316634",21.6
+20,2,Myelosuppression,Friberg_myelosuppression,FAIL,"Cc: Component ""Cc"": Mean relative difference: 0.5895754; Circ: Component ""Circ"": Mean relative difference: 0.0316634","Cc: Component ""Cc"": Mean relative difference: 0.5895754; Circ: Component ""Circ"": Mean relative difference: 0.0316634",23.8
+20,3,Myelosuppression,Friberg_myelosuppression,FAIL,"Cc: Component ""Cc"": Mean relative difference: 0.5895754; Circ: Component ""Circ"": Mean relative difference: 0.0316634","Cc: Component ""Cc"": Mean relative difference: 0.5895754; Circ: Component ""Circ"": Mean relative difference: 0.0316634",19.0
+20,4,Myelosuppression,Friberg_myelosuppression,PASS,Cc: MATCH; Circ: MATCH,,27.0
+20,5,Myelosuppression,Friberg_myelosuppression,FAIL,"Cc: Component ""Cc"": Mean relative difference: 0.5895575; Circ: Component ""Circ"": Mean relative difference: 0.9999969","Cc: Component ""Cc"": Mean relative difference: 0.5895575; Circ: Component ""Circ"": Mean relative difference: 0.9999969",22.0
+20,6,Myelosuppression,Friberg_myelosuppression,FAIL,"Cc: Component ""Cc"": Mean relative difference: 0.5895754; Circ: Component ""Circ"": Mean relative difference: 0.0316634","Cc: Component ""Cc"": Mean relative difference: 0.5895754; Circ: Component ""Circ"": Mean relative difference: 0.0316634",18.7
+20,7,Myelosuppression,Friberg_myelosuppression,FAIL,"Cc: Component ""Cc"": Mean relative difference: 0.5895754; Circ: Component ""Circ"": Mean relative difference: 0.0316634","Cc: Component ""Cc"": Mean relative difference: 0.5895754; Circ: Component ""Circ"": Mean relative difference: 0.0316634",18.0
+20,8,Myelosuppression,Friberg_myelosuppression,FAIL,"Cc: Component ""Cc"": Mean absolute difference: 4.69222; Circ: Component ""Circ"": Mean relative difference: 0.9999985","Cc: Component ""Cc"": Mean absolute difference: 4.69222; Circ: Component ""Circ"": Mean relative difference: 0.9999985",24.8
+20,9,Myelosuppression,Friberg_myelosuppression,FAIL,"Cc: Component ""Cc"": Mean relative difference: 0.5895754; Circ: Component ""Circ"": Mean relative difference: 0.0316634","Cc: Component ""Cc"": Mean relative difference: 0.5895754; Circ: Component ""Circ"": Mean relative difference: 0.0316634",25.6
+20,10,Myelosuppression,Friberg_myelosuppression,FAIL,"Cc: Component ""Cc"": Mean relative difference: 0.5895754; Circ: Component ""Circ"": Mean relative difference: 0.0316634","Cc: Component ""Cc"": Mean relative difference: 0.5895754; Circ: Component ""Circ"": Mean relative difference: 0.0316634",21.4

@@ -1,0 +1,21 @@
+[LONGITUDINAL]
+input = {Tlag, ka, V, Cl, IC50, Rin, kout}
+Tlag = {use=regressor}
+ka = {use=regressor}
+V = {use=regressor}
+Cl = {use=regressor}
+
+PK:
+absorption(cmt=1, ka, Tlag=Tlag)
+compartment(cmt=1, amount=Ac, volume=V, concentration=Cc)
+elimination(cmt=1, Cl)
+
+EQUATION:
+E_0 = Rin/kout
+
+Inh = Rin*(1 - Cc/(IC50+Cc))
+
+ddt_E = Inh - kout*E
+
+OUTPUT:
+output = {Cc, E}

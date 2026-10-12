@@ -1,0 +1,31 @@
+[LONGITUDINAL]
+input = {F1, F2, F3, F4, V1, Cl, Q, V2, ka1, ka2, ka3, ka4, Clm2, Clm3, Clm4, kpm2, kpm3, kpm4}
+
+PK:
+depot(target=Ad1, ka=ka1, p=F1, adm=1)
+depot(target=Ad2, ka=ka2, p=F2, adm=1)
+depot(target=Ad3, ka=ka3, p=F3, adm=1)
+depot(target=Ad4, ka=ka4, p=F4, adm=1)
+
+EQUATION:
+odeType=stiff
+
+ddt_Ad1 = -ka1*Ad1
+ddt_Ad2 = -ka2*Ad2
+ddt_Ad3 = -ka3*Ad3
+ddt_Ad4 = -ka4*Ad4
+
+ddt_Ac1 = ka1*Ad1 - (Cl/V1)*Ac1 - (Q/V1)*Ac1 + (Q/V2)*Ap1 - kpm2*Ac1 - kpm3*Ac1 - kpm4*Ac1
+ddt_Ap1 = (Q/V1)*Ac1 - (Q/V2)*Ap1
+
+ddt_Ac2 = ka2*Ad2 + kpm2*Ac1 - (Clm2/V1)*Ac2
+ddt_Ac3 = ka3*Ad3 + kpm3*Ac1 - (Clm3/V1)*Ac3
+ddt_Ac4 = ka4*Ad4 + kpm4*Ac1 - (Clm4/V1)*Ac4
+
+Cp = Ac1/V1
+Cm2 = Ac2/V1
+Cm3 = Ac3/V1
+Cm4 = Ac4/V1
+
+OUTPUT:
+output = {Cp, Cm2, Cm3, Cm4}

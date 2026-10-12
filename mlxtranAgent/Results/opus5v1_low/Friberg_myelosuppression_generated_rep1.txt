@@ -1,0 +1,35 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, Circ0, MTT, gam, Emax, EC50}
+
+PK:
+; first-order absorption handled by depot macro (hidden depot compartment)
+depot(target=Ac, ka)
+
+EQUATION:
+odeType = stiff
+t_0 = 0
+Ac_0 = 0
+Prol_0 = Circ0
+Tr1_0 = Circ0
+Tr2_0 = Circ0
+Tr3_0 = Circ0
+Circ_amt_0 = Circ0
+
+; transit rate: 4 compartments (prol + 3 transit) / MTT
+ktr = 4/MTT
+
+Cc = Ac/V
+Circ = max(Circ_amt, 1e-6)
+
+Edrug = Emax*Cc/(EC50 + Cc)
+FB = (Circ0/Circ)^gam
+
+ddt_Ac = -(Cl/V)*Ac
+ddt_Prol = ktr*Prol*(1-Edrug)*FB - ktr*Prol
+ddt_Tr1 = ktr*(Prol - Tr1)
+ddt_Tr2 = ktr*(Tr1 - Tr2)
+ddt_Tr3 = ktr*(Tr2 - Tr3)
+ddt_Circ_amt = ktr*Tr3 - ktr*Circ_amt
+
+OUTPUT:
+output = {Cc, Circ}

@@ -1,0 +1,32 @@
+DESCRIPTION:
+Two-compartment PK model with sequential zero-order input into an absorption
+compartment followed by first-order absorption into the central compartment.
+
+[LONGITUDINAL]
+input = {Tk0, ka, V, Cl, Q, V2}
+
+PK:
+; Zero-order input of the dose into the absorption compartment Ad
+depot(target=Ad, Tk0)
+
+EQUATION:
+; Initial conditions
+t_0 = 0
+Ad_0 = 0
+Ac_0 = 0
+Ap_0 = 0
+
+; Micro-constants
+k   = Cl/V
+k12 = Q/V
+k21 = Q/V2
+
+; First-order absorption from Ad to central compartment
+ddt_Ad = -ka*Ad
+ddt_Ac =  ka*Ad - k*Ac - k12*Ac + k21*Ap
+ddt_Ap =  k12*Ac - k21*Ap
+
+Cc = Ac/V
+
+OUTPUT:
+output = {Cc}

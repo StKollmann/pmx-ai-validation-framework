@@ -1,0 +1,22 @@
+[LONGITUDINAL]
+input = {ka, V, Cl, R0, intercept, slope, kout, Emax, EC50}
+ka = {use=regressor}
+V = {use=regressor}
+Cl = {use=regressor}
+
+PK:
+Cc = pkmodel(ka, V, Cl)
+
+EQUATION:
+; Rss correlated with R0 via linear relationship
+Rss = intercept + slope*R0
+; kin derived from Rss and kout (steady-state relationship without drug)
+kin = Rss*kout
+
+; initial condition for turnover response (not at steady-state at t=0)
+R_0 = R0
+
+ddt_R = kin*(1 + Emax*Cc/(EC50+Cc)) - kout*R
+
+OUTPUT:
+output = {Cc, R}

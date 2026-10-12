@@ -1,0 +1,15 @@
+[LONGITUDINAL]
+input = {V, k, Vm, Km}
+
+PK:
+; Central compartment
+compartment(cmt=1, amount=Ac, volume=V, concentration=Cc)
+; IV bolus administration
+iv(cmt=1, adm=1)
+; Linear elimination (first-order rate constant)
+elimination(cmt=1, k)
+; Michaelis-Menten elimination
+elimination(cmt=1, Vm, Km)
+
+OUTPUT:
+output = {Cc}

@@ -1,0 +1,11 @@
+[LONGITUDINAL]
+input = {V, k, Vm, Km}
+
+PK:
+compartment(cmt=1, amount=Ac, volume=V, concentration=Cc)
+iv(cmt=1)
+elimination(cmt=1, k)
+elimination(cmt=1, Vm, Km)
+
+OUTPUT:
+output = {Cc}

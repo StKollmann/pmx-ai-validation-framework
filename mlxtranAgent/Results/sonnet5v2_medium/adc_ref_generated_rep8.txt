@@ -1,0 +1,23 @@
+[LONGITUDINAL]
+input = {k12, k21, V, k10, V_payload, k_payload}
+
+PK:
+; Two-compartment IV disposition of the ADC (central + peripheral)
+Cc_ADC = pkmodel(V, k=k10, k12, k21)
+
+EQUATION:
+; Amount of ADC in the central compartment
+Ac_ADC = Cc_ADC*V
+
+; Proteolytic release of payload from ADC in central compartment (only pathway)
+; DAR (drug-to-antibody ratio) is constant = 4
+release_payload = k10*Ac_ADC*4
+
+; One-compartment disposition of the released payload
+ddt_A_payload = release_payload - k_payload*A_payload
+A_payload_0 = 0
+
+Cc_payload = A_payload/V_payload
+
+OUTPUT:
+output = {Cc_ADC, Cc_payload}

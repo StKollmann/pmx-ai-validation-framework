@@ -1,0 +1,19 @@
+[LONGITUDINAL]
+input = {k, V}
+
+PK:
+compartment(cmt=1, amount=Ac, volume=V)
+iv(cmt=1)
+
+EQUATION:
+t_0 = 0
+Ac_0 = 0
+AUC_0 = 0
+
+ddt_Ac = -k*Ac
+ddt_AUC = Ac/V
+
+Cc = Ac/V
+
+OUTPUT:
+output = {Cc, AUC}

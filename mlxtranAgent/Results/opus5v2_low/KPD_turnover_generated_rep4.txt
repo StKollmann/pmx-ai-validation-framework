@@ -1,0 +1,21 @@
+[LONGITUDINAL]
+input = {k, R0, kdeg, IC50, Imax, gamma}
+
+PK:
+depot(target=A)
+
+EQUATION:
+t_0 = 0
+A_0 = 0
+R_0 = R0
+
+; KPD: virtual amount with first-order degradation only
+ddt_A = -k*A
+
+; Turnover with sigmoidal Imax inhibition of production
+INH = Imax*A^gamma/(A^gamma + IC50^gamma)
+kin = R0*kdeg
+ddt_R = kin*(1 - INH) - kdeg*R
+
+OUTPUT:
+output = {R}

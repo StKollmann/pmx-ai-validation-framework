@@ -1,0 +1,40 @@
+[LONGITUDINAL]
+input = {TS0, kge, kgl, kkill, tau, ka_cis, k_cis, Vd_cis, ka_pem, k_pem, Vd_pem}
+
+PK:
+; Cisplatin PK (cmt=2, adm=2)
+compartment(cmt=2, amount=Ac_cis, volume=Vd_cis, concentration=C_cis)
+absorption(cmt=2, ka=ka_cis, adm=2)
+elimination(cmt=2, k=k_cis)
+
+; Pemetrexed PK (cmt=3, adm=1)
+compartment(cmt=3, amount=Ac_pem, volume=Vd_pem, concentration=C_pem)
+absorption(cmt=3, ka=ka_pem, adm=1)
+elimination(cmt=3, k=k_pem)
+
+EQUATION:
+odeType = stiff
+
+psi = 20
+
+; total tumor mass (proliferating + death compartments)
+w = TS+TS1+TS2+TS3
+
+; Simeoni growth term (switch between exponential and linear growth)
+growth = kge*TS / (1+(kge/kgl*w)^psi)^(1/psi)
+
+; drug exposure and log-kill effect
+EXPOSURE = C_cis + C_pem
+kill = kkill*EXPOSURE*TS
+
+; ODEs
+TS_0 = TS0
+ddt_TS  = growth - kill
+ddt_TS1 = kill    - TS1/tau
+ddt_TS2 = TS1/tau - TS2/tau
+ddt_TS3 = TS2/tau - TS3/tau
+
+TotalTS = TS+TS1+TS2+TS3
+
+OUTPUT:
+output = {TotalTS}

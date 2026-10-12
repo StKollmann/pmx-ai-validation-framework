@@ -1,0 +1,22 @@
+[LONGITUDINAL]
+input = {V, k, Vm, Km}
+
+PK:
+; IV bolus: doses go directly into the central compartment amount Ac
+depot(target=Ac)
+
+EQUATION:
+odeType = stiff
+Ac_0 = 0
+
+; concentration must be defined before use
+Cc = Ac/V
+
+; elimination fluxes (in amount units)
+elim_lin = k*Ac
+elim_MM  = Vm*Cc/(Km + Cc)
+
+ddt_Ac = -elim_lin - elim_MM
+
+OUTPUT:
+output = {Cc}

@@ -1,0 +1,21 @@
+[LONGITUDINAL]
+input = {k, R0, kdeg, IC50, Imax, gamma}
+
+PK:
+depot(target=A)
+
+EQUATION:
+odeType = stiff
+t_0 = 0
+A_0 = 0
+R_0 = R0
+
+; K-PD virtual PK: amount A declines with first-order rate k
+kin = R0*kdeg
+inh = Imax*A^gamma/(IC50^gamma + A^gamma)
+
+ddt_A = -k*A
+ddt_R = kin*(1 - inh) - kdeg*R
+
+OUTPUT:
+output = {R}

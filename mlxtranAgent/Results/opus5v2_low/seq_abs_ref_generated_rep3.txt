@@ -1,0 +1,18 @@
+[LONGITUDINAL]
+input = {Tk0, ka, V, Cl, Q, V2}
+
+PK:
+; sequential zero-order then first-order absorption
+k23 = Q/V
+k32 = Q/V2
+
+compartment(cmt=1, amount=Ad)
+absorption(cmt=1, Tk0)
+transfer(from=1, to=2, kt=ka)
+
+compartment(cmt=2, amount=Ac, volume=V, concentration=Cc)
+peripheral(k23, k32)
+elimination(cmt=2, Cl)
+
+OUTPUT:
+output = {Cc}
